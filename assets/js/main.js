@@ -155,7 +155,7 @@
     });
   });
 
-  // Portfolio details carousel
+  // Projects details carousel
   $(".portfolio-details-carousel").owlCarousel({
     autoplay: true,
     dots: true,

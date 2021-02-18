@@ -446,6 +446,25 @@ section .container {
 /*--------------------------------------------------------------
 # Skills
 --------------------------------------------------------------*/
+.skills .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills .content ul li {
+  padding-bottom: 10px;
+}
+
+.skills .content ul i {
+  font-size: 20px;
+  padding-right: 2px;
+  color: #18d26e;
+}
+
+.skills .content p:last-child {
+  margin-bottom: 0;
+}
+
 .skills .progress {
   height: 50px;
   display: block;
@@ -653,7 +672,7 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# Services
+# Awards
 --------------------------------------------------------------*/
 .services .icon-box {
   text-align: center;
@@ -727,12 +746,12 @@ section .container {
   background: #35e888;
 }
 
-.services .icon-box:hover h4 a, .services .icon-box:hover p {
+.services .icon-box:hover h4 a, .services .icon-box:hover p, .services .icon-box:hover a {
   color: #fff;
 }
 
 /*--------------------------------------------------------------
-# Portfolio
+# Projects
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
   margin-bottom: 30px;
@@ -1074,7 +1093,7 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# Portfolio Details
+# Projects Details
 --------------------------------------------------------------*/
 .portfolio-details {
   padding-top: 40px;
