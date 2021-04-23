@@ -1196,3 +1196,20 @@ section .container {
 .credits a:hover {
   color: #fff;
 }
+
+/*--------------------------------------------------------------
+# CV Download
+--------------------------------------------------------------*/
+
+.cvBtn {
+  background: #18d26e;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.cvBtn:hover {
+  background: #15bb62;
+}
