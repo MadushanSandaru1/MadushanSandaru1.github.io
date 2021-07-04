@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body oncontextmenu="return false">
 
   <!-- ======= Header ======= -->
   <header id="header" class="header-tops">
@@ -1324,8 +1324,8 @@
           <div class="error-message"></div>
           <div class="sent-message">Your message has been sent. Thank you!</div>
         </div>
-        <div class="g-recaptcha" data-theme="dark" data-sitekey="6Le-xXQbAAAAANKA2oZDZ-p1EwwHiCtAlEf83QU_"></div>
-        <div class="text-center"><button type="submit" onclick="send_message()">Send Message</button></div>
+        <div class="text-center"><button type="submit" id="submit" onclick="send_message()">Send Message</button></div>
+        <div class="text-center"><button type="submit" id="loading" disabled>Sending <i class="ri-loader-2-fill"></i></button></div>
       </form>
 
     </div>
@@ -1349,20 +1349,23 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- recaptcha JS File -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
   <!-- EmailJs File -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 
   <!-- Email -->
   <script type="text/javascript">
+  
+    $('#loading').hide();
+
     (function(){
       emailjs.init("user_rUNhO3jZZ0giIsiVwJ2Ju");
     })();
 
     $('form.php-email-form').submit(function(e) {
       e.preventDefault();
+
+      $('#submit').hide();
+      $('#loading').show();
 
       let name = document.getElementById("contact_name").value;
       let email = document.getElementById("contact_email").value;
@@ -1384,7 +1387,9 @@
             document.getElementById("contact_message").value = '';
 
             $('.php-email-form').find('.sent-message').slideDown(500, function() {
-              $('.php-email-form').find('.sent-message').delay(1000).slideUp(500);
+              $('.php-email-form').find('.sent-message').delay(2000).slideUp(500);
+              $('#submit').delay(2000).show();
+              $('#loading').delay(2000).hide();
             });
           }
         );

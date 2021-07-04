@@ -8,6 +8,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #040404;
@@ -1060,7 +1061,7 @@ section .container {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type="submit"] {
+.contact .php-email-form #submit {
   background: #18d26e;
   border: 0;
   padding: 10px 30px;
@@ -1069,8 +1070,17 @@ section .container {
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.contact .php-email-form #submit:hover {
   background: #15bb62;
+}
+
+.contact .php-email-form #loading {
+  background: transparent;
+  border: 1px solid #18d26e;
+  padding: 10px 30px;
+  color: #18d26e;
+  transition: 0.4s;
+  border-radius: 4px;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1212,4 +1222,18 @@ section .container {
 
 .cvBtn:hover {
   background: #15bb62;
+}
+
+/*--------------------------------------------------------------
+# CV Download
+--------------------------------------------------------------*/
+
+::-moz-selection { /* Code for Firefox */
+  color: #040404;
+  background: #18d26e;
+}
+
+::selection {
+  color: #040404;
+  background: #18d26e;
 }
