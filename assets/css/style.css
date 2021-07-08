@@ -1229,11 +1229,11 @@ section .container {
 --------------------------------------------------------------*/
 
 ::-moz-selection { /* Code for Firefox */
-  color: #040404;
+  color: #fff;
   background: #18d26e;
 }
 
 ::selection {
-  color: #040404;
+  color: #fff;
   background: #18d26e;
 }
