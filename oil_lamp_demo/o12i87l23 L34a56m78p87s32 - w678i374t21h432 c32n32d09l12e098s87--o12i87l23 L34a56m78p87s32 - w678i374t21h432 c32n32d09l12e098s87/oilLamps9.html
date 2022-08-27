@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>FOT UOR</title>
-    <link rel="icon" href="fav_icon.png" type="image/icon type">
+    <link rel="icon" href="../fav_icon.png" type="image/icon type">
     <style>
         body{
             overflow: hidden;
@@ -227,7 +227,8 @@
         Lamp5: 0,
         Lamp6: 0,
         Lamp7: 0,
-        Lamp8: 0
+        Lamp8: 0,
+        Lamp9: 0
     });
 </script>
 
@@ -346,8 +347,10 @@
 <script>
 
     var hide = true;
-    var candle_number = 8;
-    var interval = 8571;
+
+    var candle_number = 9;
+    var interval = 7500;
+
     let circle = document.getElementById('circle');
     let circle2 = document.getElementById('circle2');
 
@@ -457,45 +460,50 @@
 
     //////////////////////
 
-    // candle right near
+    // candle
     var caseMesh = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh.position.set(7.8, 0, 10); //(x, h, y)
+    caseMesh.position.set(4, 0, 10); //(x, h, y)
     caseMesh.castShadow = true;
 
-    // candle2 right center
+    // candle2 right near
     var caseMesh2 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh2.position.set(9.5, 0, 1.6);
+    caseMesh2.position.set(7.8, 0, 10);
     caseMesh2.castShadow = true;
 
-    // candle3 right far
+    // candle3 right center
     var caseMesh3 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh3.position.set(4, 0, -4.8);
+    caseMesh3.position.set(9.5, 0, 1.6);
     caseMesh3.castShadow = true;
 
-    // candle4 left far
+    // candle4 right far
     var caseMesh4 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh4.position.set(-4.4, 0, -4.8);
+    caseMesh4.position.set(4, 0, -4.8);
     caseMesh4.castShadow = true;
 
-    // candle5 left center
+    // candle5 left far
     var caseMesh5 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh5.position.set(-9.5, 0, 2);
+    caseMesh5.position.set(-4.4, 0, -4.8);
     caseMesh5.castShadow = true;
 
-    // candle6 left near
+    // candle6 left center
     var caseMesh6 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh6.position.set(-7.8, 0, 10.2);
+    caseMesh6.position.set(-9.5, 0, 2);
     caseMesh6.castShadow = true;
 
-    // candle7 center near
+    // candle7 left near
     var caseMesh7 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh7.position.set(0, 0, 14);
+    caseMesh7.position.set(-7.8, 0, 10.2);
     caseMesh7.castShadow = true;
 
-    // candle8 middle
+    // candle8 center near
     var caseMesh8 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh8.position.set(0, 0, 3);
+    caseMesh8.position.set(0, 0, 14);
     caseMesh8.castShadow = true;
+
+    // candle9 middle
+    var caseMesh9 = new THREE.Mesh(caseGeo, caseMat);
+    caseMesh9.position.set(0, 0, 3);
+    caseMesh9.castShadow = true;
 
     //////////////////////
 
@@ -554,6 +562,11 @@
     paraffinMesh8.position.set(0, 0, 0);
     caseMesh8.add(paraffinMesh8);
 
+    // paraffin8
+    var paraffinMesh9 = new THREE.Mesh(paraffinGeo, paraffinMat);
+    paraffinMesh9.position.set(0, 0, 0);
+    caseMesh9.add(paraffinMesh9);
+
     //////////////////////
 
 
@@ -602,6 +615,7 @@
     var candlewickMesh6 = new THREE.Mesh(candlewickGeo, candlewickMat);
     var candlewickMesh7 = new THREE.Mesh(candlewickGeo, candlewickMat);
     var candlewickMesh8 = new THREE.Mesh(candlewickGeo, candlewickMat);
+    var candlewickMesh9 = new THREE.Mesh(candlewickGeo, candlewickMat);
 
     caseMesh.add(candlewickMesh);
     caseMesh2.add(candlewickMesh2);
@@ -611,6 +625,7 @@
     caseMesh6.add(candlewickMesh6);
     caseMesh7.add(candlewickMesh7);
     caseMesh8.add(candlewickMesh8);
+    caseMesh9.add(candlewickMesh9);
 
     // candle light
     var candleLight = new THREE.PointLight(0xffaa33, 1, 5, 2);
@@ -651,6 +666,11 @@
     var candleLight8 = new THREE.PointLight(0xffaa33, 1, 5, 2);
     candleLight8.position.set(6, 3, 0);
     candleLight8.castShadow = false;
+
+    // candle light9
+    var candleLight9 = new THREE.PointLight(0xffaa33, 1, 5, 2);
+    candleLight9.position.set(6, 3, 0);
+    candleLight9.castShadow = false;
 
     /////////////////////
 
@@ -732,6 +752,14 @@
             caseMesh8.add(flame8);
         }
 
+        //flame8
+        if(candle_number == 9)
+        {
+            let flame9 = new THREE.Mesh(flameGeo, flameMat);
+            flame9.position.set(0, 1.2, 0.05);
+            caseMesh9.add(flame9);
+        }
+
         //////////////////////
     }
 
@@ -756,6 +784,7 @@
     tableMesh.add(caseMesh6);
     tableMesh.add(caseMesh7);
     tableMesh.add(caseMesh8);
+    tableMesh.add(caseMesh9);
 
     ////////////////
 
@@ -780,7 +809,7 @@
     var firebase_sum = 0;
 
     firebase.database().ref().on('value', function(snapshot) {
-        firebase_sum = snapshot.val().Lamp1+snapshot.val().Lamp2+snapshot.val().Lamp3+snapshot.val().Lamp4+snapshot.val().Lamp5+snapshot.val().Lamp6+snapshot.val().Lamp7;
+        firebase_sum = snapshot.val().Lamp1+snapshot.val().Lamp2+snapshot.val().Lamp3+snapshot.val().Lamp4+snapshot.val().Lamp5+snapshot.val().Lamp6+snapshot.val().Lamp7+snapshot.val().Lamp8+snapshot.val().Lamp9;
         // console.log(firebase_sum);
     });
 
@@ -856,6 +885,13 @@
 
                     firebase.database().ref().update({
                         Lamp8: 1
+                    });
+                }
+                if (candle_number == 9){
+                    caseMesh9.add(candleLight9);
+
+                    firebase.database().ref().update({
+                        Lamp9: 1
                     });
                 }
 
@@ -953,6 +989,10 @@
         candleLight8.position.z = Math.cos(time * Math.PI * 0.75) * 0.25;
         candleLight8.intensity = 2 + Math.sin(time * Math.PI * 2) * Math.cos(time * Math.PI * 1.5) * 0.25;
 
+        candleLight9.position.x = Math.sin(time * Math.PI) * 0.25;
+        candleLight9.position.z = Math.cos(time * Math.PI * 0.75) * 0.25;
+        candleLight9.intensity = 2 + Math.sin(time * Math.PI * 2) * Math.cos(time * Math.PI * 1.5) * 0.25;
+
         ////////////////////
 
         controls.update();
@@ -1000,8 +1040,8 @@
 
     });
 
-    const usr_images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png'];
-    //VC, DVC, Dean, Senior student councelloer, ET, ICT, BST, AR
+    const usr_images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png'];
+    //VC, DVC, Dean, Senior student counsellor, ET, ICT, BST, AR, Example
 
     function fadeIn(el) {
         el.style.opacity = 0;
