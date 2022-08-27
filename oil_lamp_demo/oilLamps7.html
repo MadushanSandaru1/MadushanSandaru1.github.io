@@ -347,17 +347,19 @@
     var hide = true;
     var candle_number = 7;
     var interval = 10000;
+    let circle = document.getElementById('circle');
+    let circle2 = document.getElementById('circle2');
 
-    document.getElementById('circle2').hidden = true;
+    circle2.hidden = true;
 
     circle.addEventListener("click", function() {
 
         is_clicked = true;
 
-        document.getElementById('circle').hidden = true;
+        circle.hidden = true;
 
         setTimeout(function(){
-            document.getElementById('circle2').hidden = false;
+            circle2.hidden = false;
             changeImage(candle_number);
         },2000);
 
@@ -374,7 +376,7 @@
 
             flame(false, candle_number);
             flame(true, candle_number);
-            document.getElementById('circle2').hidden = true;
+            circle2.hidden = true;
             controls.autoRotate = true;
 
             setTimeout(function(){
@@ -383,9 +385,9 @@
 
             setTimeout(function(){
                 controls.autoRotate = false;
-                document.getElementById('circle2').hidden = false;
+                circle2.hidden = false;
                 if(candle_number == 1){
-                    document.getElementById('circle2').hidden = true;
+                    circle2.hidden = true;
                     controls.autoRotate = true;
                 }
 
@@ -397,17 +399,17 @@
 
     // play.addEventListener("click", function() {
     //     controls.autoRotate = true;
-    // 	document.getElementById('circle2').hidden = true;
+    // 	circle2.hidden = true;
     // 	setInterval(function(){
     //     	controls.autoRotate = false;
-    //     	document.getElementById('circle2').hidden = false;
+    //     	circle2.hidden = false;
     //     },12000);
 
     // }, false);
 
     // pause.addEventListener("click", function() {
     //     controls.autoRotate = false;
-    //     document.getElementById('circle2').hidden = false;
+    //     circle2.hidden = false;
     // }, false);
 
 
@@ -835,10 +837,10 @@
             if (old_firebase_sum == 0){
                 is_clicked = true;
 
-                document.getElementById('circle').hidden = true;
+                circle.hidden = true;
 
                 setTimeout(function(){
-                    document.getElementById('circle2').hidden = false;
+                    circle2.hidden = false;
                     changeImage(candle_number);
                 },2000);
             } else {
@@ -850,7 +852,7 @@
                 {
                     flame(false, candle_number);
                     flame(true, candle_number);
-                    document.getElementById('circle2').hidden = true;
+                    circle2.hidden = true;
                     controls.autoRotate = true;
 
                     setTimeout(function(){
@@ -859,9 +861,9 @@
 
                     setTimeout(function(){
                         controls.autoRotate = false;
-                        document.getElementById('circle2').hidden = false;
+                        circle2.hidden = false;
                         if(candle_number == 1){
-                            document.getElementById('circle2').hidden = true;
+                            circle2.hidden = true;
                             controls.autoRotate = true;
                         }
 
@@ -960,7 +962,7 @@
     });
 
     const usr_images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png'];
-    //VC, DVC, Dean, Senior student councelloer, ICT, ET, BST
+    //VC, DVC, Dean, Senior student councelloer, ET, ICT, BST
 
     function fadeIn(el) {
         el.style.opacity = 0;
