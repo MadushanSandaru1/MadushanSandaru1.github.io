@@ -226,7 +226,8 @@
         Lamp4: 0,
         Lamp5: 0,
         Lamp6: 0,
-        Lamp7: 0
+        Lamp7: 0,
+        Lamp8: 0
     });
 </script>
 
@@ -345,26 +346,28 @@
 <script>
 
     var hide = true;
-    var candle_number = 7;
-    var interval = 10000;
+    var candle_number = 8;
+    var interval = 8571;
+    let circle = document.getElementById('circle');
+    let circle2 = document.getElementById('circle2');
 
-    document.getElementById('circle2').hidden = true;
+    circle2.hidden = true;
 
     circle.addEventListener("click", function() {
 
         is_clicked = true;
 
-        document.getElementById('circle').hidden = true;
+        circle.hidden = true;
 
         setTimeout(function(){
-            document.getElementById('circle2').hidden = false;
+            circle2.hidden = false;
             changeImage(candle_number);
         },2000);
 
     }, false);
 
     circle2.addEventListener("click", function() {
-        //alert("hii");
+
         is_clicked = true;
 
         --candle_number;
@@ -374,7 +377,7 @@
 
             flame(false, candle_number);
             flame(true, candle_number);
-            document.getElementById('circle2').hidden = true;
+            circle2.hidden = true;
             controls.autoRotate = true;
 
             setTimeout(function(){
@@ -383,9 +386,9 @@
 
             setTimeout(function(){
                 controls.autoRotate = false;
-                document.getElementById('circle2').hidden = false;
+                circle2.hidden = false;
                 if(candle_number == 1){
-                    document.getElementById('circle2').hidden = true;
+                    circle2.hidden = true;
                     controls.autoRotate = true;
                 }
 
@@ -397,17 +400,17 @@
 
     // play.addEventListener("click", function() {
     //     controls.autoRotate = true;
-    // 	document.getElementById('circle2').hidden = true;
+    // 	circle2.hidden = true;
     // 	setInterval(function(){
     //     	controls.autoRotate = false;
-    //     	document.getElementById('circle2').hidden = false;
+    //     	circle2.hidden = false;
     //     },12000);
 
     // }, false);
 
     // pause.addEventListener("click", function() {
     //     controls.autoRotate = false;
-    //     document.getElementById('circle2').hidden = false;
+    //     circle2.hidden = false;
     // }, false);
 
 
@@ -456,38 +459,43 @@
 
     // candle right near
     var caseMesh = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh.position.set(8.5, 0, 8.7); //(x, h, y)
+    caseMesh.position.set(7.8, 0, 10); //(x, h, y)
     caseMesh.castShadow = true;
 
-    // candle2 right far
+    // candle2 right center
     var caseMesh2 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh2.position.set(8.5, 0, -1.1);
+    caseMesh2.position.set(9.5, 0, 1.6);
     caseMesh2.castShadow = true;
 
-    // candle3 center far
+    // candle3 right far
     var caseMesh3 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh3.position.set(-0.2, 0, -5.9);
+    caseMesh3.position.set(4, 0, -4.8);
     caseMesh3.castShadow = true;
 
     // candle4 left far
     var caseMesh4 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh4.position.set(-8.5, 0, -0.8);
+    caseMesh4.position.set(-4.4, 0, -4.8);
     caseMesh4.castShadow = true;
 
-    // candle5 left near
+    // candle5 left center
     var caseMesh5 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh5.position.set(-8.5, 0, 9);
+    caseMesh5.position.set(-9.5, 0, 2);
     caseMesh5.castShadow = true;
 
-    // candle6 center near
+    // candle6 left near
     var caseMesh6 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh6.position.set(0, 0, 14);
+    caseMesh6.position.set(-7.8, 0, 10.2);
     caseMesh6.castShadow = true;
 
-    // candle7 middle
+    // candle7 center near
     var caseMesh7 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh7.position.set(0, 0, 3);
+    caseMesh7.position.set(0, 0, 14);
     caseMesh7.castShadow = true;
+
+    // candle8 middle
+    var caseMesh8 = new THREE.Mesh(caseGeo, caseMat);
+    caseMesh8.position.set(0, 0, 3);
+    caseMesh8.castShadow = true;
 
     //////////////////////
 
@@ -541,6 +549,11 @@
     paraffinMesh7.position.set(0, 0, 0);
     caseMesh7.add(paraffinMesh7);
 
+    // paraffin8
+    var paraffinMesh8 = new THREE.Mesh(paraffinGeo, paraffinMat);
+    paraffinMesh8.position.set(0, 0, 0);
+    caseMesh8.add(paraffinMesh8);
+
     //////////////////////
 
 
@@ -588,6 +601,7 @@
     var candlewickMesh5 = new THREE.Mesh(candlewickGeo, candlewickMat);
     var candlewickMesh6 = new THREE.Mesh(candlewickGeo, candlewickMat);
     var candlewickMesh7 = new THREE.Mesh(candlewickGeo, candlewickMat);
+    var candlewickMesh8 = new THREE.Mesh(candlewickGeo, candlewickMat);
 
     caseMesh.add(candlewickMesh);
     caseMesh2.add(candlewickMesh2);
@@ -596,6 +610,7 @@
     caseMesh5.add(candlewickMesh5);
     caseMesh6.add(candlewickMesh6);
     caseMesh7.add(candlewickMesh7);
+    caseMesh8.add(candlewickMesh8);
 
     // candle light
     var candleLight = new THREE.PointLight(0xffaa33, 1, 5, 2);
@@ -631,6 +646,11 @@
     var candleLight7 = new THREE.PointLight(0xffaa33, 1, 5, 2);
     candleLight7.position.set(6, 3, 0);
     candleLight7.castShadow = false;
+
+    // candle light8
+    var candleLight8 = new THREE.PointLight(0xffaa33, 1, 5, 2);
+    candleLight8.position.set(6, 3, 0);
+    candleLight8.castShadow = false;
 
     /////////////////////
 
@@ -680,6 +700,7 @@
             caseMesh4.add(flame4);
         }
 
+        //flame5
         if(candle_number == 5)
         {
             let flame5 = new THREE.Mesh(flameGeo, flameMat);
@@ -687,7 +708,7 @@
             caseMesh5.add(flame5);
         }
 
-        //flame5
+        //flame6
         if(candle_number == 6)
         {
             let flame6 = new THREE.Mesh(flameGeo, flameMat);
@@ -701,6 +722,14 @@
             let flame7 = new THREE.Mesh(flameGeo, flameMat);
             flame7.position.set(0, 1.2, 0.05);
             caseMesh7.add(flame7);
+        }
+
+        //flame8
+        if(candle_number == 8)
+        {
+            let flame8 = new THREE.Mesh(flameGeo, flameMat);
+            flame8.position.set(0, 1.2, 0.05);
+            caseMesh8.add(flame8);
         }
 
         //////////////////////
@@ -726,6 +755,7 @@
     tableMesh.add(caseMesh5);
     tableMesh.add(caseMesh6);
     tableMesh.add(caseMesh7);
+    tableMesh.add(caseMesh8);
 
     ////////////////
 
@@ -821,6 +851,13 @@
                         Lamp1: 1
                     });
                 }
+                if (candle_number == 8){
+                    caseMesh8.add(candleLight8);
+
+                    firebase.database().ref().update({
+                        Lamp8: 1
+                    });
+                }
 
                 old_firebase_sum = firebase_sum;
 
@@ -835,10 +872,10 @@
             if (old_firebase_sum == 0){
                 is_clicked = true;
 
-                document.getElementById('circle').hidden = true;
+                circle.hidden = true;
 
                 setTimeout(function(){
-                    document.getElementById('circle2').hidden = false;
+                    circle2.hidden = false;
                     changeImage(candle_number);
                 },2000);
             } else {
@@ -850,7 +887,7 @@
                 {
                     flame(false, candle_number);
                     flame(true, candle_number);
-                    document.getElementById('circle2').hidden = true;
+                    circle2.hidden = true;
                     controls.autoRotate = true;
 
                     setTimeout(function(){
@@ -859,9 +896,9 @@
 
                     setTimeout(function(){
                         controls.autoRotate = false;
-                        document.getElementById('circle2').hidden = false;
+                        circle2.hidden = false;
                         if(candle_number == 1){
-                            document.getElementById('circle2').hidden = true;
+                            circle2.hidden = true;
                             controls.autoRotate = true;
                         }
 
@@ -912,6 +949,10 @@
         candleLight7.position.z = Math.cos(time * Math.PI * 0.75) * 0.25;
         candleLight7.intensity = 2 + Math.sin(time * Math.PI * 2) * Math.cos(time * Math.PI * 1.5) * 0.25;
 
+        candleLight8.position.x = Math.sin(time * Math.PI) * 0.25;
+        candleLight8.position.z = Math.cos(time * Math.PI * 0.75) * 0.25;
+        candleLight8.intensity = 2 + Math.sin(time * Math.PI * 2) * Math.cos(time * Math.PI * 1.5) * 0.25;
+
         ////////////////////
 
         controls.update();
@@ -959,8 +1000,8 @@
 
     });
 
-    const usr_images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png'];
-    //VC, DVC, Dean, Senior student councelloer, ICT, ET, BST
+    const usr_images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png'];
+    //VC, DVC, Dean, Senior student councelloer, ET, ICT, BST, AR
 
     function fadeIn(el) {
         el.style.opacity = 0;
