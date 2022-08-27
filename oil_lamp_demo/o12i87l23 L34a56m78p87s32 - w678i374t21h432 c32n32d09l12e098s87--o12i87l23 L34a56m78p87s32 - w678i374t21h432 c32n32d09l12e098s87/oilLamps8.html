@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>FOT UOR</title>
-    <link rel="icon" href="fav_icon.png" type="image/icon type">
+    <link rel="icon" href="../fav_icon.png" type="image/icon type">
     <style>
         body{
             overflow: hidden;
@@ -780,7 +780,7 @@
     var firebase_sum = 0;
 
     firebase.database().ref().on('value', function(snapshot) {
-        firebase_sum = snapshot.val().Lamp1+snapshot.val().Lamp2+snapshot.val().Lamp3+snapshot.val().Lamp4+snapshot.val().Lamp5+snapshot.val().Lamp6+snapshot.val().Lamp7;
+        firebase_sum = snapshot.val().Lamp1+snapshot.val().Lamp2+snapshot.val().Lamp3+snapshot.val().Lamp4+snapshot.val().Lamp5+snapshot.val().Lamp6+snapshot.val().Lamp7+snapshot.val().Lamp8;
         // console.log(firebase_sum);
     });
 
@@ -1001,7 +1001,7 @@
     });
 
     const usr_images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png'];
-    //VC, DVC, Dean, Senior student councelloer, ET, ICT, BST, AR
+    //VC, DVC, Dean, Senior student counsellor, ET, ICT, BST, AR
 
     function fadeIn(el) {
         el.style.opacity = 0;
