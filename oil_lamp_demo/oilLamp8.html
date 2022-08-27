@@ -196,7 +196,7 @@
 
 <!-- logo image -->
 <div id="university_logo_div"><img id="university_logo_image" src="university_logo.gif"></div>
-<div id="faculty_logo_div"><img id="faculty_logo_image" src="fav_icon.png">></div>
+<div id="faculty_logo_div"><img id="faculty_logo_image" src="faculty_logo.png">></div>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.98.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.98.0/examples/js/controls/OrbitControls.js"></script>
@@ -328,8 +328,8 @@
     <div id="pause" ><div class="blink2">Pause</div></div> -->
 
     <div id="title_div" style="margin-top: 2%; text-align: center">
-        <h1 style="font-family: Georgia; color: orange; font-size: 50px;">Students' Welcome Ceremony - 2021</h1>
-        <h2 style="font-family: Georgia; color: orange;">5<sup>th</sup> Batch</h2>
+        <h1 style="font-family: Georgia; color: orange; font-size: 50px;">Students' Welcome Ceremony - 2022</h1>
+        <h2 style="font-family: Georgia; color: orange;">6<sup>th</sup> Batch</h2>
         <h2 style="font-family: Verdana; color: white;">Faculty of Technology - University of Ruhuna</h2>
     </div>
 
@@ -341,7 +341,7 @@
     </audio>
 
 </div>
-<h2 id="fixedbutton">Design by Department of ICT</h2>
+<h2 id="fixedbutton">Designed by Department of ICT</h2>
 
 
 <script>
@@ -976,17 +976,16 @@
     }
 
     function changeImage(position) {
+        var el = document.getElementById("user_image");
         if(position>1) {
-            var el = document.getElementById("user_image");
-            el.src = usr_images[8-position];
+            el.src = usr_images[usr_images.length+1-position];
             fadeIn(el);
         } else {
-            document.getElementById("user_image").src = "";
+            el.parentNode.removeChild(el);
         }
-
     }
 
-    changeImage(8);
+    changeImage(usr_images.length+1);
 
 </script>
 
