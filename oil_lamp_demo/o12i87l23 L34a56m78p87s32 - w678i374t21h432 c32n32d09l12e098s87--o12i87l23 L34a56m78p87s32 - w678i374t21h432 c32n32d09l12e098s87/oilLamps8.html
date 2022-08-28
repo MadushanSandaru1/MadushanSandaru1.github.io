@@ -196,7 +196,7 @@
 
 <!-- logo image -->
 <div id="university_logo_div"><img id="university_logo_image" src="university_logo.gif"></div>
-<div id="faculty_logo_div"><img id="faculty_logo_image" src="faculty_logo.png">></div>
+<div id="faculty_logo_div"><img id="faculty_logo_image" src="faculty_logo.png"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.98.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.98.0/examples/js/controls/OrbitControls.js"></script>
@@ -437,6 +437,20 @@
     controls.autoRotateSpeed = 1;
     controls.target.set(0, 4, 4);
     controls.update();
+
+    // set background image
+    loader = new THREE.TextureLoader();
+    loader.setCrossOrigin("");
+    bgTexture = loader.load("https://raw.githubusercontent.com/MadushanSandaru1/Texture-for-Lamp/master/back1.jpg",
+        function ( texture ) {
+            var img = texture.image;
+            bgWidth= img.width;
+            bgHeight = img.height;
+            resize();
+        }
+    );
+    scene.background = bgTexture;
+    // set background image
 
     //scene.add(new THREE.GridHelper(10, 10, 0x552222, 0x333322));
     var light = new THREE.DirectionalLight(0xffffff, 0.6);
