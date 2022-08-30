@@ -336,7 +336,7 @@
     scene.add(light);
     scene.add(new THREE.AmbientLight(0xffffff, 0.0625));
 
-    // lamp model
+    // lamp-case model
     var casePath = new THREE.Path();
     casePath.moveTo(0, 0);
     casePath.lineTo(0, 0);
@@ -447,7 +447,6 @@
     caseMesh8.add(paraffinMesh8);
 
     //////////////////////
-
 
     // candlewick
     var candlewickProfile = new THREE.Shape();
@@ -850,7 +849,7 @@
         controls.update();
         renderer.render(scene, camera);
     }
-    
+
 </script>
 
 </body>
