@@ -1,213 +1,93 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <title>FOT UOR</title>
-    <link rel="icon" href="../fav_icon.png" type="image/icon type">
-    <style>
-        body{
-            overflow: hidden;
-            margin: 0;
-        }
 
-        #title_div {
-            position: fixed;
-            width: 100%;
-        }
+    <!-- title -->
+    <title>Virtual Oil Lamp</title>
 
-        #user_image_div {
-            position: fixed;
-            text-align: center;
-            top: 35%;
-            left: 5%;
-        }
+    <!-- favicon -->
+    <link href="../img/faculty_logo.png" type="image/x-icon" rel="icon">
 
-        #user_image {
-            width: 250px;
-            opacity: 0;
-            filter: alpha(opacity=40);
-        }
-
-        #university_logo_div {
-            position: fixed;
-            text-align: center;
-            top: 8%;
-            left: 8%;
-        }
-
-        #faculty_logo_div {
-            position: fixed;
-            text-align: center;
-            top: 8%;
-            right: 5%;
-        }
-
-        #university_logo_image, #faculty_logo_image {
-            height: 200px;
-        }
-
-        #circle {
-            position: fixed;
-            text-align: center;
-            width: 50px;
-            height: 50px;
-            top: 54%;
-            left: 50%;
-            margin-top: -25px;
-            margin-left: -25px;
-
-        }
-
-        #circle2 {
-            position: fixed;
-            text-align: center;
-            width: 50px;
-            height: 50px;
-            top: 86%;
-            left: 50%;
-            margin-top: -25px;
-            margin-left: -25px;
-        }
-
-        #play{
-            position: fixed;
-            text-align: center;
-            width: 50px;
-            height: 50px;
-            top: 94%;
-            left: 84%;
-            margin-top: -15px;
-            margin-left: -25px;
-        }
-
-        #pause{
-            position: fixed;
-            text-align: center;
-            width: 50px;
-            height: 50px;
-            top: 94%;
-            left: 88%;
-            margin-top: -15px;
-            margin-left: -25px;
-        }
-
-        .noselect {
-            -webkit-touch-callout: none;
-            /* iOS Safari */
-            -webkit-user-select: none;
-            /* Safari */
-            -khtml-user-select: none;
-            /* Konqueror HTML */
-            -moz-user-select: none;
-            /* Firefox */
-            -ms-user-select: none;
-            /* Internet Explorer/Edge */
-            user-select: none;
-            /* Non-prefixed version, currently
-            supported by Chrome and Opera */
-        }
-
-
-        /* unvisited link */
-
-        a:link {
-            color: orange;
-        }
-
-
-        /* visited link */
-
-        a:visited {
-            color: orange;
-        }
-
-
-        /* mouse over link */
-
-        a:hover {
-            color: orange;
-        }
-
-
-        /* selected link */
-
-        a:active {
-            color: orange;
-        }
-
-        #fixedbutton {
-            position: fixed;
-            bottom: 0px;
-            right: 0px;
-            color: white;
-            background-color: rgba(255, 255, 255, 0.15);
-            padding: 5px;
-        }
-
-        @-webkit-keyframes blinker {
-            from {opacity: 1.0;}
-            to {opacity: 0.0;}
-        }
-        .blink{
-            width: 100%;
-            height: 100%;
-            -webkit-border-radius: 30px;
-            -moz-border-radius: 30px;
-            border-radius: 30px;
-            background: rgba(255, 165, 0, 0.5);
-            -webkit-animation-name: blinker;
-            -webkit-animation-duration: 0.8s;
-            -webkit-animation-iteration-count:infinite;
-            -webkit-animation-timing-function:ease-in-out;
-            -webkit-animation-direction: alternate;
-        }
-
-        .blink2{
-            width: 100%;
-            height: 100%;
-            -webkit-border-radius: 30px;
-            -moz-border-radius: 30px;
-            border-radius: 30px;
-            background: rgba(255, 165, 0, 0.5);
-            /*-webkit-animation-name: blinker;
-            -webkit-animation-duration: 0.8s;
-            -webkit-animation-iteration-count:infinite;
-            -webkit-animation-timing-function:ease-in-out;
-            -webkit-animation-direction: alternate;*/
-        }
-
-        #cursor_image {
-            pointer-events: none;
-            position: absolute;
-        }
-
-        * {
-            cursor: none;
-        }
-    </style>
+    <!-- css -->
+    <link href="../css/oil_lamp_style.css" type="text/css" rel="stylesheet">
 
 </head>
-
 <body>
 
+<!-- background sound -->
+<audio autoplay loop>
+    <!--        <source src="../mp3/danno_budunge_melody.mp3" type="audio/mpeg">-->
+</audio>
+
 <!-- cursor -->
-<img id="cursor_image" src="can.gif"/>
+<img id="candle-cursor" src="../img/candle.gif"/>
 
-<!-- user image -->
-<div id="user_image_div"><img id="user_image"></div>
+<!-- guest photo -->
+<div id="guest-photo-div"><img id="guest-photo"></div>
 
-<!-- logo image -->
-<div id="university_logo_div"><img id="university_logo_image" src="university_logo.gif"></div>
-<div id="faculty_logo_div"><img id="faculty_logo_image" src="faculty_logo.png"></div>
+<!-- logo -->
+<div id="university-logo-div"><img id="university-logo" src="../img/university_logo.png"></div>
+<div id="faculty-logo-div"><img id="faculty-logo" src="../img/faculty_logo.png"></div>
 
+<!-- headings -->
+<div id="heading-div">
+    <h1 id="topic">Students' Welcome Ceremony - 2022</h1>
+    <h2 id="batch">6<sup>th</sup> Batch</h2>
+    <h2 id="faculty-name">Faculty of Technology - University of Ruhuna</h2>
+</div>
+
+<!-- lighting point -->
+<div id="middle-point" class="lighting-points"><div class="blink"></div></div>
+<div id="bottom-point" class="lighting-points"><div class="blink"></div></div>
+
+<!-- fixed button  -->
+<div id="fixed-button-div">
+    <h2 id="fixed-button">Designed by Department of Information and Communication Technology</h2>
+</div>
+
+<!-- threejs libraries -->
 <script src="https://cdn.jsdelivr.net/npm/three@0.98.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.98.0/examples/js/controls/OrbitControls.js"></script>
 
-<!--Firebase Libraries-->
+<!-- firebase libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
 
+<!-- cursor customization -->
 <script>
-    // Your web app's Firebase configuration
+
+    let x, y;
+    let px = 0, py = 0;
+
+    // image of cursor
+    const cursor = document.getElementById("candle-cursor");
+
+    // mouse press event
+    window.addEventListener("mouseup", function(e) {
+        cursor.style.left = (px + x) + "px";
+        cursor.style.top = (py + y) + "px";
+    })
+
+    // mouse move event
+    window.addEventListener("mousemove", function(e) {
+
+        // gets the x,y position of the mouse cursor
+        x = e.clientX;
+        y = e.clientY;
+
+        // sets the image to new relative position of the cursor
+        cursor.style.left = (px + x) + "px";
+        cursor.style.top = (py + y) + "px";
+
+    });
+
+</script>
+
+<!-- firebase -->
+<script>
+
+    // firebase configuration
     var firebaseConfig = {
         apiKey: "AIzaSyBHElWLZSL6lIx53uIEhNnsXevdRsNV2ic",
         authDomain: "fir-javas-b8b97.firebaseapp.com",
@@ -216,9 +96,11 @@
         messagingSenderId: "161924262316",
         appId: "1:161924262316:web:2af943b5a094b1bc76f209"
     };
-    // Initialize Firebase
+
+    // firebase initialization
     firebase.initializeApp(firebaseConfig);
 
+    // firebase database update
     firebase.database().ref().update({
         Lamp1: 0,
         Lamp2: 0,
@@ -229,8 +111,10 @@
         Lamp7: 0,
         Lamp8: 0
     });
+
 </script>
 
+<!-- flame model -->
 <script>
     function getFlameMaterial(isFrontSide){
         let side = isFrontSide ? THREE.FrontSide : THREE.BackSide;
@@ -240,133 +124,116 @@
                 light : {value : 2}
             },
             vertexShader: `
-            uniform float time;
-            uniform float light;
-            varying vec2 vUv;
-            varying float hValue;
+                uniform float time;
+                uniform float light;
+                varying vec2 vUv;
+                varying float hValue;
 
-            //https://thebookofshaders.com/11/
-            // 2D Random
-            float random (in vec2 st) {
-                return fract(sin(dot(st.xy,
-                                    vec2(12.9898,78.233)))
-                            * 43758.5453123);
-            }
+                //https://thebookofshaders.com/11/
+                // 2D Random
+                float random (in vec2 st) {
+                    return fract(sin(dot(st.xy,
+                                        vec2(12.9898,78.233)))
+                                * 43758.5453123);
+                }
 
-            // 2D Noise based on Morgan McGuire @morgan3d
-            // https://www.shadertoy.com/view/4dS3Wd
-            float noise (in vec2 st) {
-                vec2 i = floor(st);
-                vec2 f = fract(st);
+                // 2D Noise based on Morgan McGuire @morgan3d
+                // https://www.shadertoy.com/view/4dS3Wd
+                float noise (in vec2 st) {
+                    vec2 i = floor(st);
+                    vec2 f = fract(st);
 
-                // Four corners in 2D of a tile
-                float a = random(i);
-                float b = random(i + vec2(1.0, 0.0));
-                float c = random(i + vec2(0.0, 1.0));
-                float d = random(i + vec2(1.0, 1.0));
+                    // Four corners in 2D of a tile
+                    float a = random(i);
+                    float b = random(i + vec2(1.0, 0.0));
+                    float c = random(i + vec2(0.0, 1.0));
+                    float d = random(i + vec2(1.0, 1.0));
 
-                // Smooth Interpolation
+                    // Smooth Interpolation
 
-                // Cubic Hermine Curve.  Same as SmoothStep()
-                vec2 u = f*f*(3.0-2.0*f);
-                // u = smoothstep(0.,1.,f);
+                    // Cubic Hermine Curve.  Same as SmoothStep()
+                    vec2 u = f*f*(3.0-2.0*f);
+                    // u = smoothstep(0.,1.,f);
 
-                // Mix 4 coorners percentages
-                return mix(a, b, u.x) +
-                        (c - a)* u.y * (1.0 - u.x) +
-                        (d - b) * u.x * u.y;
-            }
+                    // Mix 4 coorners percentages
+                    return mix(a, b, u.x) +
+                            (c - a)* u.y * (1.0 - u.x) +
+                            (d - b) * u.x * u.y;
+                }
 
-            void main() {
-                vUv = uv;
-                vec3 pos = position;
+                void main() {
+                    vUv = uv;
+                    vec3 pos = position;
 
 
-                pos *= vec3(0.8, light, 0.725); // pahane della
-                hValue = position.y;
-                //float sinT = sin(time * 2.) * 0.5 + 0.5;
-                float posXZlen = length(position.xz);
+                    pos *= vec3(0.8, light, 0.725); // lamp flame
+                    hValue = position.y;
+                    //float sinT = sin(time * 2.) * 0.5 + 0.5;
+                    float posXZlen = length(position.xz);
 
-                pos.y *= 1. + (cos((posXZlen + 0.25) * 3.1415926) * 0.25 + noise(vec2(0, time)) * 0.125 + noise(vec2(position.x + time, position.z + time)) * 0.5) * position.y; // flame height
+                    pos.y *= 1. + (cos((posXZlen + 0.25) * 3.1415926) * 0.25 + noise(vec2(0, time)) * 0.125 + noise(vec2(position.x + time, position.z + time)) * 0.5) * position.y; // flame height
 
-                pos.x += noise(vec2(time * 2., (position.y - time) * 4.0)) * hValue * 0.0312; // flame trembling
-                pos.z += noise(vec2((position.y - time) * 4.0, time * 2.)) * hValue * 0.0312; // flame trembling
+                    pos.x += noise(vec2(time * 2., (position.y - time) * 4.0)) * hValue * 0.0312; // flame trembling
+                    pos.z += noise(vec2((position.y - time) * 4.0, time * 2.)) * hValue * 0.0312; // flame trembling
 
-                gl_Position = projectionMatrix * modelViewMatrix * vec4(pos,1.0);
-            }
-            `,
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos,1.0);
+                }
+                `,
             fragmentShader: `
-            varying float hValue;
-            varying vec2 vUv;
+                varying float hValue;
+                varying vec2 vUv;
 
-            // honestly stolen from https://www.shadertoy.com/view/4dsSzr
-            vec3 heatmapGradient(float t) {
-                return clamp((pow(t, 1.5) * 0.8 + 0.2) * vec3(smoothstep(0.0, 0.35, t) + t * 0.5, smoothstep(0.5, 1.0, t), max(1.0 - t * 1.7, t * 7.0 - 6.0)), 0.0, 1.0);
-            }
+                // honestly stolen from https://www.shadertoy.com/view/4dsSzr
+                vec3 heatmapGradient(float t) {
+                    return clamp((pow(t, 1.5) * 0.8 + 0.2) * vec3(smoothstep(0.0, 0.35, t) + t * 0.5, smoothstep(0.5, 1.0, t), max(1.0 - t * 1.7, t * 7.0 - 6.0)), 0.0, 1.0);
+                }
 
-            void main() {
-                float v = abs(smoothstep(0.0, 0.4, hValue) - 1.);
-                float alpha = (1. - v) * 0.99; // bottom transparency
-                alpha -= 1. - smoothstep(1.0, 0.97, hValue); // tip transparency
-                gl_FragColor = vec4(heatmapGradient(smoothstep(0.0, 0.3, hValue)) * vec3(0.95,0.95,0.4), alpha) ;
-                gl_FragColor.rgb = mix(vec3(0,0,1), gl_FragColor.rgb, smoothstep(0.0, 0.3, hValue)); // blueish for bottom
-                gl_FragColor.rgb += vec3(1, 0.9, 0.5) * (1.25 - vUv.y); // make the midst brighter
-                gl_FragColor.rgb = mix(gl_FragColor.rgb, vec3(0.66, 0.32, 0.03), smoothstep(0.95, 1., hValue)); // tip
-            }
-            `,
+                void main() {
+                    float v = abs(smoothstep(0.0, 0.4, hValue) - 1.);
+                    float alpha = (1. - v) * 0.99; // bottom transparency
+                    alpha -= 1. - smoothstep(1.0, 0.97, hValue); // tip transparency
+                    gl_FragColor = vec4(heatmapGradient(smoothstep(0.0, 0.3, hValue)) * vec3(0.95,0.95,0.4), alpha) ;
+                    gl_FragColor.rgb = mix(vec3(0,0,1), gl_FragColor.rgb, smoothstep(0.0, 0.3, hValue)); // blueish for bottom
+                    gl_FragColor.rgb += vec3(1, 0.9, 0.5) * (1.25 - vUv.y); // make the midst brighter
+                    gl_FragColor.rgb = mix(gl_FragColor.rgb, vec3(0.66, 0.32, 0.03), smoothstep(0.95, 1., hValue)); // tip
+                }
+                `,
             transparent: true,
             side: side
         });
     }
 </script>
 
-<div id="info" style="position: absolute; width:100%; height: 200px; top: 5px; left: 5px; overflow: hidden; margin: 0; padding: 0">
-
-    <div id="circle" class="noselect"><div class="blink"></div></div>
-    <div id="circle2" class="noselect"><div class="blink"></div></div>
-
-    <!-- <div id="play" ><div class="blink2">Play</div></div>
-    <div id="pause" ><div class="blink2">Pause</div></div> -->
-
-    <div id="title_div" style="margin-top: 2%; text-align: center">
-        <h1 style="font-family: Georgia; color: orange; font-size: 50px;">Students' Welcome Ceremony - 2022</h1>
-        <h2 style="font-family: Georgia; color: orange;">6<sup>th</sup> Batch</h2>
-        <h2 style="font-family: Verdana; color: white;">Faculty of Technology - University of Ruhuna</h2>
-    </div>
-
-    <audio autoplay loop>
-<!--        <source src="music.mp3" type="audio/mpeg">-->
-        <source src="https://meemessasinhalasongs.com/MP3/mp3-files/Instrumentals/Danno%20Budunge.mp3" type="audio/mpeg">
-    </audio>
-
-</div>
-<h2 id="fixedbutton">Designed by Department of ICT</h2>
-
-
+<!-- guest photo change -->
 <script>
 
-    var hide = true;
-    var candle_number = 8;
-    var interval = 8571;
-    let circle = document.getElementById('circle');
-    let circle2 = document.getElementById('circle2');
+    //photo array - VC, DVC, Dean-FOT, Senior student counsellor, ET-HOD, ICT-HOD, BST-HOD, AR-FOT
+    const guest_photo = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png'];
+    const interval = 8571;
 
-    circle2.hidden = true;
+    const guest_count_plus_one = guest_photo.length+1;
+    let candle_number = guest_photo.length;
 
-    circle.addEventListener("click", function() {
+    let middle_lighting_point = document.getElementById('middle-point');
+    let bottom_lighting_point = document.getElementById('bottom-point');
+
+    // hide bottom point when load the page
+    bottom_lighting_point.hidden = true;
+
+    middle_lighting_point.addEventListener("click", function() {
 
         is_clicked = true;
 
-        circle.hidden = true;
+        middle_lighting_point.hidden = true;
 
         setTimeout(function(){
-            circle2.hidden = false;
+            bottom_lighting_point.hidden = false;
             changeImage(candle_number);
         },2000);
 
     }, false);
 
-    circle2.addEventListener("click", function() {
+    bottom_lighting_point.addEventListener("click", function() {
 
         is_clicked = true;
 
@@ -377,7 +244,7 @@
 
             flame(false, candle_number);
             flame(true, candle_number);
-            circle2.hidden = true;
+            bottom_lighting_point.hidden = true;
             controls.autoRotate = true;
 
             setTimeout(function(){
@@ -386,36 +253,48 @@
 
             setTimeout(function(){
                 controls.autoRotate = false;
-                circle2.hidden = false;
+                bottom_lighting_point.hidden = false;
                 if(candle_number == 1){
-                    circle2.hidden = true;
+                    bottom_lighting_point.hidden = true;
                     controls.autoRotate = true;
                 }
 
-            },interval);
+            }, interval);
         }
 
     }, false);
 
+    // fade animation of the guest photo
+    function fadeIn(el) {
+        el.style.opacity = 0;
+        const tick = function () {
+            el.style.opacity = +el.style.opacity + 0.005;
+            if (+el.style.opacity < 1) {
+                (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
+            }
+        };
+        tick();
+    }
 
-    // play.addEventListener("click", function() {
-    //     controls.autoRotate = true;
-    // 	circle2.hidden = true;
-    // 	setInterval(function(){
-    //     	controls.autoRotate = false;
-    //     	circle2.hidden = false;
-    //     },12000);
+    // guest photo change event
+    function changeImage(position) {
+        const el = document.getElementById("guest-photo");
+        if(position>1) {
+            el.src = '../img/guest_photo/'+guest_photo[guest_count_plus_one-position];
+            fadeIn(el);
+        } else {
+            el.parentNode.removeChild(el);
+        }
+    }
 
-    // }, false);
+    changeImage(guest_count_plus_one);
 
-    // pause.addEventListener("click", function() {
-    //     controls.autoRotate = false;
-    //     circle2.hidden = false;
-    // }, false);
+</script>
 
+<!-- oil lamp generation -->
+<script>
 
-
-    // to make scene
+    // make scene
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
     camera.position.set(0, 10, 8).setLength(30); // zoom the camera
@@ -438,7 +317,7 @@
     controls.target.set(0, 4, 4);
     controls.update();
 
-    // set background image
+    // set page background image
     loader = new THREE.TextureLoader();
     loader.setCrossOrigin("");
     bgTexture = loader.load("https://raw.githubusercontent.com/MadushanSandaru1/Texture-for-Lamp/master/back1.jpg",
@@ -450,7 +329,6 @@
         }
     );
     scene.background = bgTexture;
-    // set background image
 
     //scene.add(new THREE.GridHelper(10, 10, 0x552222, 0x333322));
     var light = new THREE.DirectionalLight(0xffffff, 0.6);
@@ -458,7 +336,7 @@
     scene.add(light);
     scene.add(new THREE.AmbientLight(0xffffff, 0.0625));
 
-    // candle
+    // lamp model
     var casePath = new THREE.Path();
     casePath.moveTo(0, 0);
     casePath.lineTo(0, 0);
@@ -750,7 +628,7 @@
     }
 
     flame(false, candle_number);
-    flame(true,candle_number);
+    flame(true, candle_number);
 
 
     // table
@@ -886,10 +764,10 @@
             if (old_firebase_sum == 0){
                 is_clicked = true;
 
-                circle.hidden = true;
+                middle_lighting_point.hidden = true;
 
                 setTimeout(function(){
-                    circle2.hidden = false;
+                    bottom_lighting_point.hidden = false;
                     changeImage(candle_number);
                 },2000);
             } else {
@@ -901,7 +779,7 @@
                 {
                     flame(false, candle_number);
                     flame(true, candle_number);
-                    circle2.hidden = true;
+                    bottom_lighting_point.hidden = true;
                     controls.autoRotate = true;
 
                     setTimeout(function(){
@@ -910,9 +788,9 @@
 
                     setTimeout(function(){
                         controls.autoRotate = false;
-                        circle2.hidden = false;
+                        bottom_lighting_point.hidden = false;
                         if(candle_number == 1){
-                            circle2.hidden = true;
+                            bottom_lighting_point.hidden = true;
                             controls.autoRotate = true;
                         }
 
@@ -971,75 +849,8 @@
 
         controls.update();
         renderer.render(scene, camera);
-
-
     }
-</script>
-
-<script>
-    var x, y;
-    var px, py;
-    px = py = 0;
-
-    // Image of cursor
-    var cursor = document.getElementById("cursor_image");
-
-    /*
-    The following event is selecting the element
-    on the image cursor and fires click() on it.
-    The following event is triggered only when mouse is pressed.
-    */
-    window.addEventListener("mouseup", function(e) {
-
-        // gets the object on image cursor position
-        var tmp = document.elementFromPoint(x + px, y + py);
-        //mutex = true;
-        //tmp.click();
-        cursor.style.left = (px + x) + "px";
-        cursor.style.top = (py + y) + "px";
-    })
-
-    /* The following event listener moves the image pointer
-    with respect to the actual mouse cursor
-    The function is triggered every time mouse is moved */
-    window.addEventListener("mousemove", function(e) {
-
-        // Gets the x,y position of the mouse cursor
-        x = e.clientX;
-        y = e.clientY;
-
-        // sets the image cursor to new relative position
-        cursor.style.left = (px + x) + "px";
-        cursor.style.top = (py + y) + "px";
-
-    });
-
-    const usr_images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png'];
-    //VC, DVC, Dean, Senior student counsellor, ET, ICT, BST, AR
-
-    function fadeIn(el) {
-        el.style.opacity = 0;
-        var tick = function () {
-            el.style.opacity = +el.style.opacity + 0.005;
-            if (+el.style.opacity < 1) {
-                (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
-            }
-        };
-        tick();
-    }
-
-    function changeImage(position) {
-        var el = document.getElementById("user_image");
-        if(position>1) {
-            el.src = usr_images[usr_images.length+1-position];
-            fadeIn(el);
-        } else {
-            el.parentNode.removeChild(el);
-        }
-    }
-
-    changeImage(usr_images.length+1);
-
+    
 </script>
 
 </body>

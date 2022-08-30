@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <head>
     <title>FOT UOR</title>
-    <link rel="icon" href="../fav_icon.png" type="image/icon type">
+    <link rel="icon" href="../img/faculty_logo.png" type="image/icon type">
     <style>
         body{
             overflow: hidden;
             margin: 0;
         }
 
-        #title_div {
+        #heading-div {
             position: fixed;
             width: 100%;
         }
 
-        #user_image_div {
+        #guest-photo-div {
             position: fixed;
             text-align: center;
             top: 35%;
             left: 5%;
         }
 
-        #user_image {
+        #guest-photo {
             width: 250px;
             opacity: 0;
             filter: alpha(opacity=40);
         }
 
-        #university_logo_div {
+        #university-logo-div {
             position: fixed;
             text-align: center;
             top: 8%;
             left: 8%;
         }
 
-        #faculty_logo_div {
+        #faculty-logo-div {
             position: fixed;
             text-align: center;
             top: 8%;
             right: 5%;
         }
 
-        #university_logo_image, #faculty_logo_image {
+        #university-logo, #faculty-logo {
             height: 200px;
         }
 
-        #circle {
+        #middle-point {
             position: fixed;
             text-align: center;
             width: 50px;
@@ -56,7 +56,7 @@
 
         }
 
-        #circle2 {
+        #bottom-point {
             position: fixed;
             text-align: center;
             width: 50px;
@@ -89,7 +89,7 @@
             margin-left: -25px;
         }
 
-        .noselect {
+        .lighting-points {
             -webkit-touch-callout: none;
             /* iOS Safari */
             -webkit-user-select: none;
@@ -133,7 +133,7 @@
             color: orange;
         }
 
-        #fixedbutton {
+        #fixed-button {
             position: fixed;
             bottom: 0px;
             right: 0px;
@@ -174,7 +174,7 @@
             -webkit-animation-direction: alternate;*/
         }
 
-        #cursor_image {
+        #candle-cursor {
             pointer-events: none;
             position: absolute;
         }
@@ -189,14 +189,14 @@
 <body>
 
 <!-- cursor -->
-<img id="cursor_image" src="can.gif"/>
+<img id="cursor_image" src="../img/candle.gif"/>
 
 <!-- user image -->
 <div id="user_image_div"><img id="user_image"></div>
 
 <!-- logo image -->
-<div id="university_logo_div"><img id="university_logo_image" src="university_logo.gif"></div>
-<div id="faculty_logo_div"><img id="faculty_logo_image" src="faculty_logo.png"></div>
+<div id="university_logo_div"><img id="university_logo_image" src="../img/university_logo.png"></div>
+<div id="faculty_logo_div"><img id="faculty_logo_image" src="../img/faculty_logo.png"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.98.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.98.0/examples/js/controls/OrbitControls.js"></script>
@@ -226,7 +226,9 @@
         Lamp4: 0,
         Lamp5: 0,
         Lamp6: 0,
-        Lamp7: 0
+        Lamp7: 0,
+        Lamp8: 0,
+        Lamp9: 0
     });
 </script>
 
@@ -334,7 +336,7 @@
     </div>
 
     <audio autoplay loop>
-<!--        <source src="music.mp3" type="audio/mpeg">-->
+<!--        <source src="danno_budunge_melody.mp3" type="audio/mpeg">-->
         <source src="https://meemessasinhalasongs.com/MP3/mp3-files/Instrumentals/Danno%20Budunge.mp3" type="audio/mpeg">
     </audio>
 
@@ -345,10 +347,12 @@
 <script>
 
     var hide = true;
-    var candle_number = 7;
-    var interval = 10000;
-    let circle = document.getElementById('circle');
-    let circle2 = document.getElementById('circle2');
+
+    var candle_number = 9;
+    var interval = 7500;
+
+    let circle = document.getElementById('middle-point');
+    let circle2 = document.getElementById('bottom-point');
 
     circle2.hidden = true;
 
@@ -366,7 +370,7 @@
     }, false);
 
     circle2.addEventListener("click", function() {
-        //alert("hii");
+
         is_clicked = true;
 
         --candle_number;
@@ -456,40 +460,50 @@
 
     //////////////////////
 
-    // candle right near
+    // candle
     var caseMesh = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh.position.set(8.5, 0, 8.7); //(x, h, y)
+    caseMesh.position.set(4, 0, 10); //(x, h, y)
     caseMesh.castShadow = true;
 
-    // candle2 right far
+    // candle2 right near
     var caseMesh2 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh2.position.set(8.5, 0, -1.1);
+    caseMesh2.position.set(7.8, 0, 10);
     caseMesh2.castShadow = true;
 
-    // candle3 center far
+    // candle3 right center
     var caseMesh3 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh3.position.set(-0.2, 0, -5.9);
+    caseMesh3.position.set(9.5, 0, 1.6);
     caseMesh3.castShadow = true;
 
-    // candle4 left far
+    // candle4 right far
     var caseMesh4 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh4.position.set(-8.5, 0, -0.8);
+    caseMesh4.position.set(4, 0, -4.8);
     caseMesh4.castShadow = true;
 
-    // candle5 left near
+    // candle5 left far
     var caseMesh5 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh5.position.set(-8.5, 0, 9);
+    caseMesh5.position.set(-4.4, 0, -4.8);
     caseMesh5.castShadow = true;
 
-    // candle6 center near
+    // candle6 left center
     var caseMesh6 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh6.position.set(0, 0, 14);
+    caseMesh6.position.set(-9.5, 0, 2);
     caseMesh6.castShadow = true;
 
-    // candle7 middle
+    // candle7 left near
     var caseMesh7 = new THREE.Mesh(caseGeo, caseMat);
-    caseMesh7.position.set(0, 0, 3);
+    caseMesh7.position.set(-7.8, 0, 10.2);
     caseMesh7.castShadow = true;
+
+    // candle8 center near
+    var caseMesh8 = new THREE.Mesh(caseGeo, caseMat);
+    caseMesh8.position.set(0, 0, 14);
+    caseMesh8.castShadow = true;
+
+    // candle9 middle
+    var caseMesh9 = new THREE.Mesh(caseGeo, caseMat);
+    caseMesh9.position.set(0, 0, 3);
+    caseMesh9.castShadow = true;
 
     //////////////////////
 
@@ -543,6 +557,16 @@
     paraffinMesh7.position.set(0, 0, 0);
     caseMesh7.add(paraffinMesh7);
 
+    // paraffin8
+    var paraffinMesh8 = new THREE.Mesh(paraffinGeo, paraffinMat);
+    paraffinMesh8.position.set(0, 0, 0);
+    caseMesh8.add(paraffinMesh8);
+
+    // paraffin8
+    var paraffinMesh9 = new THREE.Mesh(paraffinGeo, paraffinMat);
+    paraffinMesh9.position.set(0, 0, 0);
+    caseMesh9.add(paraffinMesh9);
+
     //////////////////////
 
 
@@ -590,6 +614,8 @@
     var candlewickMesh5 = new THREE.Mesh(candlewickGeo, candlewickMat);
     var candlewickMesh6 = new THREE.Mesh(candlewickGeo, candlewickMat);
     var candlewickMesh7 = new THREE.Mesh(candlewickGeo, candlewickMat);
+    var candlewickMesh8 = new THREE.Mesh(candlewickGeo, candlewickMat);
+    var candlewickMesh9 = new THREE.Mesh(candlewickGeo, candlewickMat);
 
     caseMesh.add(candlewickMesh);
     caseMesh2.add(candlewickMesh2);
@@ -598,6 +624,8 @@
     caseMesh5.add(candlewickMesh5);
     caseMesh6.add(candlewickMesh6);
     caseMesh7.add(candlewickMesh7);
+    caseMesh8.add(candlewickMesh8);
+    caseMesh9.add(candlewickMesh9);
 
     // candle light
     var candleLight = new THREE.PointLight(0xffaa33, 1, 5, 2);
@@ -633,6 +661,16 @@
     var candleLight7 = new THREE.PointLight(0xffaa33, 1, 5, 2);
     candleLight7.position.set(6, 3, 0);
     candleLight7.castShadow = false;
+
+    // candle light8
+    var candleLight8 = new THREE.PointLight(0xffaa33, 1, 5, 2);
+    candleLight8.position.set(6, 3, 0);
+    candleLight8.castShadow = false;
+
+    // candle light9
+    var candleLight9 = new THREE.PointLight(0xffaa33, 1, 5, 2);
+    candleLight9.position.set(6, 3, 0);
+    candleLight9.castShadow = false;
 
     /////////////////////
 
@@ -682,6 +720,7 @@
             caseMesh4.add(flame4);
         }
 
+        //flame5
         if(candle_number == 5)
         {
             let flame5 = new THREE.Mesh(flameGeo, flameMat);
@@ -689,7 +728,7 @@
             caseMesh5.add(flame5);
         }
 
-        //flame5
+        //flame6
         if(candle_number == 6)
         {
             let flame6 = new THREE.Mesh(flameGeo, flameMat);
@@ -703,6 +742,22 @@
             let flame7 = new THREE.Mesh(flameGeo, flameMat);
             flame7.position.set(0, 1.2, 0.05);
             caseMesh7.add(flame7);
+        }
+
+        //flame8
+        if(candle_number == 8)
+        {
+            let flame8 = new THREE.Mesh(flameGeo, flameMat);
+            flame8.position.set(0, 1.2, 0.05);
+            caseMesh8.add(flame8);
+        }
+
+        //flame8
+        if(candle_number == 9)
+        {
+            let flame9 = new THREE.Mesh(flameGeo, flameMat);
+            flame9.position.set(0, 1.2, 0.05);
+            caseMesh9.add(flame9);
         }
 
         //////////////////////
@@ -728,6 +783,8 @@
     tableMesh.add(caseMesh5);
     tableMesh.add(caseMesh6);
     tableMesh.add(caseMesh7);
+    tableMesh.add(caseMesh8);
+    tableMesh.add(caseMesh9);
 
     ////////////////
 
@@ -752,7 +809,7 @@
     var firebase_sum = 0;
 
     firebase.database().ref().on('value', function(snapshot) {
-        firebase_sum = snapshot.val().Lamp1+snapshot.val().Lamp2+snapshot.val().Lamp3+snapshot.val().Lamp4+snapshot.val().Lamp5+snapshot.val().Lamp6+snapshot.val().Lamp7;
+        firebase_sum = snapshot.val().Lamp1+snapshot.val().Lamp2+snapshot.val().Lamp3+snapshot.val().Lamp4+snapshot.val().Lamp5+snapshot.val().Lamp6+snapshot.val().Lamp7+snapshot.val().Lamp8+snapshot.val().Lamp9;
         // console.log(firebase_sum);
     });
 
@@ -821,6 +878,20 @@
 
                     firebase.database().ref().update({
                         Lamp1: 1
+                    });
+                }
+                if (candle_number == 8){
+                    caseMesh8.add(candleLight8);
+
+                    firebase.database().ref().update({
+                        Lamp8: 1
+                    });
+                }
+                if (candle_number == 9){
+                    caseMesh9.add(candleLight9);
+
+                    firebase.database().ref().update({
+                        Lamp9: 1
                     });
                 }
 
@@ -914,6 +985,14 @@
         candleLight7.position.z = Math.cos(time * Math.PI * 0.75) * 0.25;
         candleLight7.intensity = 2 + Math.sin(time * Math.PI * 2) * Math.cos(time * Math.PI * 1.5) * 0.25;
 
+        candleLight8.position.x = Math.sin(time * Math.PI) * 0.25;
+        candleLight8.position.z = Math.cos(time * Math.PI * 0.75) * 0.25;
+        candleLight8.intensity = 2 + Math.sin(time * Math.PI * 2) * Math.cos(time * Math.PI * 1.5) * 0.25;
+
+        candleLight9.position.x = Math.sin(time * Math.PI) * 0.25;
+        candleLight9.position.z = Math.cos(time * Math.PI * 0.75) * 0.25;
+        candleLight9.intensity = 2 + Math.sin(time * Math.PI * 2) * Math.cos(time * Math.PI * 1.5) * 0.25;
+
         ////////////////////
 
         controls.update();
@@ -929,7 +1008,7 @@
     px = py = 0;
 
     // Image of cursor
-    var cursor = document.getElementById("cursor_image");
+    var cursor = document.getElementById("candle-cursor");
 
     /*
     The following event is selecting the element
@@ -961,8 +1040,8 @@
 
     });
 
-    const usr_images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png'];
-    //VC, DVC, Dean, Senior student counsellor, ET, ICT, BST
+    const usr_images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png'];
+    //VC, DVC, Dean, Senior student counsellor, ET, ICT, BST, AR, Example
 
     function fadeIn(el) {
         el.style.opacity = 0;
@@ -976,7 +1055,7 @@
     }
 
     function changeImage(position) {
-        var el = document.getElementById("user_image");
+        var el = document.getElementById("guest-photo");
         if(position>1) {
             el.src = usr_images[usr_images.length+1-position];
             fadeIn(el);
