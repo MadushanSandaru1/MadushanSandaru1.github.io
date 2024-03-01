@@ -377,7 +377,7 @@
                 query += 'm149_change_status)\nVALUES (\n(SELECT NVL (MAX (m149_id), 0) + 1\n';
                 query += 'FROM dfn_ntp.m149_notify_templates_c),\n'+ eventId +',\n'+ sms +',\n';
                 query += smsLang +',\n'+ emailSub +',\n'+ emailSubLang +',\n'+ email +',\n';
-                query += emailLang +',\n1,\n\'1\',\nNULL,\n1);\n\nCOMMIT;';
+                query += emailLang +',\n1,\n\'1\',\nNULL,\n2);\n\nCOMMIT;';
             } else if (queryType === "Update") {
                 query = 'MERGE INTO dfn_ntp.m149_notify_templates_c\nUSING DUAL\n';
                 query += 'ON (m149_event_id_m148 = '+ eventId +' AND m149_institute_id_m02 = 1)\n';
