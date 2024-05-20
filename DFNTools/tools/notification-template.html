@@ -406,7 +406,7 @@
             query += 'ON (m149_event_id_m148 = '+ eventId +')\nWHEN NOT MATCHED\nTHEN\n';
             query += 'INSERT (m149_id,\nm149_event_id_m148,\nm149_sms_template,\n';
             query += 'm149_sms_template_lang,\nm149_email_subject,\nm149_email_subject_lang,\n';
-            query += 'm149_email_template,\nm149_email_template,\nm149_email_template_lang,\n';
+            query += 'm149_email_template,\nm149_email_template_lang,\n';
             query += 'm149_institute_id_m02,\nm149_custom_type,\nm149_extnl_template_id,\n';
             query += 'm149_change_status)\nVALUES (\n(SELECT NVL (MAX (m149_id), 0) + 1\n';
             query += 'FROM dfn_ntp.m149_notify_templates_c),\n'+ eventId +',\n'+ sms +',\n';
