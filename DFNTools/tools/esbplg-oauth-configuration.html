@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DFN Tools</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="../index.html"><span>DFN</span>Tools</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="../index.html" class="logo"><img src="../assets/img/logo.png" alt=""></a> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="../index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="../support.html">Support</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Page Content Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Utilities</h2>
+          <h3><span>ESBPLG OAuth 2.0</span> Gateway Config Generator</h3>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-12">
+            <div class="generator">
+              <div class="form-group">
+                <input aria-label="Country Code" class="form-control clear-input-fields-class" id="country-code" type="text" placeholder="Country Code (Ex: KSA)" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase()">
+              </div>
+              <div class="form-group">
+                <input aria-label="Broker Code" class="form-control clear-input-fields-class" id="broker-code" type="text" placeholder="Broker Code (Ex: JADWA, HSBC)" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase()">
+              </div>
+              <div class="form-group">
+                <input aria-label="Integration Name" class="form-control clear-input-fields-class" id="integration-name" type="text" placeholder="Integration Name (Ex: CRMS, CIS)" oninput="this.value = this.value.replace(/[^a-zA-Z0-9_ ]/g, '').replace(/\s+/g, '_').toUpperCase()">
+              </div>
+
+              <div class="form-group position-relative">
+                  <label for="plugin-name" class="text-secondary"><small>Plugin Name / Group ID / Deployment Unit</small></label>
+                  <div class="card" id="plugin-name">
+                    <div class="card-body">
+                        <p class="clear-p-fields-class" id="plugin-name-text"></p>
+                    </div>
+                  </div>
+              </div>
+
+              <hr class="mb-5">
+              
+              <div class="form-group">
+                <input aria-label="Plugin Base URL" class="form-control clear-input-fields-class" id="plugin-base-url" type="text" placeholder="Plugin Base URL (Ex: http://0.0.0.0:6060/api/jadwa/cis)" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-._\/:?&=#]/g, '')">
+              </div>
+              
+              <div class="form-group">
+                <input aria-label="Base URL to be exposed" class="form-control clear-input-fields-class" id="base-url-to-be-exposed" type="text" placeholder="Base URL to be exposed (Ex: http://0.0.0.0:6060/cis)" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-._\/:?&=#]/g, '')">
+              </div>
+
+              <hr>
+
+              <div class="form-group">
+                <h6>Service No: 1</h6>
+              </div>
+              
+              <div class="form-group">
+                <input aria-label="Service Name" class="form-control clear-input-fields-class" id="service-name-1" type="text" placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)" oninput="this.value = this.value.replace(/[^a-zA-Z0-9_ ]/g, '').replace(/\s+/g, '_').toUpperCase()">
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
+                    <input  aria-label="Service Endpoint" class="form-control clear-input-fields-class" id="service-endpoint-1" type="text" placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)" oninput="handleServiceEndpointInput(1)" onfocusout="handleServiceEndpointFocusOut(1)">
+                </div>
+              </div>
+              <div class="form-group">
+                <input aria-label="HTTP Method" class="form-control clear-input-fields-class" id="http-method-1" type="text" placeholder="HTTP Method (Ex: GET, POST, PUT)" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase()">
+              </div>
+
+              <div class="form-group position-relative">
+                  <label for="endpoint-to-be-exposed" class="text-secondary"><small>Endpoint to be exposed</small></label>
+                  <div class="card" id="endpoint-to-be-exposed-1">
+                    <div class="card-body">
+                        <p class="clear-p-fields-class" id="endpoint-to-be-exposed-text"><span class="fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span><span id="fill-service-endpoint-to-be-exposed-1" class="clear-input-spans-class"></span></p>
+                    </div>
+                  </div>
+              </div>
+
+              <hr>
+
+              <div class="form-group">
+                <h6>Service No: 2</h6>
+              </div>
+              
+              <div class="form-group">
+                <input aria-label="Service Name" class="form-control clear-input-fields-class" id="service-name-2" type="text" placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)" oninput="this.value = this.value.replace(/[^a-zA-Z0-9_ ]/g, '').replace(/\s+/g, '_').toUpperCase()">
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
+                    <input  aria-label="Service Endpoint" class="form-control clear-input-fields-class" id="service-endpoint-2" type="text" placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)" oninput="handleServiceEndpointInput(2)" onfocusout="handleServiceEndpointFocusOut(2)">
+                </div>
+              </div>
+              <div class="form-group">
+                <input aria-label="HTTP Method" class="form-control clear-input-fields-class" id="http-method-2" type="text" placeholder="HTTP Method (Ex: GET, POST, PUT)" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase()">
+              </div>
+
+              <div class="form-group position-relative">
+                  <label for="endpoint-to-be-exposed" class="text-secondary"><small>Endpoint to be exposed</small></label>
+                  <div class="card" id="endpoint-to-be-exposed-2">
+                    <div class="card-body">
+                        <p class="clear-p-fields-class" id="endpoint-to-be-exposed-text-2"><span class="fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span><span id="fill-service-endpoint-to-be-exposed-2" class="clear-input-spans-class"></span></p>
+                    </div>
+                  </div>
+              </div>
+
+              <hr>
+
+              <div class="text-center">
+                <button class="btn btn-primary mr-3" data-toggle="modal" data-target="#sql-query-modal" onclick="showModal('Insert')">Insert Query</button>
+                <button class="btn btn-info mx-3" data-toggle="modal" data-target="#sql-query-modal" onclick="showModal('Update')">Update Query</button>
+                <button class="btn btn-secondary px-5 ml-3" onclick="clearFields()">Clear</button>
+              </div>
+
+            </div>
+        
+            <!-- SQL query modal -->
+            <div class="modal fade" id="sql-query-modal" tabindex="-1" role="dialog" aria-labelledby="sql-query-title" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="sql-query-title">
+                            <!-- Modal title will be updated dynamically -->
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Modal body will be updated dynamically -->
+                        <textarea aria-label="SQL Query" class="form-control form-control-sm" id="sql-query-body" placeholder="SQL Query" rows="30" readonly></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-warning btn-sm" onclick="copyToClipboard('query')">Copy</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- notification toast -->
+            <div aria-atomic="true" aria-live="polite" data-delay="5000">
+                <div class="toast" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 9999;">
+                    <div class="toast-body bg-warning" id="toast-body">
+                        <!-- Toast body will be updated dynamically -->
+                    </div>
+                </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Page Content Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="fixed-bottom">
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>DFNTools</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://www.directfn.com/en/" target="_blank">DirectFN</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"></script>
+  <script crossorigin="anonymous" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+  <!-- Optional JavaScript -->
+  <script>
+    document.getElementById("country-code").addEventListener("input", function () {
+        var countryCode = this.value.toUpperCase().replace(/\s+/g, '_'); // Replace spaces with underscores
+        var brokerCode = document.getElementById("broker-code").value.toUpperCase();
+        var integrationName = document.getElementById("integration-name").value.toUpperCase();
+        document.getElementById("plugin-name-text").innerText = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+    });
+
+    document.getElementById("broker-code").addEventListener("input", function () {
+        var countryCode = document.getElementById("country-code").value.toUpperCase();
+        var brokerCode = this.value.toUpperCase().replace(/\s+/g, '_'); // Replace spaces with underscores
+        var integrationName = document.getElementById("integration-name").value.toUpperCase();
+        document.getElementById("plugin-name-text").innerText = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+    });
+
+    document.getElementById("integration-name").addEventListener("input", function () {
+        var countryCode = document.getElementById("country-code").value.toUpperCase();
+        var brokerCode = document.getElementById("broker-code").value.toUpperCase();
+        var integrationName = this.value.toUpperCase().replace(/\s+/g, '_'); // Replace spaces with underscores
+        document.getElementById("plugin-name-text").innerText = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+    });
+
+    document.getElementById("plugin-base-url").addEventListener("input", function () {
+        var fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
+        for (var i = 0; i < fillInputSpansElements.length; i++) {
+            fillInputSpansElements[i].innerText = this.value + "/";
+        }
+    });
+
+    document.getElementById("plugin-base-url").addEventListener("focusout", function () {
+        var value = this.value;
+        while (value.endsWith("/")) {
+            value = value.slice(0, -1); // Remove trailing slashes
+        }
+        this.value = value;
+
+        if (value) {
+            var fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
+            for (var i = 0; i < fillInputSpansElements.length; i++) {
+                fillInputSpansElements[i].innerText = value + "/";
+            }
+        }
+    });
+
+    document.getElementById("base-url-to-be-exposed").addEventListener("input", function () {
+        var fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
+        for (var i = 0; i < fillInputSpansElements.length; i++) {
+            fillInputSpansElements[i].innerText = this.value + "/";
+        }
+    });
+
+    document.getElementById("base-url-to-be-exposed").addEventListener("focusout", function () {
+        var value = this.value;
+        while (value.endsWith("/")) {
+            value = value.slice(0, -1); // Remove trailing slashes
+        }
+        this.value = value;
+
+        if (value) {
+            var fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
+            for (var i = 0; i < fillInputSpansElements.length; i++) {
+                fillInputSpansElements[i].innerText = value + "/";
+            }
+        }
+    });
+
+    function handleServiceEndpointInput(id) {
+        var element = document.getElementById("service-endpoint-" + id);
+        var value = element.value.replace(/[^a-zA-Z0-9\/_-]/g, '');
+        element.value = value;
+        document.getElementById("fill-service-endpoint-to-be-exposed-" + id).innerText = value;
+    }
+
+    function handleServiceEndpointFocusOut(id) {
+        var element = document.getElementById("service-endpoint-" + id);
+        var value = element.value;
+        while (value.startsWith("/")) {
+            value = value.substring(1); // Remove the first character if it's a '/'
+        }
+        while (value.endsWith("/")) {
+            value = value.slice(0, -1); // Remove trailing slashes
+        }
+        element.value = value;
+
+        if (value) {
+            document.getElementById("fill-service-endpoint-to-be-exposed-" + id).innerText = value;
+        }
+    }
+
+    function showModal(queryType) {
+        var query = '';
+        var eventId = document.getElementById("event-id").value;
+        var sms = '\'' + document.getElementById("plugin-name-text").innerText + '\'';
+        var smsLang = '\'' + document.getElementById("ar-sms-template-text").innerText + '\'';
+        var emailSub = '\'' + document.getElementById("en-email-subject-text").innerText + '\'';
+        var emailSubLang = document.getElementById("ar-email-subject-text").innerText;
+        var email = '\'' + document.getElementById("en-email-template-text").innerText + '\'';
+        var emailLang = '\'' + document.getElementById("ar-email-template-text").innerText + '\'';
+
+        if (!eventId) {
+            eventId = '<EVENT_ID>';
+        }
+
+        if (queryType === "Insert") {
+            query = 'MERGE INTO dfn_ntp.m149_notify_templates_c\nUSING DUAL\n';
+            query += 'ON (m149_event_id_m148 = '+ eventId +')\nWHEN NOT MATCHED\nTHEN\n';
+            query += 'INSERT (m149_id,\nm149_event_id_m148,\nm149_sms_template,\n';
+            query += 'm149_sms_template_lang,\nm149_email_subject,\nm149_email_subject_lang,\n';
+            query += 'm149_email_template,\nm149_email_template_lang,\n';
+            query += 'm149_institute_id_m02,\nm149_custom_type,\nm149_extnl_template_id,\n';
+            query += 'm149_change_status)\nVALUES (\n(SELECT NVL (MAX (m149_id), 0) + 1\n';
+            query += 'FROM dfn_ntp.m149_notify_templates_c),\n'+ eventId +',\n'+ sms +',\n';
+            query += smsLang +',\n'+ emailSub +',\n'+ emailSubLang +',\n'+ email +',\n';
+            query += emailLang +',\n1,\n\'1\',\nNULL,\n2);\n\nCOMMIT;';
+        } else if (queryType === "Update") {
+            query = 'MERGE INTO dfn_ntp.m149_notify_templates_c\nUSING DUAL\n';
+            query += 'ON (m149_event_id_m148 = '+ eventId +' AND m149_institute_id_m02 = 1)\n';
+            query += 'WHEN MATCHED\nTHEN\nUPDATE SET\nm149_sms_template = '+ sms +',\n';
+            query += 'm149_sms_template_lang = '+ smsLang +',\nm149_email_subject = '+ emailSub +',\n';
+            query += 'm149_email_subject_lang = '+ emailSubLang +',\nm149_email_template = '+ email +',\n';
+            query += 'm149_email_template_lang = '+ emailLang +';\n\nCOMMIT;';
+        }
+
+        $("#sql-query-title").text(queryType+' Query');
+        $("#sql-query-body").text(query);
+        $(".modal").modal("show");
+    }
+
+    function clearFields() {
+        var clearInputFieldsElements = document.getElementsByClassName("clear-input-fields-class");
+        for (var i = 0; i < clearInputFieldsElements.length; i++) {
+            clearInputFieldsElements[i].value = '';
+        }
+
+        var clearPFieldsElements = document.getElementsByClassName("clear-p-fields-class");
+        for (var i = 0; i < clearPFieldsElements.length; i++) {
+            clearPFieldsElements[i].innerText = '';
+        }
+        
+        var clearInputSpansElements = document.getElementsByClassName("clear-input-spans-class");
+        for (var i = 0; i < clearInputSpansElements.length; i++) {
+            clearInputSpansElements[i].innerText = '';
+        }
+
+        $("#toast-body")
+            .toggleClass("bg-warning", false)
+            .toggleClass("text-dark", false)
+            .toggleClass("text-success", false)
+            .toggleClass("text-danger", false)
+            .toggleClass("bg-secondary", true)
+            .toggleClass("text-light", true)
+            .text("Cleared!");
+
+        $(".toast").toast("show");
+    }
+  </script>
+
+</body>
+
+</html>
