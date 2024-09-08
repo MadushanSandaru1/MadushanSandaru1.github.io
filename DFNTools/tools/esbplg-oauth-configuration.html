@@ -207,24 +207,22 @@
               </div>
 
               <div class="text-center">
-                <button class="btn btn-primary mr-3" data-toggle="modal" data-target="#tool-modal" onclick="showModal()">Generate Config</button>
-                <button class="btn btn-secondary px-5 ml-3" onclick="clearFields()">Clear</button>
+                <button type="button" class="btn btn-primary mr-3" data-bs-toggle="modal" data-bs-target="#tool-modal" onclick="showModal()">Generate Config</button>
+                <button type="button" class="btn btn-secondary px-5 ml-3" onclick="clearFields()">Clear</button>
               </div>
 
             </div>
         
-            <!-- SQL query modal -->
+            <!-- modal -->
             <div class="modal fade" id="tool-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modal-title">
-                            <!-- Modal title will be updated dynamically -->
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modal-title">
+                      <!-- Modal title will be updated dynamically -->
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
                     <div class="modal-body">
                         <!-- Modal body will be updated dynamically -->
                         <textarea aria-label="Json Config" class="form-control form-control-sm" id="modal-body" placeholder="Json Config" rows="30" readonly></textarea>
@@ -292,7 +290,7 @@
         var value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
         this.value = value;
 
-        var countryCode = value.toUpperCase().replace(/\s+/g, '_'); // Replace spaces with underscores
+        var countryCode = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
         var brokerCode = document.getElementById("broker-code").value.toUpperCase();
         var integrationName = document.getElementById("integration-name").value.toUpperCase();
         
@@ -308,7 +306,7 @@
         this.value = value;
         
         var countryCode = document.getElementById("country-code").value.toUpperCase();
-        var brokerCode = value.toUpperCase().replace(/\s+/g, '_'); // Replace spaces with underscores
+        var brokerCode = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
         var integrationName = document.getElementById("integration-name").value.toUpperCase();
         
         if (countryCode+brokerCode+integrationName === '') {
@@ -324,7 +322,7 @@
 
         var countryCode = document.getElementById("country-code").value.toUpperCase();
         var brokerCode = document.getElementById("broker-code").value.toUpperCase();
-        var integrationName = value.toUpperCase().replace(/\s+/g, '_'); // Replace spaces with underscores
+        var integrationName = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
         document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
         
         if (countryCode+brokerCode+integrationName === '') {
@@ -351,7 +349,7 @@
     document.getElementById("plugin-base-url").addEventListener("focusout", function () {
         var value = this.value;
         while (value.endsWith("/")) {
-            value = value.slice(0, -1); // Remove trailing slashes
+            value = value.slice(0, -1); /* Remove trailing slashes */
         }
         this.value = value;
 
@@ -382,7 +380,7 @@
     document.getElementById("base-url-to-be-exposed").addEventListener("focusout", function () {
         var value = this.value;
         while (value.endsWith("/")) {
-            value = value.slice(0, -1); // Remove trailing slashes
+            value = value.slice(0, -1); /* Remove trailing slashes */
         }
         this.value = value;
 
@@ -400,15 +398,15 @@
         var element = document.getElementById("integration-name");
         var value = element.value;
         while (value.startsWith("_")) {
-            value = value.substring(1); // Remove the first character if it's a '/'
+            value = value.substring(1); /* Remove the first character if it's a '/' */
         }
         while (value.endsWith("_")) {
-            value = value.slice(0, -1); // Remove trailing slashes
+            value = value.slice(0, -1); /* Remove trailing slashes */
         }
         element.value = value;
         var countryCode = document.getElementById("country-code").value.toUpperCase();
         var brokerCode = document.getElementById("broker-code").value.toUpperCase();
-        var integrationName = value.toUpperCase().replace(/\s+/g, '_'); // Replace spaces with underscores
+        var integrationName = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
 
         if (countryCode+brokerCode+integrationName === '') {
           document.getElementById("plugin-name-text").value = '';
@@ -433,10 +431,10 @@
       var element = document.getElementById("service-name-" + id);
         var value = element.value;
         while (value.startsWith("_")) {
-            value = value.substring(1); // Remove the first character if it's a '/'
+            value = value.substring(1); /* Remove the first character if it's a '/' */
         }
         while (value.endsWith("_")) {
-            value = value.slice(0, -1); // Remove trailing slashes
+            value = value.slice(0, -1); /* Remove trailing slashes */
         }
         element.value = value;
 
@@ -458,17 +456,17 @@
         var element = document.getElementById("service-endpoint-" + id);
         var value = element.value;
         while (value.startsWith("/")) {
-            value = value.substring(1); // Remove the first character if it's a '/'
+            value = value.substring(1); /* Remove the first character if it's a '/' */
         }
         while (value.endsWith("/")) {
-            value = value.slice(0, -1); // Remove trailing slashes
+            value = value.slice(0, -1); /* Remove trailing slashes */
         }
         element.value = value;
         document.getElementById("fill-service-endpoint-to-be-exposed-" + id).value = value;
     }
 
     function showModal() {
-        $("#modal-title").text('Query');
+        $("#modal-title").text('Json Config');
         $("#modal-body").text('json file body');
         $(".modal").modal("show");
     }
