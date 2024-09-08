@@ -162,35 +162,36 @@
                             </div>
 
                             <div class="text-center">
-                                <button class="btn btn-primary mr-3" data-toggle="modal" data-target="#sql-query-modal"
-                                    onclick="showModal('Insert')">Insert Query</button>
-                                <button class="btn btn-info mx-3" data-toggle="modal" data-target="#sql-query-modal"
-                                    onclick="showModal('Update')">Update Query</button>
-                                <button class="btn btn-secondary px-5 ml-3" onclick="clearFields()">Clear</button>
+                                <div class="btn-group" role="group" aria-label="Button Group">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#tool-modal" onclick="showModal('Insert')">Insert Query</button>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#tool-modal" onclick="showModal('Update')">Update Query</button>
+                                </div>
+                                <button type="button" class="btn btn-secondary px-5 ml-3"
+                                    onclick="clearFields()">Clear</button>
                             </div>
 
                         </div>
 
-                        <!-- SQL query modal -->
-                        <div class="modal fade" id="sql-query-modal" tabindex="-1" role="dialog"
-                            aria-labelledby="sql-query-title" aria-hidden="true">
+                        <!-- modal -->
+                        <div class="modal fade" id="tool-modal" tabindex="-1" role="dialog"
+                            aria-labelledby="modal-title" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="sql-query-title">
+                                        <h1 class="modal-title fs-5" id="modal-title">
                                             <!-- Modal title will be updated dynamically -->
-                                        </h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <!-- Modal body will be updated dynamically -->
-                                        <textarea aria-label="SQL Query" class="form-control form-control-sm"
-                                            id="sql-query-body" placeholder="SQL Query" rows="30" readonly></textarea>
+                                        <pre id="sql-query-body"></pre>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-warning btn-sm"
+                                        <button type="button" class="btn btn-outline-primary btn-sm"
                                             onclick="copyToClipboard('query')">Copy</button>
                                     </div>
                                 </div>
@@ -198,10 +199,16 @@
                         </div>
 
                         <!-- notification toast -->
-                        <div aria-atomic="true" aria-live="polite" data-delay="5000">
-                            <div class="toast" role="alert"
-                                style="position: fixed; top: 20px; right: 20px; z-index: 9999;">
-                                <div class="toast-body bg-warning" id="toast-body">
+                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                            <div id="notification-toast" class="toast" role="alert" aria-live="assertive"
+                                aria-atomic="true">
+                                <div class="toast-header" id="notification-toast-header">
+                                    <strong class="me-auto">DFN Tools</strong>
+                                    <small>Just now</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body" id="notification-toast-body">
                                     <!-- Toast body will be updated dynamically -->
                                 </div>
                             </div>
@@ -377,40 +384,48 @@
             var template = '';
             if (templateType === "en-sms") {
                 template = document.getElementById("en-sms-template-text").innerText;
-                $("#toast-body").text("English SMS template copied!");
+                $("#notification-toast-body").text("English SMS template copied!");
             } else if (templateType === "ar-sms") {
                 template = document.getElementById("ar-sms-template-text").innerText;
-                $("#toast-body").text("Arabic SMS template copied!");
+                $("#notification-toast-body").text("Arabic SMS template copied!");
             } else if (templateType === "en-email-sub") {
                 template = document.getElementById("en-email-subject-text").innerText;
-                $("#toast-body").text("English Email subject copied!");
+                $("#notification-toast-body").text("English Email subject copied!");
             } else if (templateType === "ar-email-sub") {
                 template = document.getElementById("ar-email-subject-text").innerText;
-                $("#toast-body").text("Arabic Email subject copied!");
+                $("#notification-toast-body").text("Arabic Email subject copied!");
             } else if (templateType === "en-email") {
                 template = document.getElementById("en-email-template-text").innerText;
-                $("#toast-body").text("English Email template copied!");
+                $("#notification-toast-body").text("English Email template copied!");
             } else if (templateType === "ar-email") {
                 template = document.getElementById("ar-email-template-text").innerText;
-                $("#toast-body").text("Arabic Email template copied!");
+                $("#notification-toast-body").text("Arabic Email template copied!");
             } else if (templateType === "query") {
                 template = document.getElementById("sql-query-body").value;
-                $("#toast-body").text("Query copied!");
+                $("#notification-toast-body").text("Query copied!");
             }
 
             navigator.clipboard.writeText(template).then(
                 function () {
-                    $("#toast-body")
-                        .toggleClass("bg-secondary", false)
-                        .toggleClass("text-light", false)
-                        .toggleClass("text-success", false)
-                        .toggleClass("text-danger", false)
-                        .toggleClass("bg-warning", true)
-                        .toggleClass("text-dark", true);
+                    $("#notification-toast-header")
+                        .toggleClass("text-bg-danger", false)
+                        .toggleClass("text-bg-secondary", false)
+                        .toggleClass("text-bg-primary", true);
 
-                    $(".toast").toast("show");
+                    $("#notification-toast")
+                        .toast("show");
                 },
                 function (err) {
+                    $("#notification-toast-body")
+                        .text("Failed to copy!");
+
+                    $("#notification-toast-header")
+                        .toggleClass("text-bg-primary", false)
+                        .toggleClass("text-bg-secondary", false)
+                        .toggleClass("text-bg-danger", true);
+
+                    $("#notification-toast")
+                        .toast("show");
                     console.error("Failed to copy: ", err);
                 }
             );
@@ -450,7 +465,7 @@
                 query += 'm149_email_template_lang = ' + emailLang + ';\n\nCOMMIT;';
             }
 
-            $("#sql-query-title").text(queryType + ' Query');
+            $("#modal-title").text(queryType + ' Query');
             $("#sql-query-body").text(query);
             $(".modal").modal("show");
         }
@@ -468,16 +483,16 @@
             document.getElementById("en-email-template-text").innerText = '';
             document.getElementById("ar-email-template-text").innerText = '';
 
-            $("#toast-body")
-                .toggleClass("bg-warning", false)
-                .toggleClass("text-dark", false)
-                .toggleClass("text-success", false)
-                .toggleClass("text-danger", false)
-                .toggleClass("bg-secondary", true)
-                .toggleClass("text-light", true)
+            $("#notification-toast-body")
                 .text("Cleared!");
 
-            $(".toast").toast("show");
+            $("#notification-toast-header")
+                .toggleClass("text-bg-danger", false)
+                .toggleClass("text-bg-primary", false)
+                .toggleClass("text-bg-secondary", true);
+
+            $("#notification-toast")
+                .toast("show");
         }
     </script>
 
