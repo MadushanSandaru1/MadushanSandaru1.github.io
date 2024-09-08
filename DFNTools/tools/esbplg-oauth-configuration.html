@@ -400,14 +400,14 @@
             var value = this.value.replace(/[^a-zA-Z0-9-._\/:?&=#]/g, '');
             this.value = value;
 
-            var fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
-            for (var i = 0; i < fillInputSpansElements.length; i++) {
+            const fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
+            Array.from(fillInputSpansElements).forEach(fillInputSpansElement => {
                 if (value) {
-                    fillInputSpansElements[i].innerText = value + "/";
+                    fillInputSpansElement.innerText = value + "/";
                 } else {
-                    fillInputSpansElements[i].innerText = '';
+                    fillInputSpansElement.innerText = '';
                 }
-            }
+            });
         });
 
         document.getElementById("plugin-base-url").addEventListener("focusout", function () {
@@ -417,28 +417,28 @@
             }
             this.value = value;
 
-            var fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
-            for (var i = 0; i < fillInputSpansElements.length; i++) {
+            const fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
+            Array.from(fillInputSpansElements).forEach(fillInputSpansElement => {
                 if (value) {
-                    fillInputSpansElements[i].innerText = value + "/";
+                    fillInputSpansElement.innerText = value + "/";
                 } else {
-                    fillInputSpansElements[i].innerText = '';
+                    fillInputSpansElement.innerText = '';
                 }
-            }
+            });
         });
 
         document.getElementById("base-url-to-be-exposed").addEventListener("input", function () {
             var value = this.value.replace(/[^a-zA-Z0-9-._\/:?&=#]/g, '');
             this.value = value;
 
-            var fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
-            for (var i = 0; i < fillInputSpansElements.length; i++) {
+            const fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
+            Array.from(fillInputSpansElements).forEach(fillInputSpansElement => {
                 if (value) {
-                    fillInputSpansElements[i].innerText = value + "/";
+                    fillInputSpansElement.innerText = value + "/";
                 } else {
-                    fillInputSpansElements[i].innerText = '';
+                    fillInputSpansElement.innerText = '';
                 }
-            }
+            });
         });
 
         document.getElementById("base-url-to-be-exposed").addEventListener("focusout", function () {
@@ -448,14 +448,14 @@
             }
             this.value = value;
 
-            var fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
-            for (var i = 0; i < fillInputSpansElements.length; i++) {
+            const fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
+            Array.from(fillInputSpansElements).forEach(fillInputSpansElement => {
                 if (value) {
-                    fillInputSpansElements[i].innerText = value + "/";
+                    fillInputSpansElement.innerText = value + "/";
                 } else {
-                    fillInputSpansElements[i].innerText = '';
+                    fillInputSpansElement.innerText = '';
                 }
-            }
+            });
         });
 
         function handleIntegrationNameFocusOut() {
@@ -577,25 +577,25 @@
         }
 
         function clearFields() {
-            var clearInputFieldsElements = document.getElementsByClassName("clear-input-fields-class");
-            for (var i = 0; i < clearInputFieldsElements.length; i++) {
-                clearInputFieldsElements[i].value = '';
-            }
+            const clearInputFieldsElements = document.getElementsByClassName("clear-input-fields-class");
+            Array.from(clearInputFieldsElements).forEach(clearInputFieldsElement => {
+                clearInputFieldsElement.value = '';
+            });
 
-            var clearPFieldsElements = document.getElementsByClassName("clear-p-fields-class");
-            for (var i = 0; i < clearPFieldsElements.length; i++) {
-                clearPFieldsElements[i].innerText = '';
-            }
+            const clearPFieldsElements = document.getElementsByClassName("clear-p-fields-class");
+            Array.from(clearPFieldsElements).forEach(clearPFieldsElement => {
+                clearPFieldsElement.innerText = '';
+            });
 
-            var clearInputSpansElements = document.getElementsByClassName("clear-input-spans-class");
-            for (var i = 0; i < clearInputSpansElements.length; i++) {
-                clearInputSpansElements[i].innerText = '';
-            }
+            const clearInputSpansElements = document.getElementsByClassName("clear-input-spans-class");
+            Array.from(clearInputSpansElements).forEach(clearInputSpansElement => {
+                clearInputSpansElement.innerText = '';
+            });
 
-            var clearH6SpansElements = document.getElementsByClassName("clear-h6-spans-class");
-            for (var i = 0; i < clearH6SpansElements.length; i++) {
-                clearH6SpansElements[i].innerText = '';
-            }
+            const clearH6SpansElements = document.getElementsByClassName("clear-h6-spans-class");
+            Array.from(clearH6SpansElements).forEach(clearH6SpansElement => {
+                clearH6SpansElement.innerText = '';
+            });
 
             $("#notification-toast-body")
                 .text("Cleared!");
