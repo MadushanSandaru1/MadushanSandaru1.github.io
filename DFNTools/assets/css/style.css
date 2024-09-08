@@ -1821,3 +1821,14 @@ section {
     padding: 2px 0;
   }
 }
+
+/*--------------------------------------------------------------
+# JSON modal
+--------------------------------------------------------------*/
+
+pre {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 5px;
+  overflow: auto;
+}

@@ -14,7 +14,9 @@
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
@@ -66,26 +68,32 @@
             <div class="generator">
               <div class="form-group">
                 <div class="form-floating">
-                  <input aria-label="Country Code" class="form-control clear-input-fields-class" id="country-code" type="text" placeholder="Country Code (Ex: KSA)">
+                  <input aria-label="Country Code" class="form-control clear-input-fields-class" id="country-code"
+                    type="text" placeholder="Country Code (Ex: KSA)">
                   <label for="country-code">Country Code (Ex: KSA)</label>
                 </div>
               </div>
               <div class="form-group">
                 <div class="form-floating">
-                  <input aria-label="Broker Code" class="form-control clear-input-fields-class" id="broker-code" type="text" placeholder="Broker Code (Ex: JADWA, HSBC)">
+                  <input aria-label="Broker Code" class="form-control clear-input-fields-class" id="broker-code"
+                    type="text" placeholder="Broker Code (Ex: JADWA, HSBC)">
                   <label for="broker-code">Broker Code (Ex: JADWA, HSBC)</label>
                 </div>
               </div>
               <div class="form-group">
                 <div class="form-floating">
-                  <input aria-label="Integration Name" class="form-control clear-input-fields-class" id="integration-name" type="text" placeholder="Integration Name (Ex: CRMS, CIS)" onfocusout="handleIntegrationNameFocusOut()">
+                  <input aria-label="Integration Name" class="form-control clear-input-fields-class"
+                    id="integration-name" type="text" placeholder="Integration Name (Ex: CRMS, CIS)"
+                    onfocusout="handleIntegrationNameFocusOut()">
                   <label for="integration-name">Integration Name (Ex: CRMS, CIS)</label>
                 </div>
               </div>
 
               <div class="form-group">
                 <div class="form-floating">
-                  <input aria-label="Plugin Name / Group ID / Deployment Unit" class="form-control clear-input-fields-class" id="plugin-name-text" type="text" placeholder="Plugin Name / Group ID / Deployment Unit" readonly>
+                  <input aria-label="Plugin Name / Group ID / Deployment Unit"
+                    class="form-control clear-input-fields-class" id="plugin-name-text" type="text"
+                    placeholder="Plugin Name / Group ID / Deployment Unit" readonly>
                   <label for="plugin-name-text">Plugin Name / Group ID / Deployment Unit</label>
                 </div>
               </div>
@@ -95,17 +103,20 @@
               <div class="form-group">
                 <h5>URLs and Endpoints</h5>
               </div>
-              
+
               <div class="form-group">
                 <div class="form-floating">
-                  <input aria-label="Plugin Base URL" class="form-control clear-input-fields-class" id="plugin-base-url" type="text" placeholder="Plugin Base URL (Ex: http://0.0.0.0:6060/api/jadwa/cis)">
+                  <input aria-label="Plugin Base URL" class="form-control clear-input-fields-class" id="plugin-base-url"
+                    type="text" placeholder="Plugin Base URL (Ex: http://0.0.0.0:6060/api/jadwa/cis)">
                   <label for="plugin-base-url">Plugin Base URL (Ex: http://0.0.0.0:6060/api/jadwa/cis)</label>
                 </div>
               </div>
-              
+
               <div class="form-group">
                 <div class="form-floating">
-                  <input aria-label="Base URL to be exposed" class="form-control clear-input-fields-class" id="base-url-to-be-exposed" type="text" placeholder="Base URL to be exposed (Ex: http://0.0.0.0:6060/cis)">
+                  <input aria-label="Base URL to be exposed" class="form-control clear-input-fields-class"
+                    id="base-url-to-be-exposed" type="text"
+                    placeholder="Base URL to be exposed (Ex: http://0.0.0.0:6060/cis)">
                   <label for="base-url-to-be-exposed">Base URL to be exposed (Ex: http://0.0.0.0:6060/cis)</label>
                 </div>
               </div>
@@ -115,20 +126,25 @@
               <div class="form-group">
                 <h6>Service No: 1<span class="text-primary clear-h6-spans-class" id="service-name-topic-1"></span></h6>
               </div>
-              
+
               <div class="form-group">
                 <div class="form-floating">
-                  <input aria-label="Service Name" class="form-control clear-input-fields-class" id="service-name-1" type="text" placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)" oninput="handleServiceNameInput(1)" onfocusout="handleServiceNameFocusOut(1)">
+                  <input aria-label="Service Name" class="form-control clear-input-fields-class" id="service-name-1"
+                    type="text" placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
+                    oninput="handleServiceNameInput(1)" onfocusout="handleServiceNameFocusOut(1)">
                   <label for="service-name-1">Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)</label>
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
-                    <span class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
-                    <div class="form-floating">
-                      <input  aria-label="Service Endpoint" class="form-control clear-input-fields-class" id="service-endpoint-1" type="text" placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)" oninput="handleServiceEndpointInput(1)" onfocusout="handleServiceEndpointFocusOut(1)">
-                      <label for="service-endpoint-1">Service Endpoint (Ex: createCustomer, deleteBenAccount)</label>
-                    </div>
+                  <span class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
+                  <div class="form-floating">
+                    <input aria-label="Service Endpoint" class="form-control clear-input-fields-class"
+                      id="service-endpoint-1" type="text"
+                      placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)"
+                      oninput="handleServiceEndpointInput(1)" onfocusout="handleServiceEndpointFocusOut(1)">
+                    <label for="service-endpoint-1">Service Endpoint (Ex: createCustomer, deleteBenAccount)</label>
+                  </div>
                 </div>
               </div>
               <div class="form-group">
@@ -150,11 +166,13 @@
 
               <div class="form-group">
                 <div class="input-group">
-                    <span class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
-                    <div class="form-floating">
-                      <input  aria-label="Endpoint to be exposed" class="form-control clear-input-fields-class" id="fill-service-endpoint-to-be-exposed-1" type="text" placeholder="Endpoint to be exposed" readonly>
-                      <label for="fill-service-endpoint-to-be-exposed-1">Endpoint to be exposed</label>
-                    </div>
+                  <span class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
+                  <div class="form-floating">
+                    <input aria-label="Endpoint to be exposed" class="form-control clear-input-fields-class"
+                      id="fill-service-endpoint-to-be-exposed-1" type="text" placeholder="Endpoint to be exposed"
+                      readonly>
+                    <label for="fill-service-endpoint-to-be-exposed-1">Endpoint to be exposed</label>
+                  </div>
                 </div>
               </div>
 
@@ -163,20 +181,25 @@
               <div class="form-group">
                 <h6>Service No: 2<span class="text-primary clear-h6-spans-class" id="service-name-topic-2"></span></h6>
               </div>
-              
+
               <div class="form-group">
                 <div class="form-floating">
-                  <input aria-label="Service Name" class="form-control clear-input-fields-class" id="service-name-2" type="text" placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)" oninput="handleServiceNameInput(2)" onfocusout="handleServiceNameFocusOut(2)">
+                  <input aria-label="Service Name" class="form-control clear-input-fields-class" id="service-name-2"
+                    type="text" placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
+                    oninput="handleServiceNameInput(2)" onfocusout="handleServiceNameFocusOut(2)">
                   <label for="service-name-2">Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)</label>
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
-                    <span class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
-                    <div class="form-floating">
-                      <input  aria-label="Service Endpoint" class="form-control clear-input-fields-class" id="service-endpoint-2" type="text" placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)" oninput="handleServiceEndpointInput(2)" onfocusout="handleServiceEndpointFocusOut(2)">
-                      <label for="service-endpoint-2">Service Endpoint (Ex: createCustomer, deleteBenAccount)</label>
-                    </div>
+                  <span class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
+                  <div class="form-floating">
+                    <input aria-label="Service Endpoint" class="form-control clear-input-fields-class"
+                      id="service-endpoint-2" type="text"
+                      placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)"
+                      oninput="handleServiceEndpointInput(2)" onfocusout="handleServiceEndpointFocusOut(2)">
+                    <label for="service-endpoint-2">Service Endpoint (Ex: createCustomer, deleteBenAccount)</label>
+                  </div>
                 </div>
               </div>
               <div class="form-group">
@@ -195,26 +218,30 @@
                   <label for="http-method-2">HTTP Method</label>
                 </div>
               </div>
-              
+
               <div class="form-group">
                 <div class="input-group">
-                    <span class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
-                    <div class="form-floating">
-                      <input  aria-label="Endpoint to be exposed" class="form-control clear-input-fields-class" id="fill-service-endpoint-to-be-exposed-2" type="text" placeholder="Endpoint to be exposed" readonly>
-                      <label for="fill-service-endpoint-to-be-exposed-2">Endpoint to be exposed</label>
-                    </div>
+                  <span class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
+                  <div class="form-floating">
+                    <input aria-label="Endpoint to be exposed" class="form-control clear-input-fields-class"
+                      id="fill-service-endpoint-to-be-exposed-2" type="text" placeholder="Endpoint to be exposed"
+                      readonly>
+                    <label for="fill-service-endpoint-to-be-exposed-2">Endpoint to be exposed</label>
+                  </div>
                 </div>
               </div>
 
               <div class="text-center">
-                <button type="button" class="btn btn-primary mr-3" data-bs-toggle="modal" data-bs-target="#tool-modal" onclick="showModal()">Generate Config</button>
+                <button type="button" class="btn btn-primary mr-3" data-bs-toggle="modal" data-bs-target="#tool-modal"
+                  onclick="showModal()">Generate Config</button>
                 <button type="button" class="btn btn-secondary px-5 ml-3" onclick="clearFields()">Clear</button>
               </div>
 
             </div>
-        
+
             <!-- modal -->
-            <div class="modal fade" id="tool-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal fade" id="tool-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title"
+              aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -223,24 +250,30 @@
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                    <div class="modal-body">
-                        <!-- Modal body will be updated dynamically -->
-                        <textarea aria-label="Json Config" class="form-control form-control-sm" id="modal-body" placeholder="Json Config" rows="30" readonly></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-warning btn-sm" onclick="copyToClipboard()">Copy</button>
-                    </div>
+                  <div class="modal-body">
+                    <!-- Modal body will be updated dynamically -->
+                    <pre id="formattedJson"></pre>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary btn-sm"
+                      onclick="copyToClipboard()">Copy</button>
+                  </div>
                 </div>
               </div>
             </div>
-    
+
             <!-- notification toast -->
-            <div aria-atomic="true" aria-live="polite" data-delay="5000">
-                <div class="toast" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 9999;">
-                    <div class="toast-body bg-warning" id="toast-body">
-                        <!-- Toast body will be updated dynamically -->
-                    </div>
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+              <div id="notification-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header" id="notification-toast-header">
+                  <strong class="me-auto">DFN Tools</strong>
+                  <small>Just now</small>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
+                <div class="toast-body" id="notification-toast-body">
+                  <!-- Toast body will be updated dynamically -->
+                </div>
+              </div>
             </div>
 
           </div>
@@ -265,12 +298,16 @@
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"></script>
-  <script crossorigin="anonymous" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"></script>
+  <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"></script>
+  <script crossorigin="anonymous" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"></script>
 
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -287,132 +324,132 @@
   <!-- Optional JavaScript -->
   <script>
     document.getElementById("country-code").addEventListener("input", function () {
-        var value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
-        this.value = value;
+      var value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+      this.value = value;
 
-        var countryCode = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
-        var brokerCode = document.getElementById("broker-code").value.toUpperCase();
-        var integrationName = document.getElementById("integration-name").value.toUpperCase();
-        
-        if (countryCode+brokerCode+integrationName === '') {
-          document.getElementById("plugin-name-text").value = '';
-        } else {
-          document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
-        }
+      var countryCode = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
+      var brokerCode = document.getElementById("broker-code").value.toUpperCase();
+      var integrationName = document.getElementById("integration-name").value.toUpperCase();
+
+      if (countryCode + brokerCode + integrationName === '') {
+        document.getElementById("plugin-name-text").value = '';
+      } else {
+        document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+      }
     });
 
     document.getElementById("broker-code").addEventListener("input", function () {
-        var value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
-        this.value = value;
-        
-        var countryCode = document.getElementById("country-code").value.toUpperCase();
-        var brokerCode = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
-        var integrationName = document.getElementById("integration-name").value.toUpperCase();
-        
-        if (countryCode+brokerCode+integrationName === '') {
-          document.getElementById("plugin-name-text").value = '';
-        } else {
-          document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
-        }
+      var value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+      this.value = value;
+
+      var countryCode = document.getElementById("country-code").value.toUpperCase();
+      var brokerCode = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
+      var integrationName = document.getElementById("integration-name").value.toUpperCase();
+
+      if (countryCode + brokerCode + integrationName === '') {
+        document.getElementById("plugin-name-text").value = '';
+      } else {
+        document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+      }
     });
 
     document.getElementById("integration-name").addEventListener("input", function () {
-        var value = this.value.replace(/[^a-zA-Z0-9_ ]/g, '').replace(/\s+/g, '_').toUpperCase();
-        this.value = value;
+      var value = this.value.replace(/[^a-zA-Z0-9_ ]/g, '').replace(/\s+/g, '_').toUpperCase();
+      this.value = value;
 
-        var countryCode = document.getElementById("country-code").value.toUpperCase();
-        var brokerCode = document.getElementById("broker-code").value.toUpperCase();
-        var integrationName = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
+      var countryCode = document.getElementById("country-code").value.toUpperCase();
+      var brokerCode = document.getElementById("broker-code").value.toUpperCase();
+      var integrationName = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
+      document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+
+      if (countryCode + brokerCode + integrationName === '') {
+        document.getElementById("plugin-name-text").value = '';
+      } else {
         document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
-        
-        if (countryCode+brokerCode+integrationName === '') {
-          document.getElementById("plugin-name-text").value = '';
-        } else {
-          document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
-        }
+      }
     });
 
     document.getElementById("plugin-base-url").addEventListener("input", function () {
-        var value = this.value.replace(/[^a-zA-Z0-9-._\/:?&=#]/g, '');
-        this.value = value;
-        
-        var fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
-        for (var i = 0; i < fillInputSpansElements.length; i++) {
-          if (value) {
-            fillInputSpansElements[i].innerText = value + "/";
-          } else {
-            fillInputSpansElements[i].innerText = '';
-          }
+      var value = this.value.replace(/[^a-zA-Z0-9-._\/:?&=#]/g, '');
+      this.value = value;
+
+      var fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
+      for (var i = 0; i < fillInputSpansElements.length; i++) {
+        if (value) {
+          fillInputSpansElements[i].innerText = value + "/";
+        } else {
+          fillInputSpansElements[i].innerText = '';
         }
+      }
     });
 
     document.getElementById("plugin-base-url").addEventListener("focusout", function () {
-        var value = this.value;
-        while (value.endsWith("/")) {
-            value = value.slice(0, -1); /* Remove trailing slashes */
-        }
-        this.value = value;
+      var value = this.value;
+      while (value.endsWith("/")) {
+        value = value.slice(0, -1); /* Remove trailing slashes */
+      }
+      this.value = value;
 
-        var fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
-        for (var i = 0; i < fillInputSpansElements.length; i++) {
-          if (value) {
-            fillInputSpansElements[i].innerText = value + "/";
-          } else {
-            fillInputSpansElements[i].innerText = '';
-          }
+      var fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
+      for (var i = 0; i < fillInputSpansElements.length; i++) {
+        if (value) {
+          fillInputSpansElements[i].innerText = value + "/";
+        } else {
+          fillInputSpansElements[i].innerText = '';
         }
+      }
     });
 
     document.getElementById("base-url-to-be-exposed").addEventListener("input", function () {
-        var value = this.value.replace(/[^a-zA-Z0-9-._\/:?&=#]/g, '');
-        this.value = value;
+      var value = this.value.replace(/[^a-zA-Z0-9-._\/:?&=#]/g, '');
+      this.value = value;
 
-        var fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
-        for (var i = 0; i < fillInputSpansElements.length; i++) {
-          if (value) {
-            fillInputSpansElements[i].innerText = value + "/";
-          } else {
-            fillInputSpansElements[i].innerText = '';
-          }
+      var fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
+      for (var i = 0; i < fillInputSpansElements.length; i++) {
+        if (value) {
+          fillInputSpansElements[i].innerText = value + "/";
+        } else {
+          fillInputSpansElements[i].innerText = '';
         }
+      }
     });
 
     document.getElementById("base-url-to-be-exposed").addEventListener("focusout", function () {
-        var value = this.value;
-        while (value.endsWith("/")) {
-            value = value.slice(0, -1); /* Remove trailing slashes */
-        }
-        this.value = value;
+      var value = this.value;
+      while (value.endsWith("/")) {
+        value = value.slice(0, -1); /* Remove trailing slashes */
+      }
+      this.value = value;
 
-        var fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
-        for (var i = 0; i < fillInputSpansElements.length; i++) {
-          if (value) {
-            fillInputSpansElements[i].innerText = value + "/";
-          } else {
-            fillInputSpansElements[i].innerText = '';
-          }
+      var fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
+      for (var i = 0; i < fillInputSpansElements.length; i++) {
+        if (value) {
+          fillInputSpansElements[i].innerText = value + "/";
+        } else {
+          fillInputSpansElements[i].innerText = '';
         }
+      }
     });
 
     function handleIntegrationNameFocusOut() {
-        var element = document.getElementById("integration-name");
-        var value = element.value;
-        while (value.startsWith("_")) {
-            value = value.substring(1); /* Remove the first character if it's a '/' */
-        }
-        while (value.endsWith("_")) {
-            value = value.slice(0, -1); /* Remove trailing slashes */
-        }
-        element.value = value;
-        var countryCode = document.getElementById("country-code").value.toUpperCase();
-        var brokerCode = document.getElementById("broker-code").value.toUpperCase();
-        var integrationName = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
+      var element = document.getElementById("integration-name");
+      var value = element.value;
+      while (value.startsWith("_")) {
+        value = value.substring(1); /* Remove the first character if it's a '/' */
+      }
+      while (value.endsWith("_")) {
+        value = value.slice(0, -1); /* Remove trailing slashes */
+      }
+      element.value = value;
+      var countryCode = document.getElementById("country-code").value.toUpperCase();
+      var brokerCode = document.getElementById("broker-code").value.toUpperCase();
+      var integrationName = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
 
-        if (countryCode+brokerCode+integrationName === '') {
-          document.getElementById("plugin-name-text").value = '';
-        } else {
-          document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
-        }
+      if (countryCode + brokerCode + integrationName === '') {
+        document.getElementById("plugin-name-text").value = '';
+      } else {
+        document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+      }
     }
 
     function handleServiceNameInput(id) {
@@ -421,7 +458,7 @@
       element.value = value;
 
       if (value) {
-        document.getElementById("service-name-topic-" + id).innerText = " | "+ value.replace(/_/g, ' ');
+        document.getElementById("service-name-topic-" + id).innerText = " | " + value.replace(/_/g, ' ');
       } else {
         document.getElementById("service-name-topic-" + id).innerText = '';
       }
@@ -429,102 +466,120 @@
 
     function handleServiceNameFocusOut(id) {
       var element = document.getElementById("service-name-" + id);
-        var value = element.value;
-        while (value.startsWith("_")) {
-            value = value.substring(1); /* Remove the first character if it's a '/' */
-        }
-        while (value.endsWith("_")) {
-            value = value.slice(0, -1); /* Remove trailing slashes */
-        }
-        element.value = value;
+      var value = element.value;
+      while (value.startsWith("_")) {
+        value = value.substring(1); /* Remove the first character if it's a '/' */
+      }
+      while (value.endsWith("_")) {
+        value = value.slice(0, -1); /* Remove trailing slashes */
+      }
+      element.value = value;
 
-        if (value) {
-            document.getElementById("service-name-topic-" + id).innerText = " | "+ value.replace(/_/g, ' ');
-        } else {
-          document.getElementById("service-name-topic-" + id).innerText = '';
-        }
+      if (value) {
+        document.getElementById("service-name-topic-" + id).innerText = " | " + value.replace(/_/g, ' ');
+      } else {
+        document.getElementById("service-name-topic-" + id).innerText = '';
+      }
     }
 
     function handleServiceEndpointInput(id) {
-        var element = document.getElementById("service-endpoint-" + id);
-        var value = element.value.replace(/[^a-zA-Z0-9\/_-]/g, '');
-        element.value = value;
-        document.getElementById("fill-service-endpoint-to-be-exposed-" + id).value = value;
+      var element = document.getElementById("service-endpoint-" + id);
+      var value = element.value.replace(/[^a-zA-Z0-9\/_-]/g, '');
+      element.value = value;
+      document.getElementById("fill-service-endpoint-to-be-exposed-" + id).value = value;
     }
 
     function handleServiceEndpointFocusOut(id) {
-        var element = document.getElementById("service-endpoint-" + id);
-        var value = element.value;
-        while (value.startsWith("/")) {
-            value = value.substring(1); /* Remove the first character if it's a '/' */
-        }
-        while (value.endsWith("/")) {
-            value = value.slice(0, -1); /* Remove trailing slashes */
-        }
-        element.value = value;
-        document.getElementById("fill-service-endpoint-to-be-exposed-" + id).value = value;
+      var element = document.getElementById("service-endpoint-" + id);
+      var value = element.value;
+      while (value.startsWith("/")) {
+        value = value.substring(1); /* Remove the first character if it's a '/' */
+      }
+      while (value.endsWith("/")) {
+        value = value.slice(0, -1); /* Remove trailing slashes */
+      }
+      element.value = value;
+      document.getElementById("fill-service-endpoint-to-be-exposed-" + id).value = value;
     }
 
     function showModal() {
-        $("#modal-title").text('Json Config');
-        $("#modal-body").text('json file body');
-        $(".modal").modal("show");
+      const jsonInput = "{\"src\": \"Images/Sun.png\",\"name\": \"sun1\",\"hOffset\": 250,\"vOffset\": 250,\"alignment\": \"center\"}";
+      try {
+        const parsedJson = JSON.parse(jsonInput);
+        const formattedJson = JSON.stringify(parsedJson, null, 2);
+        document.getElementById('formattedJson').textContent = formattedJson;
+      } catch (e) {
+        document.getElementById('formattedJson').textContent = 'Invalid JSON';
+      }
+
+      $("#modal-title").text('Json Config');
+      $(".modal").modal("show");
     }
 
     function copyToClipboard() {
-        var template = '';
-        template = document.getElementById("modal-body").value;
-            $("#toast-body").text("Config copied!");
+      var template = '';
+      template = document.getElementById("formattedJson").textContent;
 
-        navigator.clipboard.writeText(template).then(
-            function () {
-                $("#toast-body")
-                    .toggleClass("bg-secondary", false)
-                    .toggleClass("text-light", false)
-                    .toggleClass("text-success", false)
-                    .toggleClass("text-danger", false)
-                    .toggleClass("bg-warning", true)
-                    .toggleClass("text-dark", true);
+      navigator.clipboard.writeText(template).then(
+        function () {
+          $("#notification-toast-body")
+            .text("Config copied!");
 
-                $(".toast").toast("show");
-            },
-            function (err) {
-                console.error("Failed to copy: ", err);
-            }
-        );
+          $("#notification-toast-header")
+            .toggleClass("text-bg-danger", false)
+            .toggleClass("text-bg-secondary", false)
+            .toggleClass("text-bg-primary", true);
+
+          $("#notification-toast")
+            .toast("show");
+        },
+        function (err) {
+          $("#notification-toast-body")
+            .text("Failed to copy!");
+
+          $("#notification-toast-header")
+            .toggleClass("text-bg-primary", false)
+            .toggleClass("text-bg-secondary", false)
+            .toggleClass("text-bg-danger", true);
+
+          $("#notification-toast")
+            .toast("show");
+          console.error("Failed to copy: ", err);
+        }
+      );
     }
 
     function clearFields() {
-        var clearInputFieldsElements = document.getElementsByClassName("clear-input-fields-class");
-        for (var i = 0; i < clearInputFieldsElements.length; i++) {
-            clearInputFieldsElements[i].value = '';
-        }
+      var clearInputFieldsElements = document.getElementsByClassName("clear-input-fields-class");
+      for (var i = 0; i < clearInputFieldsElements.length; i++) {
+        clearInputFieldsElements[i].value = '';
+      }
 
-        var clearPFieldsElements = document.getElementsByClassName("clear-p-fields-class");
-        for (var i = 0; i < clearPFieldsElements.length; i++) {
-            clearPFieldsElements[i].innerText = '';
-        }
-        
-        var clearInputSpansElements = document.getElementsByClassName("clear-input-spans-class");
-        for (var i = 0; i < clearInputSpansElements.length; i++) {
-            clearInputSpansElements[i].innerText = '';
-        }
-        
-        var clearH6SpansElements = document.getElementsByClassName("clear-h6-spans-class");
-        for (var i = 0; i < clearH6SpansElements.length; i++) {
-          clearH6SpansElements[i].innerText = '';
-        }
+      var clearPFieldsElements = document.getElementsByClassName("clear-p-fields-class");
+      for (var i = 0; i < clearPFieldsElements.length; i++) {
+        clearPFieldsElements[i].innerText = '';
+      }
 
-        $("#toast-body")
-            .toggleClass("bg-warning", false)
-            .toggleClass("text-dark", false)
-            .toggleClass("text-success", false)
-            .toggleClass("text-danger", false)
-            .toggleClass("bg-secondary", true)
-            .toggleClass("text-light", true)
-            .text("Cleared!");
+      var clearInputSpansElements = document.getElementsByClassName("clear-input-spans-class");
+      for (var i = 0; i < clearInputSpansElements.length; i++) {
+        clearInputSpansElements[i].innerText = '';
+      }
 
-        $(".toast").toast("show");
+      var clearH6SpansElements = document.getElementsByClassName("clear-h6-spans-class");
+      for (var i = 0; i < clearH6SpansElements.length; i++) {
+        clearH6SpansElements[i].innerText = '';
+      }
+
+      $("#notification-toast-body")
+        .text("Cleared!");
+
+      $("#notification-toast-header")
+        .toggleClass("text-bg-danger", false)
+        .toggleClass("text-bg-primary", false)
+        .toggleClass("text-bg-secondary", true);
+
+      $("#notification-toast")
+        .toast("show");
     }
   </script>
 
