@@ -67,97 +67,114 @@
                     <div class="col-lg-12">
                         <div class="generator">
                             <div class="form-group">
-                                <input aria-label="Event ID" class="form-control" id="event-id" type="number"
-                                    placeholder="Event ID">
+                                <div class="form-floating">
+                                    <input aria-label="Event ID" class="form-control clear-input-fields-class"
+                                        id="event-id" type="text" placeholder="Event ID" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                    <label for="event-id">Event ID</label>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <input aria-label="English Subject" class="form-control" id="english-subject"
-                                    type="text" placeholder="English Subject">
+                                <div class="form-floating">
+                                    <input aria-label="English Subject" class="form-control clear-input-fields-class"
+                                        id="english-subject" type="text" placeholder="English Subject">
+                                    <label for="english-subject">English Subject</label>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <input dir="rtl" aria-label="Arabic Subject" class="form-control" id="arabic-subject"
-                                    type="text" placeholder="Arabic Subject">
+                                <div class="form-floating">
+                                    <input dir="rtl" aria-label="Arabic Subject" class="form-control clear-input-fields-class"
+                                        id="arabic-subject" type="text" placeholder="Arabic Subject">
+                                    <label for="arabic-subject">Arabic Subject</label>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <textarea aria-label="English Template" class="form-control" id="english-template"
-                                    placeholder="English Template" rows="5"></textarea>
+                                <div class="form-floating">
+                                    <textarea aria-label="English Template" class="form-control clear-input-fields-class" id="english-template"
+                                    placeholder="English Template" style="height: 100px"></textarea>
+                                    <label for="english-template">English Template</label>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <textarea dir="rtl" aria-label="Arabic Template" class="form-control"
-                                    id="arabic-template" placeholder="Arabic Template" rows="5"></textarea>
+                                <div class="form-floating">
+                                    <textarea dir="rtl" aria-label="Arabic Template" class="form-control clear-input-fields-class" id="arabic-template"
+                                    placeholder="Arabic Template" style="height: 100px"></textarea>
+                                    <label for="arabic-template">Arabic Template</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="radio" class="btn-check" name="change-status" id="customize" value="1" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="customize">Customize New Template (1)</label>
+
+                                <input type="radio" class="btn-check" name="change-status" id="override" value="2" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary" for="override">Override Common Template (2)</label>
                             </div>
 
                             <hr>
 
-                            <div class="form-group position-relative">
-                                <label for="en-sms-template" class="text-secondary"><small>English SMS
-                                        Template</small></label>
-                                <div class="card" id="en-sms-template">
-                                    <div class="card-body">
-                                        <p id="en-sms-template-text"></p>
-                                    </div>
-                                    <button class="btn btn-outline-warning btn-sm copy-button"
-                                        onclick="copyToClipboard('en-sms')">Copy</button>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="English SMS Template" class="form-control clear-input-fields-class" id="en-sms-template-text"
+                                    placeholder="English SMS Template" style="height: 100px" readonly></textarea>
+                                    <label for="en-sms-template-text">English SMS Template</label>
+                                </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('en-sms')"><i class="bi bi-copy"></i></button>
                                 </div>
                             </div>
 
-                            <div class="form-group position-relative">
-                                <label for="ar-sms-template" class="text-secondary"><small>Arabic SMS
-                                        Template</small></label>
-                                <div class="card" id="ar-sms-template">
-                                    <div class="card-body">
-                                        <p id="ar-sms-template-text"></p>
-                                    </div>
-                                    <button class="btn btn-outline-warning btn-sm copy-button"
-                                        onclick="copyToClipboard('ar-sms')">Copy</button>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="Arabic SMS Template" class="form-control clear-input-fields-class" id="ar-sms-template-text"
+                                    placeholder="Arabic SMS Template" style="height: 100px" readonly></textarea>
+                                    <label for="ar-sms-template-text">Arabic SMS Template</label>
+                                </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('ar-sms')"><i class="bi bi-copy"></i></button>
                                 </div>
                             </div>
 
-                            <div class="form-group position-relative">
-                                <label for="en-email-subject" class="text-secondary"><small>English Email
-                                        Subject</small></label>
-                                <div class="card" id="en-email-subject">
-                                    <div class="card-body">
-                                        <p id="en-email-subject-text"></p>
-                                    </div>
-                                    <button class="btn btn-outline-warning btn-sm copy-button"
-                                        onclick="copyToClipboard('en-email-sub')">Copy</button>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="English Email Subject" class="form-control clear-input-fields-class" id="en-email-subject-text"
+                                    placeholder="English Email Subject" readonly></textarea>
+                                    <label for="en-email-subject-text">English Email Subject</label>
+                                </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('en-email-sub')"><i class="bi bi-copy"></i></button>
                                 </div>
                             </div>
 
-                            <div class="form-group position-relative">
-                                <label for="ar-email-subject" class="text-secondary"><small>Arabic Email
-                                        Subject</small></label>
-                                <div class="card" id="ar-email-subject">
-                                    <div class="card-body">
-                                        <p id="ar-email-subject-text"></p>
-                                    </div>
-                                    <button class="btn btn-outline-warning btn-sm copy-button"
-                                        onclick="copyToClipboard('ar-email-sub')">Copy</button>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="Arabic Email Subject" class="form-control clear-input-fields-class" id="ar-email-subject-text"
+                                    placeholder="Arabic Email Subject" readonly></textarea>
+                                    <label for="ar-email-subject-text">Arabic Email Subject</label>
+                                </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('ar-email-sub')"><i class="bi bi-copy"></i></button>
                                 </div>
                             </div>
 
-                            <div class="form-group position-relative">
-                                <label for="en-email-template" class="text-secondary"><small>English Email
-                                        Template</small></label>
-                                <div class="card" id="en-email-template">
-                                    <div class="card-body">
-                                        <p id="en-email-template-text"></p>
-                                    </div>
-                                    <button class="btn btn-outline-warning btn-sm copy-button"
-                                        onclick="copyToClipboard('en-email')">Copy</button>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="English Email Template" class="form-control clear-input-fields-class" id="en-email-template-text"
+                                    placeholder="English Email Template" style="height: 100px" readonly></textarea>
+                                    <label for="en-email-template-text">English Email Template</label>
+                                </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('en-email')"><i class="bi bi-copy"></i></button>
                                 </div>
                             </div>
 
-                            <div class="form-group position-relative">
-                                <label for="ar-email-template" class="text-secondary"><small>Arabic Email
-                                        Template</small></label>
-                                <div class="card" id="ar-email-template">
-                                    <div class="card-body">
-                                        <p id="ar-email-template-text"></p>
-                                    </div>
-                                    <button class="btn btn-outline-warning btn-sm copy-button"
-                                        onclick="copyToClipboard('ar-email')">Copy</button>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="Arabic Email Template" class="form-control clear-input-fields-class" id="ar-email-template-text"
+                                    placeholder="Arabic Email Template" style="height: 100px" readonly></textarea>
+                                    <label for="ar-email-template-text">Arabic Email Template</label>
+                                </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('ar-email')"><i class="bi bi-copy"></i></button>
                                 </div>
                             </div>
 
@@ -262,41 +279,53 @@
     <!-- Optional JavaScript -->
     <script>
         document.getElementById("english-subject").addEventListener("input", function () {
-            var englishSubject = this.value;
+            var englishSubject = this.value.trim();
 
-            document.getElementById("en-email-subject-text").innerText = englishSubject;
+            if (englishSubject) {
+                document.getElementById("en-email-subject-text").value = englishSubject;
+            }
         });
 
         document.getElementById("arabic-subject").addEventListener("input", function () {
-            var arabicSubject = this.value;
+            var arabicSubject = this.value.trim();
 
-            var replacedStringSubject = unicodeForSubject(arabicSubject).replace(/\\0020/g, ' ');
-            var subjectWithTags = 'UNISTR (\'' + replacedStringSubject + '\')';
-            document.getElementById("ar-email-subject-text").innerText = subjectWithTags;
+            if (arabicSubject) {
+                var replacedStringSubject = unicodeForSubject(arabicSubject).replace(/\\0020/g, ' ');
+                var subjectWithTags = 'UNISTR (\'' + replacedStringSubject + '\')';
+                document.getElementById("ar-email-subject-text").value = subjectWithTags;
+            }
         });
 
         document.getElementById("english-template").addEventListener("input", function () {
-            var englishTextForSms = this.value;
-            var englishTextForEmail = this.value;
+            var englishTextForSms = this.value.trim();
+            var englishTextForEmail = this.value.trim();
 
-            var replacedStringSMS = englishTextForSms.replace(/\n/g, '>br<');
-            document.getElementById("en-sms-template-text").innerText = replacedStringSMS;
+            if (englishTextForSms) {
+                var replacedStringSMS = englishTextForSms.replace(/\n/g, '>br<');
+                document.getElementById("en-sms-template-text").value = replacedStringSMS;
+            }
 
-            var replacedStringEmail = englishTextForEmail.replace(/\n/g, '<br>');
-            var emailWithTags = '<html><body><p>' + replacedStringEmail + '</p></body></html>';
-            document.getElementById("en-email-template-text").innerText = emailWithTags;
+            if (englishTextForEmail) {
+                var replacedStringEmail = englishTextForEmail.replace(/\n/g, '<br>');
+                var emailWithTags = '<html><body><p>' + replacedStringEmail + '</p></body></html>';
+                document.getElementById("en-email-template-text").value = emailWithTags;
+            }
         });
 
         document.getElementById("arabic-template").addEventListener("input", function () {
-            var arabicTextForSms = this.value;
-            var arabicTextForEmail = this.value;
+            var arabicTextForSms = this.value.trim();
+            var arabicTextForEmail = this.value.trim();
 
-            var replacedStringSMS = unicodeForSMS(arabicTextForSms).replace(/\\u000a/g, '>br<').replace(/\\u0020/g, ' ');
-            document.getElementById("ar-sms-template-text").innerText = replacedStringSMS;
+            if (arabicTextForSms) {
+                var replacedStringSMS = unicodeForSMS(arabicTextForSms).replace(/\\u000a/g, '>br<').replace(/\\u0020/g, ' ');
+                document.getElementById("ar-sms-template-text").value = replacedStringSMS;
+            }
 
-            var replacedStringEmail = unicodeForEmail(arabicTextForEmail).replace(/&#x000a;/g, '<br>').replace(/&#x0020;/g, ' ');
-            var emailWithTags = '<html dir="rtl"><body><p align="right">' + replacedStringEmail + '</p></body></html>';
-            document.getElementById("ar-email-template-text").innerText = emailWithTags;
+            if (arabicTextForEmail) {
+                var replacedStringEmail = unicodeForEmail(arabicTextForEmail).replace(/&#x000a;/g, '<br>').replace(/&#x0020;/g, ' ');
+                var emailWithTags = '<html dir="rtl"><body><p align="right">' + replacedStringEmail + '</p></body></html>';
+                document.getElementById("ar-email-template-text").value = emailWithTags;
+            }
         });
 
         function unicodeForSubject(text) {
@@ -383,86 +412,159 @@
         function copyToClipboard(templateType) {
             var template = '';
             if (templateType === "en-sms") {
-                template = document.getElementById("en-sms-template-text").innerText;
-                $("#notification-toast-body").text("English SMS template copied!");
+                template = document.getElementById("en-sms-template-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("English SMS Template Copied!");
+                } else {
+                    $("#notification-toast-body").text("English SMS Template Empty!");
+                }
             } else if (templateType === "ar-sms") {
-                template = document.getElementById("ar-sms-template-text").innerText;
-                $("#notification-toast-body").text("Arabic SMS template copied!");
+                template = document.getElementById("ar-sms-template-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("Arabic SMS Template Copied!");
+                } else {
+                    $("#notification-toast-body").text("Arabic SMS Template Empty!");
+                }
             } else if (templateType === "en-email-sub") {
-                template = document.getElementById("en-email-subject-text").innerText;
-                $("#notification-toast-body").text("English Email subject copied!");
+                template = document.getElementById("en-email-subject-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("English Email Subject Copied!");
+                } else {
+                    $("#notification-toast-body").text("English Email Subject Empty!");
+                }
             } else if (templateType === "ar-email-sub") {
-                template = document.getElementById("ar-email-subject-text").innerText;
-                $("#notification-toast-body").text("Arabic Email subject copied!");
+                template = document.getElementById("ar-email-subject-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("Arabic Email Subject Copied!");
+                } else {
+                    $("#notification-toast-body").text("Arabic Email Subject Empty!");
+                }
             } else if (templateType === "en-email") {
-                template = document.getElementById("en-email-template-text").innerText;
-                $("#notification-toast-body").text("English Email template copied!");
+                template = document.getElementById("en-email-template-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("English Email Template Copied!");
+                } else {
+                    $("#notification-toast-body").text("English Email Template Empty!");
+                }
             } else if (templateType === "ar-email") {
-                template = document.getElementById("ar-email-template-text").innerText;
-                $("#notification-toast-body").text("Arabic Email template copied!");
+                template = document.getElementById("ar-email-template-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("Arabic Email Template Copied!");
+                } else {
+                    $("#notification-toast-body").text("Arabic Email Template Empty!");
+                }
             } else if (templateType === "query") {
-                template = document.getElementById("sql-query-body").value;
-                $("#notification-toast-body").text("Query copied!");
+                template = document.getElementById("sql-query-body").textContent.trim();
+                if (template) {
+                    $("#notification-toast-body").text("Query Copied!");
+                } else {
+                    $("#notification-toast-body").text("Query Empty!");
+                }
             }
 
-            navigator.clipboard.writeText(template).then(
-                function () {
-                    $("#notification-toast-header")
-                        .toggleClass("text-bg-danger", false)
-                        .toggleClass("text-bg-secondary", false)
-                        .toggleClass("text-bg-primary", true);
+            if (template) {
+                navigator.clipboard.writeText(template).then(
+                    function () {
+                        $("#notification-toast-header")
+                            .toggleClass("text-bg-danger", false)
+                            .toggleClass("text-bg-secondary", false)
+                            .toggleClass("text-bg-warning", false)
+                            .toggleClass("text-bg-primary", true);
 
-                    $("#notification-toast")
-                        .toast("show");
-                },
-                function (err) {
-                    $("#notification-toast-body")
-                        .text("Failed to copy!");
+                        $("#notification-toast")
+                            .toast("show");
+                    },
+                    function (err) {
+                        $("#notification-toast-body")
+                            .text("Failed to Copy!");
 
-                    $("#notification-toast-header")
-                        .toggleClass("text-bg-primary", false)
-                        .toggleClass("text-bg-secondary", false)
-                        .toggleClass("text-bg-danger", true);
+                        $("#notification-toast-header")
+                            .toggleClass("text-bg-primary", false)
+                            .toggleClass("text-bg-secondary", false)
+                            .toggleClass("text-bg-warning", false)
+                            .toggleClass("text-bg-danger", true);
 
-                    $("#notification-toast")
-                        .toast("show");
-                    console.error("Failed to copy: ", err);
-                }
-            );
+                        $("#notification-toast")
+                            .toast("show");
+                        console.error("Failed to copy: ", err);
+                    }
+                );
+            } else {
+                $("#notification-toast-header")
+                    .toggleClass("text-bg-primary", false)
+                    .toggleClass("text-bg-secondary", false)
+                    .toggleClass("text-bg-danger", false)
+                    .toggleClass("text-bg-warning", true);
+
+                $("#notification-toast")
+                    .toast("show");
+            }
         }
 
         function showModal(queryType) {
             var query = '';
             var eventId = document.getElementById("event-id").value;
-            var sms = '\'' + document.getElementById("en-sms-template-text").innerText + '\'';
-            var smsLang = '\'' + document.getElementById("ar-sms-template-text").innerText + '\'';
-            var emailSub = '\'' + document.getElementById("en-email-subject-text").innerText + '\'';
-            var emailSubLang = document.getElementById("ar-email-subject-text").innerText;
-            var email = '\'' + document.getElementById("en-email-template-text").innerText + '\'';
-            var emailLang = '\'' + document.getElementById("ar-email-template-text").innerText + '\'';
+            var sms = '\'' + document.getElementById("en-sms-template-text").value + '\'';
+            var smsLang = '\'' + document.getElementById("ar-sms-template-text").value + '\'';
+            var emailSub = '\'' + document.getElementById("en-email-subject-text").value + '\'';
+            var emailSubLang = document.getElementById("ar-email-subject-text").value;
+            var email = '\'' + document.getElementById("en-email-template-text").value + '\'';
+            var emailLang = '\'' + document.getElementById("ar-email-template-text").value + '\'';
+            var changeStatus = document.querySelector('input[name="change-status"]:checked').value;
 
             if (!eventId) {
                 eventId = '<EVENT_ID>';
             }
 
+            if (!emailSubLang) {
+                emailSubLang = 'UNISTR (\'\')';
+            }
+
             if (queryType === "Insert") {
-                query = 'MERGE INTO dfn_ntp.m149_notify_templates_c\nUSING DUAL\n';
-                query += 'ON (m149_event_id_m148 = ' + eventId + ')\nWHEN NOT MATCHED\nTHEN\n';
-                query += 'INSERT (m149_id,\nm149_event_id_m148,\nm149_sms_template,\n';
-                query += 'm149_sms_template_lang,\nm149_email_subject,\nm149_email_subject_lang,\n';
-                query += 'm149_email_template,\nm149_email_template_lang,\n';
-                query += 'm149_institute_id_m02,\nm149_custom_type,\nm149_extnl_template_id,\n';
-                query += 'm149_change_status)\nVALUES (\n(SELECT NVL (MAX (m149_id), 0) + 1\n';
-                query += 'FROM dfn_ntp.m149_notify_templates_c),\n' + eventId + ',\n' + sms + ',\n';
-                query += smsLang + ',\n' + emailSub + ',\n' + emailSubLang + ',\n' + email + ',\n';
-                query += emailLang + ',\n1,\n\'1\',\nNULL,\n2);\n\nCOMMIT;';
+                query = 'MERGE INTO dfn_ntp.m149_notify_templates_c\n';
+                query += ' USING DUAL\n';
+                query += '    ON (m149_event_id_m148 = ' + eventId + ')\nWHEN NOT MATCHED\nTHEN\n';
+                query += 'WHEN NOT MATCHED\n';
+                query += 'THEN\n';
+                query += '    INSERT (m149_id,\n';
+                query += '            m149_event_id_m148,\n';
+                query += '            m149_sms_template,\n';
+                query += '            m149_sms_template_lang,\n';
+                query += '            m149_email_subject,\n';
+                query += '            m149_email_subject_lang,\n';
+                query += '            m149_email_template,\n';
+                query += '            m149_email_template_lang,\n';
+                query += '            m149_institute_id_m02,\n';
+                query += '            m149_custom_type,\n';
+                query += '            m149_extnl_template_id,\n';
+                query += '            m149_change_status)\n';
+                query += '    VALUES ( (SELECT NVL (MAX (m149_id), 0) + 1\n';
+                query += '                FROM dfn_ntp.m149_notify_templates_c),\n';
+                query += '            ' + eventId + ',\n';
+                query += '            ' + sms + ',\n';
+                query += '            ' + smsLang + ',\n';
+                query += '            ' + emailSub + ',\n';
+                query += '            ' + emailSubLang + ',\n';
+                query += '            ' + email + ',\n';
+                query += '            ' + emailLang + ',\n';
+                query += '            1,\n';
+                query += '            \'1\',\n';
+                query += '            NULL,\n';
+                query += '            ' + changeStatus + ');\n\n';
+                query += 'COMMIT;';
             } else if (queryType === "Update") {
-                query = 'MERGE INTO dfn_ntp.m149_notify_templates_c\nUSING DUAL\n';
-                query += 'ON (m149_event_id_m148 = ' + eventId + ' AND m149_institute_id_m02 = 1)\n';
-                query += 'WHEN MATCHED\nTHEN\nUPDATE SET\nm149_sms_template = ' + sms + ',\n';
-                query += 'm149_sms_template_lang = ' + smsLang + ',\nm149_email_subject = ' + emailSub + ',\n';
-                query += 'm149_email_subject_lang = ' + emailSubLang + ',\nm149_email_template = ' + email + ',\n';
-                query += 'm149_email_template_lang = ' + emailLang + ';\n\nCOMMIT;';
+                query = 'MERGE INTO dfn_ntp.m149_notify_templates_c\n';
+                query += ' USING DUAL\n';
+                query += '    ON (m149_event_id_m148 = ' + eventId + ' AND m149_institute_id_m02 = 1)\n';
+                query += 'WHEN MATCHED\n';
+                query += 'THEN\n';
+                query += '    UPDATE SET m149_sms_template = ' + sms + ',\n';
+                query += '               m149_sms_template_lang = ' + smsLang + ',\n';
+                query += '               m149_email_subject = ' + emailSub + ',\n';
+                query += '               m149_email_subject_lang = ' + emailSubLang + ',\n';
+                query += '               m149_email_template = ' + email + ',\n';
+                query += '               m149_email_template_lang = ' + emailLang + ';\n\n';
+                query += 'COMMIT;';
             }
 
             $("#modal-title").text(queryType + ' Query');
@@ -471,17 +573,12 @@
         }
 
         function clearFields() {
-            document.getElementById("event-id").value = '';
-            document.getElementById("english-subject").value = '';
-            document.getElementById("arabic-subject").value = '';
-            document.getElementById("english-template").value = '';
-            document.getElementById("arabic-template").value = '';
-            document.getElementById("en-sms-template-text").innerText = '';
-            document.getElementById("ar-sms-template-text").innerText = '';
-            document.getElementById("en-email-subject-text").innerText = '';
-            document.getElementById("ar-email-subject-text").innerText = '';
-            document.getElementById("en-email-template-text").innerText = '';
-            document.getElementById("ar-email-template-text").innerText = '';
+            var clearInputFieldsElements = document.getElementsByClassName("clear-input-fields-class");
+            for (var i = 0; i < clearInputFieldsElements.length; i++) {
+                clearInputFieldsElements[i].value = '';
+            }
+
+            document.getElementById("override").checked = true;
 
             $("#notification-toast-body")
                 .text("Cleared!");
@@ -489,6 +586,7 @@
             $("#notification-toast-header")
                 .toggleClass("text-bg-danger", false)
                 .toggleClass("text-bg-primary", false)
+                .toggleClass("text-bg-warning", false)
                 .toggleClass("text-bg-secondary", true);
 
             $("#notification-toast")
