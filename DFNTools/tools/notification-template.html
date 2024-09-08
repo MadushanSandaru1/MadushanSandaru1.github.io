@@ -69,7 +69,8 @@
                             <div class="form-group">
                                 <div class="form-floating">
                                     <input aria-label="Event ID" class="form-control clear-input-fields-class"
-                                        id="event-id" type="text" placeholder="Event ID" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                        id="event-id" type="text" placeholder="Event ID"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                     <label for="event-id">Event ID</label>
                                 </div>
                             </div>
@@ -82,32 +83,39 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-floating">
-                                    <input dir="rtl" aria-label="Arabic Subject" class="form-control clear-input-fields-class"
-                                        id="arabic-subject" type="text" placeholder="Arabic Subject">
+                                    <input dir="rtl" aria-label="Arabic Subject"
+                                        class="form-control clear-input-fields-class" id="arabic-subject" type="text"
+                                        placeholder="Arabic Subject">
                                     <label for="arabic-subject">Arabic Subject</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-floating">
-                                    <textarea aria-label="English Template" class="form-control clear-input-fields-class" id="english-template"
-                                    placeholder="English Template" style="height: 100px"></textarea>
+                                    <textarea aria-label="English Template"
+                                        class="form-control clear-input-fields-class" id="english-template"
+                                        placeholder="English Template" style="height: 100px"></textarea>
                                     <label for="english-template">English Template</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-floating">
-                                    <textarea dir="rtl" aria-label="Arabic Template" class="form-control clear-input-fields-class" id="arabic-template"
-                                    placeholder="Arabic Template" style="height: 100px"></textarea>
+                                    <textarea dir="rtl" aria-label="Arabic Template"
+                                        class="form-control clear-input-fields-class" id="arabic-template"
+                                        placeholder="Arabic Template" style="height: 100px"></textarea>
                                     <label for="arabic-template">Arabic Template</label>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <input type="radio" class="btn-check" name="change-status" id="customize" value="1" autocomplete="off">
-                                <label class="btn btn-outline-primary" for="customize">Customize New Template (1)</label>
+                                <input type="radio" class="btn-check" name="change-status" id="customize" value="1"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-primary" for="customize">Customize New Template
+                                    (1)</label>
 
-                                <input type="radio" class="btn-check" name="change-status" id="override" value="2" autocomplete="off" checked>
-                                <label class="btn btn-outline-primary" for="override">Override Common Template (2)</label>
+                                <input type="radio" class="btn-check" name="change-status" id="override" value="2"
+                                    autocomplete="off" checked>
+                                <label class="btn btn-outline-primary" for="override">Override Common Template
+                                    (2)</label>
                             </div>
 
                             <hr>
@@ -115,66 +123,81 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="form-floating">
-                                        <textarea aria-label="English SMS Template" class="form-control clear-input-fields-class" id="en-sms-template-text"
-                                    placeholder="English SMS Template" style="height: 100px" readonly></textarea>
-                                    <label for="en-sms-template-text">English SMS Template</label>
-                                </div>
-                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('en-sms')"><i class="bi bi-copy"></i></button>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="form-floating">
-                                        <textarea aria-label="Arabic SMS Template" class="form-control clear-input-fields-class" id="ar-sms-template-text"
-                                    placeholder="Arabic SMS Template" style="height: 100px" readonly></textarea>
-                                    <label for="ar-sms-template-text">Arabic SMS Template</label>
-                                </div>
-                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('ar-sms')"><i class="bi bi-copy"></i></button>
+                                        <textarea aria-label="English SMS Template"
+                                            class="form-control clear-input-fields-class" id="en-sms-template-text"
+                                            placeholder="English SMS Template" style="height: 100px"
+                                            readonly></textarea>
+                                        <label for="en-sms-template-text">English SMS Template</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('en-sms')"><i class="bi bi-copy"></i></button>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="form-floating">
-                                        <textarea aria-label="English Email Subject" class="form-control clear-input-fields-class" id="en-email-subject-text"
-                                    placeholder="English Email Subject" readonly></textarea>
-                                    <label for="en-email-subject-text">English Email Subject</label>
-                                </div>
-                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('en-email-sub')"><i class="bi bi-copy"></i></button>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="form-floating">
-                                        <textarea aria-label="Arabic Email Subject" class="form-control clear-input-fields-class" id="ar-email-subject-text"
-                                    placeholder="Arabic Email Subject" readonly></textarea>
-                                    <label for="ar-email-subject-text">Arabic Email Subject</label>
-                                </div>
-                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('ar-email-sub')"><i class="bi bi-copy"></i></button>
+                                        <textarea aria-label="Arabic SMS Template"
+                                            class="form-control clear-input-fields-class" id="ar-sms-template-text"
+                                            placeholder="Arabic SMS Template" style="height: 100px" readonly></textarea>
+                                        <label for="ar-sms-template-text">Arabic SMS Template</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('ar-sms')"><i class="bi bi-copy"></i></button>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="form-floating">
-                                        <textarea aria-label="English Email Template" class="form-control clear-input-fields-class" id="en-email-template-text"
-                                    placeholder="English Email Template" style="height: 100px" readonly></textarea>
-                                    <label for="en-email-template-text">English Email Template</label>
-                                </div>
-                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('en-email')"><i class="bi bi-copy"></i></button>
+                                        <textarea aria-label="English Email Subject"
+                                            class="form-control clear-input-fields-class" id="en-email-subject-text"
+                                            placeholder="English Email Subject" readonly></textarea>
+                                        <label for="en-email-subject-text">English Email Subject</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('en-email-sub')"><i class="bi bi-copy"></i></button>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="form-floating">
-                                        <textarea aria-label="Arabic Email Template" class="form-control clear-input-fields-class" id="ar-email-template-text"
-                                    placeholder="Arabic Email Template" style="height: 100px" readonly></textarea>
-                                    <label for="ar-email-template-text">Arabic Email Template</label>
+                                        <textarea aria-label="Arabic Email Subject"
+                                            class="form-control clear-input-fields-class" id="ar-email-subject-text"
+                                            placeholder="Arabic Email Subject" readonly></textarea>
+                                        <label for="ar-email-subject-text">Arabic Email Subject</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('ar-email-sub')"><i class="bi bi-copy"></i></button>
                                 </div>
-                                    <button type="button" class="btn btn-outline-primary copy-button" onclick="copyToClipboard('ar-email')"><i class="bi bi-copy"></i></button>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="English Email Template"
+                                            class="form-control clear-input-fields-class" id="en-email-template-text"
+                                            placeholder="English Email Template" style="height: 100px"
+                                            readonly></textarea>
+                                        <label for="en-email-template-text">English Email Template</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('en-email')"><i class="bi bi-copy"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="Arabic Email Template"
+                                            class="form-control clear-input-fields-class" id="ar-email-template-text"
+                                            placeholder="Arabic Email Template" style="height: 100px"
+                                            readonly></textarea>
+                                        <label for="ar-email-template-text">Arabic Email Template</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('ar-email')"><i class="bi bi-copy"></i></button>
                                 </div>
                             </div>
 
