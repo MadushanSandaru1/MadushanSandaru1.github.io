@@ -594,10 +594,10 @@
         }
 
         function clearFields() {
-            var clearInputFieldsElements = document.getElementsByClassName("clear-input-fields-class");
-            for (var i = 0; i < clearInputFieldsElements.length; i++) {
-                clearInputFieldsElements[i].value = '';
-            }
+            const clearInputFieldsElements = document.getElementsByClassName("clear-input-fields-class");
+            Array.from(clearInputFieldsElements).forEach(clearInputFieldsElement => {
+                clearInputFieldsElement.value = '';
+            });
 
             document.getElementById("override").checked = true;
 
