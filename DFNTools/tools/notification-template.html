@@ -524,7 +524,7 @@
 
         function showModal(queryType) {
             var query = '';
-            var eventId = document.getElementById("event-id").value;
+            var eventId = document.getElementById("event-id").value.trim();
             var sms = '\'' + document.getElementById("en-sms-template-text").value + '\'';
             var smsLang = '\'' + document.getElementById("ar-sms-template-text").value + '\'';
             var emailSub = '\'' + document.getElementById("en-email-subject-text").value + '\'';
