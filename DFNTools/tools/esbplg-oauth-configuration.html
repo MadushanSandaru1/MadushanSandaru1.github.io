@@ -115,12 +115,34 @@
                             </div>
 
                             <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <input aria-label="Host to be exposed"
+                                            class="form-control clear-input-fields-class" id="host-to-be-exposed"
+                                            type="text" placeholder="Host to be exposed (Ex: 0.0.0.0)">
+                                        <label for="host-to-be-exposed">Host to be exposed (Ex: 0.0.0.0)</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input aria-label="Port to be exposed"
+                                            class="form-control clear-input-fields-class" id="port-to-be-exposed"
+                                            type="text" placeholder="Port to be exposed (Ex: 6060)">
+                                        <label for="port-to-be-exposed">Port to be exposed (Ex: 6060)</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input aria-label="Base Endpoint to be exposed"
+                                            class="form-control clear-input-fields-class" id="base-endpoint-to-be-exposed"
+                                            type="text" placeholder="Base Endpoint to be exposed (Ex: cis)">
+                                        <label for="base-endpoint-to-be-exposed">Base Endpoint to be exposed (Ex: cis)</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <div class="form-floating">
                                     <input aria-label="Base URL to be exposed"
                                         class="form-control clear-input-fields-class" id="base-url-to-be-exposed"
-                                        type="text" placeholder="Base URL to be exposed (Ex: http://0.0.0.0:6060/cis)">
-                                    <label for="base-url-to-be-exposed">Base URL to be exposed (Ex:
-                                        http://0.0.0.0:6060/cis)</label>
+                                        type="text" placeholder="Base URL to be exposed" readonly>
+                                    <label for="base-url-to-be-exposed">Base URL to be exposed</label>
                                 </div>
                             </div>
 
@@ -282,6 +304,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-outline-primary btn-sm"
+                                            onclick="downloadJson()">Download JSON</button>
+                                        <button type="button" class="btn btn-outline-primary btn-sm"
                                             onclick="copyToClipboard()">Copy</button>
                                     </div>
                                 </div>
@@ -427,27 +451,91 @@
                 }
             });
         });
-
-        document.getElementById("base-url-to-be-exposed").addEventListener("input", function () {
-            var value = this.value.replace(/[^a-zA-Z0-9-._\/:?&=#]/g, '');
+        
+        document.getElementById("host-to-be-exposed").addEventListener("input", function () {
+            var value = this.value.replace(/[^0-9.]/g, '');
             this.value = value;
 
-            const fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
-            Array.from(fillInputSpansElements).forEach(fillInputSpansElement => {
-                if (value) {
-                    fillInputSpansElement.innerText = value + "/";
-                } else {
-                    fillInputSpansElement.innerText = '';
-                }
-            });
-        });
+            var host = value;
+            var port = document.getElementById("port-to-be-exposed").value;
+            var endpoint = document.getElementById("base-endpoint-to-be-exposed").value;
 
-        document.getElementById("base-url-to-be-exposed").addEventListener("focusout", function () {
+            if (host + port + endpoint === '') {
+                document.getElementById("base-url-to-be-exposed").value = '';
+            } else {
+                document.getElementById("base-url-to-be-exposed").value = "http://" + host + ":" + port + "/" + endpoint;
+            }
+
+            /* Manually trigger the 'input' event */
+            var event = new Event('input', { bubbles: true });
+            document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
+        });
+        
+        document.getElementById("port-to-be-exposed").addEventListener("input", function () {
+            var value = this.value.replace(/[^0-9]/g, '').slice(0, 5);
+            this.value = value;
+
+            var host = document.getElementById("host-to-be-exposed").value;
+            var port = value;
+            var endpoint = document.getElementById("base-endpoint-to-be-exposed").value;
+
+            if (host + port + endpoint === '') {
+                document.getElementById("base-url-to-be-exposed").value = '';
+            } else {
+                document.getElementById("base-url-to-be-exposed").value = "http://" + host + ":" + port + "/" + endpoint;
+            }
+
+            /* Manually trigger the 'input' event */
+            var event = new Event('input', { bubbles: true });
+            document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
+        });
+        
+        document.getElementById("base-endpoint-to-be-exposed").addEventListener("input", function () {
+            var value = this.value.replace(/[^a-zA-Z0-9\/_-]/g, '');
+            this.value = value;
+
+            var host = document.getElementById("host-to-be-exposed").value;
+            var port = document.getElementById("port-to-be-exposed").value;
+            var endpoint = value;
+
+            if (host + port + endpoint === '') {
+                document.getElementById("base-url-to-be-exposed").value = '';
+            } else {
+                document.getElementById("base-url-to-be-exposed").value = "http://" + host + ":" + port + "/" + endpoint;
+            }
+
+            /* Manually trigger the 'input' event */
+            var event = new Event('input', { bubbles: true });
+            document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
+        });
+        
+        document.getElementById("base-endpoint-to-be-exposed").addEventListener("focusout", function () {
             var value = this.value;
+            while (value.startsWith("/")) {
+                value = value.substring(1); /* Remove the first character if it's a '/' */
+            }
             while (value.endsWith("/")) {
                 value = value.slice(0, -1); /* Remove trailing slashes */
             }
             this.value = value;
+
+            var host = document.getElementById("host-to-be-exposed").value;
+            var port = document.getElementById("port-to-be-exposed").value;
+            var endpoint = value;
+
+            if (host + port + endpoint === '') {
+                document.getElementById("base-url-to-be-exposed").value = '';
+            } else {
+                document.getElementById("base-url-to-be-exposed").value = "http://" + host + ":" + port + "/" + endpoint;
+            }
+
+            /* Manually trigger the 'input' event */
+            var event = new Event('input', { bubbles: true });
+            document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
+        });
+
+        document.getElementById("base-url-to-be-exposed").addEventListener("input", function () {
+            var value = this.value;
 
             const fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
             Array.from(fillInputSpansElements).forEach(fillInputSpansElement => {
@@ -546,7 +634,9 @@
             var pluginNameText = document.getElementById("plugin-name-text").value.trim();
             
             var pluginBaseUrl = document.getElementById("plugin-base-url").value.trim();
-            var baseUrlToBeExposed = document.getElementById("base-url-to-be-exposed").value.trim();
+            var hostToBeExposed = document.getElementById("host-to-be-exposed").value.trim();
+            var portToBeExposed = parseInt(document.getElementById("port-to-be-exposed").value.trim());
+            var baseEndpointToBeExposed = document.getElementById("base-endpoint-to-be-exposed").value.trim();
 
             var services = document.getElementsByClassName("services");
             var servicesDataArray = [];
@@ -595,9 +685,9 @@
             }
 
             var restProducer = {
-                port: 6060,
-                host: '0.0.0.0',
-                endpoint: '/api/cis',
+                port: portToBeExposed,
+                host: hostToBeExposed,
+                endpoint: baseEndpointToBeExposed,
                 maxThreadCount: 250,
                 minThreadCount: 50,
                 requestBufferSize: 5000,
@@ -760,8 +850,30 @@
                 document.getElementById('formattedJson').textContent = 'Invalid JSON';
             }
 
-            $("#modal-title").text('Json Config');
+            $("#modal-title").text(pluginNameText);
             $(".modal").modal("show");
+        }
+
+        function downloadJson() {
+            var jsonString = document.getElementById("formattedJson").textContent;
+            var jsonFileName = document.getElementById("modal-title").textContent;
+
+            /* Create a blob for the JSON file */
+            const blob = new Blob([jsonString], { type: 'application/json' });
+
+            /* Create a link element to download the file */
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = jsonFileName;
+
+            /* Append link to the body (not visible to the user) */
+            document.body.appendChild(link);
+
+            /* Automatically click the link to trigger the download */
+            link.click();
+
+            /* Clean up by removing the link element */
+            document.body.removeChild(link);
         }
 
         function copyToClipboard() {
