@@ -124,132 +124,133 @@
                                 </div>
                             </div>
 
-                            <hr>
-
-                            <div class="form-group">
-                                <h6>Service No: 1<span class="text-primary clear-h6-spans-class"
-                                        id="service-name-topic-1"></span></h6>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="form-floating">
-                                    <input aria-label="Service Name" class="form-control clear-input-fields-class"
-                                        id="service-name-1" type="text"
-                                        placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
-                                        oninput="handleServiceNameInput(1)" onfocusout="handleServiceNameFocusOut(1)">
-                                    <label for="service-name-1">Service Name (Ex: CUSTOMER_CREATE,
-                                        BEN_ACC_DELETE)</label>
+                            <div id="1" class="services">
+                                <hr>
+                                <div class="form-group">
+                                    <h6>Service No: 1<span class="text-primary clear-h6-spans-class"
+                                            id="service-name-topic-1"></span></h6>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span
-                                        class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
+    
+                                <div class="form-group">
                                     <div class="form-floating">
-                                        <input aria-label="Service Endpoint"
-                                            class="form-control clear-input-fields-class" id="service-endpoint-1"
-                                            type="text"
-                                            placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)"
-                                            oninput="handleServiceEndpointInput(1)"
-                                            onfocusout="handleServiceEndpointFocusOut(1)">
-                                        <label for="service-endpoint-1">Service Endpoint (Ex: createCustomer,
-                                            deleteBenAccount)</label>
+                                        <input aria-label="Service Name" class="form-control clear-input-fields-class"
+                                            id="service-name-1" type="text"
+                                            placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
+                                            oninput="handleServiceNameInput(1)" onfocusout="handleServiceNameFocusOut(1)">
+                                        <label for="service-name-1">Service Name (Ex: CUSTOMER_CREATE,
+                                            BEN_ACC_DELETE)</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
+                                        <div class="form-floating">
+                                            <input aria-label="Service Endpoint"
+                                                class="form-control clear-input-fields-class" id="service-endpoint-1"
+                                                type="text"
+                                                placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)"
+                                                oninput="handleServiceEndpointInput(1)"
+                                                onfocusout="handleServiceEndpointFocusOut(1)">
+                                            <label for="service-endpoint-1">Service Endpoint (Ex: createCustomer,
+                                                deleteBenAccount)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="http-method-1" aria-label="HTTP Method">
+                                            <option value="GET">GET</option>
+                                            <option selected value="POST">POST</option>
+                                            <option value="PUT">PUT</option>
+                                            <option value="PATCH">PATCH</option>
+                                            <option value="DELETE">DELETE</option>
+                                            <option value="HEAD">HEAD</option>
+                                            <option value="OPTIONS">OPTIONS</option>
+                                            <option value="CONNECT">CONNECT</option>
+                                            <option value="TRACE">TRACE</option>
+                                        </select>
+                                        <label for="http-method-1">HTTP Method</label>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
+                                        <div class="form-floating">
+                                            <input aria-label="Endpoint to be exposed"
+                                                class="form-control clear-input-fields-class"
+                                                id="fill-service-endpoint-to-be-exposed-1" type="text"
+                                                placeholder="Endpoint to be exposed" readonly>
+                                            <label for="fill-service-endpoint-to-be-exposed-1">Endpoint to be
+                                                exposed</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="form-floating">
-                                    <select class="form-select" id="http-method-1" aria-label="HTTP Method">
-                                        <option value="GET">GET</option>
-                                        <option selected value="POST">POST</option>
-                                        <option value="PUT">PUT</option>
-                                        <option value="PATCH">PATCH</option>
-                                        <option value="DELETE">DELETE</option>
-                                        <option value="HEAD">HEAD</option>
-                                        <option value="OPTIONS">OPTIONS</option>
-                                        <option value="CONNECT">CONNECT</option>
-                                        <option value="TRACE">TRACE</option>
-                                    </select>
-                                    <label for="http-method-1">HTTP Method</label>
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span
-                                        class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
+                            <div id="2" class="services">
+                                <div class="form-group">
+                                    <h6>Service No: 2<span class="text-primary clear-h6-spans-class"
+                                            id="service-name-topic-2"></span></h6>
+                                </div>
+    
+                                <div class="form-group">
                                     <div class="form-floating">
-                                        <input aria-label="Endpoint to be exposed"
-                                            class="form-control clear-input-fields-class"
-                                            id="fill-service-endpoint-to-be-exposed-1" type="text"
-                                            placeholder="Endpoint to be exposed" readonly>
-                                        <label for="fill-service-endpoint-to-be-exposed-1">Endpoint to be
-                                            exposed</label>
+                                        <input aria-label="Service Name" class="form-control clear-input-fields-class"
+                                            id="service-name-2" type="text"
+                                            placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
+                                            oninput="handleServiceNameInput(2)" onfocusout="handleServiceNameFocusOut(2)">
+                                        <label for="service-name-2">Service Name (Ex: CUSTOMER_CREATE,
+                                            BEN_ACC_DELETE)</label>
                                     </div>
                                 </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="form-group">
-                                <h6>Service No: 2<span class="text-primary clear-h6-spans-class"
-                                        id="service-name-topic-2"></span></h6>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="form-floating">
-                                    <input aria-label="Service Name" class="form-control clear-input-fields-class"
-                                        id="service-name-2" type="text"
-                                        placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
-                                        oninput="handleServiceNameInput(2)" onfocusout="handleServiceNameFocusOut(2)">
-                                    <label for="service-name-2">Service Name (Ex: CUSTOMER_CREATE,
-                                        BEN_ACC_DELETE)</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span
-                                        class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
-                                    <div class="form-floating">
-                                        <input aria-label="Service Endpoint"
-                                            class="form-control clear-input-fields-class" id="service-endpoint-2"
-                                            type="text"
-                                            placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)"
-                                            oninput="handleServiceEndpointInput(2)"
-                                            onfocusout="handleServiceEndpointFocusOut(2)">
-                                        <label for="service-endpoint-2">Service Endpoint (Ex: createCustomer,
-                                            deleteBenAccount)</label>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
+                                        <div class="form-floating">
+                                            <input aria-label="Service Endpoint"
+                                                class="form-control clear-input-fields-class" id="service-endpoint-2"
+                                                type="text"
+                                                placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)"
+                                                oninput="handleServiceEndpointInput(2)"
+                                                onfocusout="handleServiceEndpointFocusOut(2)">
+                                            <label for="service-endpoint-2">Service Endpoint (Ex: createCustomer,
+                                                deleteBenAccount)</label>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="form-floating">
-                                    <select class="form-select" id="http-method-2" aria-label="HTTP Method">
-                                        <option value="GET">GET</option>
-                                        <option selected value="POST">POST</option>
-                                        <option value="PUT">PUT</option>
-                                        <option value="PATCH">PATCH</option>
-                                        <option value="DELETE">DELETE</option>
-                                        <option value="HEAD">HEAD</option>
-                                        <option value="OPTIONS">OPTIONS</option>
-                                        <option value="CONNECT">CONNECT</option>
-                                        <option value="TRACE">TRACE</option>
-                                    </select>
-                                    <label for="http-method-2">HTTP Method</label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span
-                                        class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
+                                <div class="form-group">
                                     <div class="form-floating">
-                                        <input aria-label="Endpoint to be exposed"
-                                            class="form-control clear-input-fields-class"
-                                            id="fill-service-endpoint-to-be-exposed-2" type="text"
-                                            placeholder="Endpoint to be exposed" readonly>
-                                        <label for="fill-service-endpoint-to-be-exposed-2">Endpoint to be
-                                            exposed</label>
+                                        <select class="form-select" id="http-method-2" aria-label="HTTP Method">
+                                            <option value="GET">GET</option>
+                                            <option selected value="POST">POST</option>
+                                            <option value="PUT">PUT</option>
+                                            <option value="PATCH">PATCH</option>
+                                            <option value="DELETE">DELETE</option>
+                                            <option value="HEAD">HEAD</option>
+                                            <option value="OPTIONS">OPTIONS</option>
+                                            <option value="CONNECT">CONNECT</option>
+                                            <option value="TRACE">TRACE</option>
+                                        </select>
+                                        <label for="http-method-2">HTTP Method</label>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
+                                        <div class="form-floating">
+                                            <input aria-label="Endpoint to be exposed"
+                                                class="form-control clear-input-fields-class"
+                                                id="fill-service-endpoint-to-be-exposed-2" type="text"
+                                                placeholder="Endpoint to be exposed" readonly>
+                                            <label for="fill-service-endpoint-to-be-exposed-2">Endpoint to be
+                                                exposed</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -529,11 +530,221 @@
             document.getElementById("fill-service-endpoint-to-be-exposed-" + id).value = value;
         }
 
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random() * 16 | 0,
+                v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
         function showModal() {
-            const jsonInput = "{\"src\": \"Images/Sun.png\",\"name\": \"sun1\",\"hOffset\": 250,\"vOffset\": 250,\"alignment\": \"center\"}";
+            /* collect data */
+            var countryCode = document.getElementById("country-code").value.trim();
+            var brokerCode = document.getElementById("broker-code").value.trim();
+            var integrationName = document.getElementById("integration-name").value.trim();
+            var pluginNameText = document.getElementById("plugin-name-text").value.trim();
+            
+            var pluginBaseUrl = document.getElementById("plugin-base-url").value.trim();
+            var baseUrlToBeExposed = document.getElementById("base-url-to-be-exposed").value.trim();
+
+            var services = document.getElementsByClassName("services");
+            var servicesDataArray = [];
+            Array.from(services).forEach(service => {
+                var serviceObject = {
+                    name: document.getElementById("service-name-"+service.id).value.trim(),
+                    endpoint: document.getElementById("service-endpoint-"+service.id).value.trim(),
+                    method: document.getElementById("http-method-"+service.id).value.trim(),
+                    exposed: document.getElementById("fill-service-endpoint-to-be-exposed-"+service.id).value.trim(),
+                };
+    
+                /* Push the object into the array */
+                servicesDataArray.push(serviceObject);
+            });
+
+            /* create json object */
+            var restProducers = [];
+            var plugins = [];
+            var restConsumers = [];
+            var wsProducers = [];
+            var wsConsumers = [];
+            var jmsProducers = [];
+            var jmsConsumers = [];
+
+            /* create restProducers */
+            var methodMappings = [];
+            var authMethodMapping = {
+                endpoint: '/authToken',
+                requestType: 'POST',
+                incomingRoute: integrationName+'_AUTH_TOKEN_IN_OUT_ROUTE',
+                outgoingRoute: integrationName+'_AUTH_TOKEN_RATE_LIMITER_IN_ROUTE'
+            };
+            methodMappings.push(authMethodMapping);
+
+            if (servicesDataArray.length > 0) {
+                Array.from(servicesDataArray).forEach(servicesData => {
+                    var methodMappingObject = {
+                        endpoint: servicesData.exposed,
+                        requestType: servicesData.method,
+                        incomingRoute: integrationName+'_'+servicesData.name+'_IN_OUT_ROUTE',
+                        outgoingRoute: integrationName+'_'+servicesData.name+'_RATE_LIMITER_IN_ROUTE'
+                    };
+                    /* Push the object into the array */
+                    methodMappings.push(methodMappingObject);
+                });
+            }
+
+            var restProducer = {
+                port: 6060,
+                host: '0.0.0.0',
+                endpoint: '/api/cis',
+                maxThreadCount: 250,
+                minThreadCount: 50,
+                requestBufferSize: 5000,
+                responseBufferSize: 5000,
+                maxIdleTime: 30000,
+                requestHeaderSize: 1024,
+                proxyPort: -1,
+                restBindingMode: 'auto',
+                matchOnURIPrefix: true,
+                useXForwardForHeader: false,
+                disableStackTrace: true,
+                methodMappings: methodMappings,
+                pluginID: integrationName+'_INTEGRATION_API_GATEWAY',
+                serialVersionID: integrationName+'_API_GATEWAY_PRODUCER_V1',
+                errorHandler: {
+                    deadLetterChannel: '\''+generateUUID()+'\'',
+                    reDeliveryDelay: 1000,
+                    maxAttempts: 1
+                }
+            };
+
+            restProducers.push(restProducer);
+            /* create restProducers END */
+
+            /* create plugins */
+            var authPlugin = {
+                name: 'MESSAGE_RATE_LIMITER',
+                pluginID: integrationName+'_AUTH_TOKEN_RATE_LIMITER',
+                deploymentUnit: pluginNameText,
+                groupID: pluginNameText,
+                incoming: integrationName+'_AUTH_TOKEN_RATE_LIMITER_IN_ROUTE',
+                outgoing: integrationName+'_AUTH_TOKEN_RATE_LIMITER_OUT_ROUTE',
+                params: {
+                    'msg.count.period': '1000',
+                    'msg.period.size': '60000000',
+                    'reject.limit.enable': 'true',
+                    'msg.group.expression': '((org.eclipse.jetty.server.Request)headers.get(\'CamelHttpServletRequest\')).getRemoteAddr()',
+                    'msg.reject.endpoint': integrationName+'_AUTH_TOKEN_IN_OUT_ROUTE'
+                }
+            };
+
+            plugins.push(authPlugin);
+
+            if (servicesDataArray.length > 0) {
+                Array.from(servicesDataArray).forEach(servicesData => {
+                    var pluginRateLimiterObject = {
+                        name: 'MESSAGE_RATE_LIMITER',
+                        pluginID: integrationName+'_'+servicesData.name+'_RATE_LIMITER',
+                        deploymentUnit: pluginNameText,
+                        groupID: pluginNameText,
+                        incoming: integrationName+'_'+servicesData.name+'_RATE_LIMITER_IN_ROUTE',
+                        outgoing: integrationName+'_'+servicesData.name+'_RATE_LIMITER_OUT_ROUTE',
+                        params: {
+                            'msg.count.period': '1000',
+                            'msg.period.size': '60000000',
+                            'reject.limit.enable': 'true',
+                            'msg.group.expression': '((org.eclipse.jetty.server.Request)headers.get(\'CamelHttpServletRequest\')).getRemoteAddr()',
+                            'msg.reject.endpoint': integrationName+'_'+servicesData.name+'_IN_OUT_ROUTE'
+                        }
+                    };
+                    var pluginBasicAuthObject = {
+                        name: 'BASIC_AUTH',
+                        pluginID: integrationName+'_'+servicesData.name+'_AUTH_VALIDATOR',
+                        deploymentUnit: pluginNameText,
+                        groupID: pluginNameText,
+                        incoming: integrationName+'_'+servicesData.name+'_LIMITER_VALIDATOR_ROUTE',
+                        outgoing: integrationName+'_'+servicesData.name+'_VALIDATOR_OUT_ROUTE',
+                        params: {
+                            'msg.validate.error.log.enable': 'true',
+                            'auth.endpoint.url': 'http://0.0.0.0:8098/auth/token',
+                            'msg.validate.scope': 'hasAll(openid)'
+                        }
+                    };
+                    /* Push the object into the array */
+                    plugins.push(pluginRateLimiterObject);
+                    plugins.push(pluginBasicAuthObject);
+                });
+            }
+            /* create plugins END */
+            
+            /* create restProducers */
+            var methodMappings = [];
+            var authMethodMapping = {
+                endpoint: '/authToken',
+                requestType: 'POST',
+                incomingRoute: integrationName+'_AUTH_TOKEN_IN_OUT_ROUTE',
+                outgoingRoute: integrationName+'_AUTH_TOKEN_RATE_LIMITER_IN_ROUTE'
+            };
+            methodMappings.push(authMethodMapping);
+
+            if (servicesDataArray.length > 0) {
+                Array.from(servicesDataArray).forEach(servicesData => {
+                    var methodMappingObject = {
+                        endpoint: servicesData.exposed,
+                        requestType: servicesData.method,
+                        incomingRoute: integrationName+'_'+servicesData.name+'_IN_OUT_ROUTE',
+                        outgoingRoute: integrationName+'_'+servicesData.name+'_RATE_LIMITER_IN_ROUTE'
+                    };
+                    /* Push the object into the array */
+                    methodMappings.push(methodMappingObject);
+                });
+            }
+
+            var restProducer = {
+                port: 6060,
+                host: '0.0.0.0',
+                endpoint: '/api/cis',
+                maxThreadCount: 250,
+                minThreadCount: 50,
+                requestBufferSize: 5000,
+                responseBufferSize: 5000,
+                maxIdleTime: 30000,
+                requestHeaderSize: 1024,
+                proxyPort: -1,
+                restBindingMode: 'auto',
+                matchOnURIPrefix: true,
+                useXForwardForHeader: false,
+                disableStackTrace: true,
+                methodMappings: methodMappings,
+                pluginID: integrationName+'_INTEGRATION_API_GATEWAY',
+                serialVersionID: integrationName+'_API_GATEWAY_PRODUCER_V1',
+                errorHandler: {
+                    deadLetterChannel: '\''+generateUUID()+'\'',
+                    reDeliveryDelay: 1000,
+                    maxAttempts: 1
+                }
+            };
+
+            restProducers.push(restProducer);
+            /* create restProducers END */
+        
+            var config = {
+                restProducers: restProducers,
+                plugins: plugins,
+                restConsumers: restConsumers,
+                wsProducers: wsProducers,
+                wsConsumers: wsConsumers,
+                jmsProducers: jmsProducers,
+                jmsConsumers: jmsConsumers,
+                name: pluginNameText,
+                groupID: pluginNameText,
+                deploymentUnit: pluginNameText
+            };
+            /* create json object END */
+
             try {
-                const parsedJson = JSON.parse(jsonInput);
-                const formattedJson = JSON.stringify(parsedJson, null, 2);
+                const formattedJson = JSON.stringify(config, null, 2);
                 document.getElementById('formattedJson').textContent = formattedJson;
             } catch (e) {
                 document.getElementById('formattedJson').textContent = 'Invalid JSON';
