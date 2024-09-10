@@ -443,6 +443,16 @@
 
             /* Append the new service to the services-list */
             servicesList.insertAdjacentHTML('beforeend', servicesTemplate);
+
+            if (nextServiceId != 1) {
+                /* Manually trigger the 'input' event */
+                var event = new Event('input', { bubbles: true });
+                document.getElementById("plugin-base-url").dispatchEvent(event);
+
+                /* Manually trigger the 'input' event */
+                var event = new Event('input', { bubbles: true });
+                document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
+            }
         }
 
         function removeService(id) {
