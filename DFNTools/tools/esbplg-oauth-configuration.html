@@ -231,6 +231,8 @@
                                     onclick="generateConfig()">Generate Config</button>
                                 <button type="button" class="btn btn-secondary px-5 ml-3"
                                     onclick="clearFields()">Clear</button>
+                                <button type="button" class="btn btn-dark px-5 ml-3"
+                                    onclick="resetFields()">Reset</button>
                             </div>
 
                         </div>
@@ -1145,6 +1147,7 @@
                         .text("Please fill out all required fields!");
 
                 $("#notification-toast-header")
+                    .toggleClass("text-bg-dark", false)
                     .toggleClass("text-bg-primary", false)
                     .toggleClass("text-bg-secondary", false)
                     .toggleClass("text-bg-danger", true);
@@ -1167,6 +1170,7 @@
 
                     $("#notification-toast-header")
                         .toggleClass("text-bg-danger", false)
+                        .toggleClass("text-bg-dark", false)
                         .toggleClass("text-bg-secondary", false)
                         .toggleClass("text-bg-primary", true);
 
@@ -1178,6 +1182,7 @@
                         .text("Failed to copy!");
 
                     $("#notification-toast-header")
+                        .toggleClass("text-bg-dark", false)
                         .toggleClass("text-bg-primary", false)
                         .toggleClass("text-bg-secondary", false)
                         .toggleClass("text-bg-danger", true);
@@ -1213,8 +1218,6 @@
             /* auth service component reset */
             document.getElementById("service-endpoint-auth").value = 'authToken';
             document.getElementById("fill-service-endpoint-to-be-exposed-auth").value = 'authToken';
-            document.getElementById("auth-through-plugin").checked = false;
-            document.getElementById("service-auth").style.display = 'none';
 
             /* Select all elements that have either 'is-invalid' or 'is-valid' class */
             var elements = document.querySelectorAll('.is-invalid, .is-valid');
@@ -1229,8 +1232,31 @@
 
             $("#notification-toast-header")
                 .toggleClass("text-bg-danger", false)
+                .toggleClass("text-bg-dark", false)
                 .toggleClass("text-bg-primary", false)
                 .toggleClass("text-bg-secondary", true);
+
+            $("#notification-toast")
+                .toast("show");
+        }
+
+        function resetFields() {
+            clearFields();
+
+            document.getElementById("auth-through-plugin").checked = false;
+            document.getElementById("service-auth").style.display = 'none';
+            document.getElementById('services-list').innerHTML = '';
+
+            addService();
+
+            $("#notification-toast-body")
+                .text("Reset!");
+
+            $("#notification-toast-header")
+                .toggleClass("text-bg-danger", false)
+                .toggleClass("text-bg-primary", false)
+                .toggleClass("text-bg-secondary", false)
+                .toggleClass("text-bg-dark", true);
 
             $("#notification-toast")
                 .toast("show");
