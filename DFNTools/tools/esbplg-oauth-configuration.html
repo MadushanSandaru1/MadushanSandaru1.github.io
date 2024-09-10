@@ -70,7 +70,7 @@
                                 <div class="form-floating">
                                     <input aria-label="Country Code" class="form-control clear-input-fields-class"
                                         id="country-code" type="text" placeholder="Country Code (Ex: KSA)">
-                                    <label for="country-code">Country Code (Ex: KSA)</label>
+                                    <label for="country-code">Country Code (Ex: KSA) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
                                     <div class="invalid-feedback">Country Code Required.</div>
                                 </div>
                             </div>
@@ -78,7 +78,8 @@
                                 <div class="form-floating">
                                     <input aria-label="Broker Code" class="form-control clear-input-fields-class"
                                         id="broker-code" type="text" placeholder="Broker Code (Ex: JADWA, HSBC)">
-                                    <label for="broker-code">Broker Code (Ex: JADWA, HSBC)</label>
+                                    <label for="broker-code">Broker Code (Ex: JADWA, HSBC) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                    <div class="invalid-feedback">Broker Code Required.</div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -86,7 +87,8 @@
                                     <input aria-label="Integration Name" class="form-control clear-input-fields-class"
                                         id="integration-name" type="text" placeholder="Integration Name (Ex: CRMS, CIS)"
                                         onfocusout="handleIntegrationNameFocusOut()">
-                                    <label for="integration-name">Integration Name (Ex: CRMS, CIS)</label>
+                                    <label for="integration-name">Integration Name (Ex: CRMS, CIS) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                    <div class="invalid-feedback">Integration Name Required.</div>
                                 </div>
                             </div>
 
@@ -110,30 +112,33 @@
                                     <input aria-label="Plugin Base URL" class="form-control clear-input-fields-class"
                                         id="plugin-base-url" type="text"
                                         placeholder="Plugin Base URL (Ex: http://0.0.0.0:6060/api/jadwa/cis)">
-                                    <label for="plugin-base-url">Plugin Base URL (Ex:
-                                        http://0.0.0.0:6060/api/jadwa/cis)</label>
+                                    <label for="plugin-base-url">Plugin Base URL (Ex: http://0.0.0.0:6060/api/jadwa/cis) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                    <div class="invalid-feedback">Plugin Base URL Required.</div>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="form-floating">
-                                        <input aria-label="Host to be exposed"
+                                        <input aria-label="Host To Be Exposed"
                                             class="form-control clear-input-fields-class" id="host-to-be-exposed"
-                                            type="text" placeholder="Host to be exposed (Ex: 0.0.0.0)">
-                                        <label for="host-to-be-exposed">Host to be exposed (Ex: 0.0.0.0)</label>
+                                            type="text" placeholder="Host To Be Exposed (Ex: 0.0.0.0)">
+                                        <label for="host-to-be-exposed">Host To Be Exposed (Ex: 0.0.0.0) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                        <div class="invalid-feedback">Host To Be Exposed Required.</div>
                                     </div>
                                     <div class="form-floating">
-                                        <input aria-label="Port to be exposed"
+                                        <input aria-label="Port To Be Exposed"
                                             class="form-control clear-input-fields-class" id="port-to-be-exposed"
-                                            type="text" placeholder="Port to be exposed (Ex: 6060)">
-                                        <label for="port-to-be-exposed">Port to be exposed (Ex: 6060)</label>
+                                            type="text" placeholder="Port To Be Exposed (Ex: 6060)">
+                                        <label for="port-to-be-exposed">Port To Be Exposed (Ex: 6060) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                        <div class="invalid-feedback">Port To Be Exposed Required.</div>
                                     </div>
                                     <div class="form-floating">
-                                        <input aria-label="Base Endpoint to be exposed"
+                                        <input aria-label="Base Endpoint To Be Exposed"
                                             class="form-control clear-input-fields-class" id="base-endpoint-to-be-exposed"
-                                            type="text" placeholder="Base Endpoint to be exposed (Ex: cis)">
-                                        <label for="base-endpoint-to-be-exposed">Base Endpoint to be exposed (Ex: cis)</label>
+                                            type="text" placeholder="Base Endpoint To Be Exposed (Ex: cis)">
+                                        <label for="base-endpoint-to-be-exposed">Base Endpoint To Be Exposed (Ex: cis) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                        <div class="invalid-feedback">Base Endpoint To Be Exposed Required.</div>
                                     </div>
                                 </div>
                             </div>
@@ -156,13 +161,12 @@
                                 <div id="service-auth" style="display: none;">
                                     <hr>
                                     <div class="form-group">
-                                        <h6>Service: <span class="text-primary clear-h6-spans-class"
-                                                id="service-name-topic-auth">| AUTH TOKEN</span></h6>
+                                        <h6>Service: <span class="text-primary" id="service-name-topic-auth">| AUTH TOKEN</span></h6>
                                     </div>
         
                                     <div class="form-group">
                                         <div class="form-floating">
-                                            <input aria-label="Service Name" class="form-control clear-input-fields-class"
+                                            <input aria-label="Service Name" class="form-control"
                                                 id="service-name-auth" type="text"
                                                 placeholder="Service Name (Ex: AUTH_TOKEN)" value="AUTH_TOKEN"
                                                 oninput="handleServiceNameInput('auth')" onfocusout="handleServiceNameFocusOut('auth')" disabled readonly>
@@ -180,13 +184,14 @@
                                                     placeholder="Service Endpoint (Ex: authToken)" value="authToken"
                                                     oninput="handleServiceEndpointInput('auth')"
                                                     onfocusout="handleServiceEndpointFocusOut('auth')">
-                                                <label for="service-endpoint-auth">Service Endpoint (Ex: authToken)</label>
+                                                <label for="service-endpoint-auth">Service Endpoint (Ex: authToken) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                                <div class="invalid-feedback">Service Endpoint Required.</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="form-floating">
-                                            <select class="form-select" id="http-method-auth" aria-label="HTTP Method" disabled aria-readonly="true">
+                                            <select class="form-select" id="http-method-auth" aria-label="HTTP Method">
                                                 <option value="GET">GET</option>
                                                 <option selected value="POST">POST</option>
                                                 <option value="PUT">PUT</option>
@@ -197,7 +202,7 @@
                                                 <option value="CONNECT">CONNECT</option>
                                                 <option value="TRACE">TRACE</option>
                                             </select>
-                                            <label for="http-method-auth">HTTP Method</label>
+                                            <label for="http-method-auth">HTTP Method  <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
                                         </div>
                                     </div>
         
@@ -206,12 +211,11 @@
                                             <span
                                                 class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
                                             <div class="form-floating">
-                                                <input aria-label="Endpoint to be exposed"
+                                                <input aria-label="Endpoint To Be Exposed"
                                                     class="form-control clear-input-fields-class"
                                                     id="fill-service-endpoint-to-be-exposed-auth" type="text"
-                                                    placeholder="Endpoint to be exposed" value="authToken" disabled readonly>
-                                                <label for="fill-service-endpoint-to-be-exposed-auth">Endpoint to be
-                                                    exposed</label>
+                                                    placeholder="Endpoint To Be Exposed" value="authToken" disabled readonly>
+                                                <label for="fill-service-endpoint-to-be-exposed-auth">Endpoint To Be Exposed</label>
                                             </div>
                                         </div>
                                     </div>
@@ -231,7 +235,8 @@
                                                 placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
                                                 oninput="handleServiceNameInput(1)" onfocusout="handleServiceNameFocusOut(1)">
                                             <label for="service-name-1">Service Name (Ex: CUSTOMER_CREATE,
-                                                BEN_ACC_DELETE)</label>
+                                                BEN_ACC_DELETE) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                            <div class="invalid-feedback">Service Name Required.</div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -246,7 +251,8 @@
                                                     oninput="handleServiceEndpointInput(1)"
                                                     onfocusout="handleServiceEndpointFocusOut(1)">
                                                 <label for="service-endpoint-1">Service Endpoint (Ex: createCustomer,
-                                                    deleteBenAccount)</label>
+                                                    deleteBenAccount) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                                <div class="invalid-feedback">Service Endpoint Required.</div>
                                             </div>
                                         </div>
                                     </div>
@@ -263,7 +269,7 @@
                                                 <option value="CONNECT">CONNECT</option>
                                                 <option value="TRACE">TRACE</option>
                                             </select>
-                                            <label for="http-method-1">HTTP Method</label>
+                                            <label for="http-method-1">HTTP Method <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
                                         </div>
                                     </div>
         
@@ -272,12 +278,11 @@
                                             <span
                                                 class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
                                             <div class="form-floating">
-                                                <input aria-label="Endpoint to be exposed"
+                                                <input aria-label="Endpoint To Be Exposed"
                                                     class="form-control clear-input-fields-class"
                                                     id="fill-service-endpoint-to-be-exposed-1" type="text"
-                                                    placeholder="Endpoint to be exposed" disabled readonly>
-                                                <label for="fill-service-endpoint-to-be-exposed-1">Endpoint to be
-                                                    exposed</label>
+                                                    placeholder="Endpoint To Be Exposed" disabled readonly>
+                                                <label for="fill-service-endpoint-to-be-exposed-1">Endpoint To Be Exposed</label>
                                             </div>
                                         </div>
                                     </div>
@@ -297,7 +302,8 @@
                                                 placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
                                                 oninput="handleServiceNameInput(2)" onfocusout="handleServiceNameFocusOut(2)">
                                             <label for="service-name-2">Service Name (Ex: CUSTOMER_CREATE,
-                                                BEN_ACC_DELETE)</label>
+                                                BEN_ACC_DELETE) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                            <div class="invalid-feedback">Service Name Required.</div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -312,7 +318,8 @@
                                                     oninput="handleServiceEndpointInput(2)"
                                                     onfocusout="handleServiceEndpointFocusOut(2)">
                                                 <label for="service-endpoint-2">Service Endpoint (Ex: createCustomer,
-                                                    deleteBenAccount)</label>
+                                                    deleteBenAccount) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                                <div class="invalid-feedback">Service Endpoint Required.</div>
                                             </div>
                                         </div>
                                     </div>
@@ -329,7 +336,7 @@
                                                 <option value="CONNECT">CONNECT</option>
                                                 <option value="TRACE">TRACE</option>
                                             </select>
-                                            <label for="http-method-2">HTTP Method</label>
+                                            <label for="http-method-2">HTTP Method <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
                                         </div>
                                     </div>
         
@@ -338,12 +345,11 @@
                                             <span
                                                 class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
                                             <div class="form-floating">
-                                                <input aria-label="Endpoint to be exposed"
+                                                <input aria-label="Endpoint To Be Exposed"
                                                     class="form-control clear-input-fields-class"
                                                     id="fill-service-endpoint-to-be-exposed-2" type="text"
-                                                    placeholder="Endpoint to be exposed" disabled readonly>
-                                                <label for="fill-service-endpoint-to-be-exposed-2">Endpoint to be
-                                                    exposed</label>
+                                                    placeholder="Endpoint To Be Exposed" disabled readonly>
+                                                <label for="fill-service-endpoint-to-be-exposed-2">Endpoint To Be Exposed</label>
                                             </div>
                                         </div>
                                     </div>
@@ -351,8 +357,8 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="button" class="btn btn-primary mr-3" data-bs-toggle="modal"
-                                    data-bs-target="#tool-modal" onclick="showModal()">Generate Config</button>
+                                <button type="button" class="btn btn-primary mr-3"
+                                    onclick="generateConfig()">Generate Config</button>
                                 <button type="button" class="btn btn-secondary px-5 ml-3"
                                     onclick="clearFields()">Clear</button>
                             </div>
@@ -456,10 +462,30 @@
             var brokerCode = document.getElementById("broker-code").value.toUpperCase();
             var integrationName = document.getElementById("integration-name").value.toUpperCase();
 
+            if (countryCode === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
             if (countryCode + brokerCode + integrationName === '') {
                 document.getElementById("plugin-name-text").value = '';
             } else {
                 document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+            }
+        });
+
+        document.getElementById("country-code").addEventListener("focusout", function () {
+            var value = this.value;
+
+            if (value === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
             }
         });
 
@@ -471,10 +497,30 @@
             var brokerCode = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
             var integrationName = document.getElementById("integration-name").value.toUpperCase();
 
+            if (brokerCode === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
             if (countryCode + brokerCode + integrationName === '') {
                 document.getElementById("plugin-name-text").value = '';
             } else {
                 document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+            }
+        });
+
+        document.getElementById("broker-code").addEventListener("focusout", function () {
+            var value = this.value;
+
+            if (value === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
             }
         });
 
@@ -486,6 +532,14 @@
             var brokerCode = document.getElementById("broker-code").value.toUpperCase();
             var integrationName = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
             document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+
+            if (integrationName === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
 
             if (countryCode + brokerCode + integrationName === '') {
                 document.getElementById("plugin-name-text").value = '';
@@ -502,8 +556,12 @@
             Array.from(fillInputSpansElements).forEach(fillInputSpansElement => {
                 if (value) {
                     fillInputSpansElement.innerText = value + "/";
+                    this.classList.add('is-valid');
+                    this.classList.remove('is-invalid');
                 } else {
                     fillInputSpansElement.innerText = '';
+                    this.classList.add('is-invalid');
+                    this.classList.remove('is-valid');
                 }
             });
         });
@@ -519,8 +577,12 @@
             Array.from(fillInputSpansElements).forEach(fillInputSpansElement => {
                 if (value) {
                     fillInputSpansElement.innerText = value + "/";
+                    this.classList.add('is-valid');
+                    this.classList.remove('is-invalid');
                 } else {
                     fillInputSpansElement.innerText = '';
+                    this.classList.add('is-invalid');
+                    this.classList.remove('is-valid');
                 }
             });
         });
@@ -533,6 +595,14 @@
             var port = document.getElementById("port-to-be-exposed").value;
             var endpoint = document.getElementById("base-endpoint-to-be-exposed").value;
 
+            if (host === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
             if (host + port + endpoint === '') {
                 document.getElementById("base-url-to-be-exposed").value = '';
             } else {
@@ -542,6 +612,18 @@
             /* Manually trigger the 'input' event */
             var event = new Event('input', { bubbles: true });
             document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
+        });
+
+        document.getElementById("host-to-be-exposed").addEventListener("focusout", function () {
+            var value = this.value;
+
+            if (value === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
         });
         
         document.getElementById("port-to-be-exposed").addEventListener("input", function () {
@@ -552,6 +634,14 @@
             var port = value;
             var endpoint = document.getElementById("base-endpoint-to-be-exposed").value;
 
+            if (port === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
             if (host + port + endpoint === '') {
                 document.getElementById("base-url-to-be-exposed").value = '';
             } else {
@@ -563,6 +653,18 @@
             document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
         });
         
+        document.getElementById("port-to-be-exposed").addEventListener("focusout", function () {
+            var value = this.value;
+
+            if (value === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+        });
+        
         document.getElementById("base-endpoint-to-be-exposed").addEventListener("input", function () {
             var value = this.value.replace(/[^a-zA-Z0-9\/_-]/g, '');
             this.value = value;
@@ -570,6 +672,14 @@
             var host = document.getElementById("host-to-be-exposed").value;
             var port = document.getElementById("port-to-be-exposed").value;
             var endpoint = value;
+
+            if (endpoint === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
 
             if (host + port + endpoint === '') {
                 document.getElementById("base-url-to-be-exposed").value = '';
@@ -596,6 +706,14 @@
             var port = document.getElementById("port-to-be-exposed").value;
             var endpoint = value;
 
+            if (endpoint === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
             if (host + port + endpoint === '') {
                 document.getElementById("base-url-to-be-exposed").value = '';
             } else {
@@ -621,12 +739,16 @@
         });
 
         document.getElementById("auth-through-plugin").addEventListener("change", function () {
-            var div = document.getElementById('service-auth');
+            var div = document.getElementById("service-auth");
 
             if (this.checked) {
                 div.style.display = 'block';
             } else {
                 div.style.display = 'none';
+                document.getElementById("service-endpoint-auth").value = 'authToken';
+                document.getElementById("service-endpoint-auth").classList.remove('is-valid');
+                document.getElementById("service-endpoint-auth").classList.remove('is-invalid');
+                document.getElementById("fill-service-endpoint-to-be-exposed-auth").value = 'authToken';
             }
         });
 
@@ -644,6 +766,14 @@
             var brokerCode = document.getElementById("broker-code").value.toUpperCase();
             var integrationName = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
 
+            if (integrationName === '') {
+                element.classList.add('is-invalid');
+                element.classList.remove('is-valid');
+            } else {
+                element.classList.add('is-valid');
+                element.classList.remove('is-invalid');
+            }
+
             if (countryCode + brokerCode + integrationName === '') {
                 document.getElementById("plugin-name-text").value = '';
             } else {
@@ -658,8 +788,12 @@
 
             if (value) {
                 document.getElementById("service-name-topic-" + id).innerText = " | " + value.replace(/_/g, ' ');
+                element.classList.add('is-valid');
+                element.classList.remove('is-invalid');
             } else {
                 document.getElementById("service-name-topic-" + id).innerText = '';
+                element.classList.add('is-invalid');
+                element.classList.remove('is-valid');
             }
         }
 
@@ -676,8 +810,12 @@
 
             if (value) {
                 document.getElementById("service-name-topic-" + id).innerText = " | " + value.replace(/_/g, ' ');
+                element.classList.add('is-valid');
+                element.classList.remove('is-invalid');
             } else {
                 document.getElementById("service-name-topic-" + id).innerText = '';
+                element.classList.add('is-invalid');
+                element.classList.remove('is-valid');
             }
         }
 
@@ -686,6 +824,14 @@
             var value = element.value.replace(/[^a-zA-Z0-9\/_-]/g, '');
             element.value = value;
             document.getElementById("fill-service-endpoint-to-be-exposed-" + id).value = value;
+
+            if (value === '') {
+                element.classList.add('is-invalid');
+                element.classList.remove('is-valid');
+            } else {
+                element.classList.add('is-valid');
+                element.classList.remove('is-invalid');
+            }
         }
 
         function handleServiceEndpointFocusOut(id) {
@@ -699,6 +845,14 @@
             }
             element.value = value;
             document.getElementById("fill-service-endpoint-to-be-exposed-" + id).value = value;
+
+            if (value === '') {
+                element.classList.add('is-invalid');
+                element.classList.remove('is-valid');
+            } else {
+                element.classList.add('is-valid');
+                element.classList.remove('is-invalid');
+            }
         }
 
         function generateUUID() {
@@ -709,7 +863,47 @@
             });
         }
 
-        function showModal() {
+        function validateFields() {
+            var countryCode = document.getElementById("country-code");
+            countryCode.value.trim() ? countryCode.classList.remove('is-invalid'): countryCode.classList.add('is-invalid');
+
+            var brokerCode = document.getElementById("broker-code");
+            brokerCode.value.trim() ? brokerCode.classList.remove('is-invalid'): brokerCode.classList.add('is-invalid');
+
+            var integrationName = document.getElementById("integration-name");
+            integrationName.value.trim() ? integrationName.classList.remove('is-invalid'): integrationName.classList.add('is-invalid');
+            
+            var pluginBaseUrl = document.getElementById("plugin-base-url");
+            pluginBaseUrl.value.trim() ? pluginBaseUrl.classList.remove('is-invalid'): pluginBaseUrl.classList.add('is-invalid');
+
+            var hostToBeExposed = document.getElementById("host-to-be-exposed");
+            hostToBeExposed.value.trim() ? hostToBeExposed.classList.remove('is-invalid'): hostToBeExposed.classList.add('is-invalid');
+
+            var portToBeExposed = document.getElementById("port-to-be-exposed");
+            portToBeExposed.value.trim() ? portToBeExposed.classList.remove('is-invalid'): portToBeExposed.classList.add('is-invalid');
+
+            var baseEndpointToBeExposed = document.getElementById("base-endpoint-to-be-exposed");
+            baseEndpointToBeExposed.value.trim() ? baseEndpointToBeExposed.classList.remove('is-invalid'): baseEndpointToBeExposed.classList.add('is-invalid');
+
+            var authThroughPlugin = document.getElementById("auth-through-plugin").checked;
+            var authEndpoint = document.getElementById("service-endpoint-auth");
+            authEndpoint.value.trim() ? authEndpoint.classList.remove('is-invalid'): authEndpoint.classList.add('is-invalid');
+
+            var services = document.getElementsByClassName("services");
+            var servicesDataArray = [];
+            Array.from(services).forEach(service => {
+                var name = document.getElementById("service-name-"+service.id);
+                name.value.trim() ? name.classList.remove('is-invalid'): name.classList.add('is-invalid');
+
+                var endpoint = document.getElementById("service-endpoint-"+service.id);
+                endpoint.value.trim() ? endpoint.classList.remove('is-invalid'): endpoint.classList.add('is-invalid');
+
+                var method = document.getElementById("http-method-"+service.id);
+                method.value.trim() ? method.classList.remove('is-invalid'): method.classList.add('is-invalid');
+            });
+        }
+
+        function showModal() {            
             /* collect data */
             var countryCode = document.getElementById("country-code").value.trim();
             var brokerCode = document.getElementById("broker-code").value.trim();
@@ -720,7 +914,11 @@
             var hostToBeExposed = document.getElementById("host-to-be-exposed").value.trim();
             var portToBeExposed = parseInt(document.getElementById("port-to-be-exposed").value.trim());
             var baseEndpointToBeExposed = document.getElementById("base-endpoint-to-be-exposed").value.trim();
+
             var authThroughPlugin = document.getElementById("auth-through-plugin").checked;
+            if (authThroughPlugin) {
+                authEndpointToBeExposed = '/'+document.getElementById("fill-service-endpoint-to-be-exposed-auth").value.trim();
+            }
 
             var services = document.getElementsByClassName("services");
             var servicesDataArray = [];
@@ -975,6 +1173,25 @@
             /* Clean up by removing the link element */
             document.body.removeChild(link);
         }
+        
+        function generateConfig() {
+            validateFields();
+
+            if (document.querySelector('.is-invalid')) {
+                $("#notification-toast-body")
+                        .text("Please fill out all required fields!");
+
+                $("#notification-toast-header")
+                    .toggleClass("text-bg-primary", false)
+                    .toggleClass("text-bg-secondary", false)
+                    .toggleClass("text-bg-danger", true);
+
+                $("#notification-toast")
+                    .toast("show");
+            } else {
+                showModal();
+            }
+        }
 
         function copyToClipboard() {
             var template = '';
@@ -1028,6 +1245,20 @@
             const clearH6SpansElements = document.getElementsByClassName("clear-h6-spans-class");
             Array.from(clearH6SpansElements).forEach(clearH6SpansElement => {
                 clearH6SpansElement.innerText = '';
+            });
+
+            /* auth service component reset */
+            document.getElementById("service-endpoint-auth").value = 'authToken';
+            document.getElementById("fill-service-endpoint-to-be-exposed-auth").value = 'authToken';
+            document.getElementById("auth-through-plugin").checked = false;
+            document.getElementById("service-auth").style.display = 'none';
+
+            /* Select all elements that have either 'is-invalid' or 'is-valid' class */
+            var elements = document.querySelectorAll('.is-invalid, .is-valid');
+
+            /* Loop through the selected elements and remove the classes */
+            elements.forEach(function(element) {
+                element.classList.remove('is-invalid', 'is-valid');
             });
 
             $("#notification-toast-body")
