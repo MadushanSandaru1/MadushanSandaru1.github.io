@@ -157,204 +157,74 @@
                                 <label class="btn btn-outline-primary" for="auth-through-plugin">Exposes Auth Service Through The Plugin</label><br>
                             </div>
 
-                            <div id="services-list">
-                                <div id="service-auth" style="display: none;">
-                                    <hr>
-                                    <div class="form-group">
-                                        <h6>Service: <span class="text-primary" id="service-name-topic-auth">| AUTH TOKEN</span></h6>
+                            <div id="service-auth" style="display: none;">
+                                <hr>
+                                <div class="form-group">
+                                    <h6>Service: <span class="text-primary" id="service-name-topic-auth">| AUTH TOKEN</span></h6>
+                                </div>
+    
+                                <div class="form-group">
+                                    <div class="form-floating">
+                                        <input aria-label="Service Name" class="form-control"
+                                            id="service-name-auth" type="text"
+                                            placeholder="Service Name (Ex: AUTH_TOKEN)" value="AUTH_TOKEN"
+                                            oninput="handleServiceNameInput('auth')" onfocusout="handleServiceNameFocusOut('auth')" disabled readonly>
+                                        <label for="service-name-auth">Service Name (Ex: AUTH_TOKEN)</label>
                                     </div>
-        
-                                    <div class="form-group">
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
                                         <div class="form-floating">
-                                            <input aria-label="Service Name" class="form-control"
-                                                id="service-name-auth" type="text"
-                                                placeholder="Service Name (Ex: AUTH_TOKEN)" value="AUTH_TOKEN"
-                                                oninput="handleServiceNameInput('auth')" onfocusout="handleServiceNameFocusOut('auth')" disabled readonly>
-                                            <label for="service-name-auth">Service Name (Ex: AUTH_TOKEN)</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span
-                                                class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
-                                            <div class="form-floating">
-                                                <input aria-label="Service Endpoint"
-                                                    class="form-control clear-input-fields-class" id="service-endpoint-auth"
-                                                    type="text"
-                                                    placeholder="Service Endpoint (Ex: authToken)" value="authToken"
-                                                    oninput="handleServiceEndpointInput('auth')"
-                                                    onfocusout="handleServiceEndpointFocusOut('auth')">
-                                                <label for="service-endpoint-auth">Service Endpoint (Ex: authToken) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
-                                                <div class="invalid-feedback">Service Endpoint Required.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="form-floating">
-                                            <select class="form-select" id="http-method-auth" aria-label="HTTP Method">
-                                                <option value="GET">GET</option>
-                                                <option selected value="POST">POST</option>
-                                                <option value="PUT">PUT</option>
-                                                <option value="PATCH">PATCH</option>
-                                                <option value="DELETE">DELETE</option>
-                                                <option value="HEAD">HEAD</option>
-                                                <option value="OPTIONS">OPTIONS</option>
-                                                <option value="CONNECT">CONNECT</option>
-                                                <option value="TRACE">TRACE</option>
-                                            </select>
-                                            <label for="http-method-auth">HTTP Method  <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
-                                        </div>
-                                    </div>
-        
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span
-                                                class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
-                                            <div class="form-floating">
-                                                <input aria-label="Endpoint To Be Exposed"
-                                                    class="form-control clear-input-fields-class"
-                                                    id="fill-service-endpoint-to-be-exposed-auth" type="text"
-                                                    placeholder="Endpoint To Be Exposed" value="authToken" disabled readonly>
-                                                <label for="fill-service-endpoint-to-be-exposed-auth">Endpoint To Be Exposed</label>
-                                            </div>
+                                            <input aria-label="Service Endpoint"
+                                                class="form-control clear-input-fields-class" id="service-endpoint-auth"
+                                                type="text"
+                                                placeholder="Service Endpoint (Ex: authToken)" value="authToken"
+                                                oninput="handleServiceEndpointInput('auth')"
+                                                onfocusout="handleServiceEndpointFocusOut('auth')">
+                                            <label for="service-endpoint-auth">Service Endpoint (Ex: authToken) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                            <div class="invalid-feedback">Service Endpoint Required.</div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div id="1" class="services">
-                                    <hr>
-                                    <div class="form-group">
-                                        <h6>Service No: 1<span class="text-primary clear-h6-spans-class"
-                                                id="service-name-topic-1"></span></h6>
-                                    </div>
-        
-                                    <div class="form-group">
-                                        <div class="form-floating">
-                                            <input aria-label="Service Name" class="form-control clear-input-fields-class"
-                                                id="service-name-1" type="text"
-                                                placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
-                                                oninput="handleServiceNameInput(1)" onfocusout="handleServiceNameFocusOut(1)">
-                                            <label for="service-name-1">Service Name (Ex: CUSTOMER_CREATE,
-                                                BEN_ACC_DELETE) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
-                                            <div class="invalid-feedback">Service Name Required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span
-                                                class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
-                                            <div class="form-floating">
-                                                <input aria-label="Service Endpoint"
-                                                    class="form-control clear-input-fields-class" id="service-endpoint-1"
-                                                    type="text"
-                                                    placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)"
-                                                    oninput="handleServiceEndpointInput(1)"
-                                                    onfocusout="handleServiceEndpointFocusOut(1)">
-                                                <label for="service-endpoint-1">Service Endpoint (Ex: createCustomer,
-                                                    deleteBenAccount) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
-                                                <div class="invalid-feedback">Service Endpoint Required.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="form-floating">
-                                            <select class="form-select" id="http-method-1" aria-label="HTTP Method">
-                                                <option value="GET">GET</option>
-                                                <option selected value="POST">POST</option>
-                                                <option value="PUT">PUT</option>
-                                                <option value="PATCH">PATCH</option>
-                                                <option value="DELETE">DELETE</option>
-                                                <option value="HEAD">HEAD</option>
-                                                <option value="OPTIONS">OPTIONS</option>
-                                                <option value="CONNECT">CONNECT</option>
-                                                <option value="TRACE">TRACE</option>
-                                            </select>
-                                            <label for="http-method-1">HTTP Method <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
-                                        </div>
-                                    </div>
-        
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span
-                                                class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
-                                            <div class="form-floating">
-                                                <input aria-label="Endpoint To Be Exposed"
-                                                    class="form-control clear-input-fields-class"
-                                                    id="fill-service-endpoint-to-be-exposed-1" type="text"
-                                                    placeholder="Endpoint To Be Exposed" disabled readonly>
-                                                <label for="fill-service-endpoint-to-be-exposed-1">Endpoint To Be Exposed</label>
-                                            </div>
-                                        </div>
+                                <div class="form-group">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="http-method-auth" aria-label="HTTP Method">
+                                            <option value="GET">GET</option>
+                                            <option selected value="POST">POST</option>
+                                            <option value="PUT">PUT</option>
+                                            <option value="PATCH">PATCH</option>
+                                            <option value="DELETE">DELETE</option>
+                                            <option value="HEAD">HEAD</option>
+                                            <option value="OPTIONS">OPTIONS</option>
+                                            <option value="CONNECT">CONNECT</option>
+                                            <option value="TRACE">TRACE</option>
+                                        </select>
+                                        <label for="http-method-auth">HTTP Method  <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
                                     </div>
                                 </div>
     
-                                <div id="2" class="services">
-                                    <hr>
-                                    <div class="form-group">
-                                        <h6>Service No: 2<span class="text-primary clear-h6-spans-class"
-                                                id="service-name-topic-2"></span></h6>
-                                    </div>
-        
-                                    <div class="form-group">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
                                         <div class="form-floating">
-                                            <input aria-label="Service Name" class="form-control clear-input-fields-class"
-                                                id="service-name-2" type="text"
-                                                placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
-                                                oninput="handleServiceNameInput(2)" onfocusout="handleServiceNameFocusOut(2)">
-                                            <label for="service-name-2">Service Name (Ex: CUSTOMER_CREATE,
-                                                BEN_ACC_DELETE) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
-                                            <div class="invalid-feedback">Service Name Required.</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span
-                                                class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
-                                            <div class="form-floating">
-                                                <input aria-label="Service Endpoint"
-                                                    class="form-control clear-input-fields-class" id="service-endpoint-2"
-                                                    type="text"
-                                                    placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)"
-                                                    oninput="handleServiceEndpointInput(2)"
-                                                    onfocusout="handleServiceEndpointFocusOut(2)">
-                                                <label for="service-endpoint-2">Service Endpoint (Ex: createCustomer,
-                                                    deleteBenAccount) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
-                                                <div class="invalid-feedback">Service Endpoint Required.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="form-floating">
-                                            <select class="form-select" id="http-method-2" aria-label="HTTP Method">
-                                                <option value="GET">GET</option>
-                                                <option selected value="POST">POST</option>
-                                                <option value="PUT">PUT</option>
-                                                <option value="PATCH">PATCH</option>
-                                                <option value="DELETE">DELETE</option>
-                                                <option value="HEAD">HEAD</option>
-                                                <option value="OPTIONS">OPTIONS</option>
-                                                <option value="CONNECT">CONNECT</option>
-                                                <option value="TRACE">TRACE</option>
-                                            </select>
-                                            <label for="http-method-2">HTTP Method <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
-                                        </div>
-                                    </div>
-        
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span
-                                                class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
-                                            <div class="form-floating">
-                                                <input aria-label="Endpoint To Be Exposed"
-                                                    class="form-control clear-input-fields-class"
-                                                    id="fill-service-endpoint-to-be-exposed-2" type="text"
-                                                    placeholder="Endpoint To Be Exposed" disabled readonly>
-                                                <label for="fill-service-endpoint-to-be-exposed-2">Endpoint To Be Exposed</label>
-                                            </div>
+                                            <input aria-label="Endpoint To Be Exposed"
+                                                class="form-control clear-input-fields-class"
+                                                id="fill-service-endpoint-to-be-exposed-auth" type="text"
+                                                placeholder="Endpoint To Be Exposed" value="authToken" disabled readonly>
+                                            <label for="fill-service-endpoint-to-be-exposed-auth">Endpoint To Be Exposed</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <div id="services-list">
+                            </div>
+
+                            <hr>
+                            <button type="button" class="btn btn-outline-primary" id="add-service" onclick="addService()">Add Service</button>
 
                             <div class="text-center">
                                 <button type="button" class="btn btn-primary mr-3"
@@ -454,6 +324,99 @@
 
     <!-- Optional JavaScript -->
     <script>
+        window.onload = function() {
+            addService(); /* Call the function after all resources are fully loaded */
+            };
+        
+        function addService() {
+            var serviceElements = document.querySelectorAll('.services');
+            var nextServiceId = serviceElements.length+1;
+
+            var servicesList = document.getElementById('services-list');
+            var servicesTemplate = `<div id="${nextServiceId}" class="services">
+                                    <hr>
+                                    <div class="form-group">
+                                        <div class="row justify-content-between">
+                                            <div class="col-auto">
+                                                <h6>Service No: ${nextServiceId}<span class="text-primary clear-h6-spans-class" id="service-name-topic-${nextServiceId}"></span></h6>
+                                            </div>
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-sm btn-outline-danger" id="remove-service-${nextServiceId}" onclick="removeService(${nextServiceId})" ${nextServiceId==1?'disabled':''}>Remove Service</button>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <div class="form-floating">
+                                            <input aria-label="Service Name" class="form-control clear-input-fields-class"
+                                                id="service-name-${nextServiceId}" type="text"
+                                                placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
+                                                oninput="handleServiceNameInput(${nextServiceId})" onfocusout="handleServiceNameFocusOut(${nextServiceId})">
+                                            <label for="service-name-${nextServiceId}">Service Name (Ex: CUSTOMER_CREATE,
+                                                BEN_ACC_DELETE) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                            <div class="invalid-feedback">Service Name Required.</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span
+                                                class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
+                                            <div class="form-floating">
+                                                <input aria-label="Service Endpoint"
+                                                    class="form-control clear-input-fields-class" id="service-endpoint-${nextServiceId}"
+                                                    type="text"
+                                                    placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)"
+                                                    oninput="handleServiceEndpointInput(${nextServiceId})"
+                                                    onfocusout="handleServiceEndpointFocusOut(${nextServiceId})">
+                                                <label for="service-endpoint-${nextServiceId}">Service Endpoint (Ex: createCustomer,
+                                                    deleteBenAccount) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                                <div class="invalid-feedback">Service Endpoint Required.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="http-method-${nextServiceId}" aria-label="HTTP Method">
+                                                <option value="GET">GET</option>
+                                                <option selected value="POST">POST</option>
+                                                <option value="PUT">PUT</option>
+                                                <option value="PATCH">PATCH</option>
+                                                <option value="DELETE">DELETE</option>
+                                                <option value="HEAD">HEAD</option>
+                                                <option value="OPTIONS">OPTIONS</option>
+                                                <option value="CONNECT">CONNECT</option>
+                                                <option value="TRACE">TRACE</option>
+                                            </select>
+                                            <label for="http-method-${nextServiceId}">HTTP Method <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span
+                                                class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
+                                            <div class="form-floating">
+                                                <input aria-label="Endpoint To Be Exposed"
+                                                    class="form-control clear-input-fields-class"
+                                                    id="fill-service-endpoint-to-be-exposed-${nextServiceId}" type="text"
+                                                    placeholder="Endpoint To Be Exposed" disabled readonly>
+                                                <label for="fill-service-endpoint-to-be-exposed-${nextServiceId}">Endpoint To Be Exposed</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`;
+            
+            /* Append the new service to the services-list */
+            servicesList.insertAdjacentHTML('beforeend', servicesTemplate);
+        }
+
+        function removeService(id) {
+            var element = document.getElementById(id);
+            element.innerHTML = '';
+            element.className = '';
+            element.id = '';
+        }
+
         document.getElementById("country-code").addEventListener("input", function () {
             var value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
             this.value = value;
