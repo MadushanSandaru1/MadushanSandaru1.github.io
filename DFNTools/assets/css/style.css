@@ -1826,3 +1826,27 @@ pre {
   border-radius: 5px;
   overflow: auto;
 }
+
+.offcanvas-links {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.offcanvas-links::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.offcanvas-links:hover::before {
+  background: #106eea;
+  right: 0;
+  border-radius: 40px 4px 4px 40px;
+}
