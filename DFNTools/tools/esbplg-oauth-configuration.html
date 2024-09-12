@@ -921,7 +921,7 @@
             var pluginBaseUrl = document.getElementById("plugin-base-url").value.trim();
             var hostToBeExposed = document.getElementById("host-to-be-exposed").value.trim();
             var portToBeExposed = parseInt(document.getElementById("port-to-be-exposed").value.trim());
-            var baseEndpointToBeExposed = document.getElementById("base-endpoint-to-be-exposed").value.trim();
+            var baseEndpointToBeExposed = '/' + document.getElementById("base-endpoint-to-be-exposed").value.trim();
 
             var authThroughPlugin = document.getElementById("auth-through-plugin").checked;
             if (authThroughPlugin) {
