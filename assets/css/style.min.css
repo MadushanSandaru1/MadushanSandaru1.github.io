@@ -1550,6 +1550,10 @@ html.dark input:-webkit-autofill,
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .gap-1 {
   gap: 0.25rem;
 }
@@ -3734,6 +3738,10 @@ html.dark .portfolio_wrapper .info span {
 
   .max-xl\:pt-20 {
     padding-top: 5rem;
+  }
+
+  .max-xl\:pt-45 {
+    padding-top: 11.25rem;
   }
 
   .max-xl\:\*\:mx-auto > * {
