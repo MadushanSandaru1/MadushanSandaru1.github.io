@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>DFN Tools</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <h1 class="logo"><a href="../index.html"><span>DFN</span>Tools</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="../index.html" class="logo"><img src="../assets/img/logo.png" alt=""></a> -->
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="../index.html">Home</a></li>
+                    <li><a class="nav-link scrollto" href="../support.html">Support</a></li>
+                    <li><a class="nav-link" href="#offcanvas-tools" data-bs-toggle="offcanvas" aria-controls="offcanvas-tools">Tools</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Page Content Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Utilities</h2>
+                    <h3><span>ESBPLG OAuth 2.0</span> Gateway Config Generator</h3>
+                </div>
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="col-lg-12">
+                        <div class="generator">
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <input aria-label="Country Code" class="form-control clear-input-fields-class"
+                                        id="country-code" type="text" placeholder="Country Code (Ex: KSA)">
+                                    <label for="country-code">Country Code (Ex: KSA) <sup><small><i
+                                                    class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                    <div class="invalid-feedback">Country Code Required.</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <input aria-label="Broker Code" class="form-control clear-input-fields-class"
+                                        id="broker-code" type="text" placeholder="Broker Code (Ex: JADWA, HSBC)">
+                                    <label for="broker-code">Broker Code (Ex: JADWA, HSBC) <sup><small><i
+                                                    class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                    <div class="invalid-feedback">Broker Code Required.</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <input aria-label="Integration Name" class="form-control clear-input-fields-class"
+                                        id="integration-name" type="text" placeholder="Integration Name (Ex: CRMS, CIS)"
+                                        onfocusout="handleIntegrationNameFocusOut()">
+                                    <label for="integration-name">Integration Name (Ex: CRMS, CIS) <sup><small><i
+                                                    class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                    <div class="invalid-feedback">Integration Name Required.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <input aria-label="Plugin Name / Group ID / Deployment Unit"
+                                        class="form-control clear-input-fields-class" id="plugin-name-text" type="text"
+                                        placeholder="Plugin Name / Group ID / Deployment Unit" disabled readonly>
+                                    <label for="plugin-name-text">Plugin Name / Group ID / Deployment Unit</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-group">
+                                <h5>URLs and Endpoints</h5>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <input aria-label="Plugin Base URL" class="form-control clear-input-fields-class"
+                                        id="plugin-base-url" type="text"
+                                        placeholder="Plugin Base URL (Ex: http://0.0.0.0:6060/api/jadwa/cis)">
+                                    <label for="plugin-base-url">Plugin Base URL (Ex: http://0.0.0.0:6060/api/jadwa/cis)
+                                        <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                    <div class="invalid-feedback">Plugin Base URL Required.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <input aria-label="Host To Be Exposed"
+                                            class="form-control clear-input-fields-class" id="host-to-be-exposed"
+                                            type="text" placeholder="Host To Be Exposed (Ex: 0.0.0.0)">
+                                        <label for="host-to-be-exposed">Host To Be Exposed (Ex: 0.0.0.0) <sup><small><i
+                                                        class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                        <div class="invalid-feedback">Host To Be Exposed Required.</div>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input aria-label="Port To Be Exposed"
+                                            class="form-control clear-input-fields-class" id="port-to-be-exposed"
+                                            type="text" placeholder="Port To Be Exposed (Ex: 6060)">
+                                        <label for="port-to-be-exposed">Port To Be Exposed (Ex: 6060) <sup><small><i
+                                                        class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                        <div class="invalid-feedback">Port To Be Exposed Required.</div>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input aria-label="Base Endpoint To Be Exposed"
+                                            class="form-control clear-input-fields-class"
+                                            id="base-endpoint-to-be-exposed" type="text"
+                                            placeholder="Base Endpoint To Be Exposed (Ex: cis)">
+                                        <label for="base-endpoint-to-be-exposed">Base Endpoint To Be Exposed (Ex: cis)
+                                            <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                        <div class="invalid-feedback">Base Endpoint To Be Exposed Required.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <input aria-label="Base URL to be exposed"
+                                        class="form-control clear-input-fields-class" id="base-url-to-be-exposed"
+                                        type="text" placeholder="Base URL to be exposed" disabled readonly>
+                                    <label for="base-url-to-be-exposed">Base URL to be exposed</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="checkbox" class="btn-check" id="auth-through-plugin" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="auth-through-plugin">Exposes Auth Service
+                                    Through The Plugin</label><br>
+                            </div>
+
+                            <div id="service-auth" style="display: none;">
+                                <hr>
+                                <div class="form-group">
+                                    <h6>Service: <span class="text-primary" id="service-name-topic-auth">| AUTH
+                                            TOKEN</span></h6>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-floating">
+                                        <input aria-label="Service Name" class="form-control" id="service-name-auth"
+                                            type="text" placeholder="Service Name (Ex: AUTH_TOKEN)" value="AUTH_TOKEN"
+                                            oninput="handleServiceNameInput('auth')"
+                                            onfocusout="handleServiceNameFocusOut('auth')" disabled readonly>
+                                        <label for="service-name-auth">Service Name (Ex: AUTH_TOKEN)</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
+                                        <div class="form-floating">
+                                            <input aria-label="Service Endpoint"
+                                                class="form-control clear-input-fields-class" id="service-endpoint-auth"
+                                                type="text" placeholder="Service Endpoint (Ex: authToken)"
+                                                value="authToken" oninput="handleServiceEndpointInput('auth')"
+                                                onfocusout="handleServiceEndpointFocusOut('auth')">
+                                            <label for="service-endpoint-auth">Service Endpoint (Ex: authToken)
+                                                <sup><small><i
+                                                            class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                            <div class="invalid-feedback">Service Endpoint Required.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="http-method-auth" aria-label="HTTP Method">
+                                            <option value="GET">GET</option>
+                                            <option selected value="POST">POST</option>
+                                            <option value="PUT">PUT</option>
+                                            <option value="PATCH">PATCH</option>
+                                            <option value="DELETE">DELETE</option>
+                                            <option value="HEAD">HEAD</option>
+                                            <option value="OPTIONS">OPTIONS</option>
+                                            <option value="CONNECT">CONNECT</option>
+                                            <option value="TRACE">TRACE</option>
+                                        </select>
+                                        <label for="http-method-auth">HTTP Method <sup><small><i
+                                                        class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
+                                        <div class="form-floating">
+                                            <input aria-label="Endpoint To Be Exposed"
+                                                class="form-control clear-input-fields-class"
+                                                id="fill-service-endpoint-to-be-exposed-auth" type="text"
+                                                placeholder="Endpoint To Be Exposed" value="authToken" disabled
+                                                readonly>
+                                            <label for="fill-service-endpoint-to-be-exposed-auth">Endpoint To Be
+                                                Exposed</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="services-list">
+                            </div>
+
+                            <hr>
+                            <button type="button" class="btn btn-sm btn-outline-primary" id="add-service"
+                                onclick="addService()">Add Service</button>
+
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary mr-3" onclick="generateConfig()">Generate
+                                    Config</button>
+                                <button type="button" class="btn btn-secondary px-5 ml-3"
+                                    onclick="clearFields()">Clear</button>
+                                <button type="button" class="btn btn-dark px-5 ml-3"
+                                    onclick="resetFields()">Reset</button>
+                            </div>
+
+                        </div>
+
+                        <!-- modal -->
+                        <div class="modal fade" id="tool-modal" tabindex="-1" role="dialog"
+                            aria-labelledby="modal-title" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="modal-title">
+                                            <!-- Modal title will be updated dynamically -->
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Modal body will be updated dynamically -->
+                                        <pre id="formattedJson"></pre>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-primary btn-sm"
+                                            onclick="downloadJson()">Download JSON</button>
+                                        <button type="button" class="btn btn-outline-primary btn-sm"
+                                            onclick="copyToClipboard()">Copy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- notification toast -->
+                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                            <div id="notification-toast" class="toast" role="alert" aria-live="assertive"
+                                aria-atomic="true">
+                                <div class="toast-header" id="notification-toast-header">
+                                    <strong class="me-auto">DFN Tools</strong>
+                                    <small>Just now</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body" id="notification-toast-body">
+                                    <!-- Toast body will be updated dynamically -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-tools" aria-labelledby="offcanvas-tools-label">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvas-tools-label"><span class="text-primary">Quick Links </span>for Tools</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="section-title">
+                  <h2>Utilities</h2>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <a href="notification-template.html" target="_blank" class="list-group-item list-group-item-action offcanvas-links"><i class="bi bi-chat-right-text"></i> Notification Template Generator</a>
+                  <a href="esbplg-oauth-configuration.html" class="list-group-item list-group-item-action offcanvas-links"><i class="bi bi-filetype-json"></i> ESBPLG OAuth 2.0 Gateway Config Generator</a>
+                </ul>
+              </div>
+            </div>
+
+        </section><!-- End Page Content Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="fixed-bottom">
+        <div class="container py-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span>DFNTools</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="https://www.linkedin.com/in/madushansandaru1/" target="_blank">MadushanSandaru1</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Optional JavaScript -->
+    <script>
+        window.onload = function () {
+            addService(); /* Call the function after all resources are fully loaded */
+        };
+
+        function addService() {
+            var serviceElements = document.querySelectorAll('.services');
+            var nextServiceId = serviceElements.length + 1;
+
+            var servicesList = document.getElementById('services-list');
+            var servicesTemplate = `<div id="${nextServiceId}" class="services">
+                                    <hr>
+                                    <div class="form-group">
+                                        <div class="row justify-content-between">
+                                            <div class="col-auto">
+                                                <h6>Service No: ${nextServiceId}<span class="text-primary clear-h6-spans-class" id="service-name-topic-${nextServiceId}"></span></h6>
+                                            </div>
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-sm btn-outline-danger" id="remove-service-${nextServiceId}" onclick="removeService(${nextServiceId})" ${nextServiceId == 1 ? 'disabled' : ''}>Remove Service</button>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <div class="form-floating">
+                                            <input aria-label="Service Name" class="form-control clear-input-fields-class"
+                                                id="service-name-${nextServiceId}" type="text"
+                                                placeholder="Service Name (Ex: CUSTOMER_CREATE, BEN_ACC_DELETE)"
+                                                oninput="handleServiceNameInput(${nextServiceId})" onfocusout="handleServiceNameFocusOut(${nextServiceId})">
+                                            <label for="service-name-${nextServiceId}">Service Name (Ex: CUSTOMER_CREATE,
+                                                BEN_ACC_DELETE) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                            <div class="invalid-feedback">Service Name Required.</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span
+                                                class="input-group-text fill-plugin-base-url-spans-class clear-input-spans-class"></span>
+                                            <div class="form-floating">
+                                                <input aria-label="Service Endpoint"
+                                                    class="form-control clear-input-fields-class" id="service-endpoint-${nextServiceId}"
+                                                    type="text"
+                                                    placeholder="Service Endpoint (Ex: createCustomer, deleteBenAccount)"
+                                                    oninput="handleServiceEndpointInput(${nextServiceId})"
+                                                    onfocusout="handleServiceEndpointFocusOut(${nextServiceId})">
+                                                <label for="service-endpoint-${nextServiceId}">Service Endpoint (Ex: createCustomer,
+                                                    deleteBenAccount) <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                                <div class="invalid-feedback">Service Endpoint Required.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="http-method-${nextServiceId}" aria-label="HTTP Method">
+                                                <option value="GET">GET</option>
+                                                <option selected value="POST">POST</option>
+                                                <option value="PUT">PUT</option>
+                                                <option value="PATCH">PATCH</option>
+                                                <option value="DELETE">DELETE</option>
+                                                <option value="HEAD">HEAD</option>
+                                                <option value="OPTIONS">OPTIONS</option>
+                                                <option value="CONNECT">CONNECT</option>
+                                                <option value="TRACE">TRACE</option>
+                                            </select>
+                                            <label for="http-method-${nextServiceId}">HTTP Method <sup><small><i class="bi bi-asterisk text-danger"></i></small></sup></label>
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span
+                                                class="input-group-text fill-base-url-to-be-exposed-spans-class clear-input-spans-class"></span>
+                                            <div class="form-floating">
+                                                <input aria-label="Endpoint To Be Exposed"
+                                                    class="form-control clear-input-fields-class"
+                                                    id="fill-service-endpoint-to-be-exposed-${nextServiceId}" type="text"
+                                                    placeholder="Endpoint To Be Exposed" disabled readonly>
+                                                <label for="fill-service-endpoint-to-be-exposed-${nextServiceId}">Endpoint To Be Exposed</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`;
+
+            /* Append the new service to the services-list */
+            servicesList.insertAdjacentHTML('beforeend', servicesTemplate);
+
+            if (nextServiceId != 1) {
+                /* Manually trigger the 'input' event */
+                var event = new Event('input', { bubbles: true });
+                document.getElementById("plugin-base-url").dispatchEvent(event);
+
+                /* Manually trigger the 'input' event */
+                var event = new Event('input', { bubbles: true });
+                document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
+            }
+        }
+
+        function removeService(id) {
+            var element = document.getElementById(id);
+            element.innerHTML = '';
+            element.className = '';
+            element.id = '';
+        }
+
+        document.getElementById("country-code").addEventListener("input", function () {
+            var value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+            this.value = value;
+
+            var countryCode = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
+            var brokerCode = document.getElementById("broker-code").value.toUpperCase();
+            var integrationName = document.getElementById("integration-name").value.toUpperCase();
+
+            if (countryCode === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
+            if (countryCode + brokerCode + integrationName === '') {
+                document.getElementById("plugin-name-text").value = '';
+            } else {
+                document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+            }
+        });
+
+        document.getElementById("country-code").addEventListener("focusout", function () {
+            var value = this.value;
+
+            if (value === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+        });
+
+        document.getElementById("broker-code").addEventListener("input", function () {
+            var value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+            this.value = value;
+
+            var countryCode = document.getElementById("country-code").value.toUpperCase();
+            var brokerCode = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
+            var integrationName = document.getElementById("integration-name").value.toUpperCase();
+
+            if (brokerCode === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
+            if (countryCode + brokerCode + integrationName === '') {
+                document.getElementById("plugin-name-text").value = '';
+            } else {
+                document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+            }
+        });
+
+        document.getElementById("broker-code").addEventListener("focusout", function () {
+            var value = this.value;
+
+            if (value === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+        });
+
+        document.getElementById("integration-name").addEventListener("input", function () {
+            var value = this.value.replace(/[^a-zA-Z0-9_ ]/g, '').replace(/\s+/g, '_').toUpperCase();
+            this.value = value;
+
+            var countryCode = document.getElementById("country-code").value.toUpperCase();
+            var brokerCode = document.getElementById("broker-code").value.toUpperCase();
+            var integrationName = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
+            document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+
+            if (integrationName === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
+            if (countryCode + brokerCode + integrationName === '') {
+                document.getElementById("plugin-name-text").value = '';
+            } else {
+                document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+            }
+        });
+
+        document.getElementById("plugin-base-url").addEventListener("input", function () {
+            var value = this.value.replace(/[^a-zA-Z0-9-._\/:?&=#]/g, '');
+            this.value = value;
+
+            const fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
+            Array.from(fillInputSpansElements).forEach(fillInputSpansElement => {
+                if (value) {
+                    fillInputSpansElement.innerText = value + "/";
+                    this.classList.add('is-valid');
+                    this.classList.remove('is-invalid');
+                } else {
+                    fillInputSpansElement.innerText = '';
+                    this.classList.add('is-invalid');
+                    this.classList.remove('is-valid');
+                }
+            });
+        });
+
+        document.getElementById("plugin-base-url").addEventListener("focusout", function () {
+            var value = this.value;
+            while (value.endsWith("/")) {
+                value = value.slice(0, -1); /* Remove trailing slashes */
+            }
+            this.value = value;
+
+            const fillInputSpansElements = document.getElementsByClassName("fill-plugin-base-url-spans-class");
+            Array.from(fillInputSpansElements).forEach(fillInputSpansElement => {
+                if (value) {
+                    fillInputSpansElement.innerText = value + "/";
+                    this.classList.add('is-valid');
+                    this.classList.remove('is-invalid');
+                } else {
+                    fillInputSpansElement.innerText = '';
+                    this.classList.add('is-invalid');
+                    this.classList.remove('is-valid');
+                }
+            });
+        });
+
+        document.getElementById("host-to-be-exposed").addEventListener("input", function () {
+            var value = this.value.replace(/[^0-9.]/g, '');
+            this.value = value;
+
+            var host = value;
+            var port = document.getElementById("port-to-be-exposed").value;
+            var endpoint = document.getElementById("base-endpoint-to-be-exposed").value;
+
+            if (host === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
+            if (host + port + endpoint === '') {
+                document.getElementById("base-url-to-be-exposed").value = '';
+            } else {
+                document.getElementById("base-url-to-be-exposed").value = "http://" + host + ":" + port + "/" + endpoint;
+            }
+
+            /* Manually trigger the 'input' event */
+            var event = new Event('input', { bubbles: true });
+            document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
+        });
+
+        document.getElementById("host-to-be-exposed").addEventListener("focusout", function () {
+            var value = this.value;
+
+            if (value === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+        });
+
+        document.getElementById("port-to-be-exposed").addEventListener("input", function () {
+            var value = this.value.replace(/[^0-9]/g, '').slice(0, 5);
+            this.value = value;
+
+            var host = document.getElementById("host-to-be-exposed").value;
+            var port = value;
+            var endpoint = document.getElementById("base-endpoint-to-be-exposed").value;
+
+            if (port === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
+            if (host + port + endpoint === '') {
+                document.getElementById("base-url-to-be-exposed").value = '';
+            } else {
+                document.getElementById("base-url-to-be-exposed").value = "http://" + host + ":" + port + "/" + endpoint;
+            }
+
+            /* Manually trigger the 'input' event */
+            var event = new Event('input', { bubbles: true });
+            document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
+        });
+
+        document.getElementById("port-to-be-exposed").addEventListener("focusout", function () {
+            var value = this.value;
+
+            if (value === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+        });
+
+        document.getElementById("base-endpoint-to-be-exposed").addEventListener("input", function () {
+            var value = this.value.replace(/[^a-zA-Z0-9\/_-]/g, '');
+            this.value = value;
+
+            var host = document.getElementById("host-to-be-exposed").value;
+            var port = document.getElementById("port-to-be-exposed").value;
+            var endpoint = value;
+
+            if (endpoint === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
+            if (host + port + endpoint === '') {
+                document.getElementById("base-url-to-be-exposed").value = '';
+            } else {
+                document.getElementById("base-url-to-be-exposed").value = "http://" + host + ":" + port + "/" + endpoint;
+            }
+
+            /* Manually trigger the 'input' event */
+            var event = new Event('input', { bubbles: true });
+            document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
+        });
+
+        document.getElementById("base-endpoint-to-be-exposed").addEventListener("focusout", function () {
+            var value = this.value;
+            while (value.startsWith("/")) {
+                value = value.substring(1); /* Remove the first character if it's a '/' */
+            }
+            while (value.endsWith("/")) {
+                value = value.slice(0, -1); /* Remove trailing slashes */
+            }
+            this.value = value;
+
+            var host = document.getElementById("host-to-be-exposed").value;
+            var port = document.getElementById("port-to-be-exposed").value;
+            var endpoint = value;
+
+            if (endpoint === '') {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            } else {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            }
+
+            if (host + port + endpoint === '') {
+                document.getElementById("base-url-to-be-exposed").value = '';
+            } else {
+                document.getElementById("base-url-to-be-exposed").value = "http://" + host + ":" + port + "/" + endpoint;
+            }
+
+            /* Manually trigger the 'input' event */
+            var event = new Event('input', { bubbles: true });
+            document.getElementById("base-url-to-be-exposed").dispatchEvent(event);
+        });
+
+        document.getElementById("base-url-to-be-exposed").addEventListener("input", function () {
+            var value = this.value;
+
+            const fillInputSpansElements = document.getElementsByClassName("fill-base-url-to-be-exposed-spans-class");
+            Array.from(fillInputSpansElements).forEach(fillInputSpansElement => {
+                if (value) {
+                    fillInputSpansElement.innerText = value + "/";
+                } else {
+                    fillInputSpansElement.innerText = '';
+                }
+            });
+        });
+
+        document.getElementById("auth-through-plugin").addEventListener("change", function () {
+            var div = document.getElementById("service-auth");
+
+            if (this.checked) {
+                div.style.display = 'block';
+            } else {
+                div.style.display = 'none';
+                document.getElementById("service-endpoint-auth").value = 'authToken';
+                document.getElementById("service-endpoint-auth").classList.remove('is-valid');
+                document.getElementById("service-endpoint-auth").classList.remove('is-invalid');
+                document.getElementById("fill-service-endpoint-to-be-exposed-auth").value = 'authToken';
+            }
+        });
+
+        function handleIntegrationNameFocusOut() {
+            var element = document.getElementById("integration-name");
+            var value = element.value;
+            while (value.startsWith("_")) {
+                value = value.substring(1); /* Remove the first character if it's a '/' */
+            }
+            while (value.endsWith("_")) {
+                value = value.slice(0, -1); /* Remove trailing slashes */
+            }
+            element.value = value;
+            var countryCode = document.getElementById("country-code").value.toUpperCase();
+            var brokerCode = document.getElementById("broker-code").value.toUpperCase();
+            var integrationName = value.toUpperCase().replace(/\s+/g, '_'); /* Replace spaces with underscores */
+
+            if (integrationName === '') {
+                element.classList.add('is-invalid');
+                element.classList.remove('is-valid');
+            } else {
+                element.classList.add('is-valid');
+                element.classList.remove('is-invalid');
+            }
+
+            if (countryCode + brokerCode + integrationName === '') {
+                document.getElementById("plugin-name-text").value = '';
+            } else {
+                document.getElementById("plugin-name-text").value = countryCode + "_" + brokerCode + "_" + integrationName + "_API_GATEWAY";
+            }
+        }
+
+        function handleServiceNameInput(id) {
+            var element = document.getElementById("service-name-" + id);
+            var value = element.value.replace(/[^a-zA-Z0-9_ ]/g, '').replace(/\s+/g, '_').toUpperCase();
+            element.value = value;
+
+            if (value) {
+                document.getElementById("service-name-topic-" + id).innerText = " | " + value.replace(/_/g, ' ');
+                element.classList.add('is-valid');
+                element.classList.remove('is-invalid');
+            } else {
+                document.getElementById("service-name-topic-" + id).innerText = '';
+                element.classList.add('is-invalid');
+                element.classList.remove('is-valid');
+            }
+        }
+
+        function handleServiceNameFocusOut(id) {
+            var element = document.getElementById("service-name-" + id);
+            var value = element.value;
+            while (value.startsWith("_")) {
+                value = value.substring(1); /* Remove the first character if it's a '/' */
+            }
+            while (value.endsWith("_")) {
+                value = value.slice(0, -1); /* Remove trailing slashes */
+            }
+            element.value = value;
+
+            if (value) {
+                document.getElementById("service-name-topic-" + id).innerText = " | " + value.replace(/_/g, ' ');
+                element.classList.add('is-valid');
+                element.classList.remove('is-invalid');
+            } else {
+                document.getElementById("service-name-topic-" + id).innerText = '';
+                element.classList.add('is-invalid');
+                element.classList.remove('is-valid');
+            }
+        }
+
+        function handleServiceEndpointInput(id) {
+            var element = document.getElementById("service-endpoint-" + id);
+            var value = element.value.replace(/[^a-zA-Z0-9\/_-]/g, '');
+            element.value = value;
+            document.getElementById("fill-service-endpoint-to-be-exposed-" + id).value = value;
+
+            if (value === '') {
+                element.classList.add('is-invalid');
+                element.classList.remove('is-valid');
+            } else {
+                element.classList.add('is-valid');
+                element.classList.remove('is-invalid');
+            }
+        }
+
+        function handleServiceEndpointFocusOut(id) {
+            var element = document.getElementById("service-endpoint-" + id);
+            var value = element.value;
+            while (value.startsWith("/")) {
+                value = value.substring(1); /* Remove the first character if it's a '/' */
+            }
+            while (value.endsWith("/")) {
+                value = value.slice(0, -1); /* Remove trailing slashes */
+            }
+            element.value = value;
+            document.getElementById("fill-service-endpoint-to-be-exposed-" + id).value = value;
+
+            if (value === '') {
+                element.classList.add('is-invalid');
+                element.classList.remove('is-valid');
+            } else {
+                element.classList.add('is-valid');
+                element.classList.remove('is-invalid');
+            }
+        }
+
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = Math.random() * 16 | 0,
+                    v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        function validateFields() {
+            var countryCode = document.getElementById("country-code");
+            countryCode.value.trim() ? countryCode.classList.remove('is-invalid') : countryCode.classList.add('is-invalid');
+
+            var brokerCode = document.getElementById("broker-code");
+            brokerCode.value.trim() ? brokerCode.classList.remove('is-invalid') : brokerCode.classList.add('is-invalid');
+
+            var integrationName = document.getElementById("integration-name");
+            integrationName.value.trim() ? integrationName.classList.remove('is-invalid') : integrationName.classList.add('is-invalid');
+
+            var pluginBaseUrl = document.getElementById("plugin-base-url");
+            pluginBaseUrl.value.trim() ? pluginBaseUrl.classList.remove('is-invalid') : pluginBaseUrl.classList.add('is-invalid');
+
+            var hostToBeExposed = document.getElementById("host-to-be-exposed");
+            hostToBeExposed.value.trim() ? hostToBeExposed.classList.remove('is-invalid') : hostToBeExposed.classList.add('is-invalid');
+
+            var portToBeExposed = document.getElementById("port-to-be-exposed");
+            portToBeExposed.value.trim() ? portToBeExposed.classList.remove('is-invalid') : portToBeExposed.classList.add('is-invalid');
+
+            var baseEndpointToBeExposed = document.getElementById("base-endpoint-to-be-exposed");
+            baseEndpointToBeExposed.value.trim() ? baseEndpointToBeExposed.classList.remove('is-invalid') : baseEndpointToBeExposed.classList.add('is-invalid');
+
+            var authThroughPlugin = document.getElementById("auth-through-plugin").checked;
+            var authEndpoint = document.getElementById("service-endpoint-auth");
+            authEndpoint.value.trim() ? authEndpoint.classList.remove('is-invalid') : authEndpoint.classList.add('is-invalid');
+
+            var services = document.getElementsByClassName("services");
+            var servicesDataArray = [];
+            Array.from(services).forEach(service => {
+                var name = document.getElementById("service-name-" + service.id);
+                name.value.trim() ? name.classList.remove('is-invalid') : name.classList.add('is-invalid');
+
+                var endpoint = document.getElementById("service-endpoint-" + service.id);
+                endpoint.value.trim() ? endpoint.classList.remove('is-invalid') : endpoint.classList.add('is-invalid');
+
+                var method = document.getElementById("http-method-" + service.id);
+                method.value.trim() ? method.classList.remove('is-invalid') : method.classList.add('is-invalid');
+            });
+        }
+
+        function showModal() {
+            /* collect data */
+            var countryCode = document.getElementById("country-code").value.trim();
+            var brokerCode = document.getElementById("broker-code").value.trim();
+            var integrationName = document.getElementById("integration-name").value.trim();
+            var pluginNameText = document.getElementById("plugin-name-text").value.trim();
+
+            var pluginBaseUrl = document.getElementById("plugin-base-url").value.trim();
+            var hostToBeExposed = document.getElementById("host-to-be-exposed").value.trim();
+            var portToBeExposed = parseInt(document.getElementById("port-to-be-exposed").value.trim());
+            var baseEndpointToBeExposed = '/' + document.getElementById("base-endpoint-to-be-exposed").value.trim();
+
+            var authThroughPlugin = document.getElementById("auth-through-plugin").checked;
+            if (authThroughPlugin) {
+                authEndpointToBeExposed = '/' + document.getElementById("fill-service-endpoint-to-be-exposed-auth").value.trim();
+            }
+
+            var services = document.getElementsByClassName("services");
+            var servicesDataArray = [];
+            Array.from(services).forEach(service => {
+                var serviceObject = {
+                    name: document.getElementById("service-name-" + service.id).value.trim(),
+                    endpoint: '/' + document.getElementById("service-endpoint-" + service.id).value.trim(),
+                    method: document.getElementById("http-method-" + service.id).value.trim(),
+                    exposed: '/' + document.getElementById("fill-service-endpoint-to-be-exposed-" + service.id).value.trim(),
+                };
+
+                /* Push the object into the array */
+                servicesDataArray.push(serviceObject);
+            });
+
+            /* create json object */
+            var restProducers = [];
+            var plugins = [];
+            var restConsumers = [];
+            var wsProducers = [];
+            var wsConsumers = [];
+            var jmsProducers = [];
+            var jmsConsumers = [];
+
+            /* create restProducers */
+            var methodMappings = [];
+            var authEndpointToBeExposed = '/authToken';
+            if (authThroughPlugin) {
+                authEndpointToBeExposed = '/' + document.getElementById("fill-service-endpoint-to-be-exposed-auth").value.trim();
+            }
+            var authMethodMapping = {
+                endpoint: authEndpointToBeExposed,
+                requestType: 'POST',
+                incomingRoute: integrationName + '_AUTH_TOKEN_' + integrationName + '_IN_OUT_ROUTE',
+                outgoingRoute: integrationName + '_AUTH_TOKEN_RATE_LIMITER_IN_ROUTE'
+            };
+            methodMappings.push(authMethodMapping);
+
+            if (servicesDataArray.length > 0) {
+                Array.from(servicesDataArray).forEach(servicesData => {
+                    var methodMappingObject = {
+                        endpoint: servicesData.exposed,
+                        requestType: servicesData.method,
+                        incomingRoute: integrationName + '_' + servicesData.name + '_' + integrationName + '_IN_OUT_ROUTE',
+                        outgoingRoute: integrationName + '_' + servicesData.name + '_RATE_LIMITER_IN_ROUTE'
+                    };
+                    /* Push the object into the array */
+                    methodMappings.push(methodMappingObject);
+                });
+            }
+
+            var restProducer = {
+                port: portToBeExposed,
+                host: hostToBeExposed,
+                endpoint: baseEndpointToBeExposed,
+                maxThreadCount: 250,
+                minThreadCount: 50,
+                requestBufferSize: 5000,
+                responseBufferSize: 5000,
+                maxIdleTime: 30000,
+                requestHeaderSize: 1024,
+                proxyPort: -1,
+                restBindingMode: 'auto',
+                matchOnURIPrefix: true,
+                useXForwardForHeader: false,
+                disableStackTrace: true,
+                methodMappings: methodMappings,
+                pluginID: integrationName + '_INTEGRATION_API_GATEWAY',
+                serialVersionID: integrationName + '_API_GATEWAY_PRODUCER_V1',
+                errorHandler: {
+                    deadLetterChannel: '\'' + generateUUID() + '\'',
+                    reDeliveryDelay: 1000,
+                    maxAttempts: 1
+                }
+            };
+
+            restProducers.push(restProducer);
+            /* create restProducers END */
+
+            /* create plugins */
+            var authPlugin = {
+                name: 'MESSAGE_RATE_LIMITER',
+                pluginID: integrationName + '_AUTH_TOKEN_RATE_LIMITER',
+                deploymentUnit: pluginNameText,
+                groupID: pluginNameText,
+                incoming: integrationName + '_AUTH_TOKEN_RATE_LIMITER_IN_ROUTE',
+                outgoing: integrationName + '_AUTH_TOKEN_RATE_LIMITER_OUT_ROUTE',
+                params: {
+                    'msg.count.period': '1000',
+                    'msg.period.size': '60000000',
+                    'reject.limit.enable': 'true',
+                    'msg.group.expression': '((org.eclipse.jetty.server.Request)headers.get(\'CamelHttpServletRequest\')).getRemoteAddr()',
+                    'msg.reject.endpoint': integrationName + '_AUTH_TOKEN_' + integrationName + '_IN_OUT_ROUTE'
+                }
+            };
+
+            plugins.push(authPlugin);
+
+            if (servicesDataArray.length > 0) {
+                Array.from(servicesDataArray).forEach(servicesData => {
+                    var pluginRateLimiterObject = {
+                        name: 'MESSAGE_RATE_LIMITER',
+                        pluginID: integrationName + '_' + servicesData.name + '_RATE_LIMITER',
+                        deploymentUnit: pluginNameText,
+                        groupID: pluginNameText,
+                        incoming: integrationName + '_' + servicesData.name + '_RATE_LIMITER_IN_ROUTE',
+                        outgoing: integrationName + '_' + servicesData.name + '_LIMITER_VALIDATOR_ROUTE',
+                        params: {
+                            'msg.count.period': '10000',
+                            'msg.period.size': '6000000',
+                            'reject.limit.enable': 'true',
+                            'msg.group.expression': '((org.eclipse.jetty.server.Request)headers.get(\'CamelHttpServletRequest\')).getRemoteAddr()',
+                            'msg.reject.endpoint': integrationName + '_' + servicesData.name + '_' + integrationName + '_IN_OUT_ROUTE'
+                        }
+                    };
+                    var pluginBasicAuthObject = {
+                        name: 'BASIC_AUTH',
+                        pluginID: integrationName + '_' + servicesData.name + '_AUTH_VALIDATOR',
+                        deploymentUnit: pluginNameText,
+                        groupID: pluginNameText,
+                        incoming: integrationName + '_' + servicesData.name + '_LIMITER_VALIDATOR_ROUTE',
+                        outgoing: integrationName + '_' + servicesData.name + '_VALIDATOR_OUT_ROUTE',
+                        params: {
+                            'msg.validate.error.log.enable': 'true',
+                            'auth.endpoint.url': 'http://0.0.0.0:8098/auth/token',
+                            'msg.validate.scope': 'hasAll(openid)'
+                        }
+                    };
+                    /* Push the object into the array */
+                    plugins.push(pluginRateLimiterObject);
+                    plugins.push(pluginBasicAuthObject);
+                });
+            }
+            /* create plugins END */
+
+            /* create restConsumers */
+            var methodMappings = [];
+
+            if (authThroughPlugin) {
+                var authMethodMappingObject = {
+                    endpoint: '/' + document.getElementById("service-endpoint-auth").value.trim(),
+                    requestType: document.getElementById("http-method-auth").value.trim(),
+                    incomingRoute: integrationName + '_AUTH_TOKEN_RATE_LIMITER_OUT_ROUTE',
+                    outgoingRoute: integrationName + '_AUTH_TOKEN_' + integrationName + '_IN_OUT_ROUTE'
+                };
+                /* Push the object into the array */
+                methodMappings.push(authMethodMappingObject);
+            } else {
+                var authRestConsumer = {
+                    url: 'http://0.0.0.0:8098/auth',
+                    maxTotalConnections: 500,
+                    connectionsPerRoute: 50,
+                    connectionManagerTimeout: 30000,
+                    connectionEstablishTimeout: 30000,
+                    socketTimeout: 30000,
+                    matchOnURIPrefix: false,
+                    proxyAuthPort: -1,
+                    customParamMap: {
+                        throwExceptionOnFailure: false
+                    },
+                    methodMappings: [
+                        {
+                            endpoint: '/authToken',
+                            requestType: 'POST',
+                            incomingRoute: integrationName + '_AUTH_TOKEN_RATE_LIMITER_OUT_ROUTE',
+                            outgoingRoute: integrationName + '_AUTH_TOKEN_' + integrationName + '_IN_OUT_ROUTE'
+                        }
+                    ],
+                    pluginID: integrationName + '_INTEGRATION_API_GATEWAY',
+                    serialVersionID: integrationName + '_API_GATEWAY_AUTH_CONSUMER_V1'
+                };
+
+                restConsumers.push(authRestConsumer);
+            }
+
+            if (servicesDataArray.length > 0) {
+                Array.from(servicesDataArray).forEach(servicesData => {
+                    var methodMappingObject = {
+                        endpoint: servicesData.endpoint,
+                        requestType: servicesData.method,
+                        incomingRoute: integrationName + '_' + servicesData.name + '_VALIDATOR_OUT_ROUTE',
+                        outgoingRoute: integrationName + '_' + servicesData.name + '_' + integrationName + '_IN_OUT_ROUTE'
+                    };
+                    /* Push the object into the array */
+                    methodMappings.push(methodMappingObject);
+                });
+            }
+
+            var restConsumer = {
+                url: pluginBaseUrl,
+                maxTotalConnections: 500,
+                connectionsPerRoute: 50,
+                connectionManagerTimeout: 30000,
+                connectionEstablishTimeout: 30000,
+                socketTimeout: 30000,
+                matchOnURIPrefix: false,
+                proxyAuthPort: -1,
+                customParamMap: {
+                    throwExceptionOnFailure: false
+                },
+                methodMappings: methodMappings,
+                pluginID: integrationName + '_INTEGRATION_API_GATEWAY',
+                serialVersionID: integrationName + '_API_GATEWAY_' + integrationName + '_CONSUMER_V1'
+            };
+
+            restConsumers.push(restConsumer);
+            /* create restConsumers END */
+
+            var config = {
+                restProducers: restProducers,
+                plugins: plugins,
+                restConsumers: restConsumers,
+                wsProducers: wsProducers,
+                wsConsumers: wsConsumers,
+                jmsProducers: jmsProducers,
+                jmsConsumers: jmsConsumers,
+                name: pluginNameText,
+                groupID: pluginNameText,
+                deploymentUnit: pluginNameText
+            };
+            /* create json object END */
+
+            try {
+                const formattedJson = JSON.stringify(config, null, 2);
+                document.getElementById('formattedJson').textContent = formattedJson;
+            } catch (e) {
+                document.getElementById('formattedJson').textContent = 'Invalid JSON';
+            }
+
+            $("#modal-title").text(pluginNameText);
+            $(".modal").modal("show");
+        }
+
+        function downloadJson() {
+            var jsonString = document.getElementById("formattedJson").textContent;
+            var jsonFileName = document.getElementById("modal-title").textContent;
+
+            /* Create a blob for the JSON file */
+            const blob = new Blob([jsonString], { type: 'application/json' });
+
+            /* Create a link element to download the file */
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = jsonFileName;
+
+            /* Append link to the body (not visible to the user) */
+            document.body.appendChild(link);
+
+            /* Automatically click the link to trigger the download */
+            link.click();
+
+            /* Clean up by removing the link element */
+            document.body.removeChild(link);
+        }
+
+        function generateConfig() {
+            validateFields();
+
+            if (document.querySelector('.is-invalid')) {
+                $("#notification-toast-body")
+                    .text("Please fill out all required fields!");
+
+                $("#notification-toast-header")
+                    .toggleClass("text-bg-dark", false)
+                    .toggleClass("text-bg-primary", false)
+                    .toggleClass("text-bg-secondary", false)
+                    .toggleClass("text-bg-danger", true);
+
+                $("#notification-toast")
+                    .toast("show");
+            } else {
+                showModal();
+            }
+        }
+
+        function copyToClipboard() {
+            var template = '';
+            template = document.getElementById("formattedJson").textContent;
+
+            navigator.clipboard.writeText(template).then(
+                function () {
+                    $("#notification-toast-body")
+                        .text("Config copied!");
+
+                    $("#notification-toast-header")
+                        .toggleClass("text-bg-danger", false)
+                        .toggleClass("text-bg-dark", false)
+                        .toggleClass("text-bg-secondary", false)
+                        .toggleClass("text-bg-primary", true);
+
+                    $("#notification-toast")
+                        .toast("show");
+                },
+                function (err) {
+                    $("#notification-toast-body")
+                        .text("Failed to copy!");
+
+                    $("#notification-toast-header")
+                        .toggleClass("text-bg-dark", false)
+                        .toggleClass("text-bg-primary", false)
+                        .toggleClass("text-bg-secondary", false)
+                        .toggleClass("text-bg-danger", true);
+
+                    $("#notification-toast")
+                        .toast("show");
+                    console.error("Failed to copy: ", err);
+                }
+            );
+        }
+
+        function clearFields() {
+            const clearInputFieldsElements = document.getElementsByClassName("clear-input-fields-class");
+            Array.from(clearInputFieldsElements).forEach(clearInputFieldsElement => {
+                clearInputFieldsElement.value = '';
+            });
+
+            const clearPFieldsElements = document.getElementsByClassName("clear-p-fields-class");
+            Array.from(clearPFieldsElements).forEach(clearPFieldsElement => {
+                clearPFieldsElement.innerText = '';
+            });
+
+            const clearInputSpansElements = document.getElementsByClassName("clear-input-spans-class");
+            Array.from(clearInputSpansElements).forEach(clearInputSpansElement => {
+                clearInputSpansElement.innerText = '';
+            });
+
+            const clearH6SpansElements = document.getElementsByClassName("clear-h6-spans-class");
+            Array.from(clearH6SpansElements).forEach(clearH6SpansElement => {
+                clearH6SpansElement.innerText = '';
+            });
+
+            /* auth service component reset */
+            document.getElementById("service-endpoint-auth").value = 'authToken';
+            document.getElementById("fill-service-endpoint-to-be-exposed-auth").value = 'authToken';
+
+            /* Select all elements that have either 'is-invalid' or 'is-valid' class */
+            var elements = document.querySelectorAll('.is-invalid, .is-valid');
+
+            /* Loop through the selected elements and remove the classes */
+            elements.forEach(function (element) {
+                element.classList.remove('is-invalid', 'is-valid');
+            });
+
+            $("#notification-toast-body")
+                .text("Cleared!");
+
+            $("#notification-toast-header")
+                .toggleClass("text-bg-danger", false)
+                .toggleClass("text-bg-dark", false)
+                .toggleClass("text-bg-primary", false)
+                .toggleClass("text-bg-secondary", true);
+
+            $("#notification-toast")
+                .toast("show");
+        }
+
+        function resetFields() {
+            clearFields();
+
+            document.getElementById("auth-through-plugin").checked = false;
+            document.getElementById("service-auth").style.display = 'none';
+            document.getElementById('services-list').innerHTML = '';
+
+            addService();
+
+            $("#notification-toast-body")
+                .text("Reset!");
+
+            $("#notification-toast-header")
+                .toggleClass("text-bg-danger", false)
+                .toggleClass("text-bg-primary", false)
+                .toggleClass("text-bg-secondary", false)
+                .toggleClass("text-bg-dark", true);
+
+            $("#notification-toast")
+                .toast("show");
+        }
+    </script>
+
+</body>
+
+</html>

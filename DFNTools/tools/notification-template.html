@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>DFN Tools</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <h1 class="logo"><a href="../index.html"><span>DFN</span>Tools</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="../index.html" class="logo"><img src="../assets/img/logo.png" alt=""></a> -->
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="../index.html">Home</a></li>
+                    <li><a class="nav-link scrollto" href="../support.html">Support</a></li>
+                    <li><a class="nav-link" href="#offcanvas-tools" data-bs-toggle="offcanvas" aria-controls="offcanvas-tools">Tools</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Page Content Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Utilities</h2>
+                    <h3><span>Notification</span> Template Generator</h3>
+                </div>
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="col-lg-12">
+                        <div class="generator">
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <input aria-label="Event ID" class="form-control clear-input-fields-class"
+                                        id="event-id" type="text" placeholder="Event ID"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                    <label for="event-id">Event ID</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <input aria-label="English Subject" class="form-control clear-input-fields-class"
+                                        id="english-subject" type="text" placeholder="English Subject">
+                                    <label for="english-subject">English Subject</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <input dir="rtl" aria-label="Arabic Subject"
+                                        class="form-control clear-input-fields-class" id="arabic-subject" type="text"
+                                        placeholder="Arabic Subject">
+                                    <label for="arabic-subject">Arabic Subject</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <textarea aria-label="English Template"
+                                        class="form-control clear-input-fields-class" id="english-template"
+                                        placeholder="English Template" style="height: 100px"></textarea>
+                                    <label for="english-template">English Template</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <textarea dir="rtl" aria-label="Arabic Template"
+                                        class="form-control clear-input-fields-class" id="arabic-template"
+                                        placeholder="Arabic Template" style="height: 100px"></textarea>
+                                    <label for="arabic-template">Arabic Template</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="radio" class="btn-check" name="change-status" id="customize" value="1"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-primary" for="customize">Customize New Template
+                                    (1)</label>
+
+                                <input type="radio" class="btn-check" name="change-status" id="override" value="2"
+                                    autocomplete="off" checked>
+                                <label class="btn btn-outline-primary" for="override">Override Common Template
+                                    (2)</label>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="English SMS Template"
+                                            class="form-control clear-input-fields-class" id="en-sms-template-text"
+                                            placeholder="English SMS Template" style="height: 100px"
+                                            readonly></textarea>
+                                        <label for="en-sms-template-text">English SMS Template</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('en-sms')"><i class="bi bi-copy"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="Arabic SMS Template"
+                                            class="form-control clear-input-fields-class" id="ar-sms-template-text"
+                                            placeholder="Arabic SMS Template" style="height: 100px" readonly></textarea>
+                                        <label for="ar-sms-template-text">Arabic SMS Template</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('ar-sms')"><i class="bi bi-copy"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="English Email Subject"
+                                            class="form-control clear-input-fields-class" id="en-email-subject-text"
+                                            placeholder="English Email Subject" readonly></textarea>
+                                        <label for="en-email-subject-text">English Email Subject</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('en-email-sub')"><i class="bi bi-copy"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="Arabic Email Subject"
+                                            class="form-control clear-input-fields-class" id="ar-email-subject-text"
+                                            placeholder="Arabic Email Subject" readonly></textarea>
+                                        <label for="ar-email-subject-text">Arabic Email Subject</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('ar-email-sub')"><i class="bi bi-copy"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="English Email Template"
+                                            class="form-control clear-input-fields-class" id="en-email-template-text"
+                                            placeholder="English Email Template" style="height: 100px"
+                                            readonly></textarea>
+                                        <label for="en-email-template-text">English Email Template</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('en-email')"><i class="bi bi-copy"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <textarea aria-label="Arabic Email Template"
+                                            class="form-control clear-input-fields-class" id="ar-email-template-text"
+                                            placeholder="Arabic Email Template" style="height: 100px"
+                                            readonly></textarea>
+                                        <label for="ar-email-template-text">Arabic Email Template</label>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary copy-button"
+                                        onclick="copyToClipboard('ar-email')"><i class="bi bi-copy"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#tool-modal" onclick="showModal('Insert')">Insert Query</button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#tool-modal" onclick="showModal('Update')">Update Query</button>
+                                <button type="button" class="btn btn-secondary px-5 ml-3"
+                                    onclick="clearFields()">Clear</button>
+                            </div>
+
+                        </div>
+
+                        <!-- modal -->
+                        <div class="modal fade" id="tool-modal" tabindex="-1" role="dialog"
+                            aria-labelledby="modal-title" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="modal-title">
+                                            <!-- Modal title will be updated dynamically -->
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Modal body will be updated dynamically -->
+                                        <pre id="sql-query-body"></pre>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-primary btn-sm"
+                                            onclick="copyToClipboard('query')">Copy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- notification toast -->
+                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                            <div id="notification-toast" class="toast" role="alert" aria-live="assertive"
+                                aria-atomic="true">
+                                <div class="toast-header" id="notification-toast-header">
+                                    <strong class="me-auto">DFN Tools</strong>
+                                    <small>Just now</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body" id="notification-toast-body">
+                                    <!-- Toast body will be updated dynamically -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-tools" aria-labelledby="offcanvas-tools-label">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvas-tools-label"><span class="text-primary">Quick Links </span>for Tools</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="section-title">
+                  <h2>Utilities</h2>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <a href="notification-template.html" target="_blank" class="list-group-item list-group-item-action offcanvas-links"><i class="bi bi-chat-right-text"></i> Notification Template Generator</a>
+                  <a href="esbplg-oauth-configuration.html" class="list-group-item list-group-item-action offcanvas-links"><i class="bi bi-filetype-json"></i> ESBPLG OAuth 2.0 Gateway Config Generator</a>
+                </ul>
+              </div>
+            </div>
+
+        </section><!-- End Page Content Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="fixed-bottom">
+        <div class="container py-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span>DFNTools</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="https://www.linkedin.com/in/madushansandaru1/" target="_blank">MadushanSandaru1</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Optional JavaScript -->
+    <script>
+        document.getElementById("english-subject").addEventListener("input", function () {
+            var englishSubject = this.value.trim();
+
+            if (englishSubject) {
+                document.getElementById("en-email-subject-text").value = englishSubject;
+            }
+        });
+
+        document.getElementById("arabic-subject").addEventListener("input", function () {
+            var arabicSubject = this.value.trim();
+
+            if (arabicSubject) {
+                var replacedStringSubject = unicodeForSubject(arabicSubject).replace(/\\0020/g, ' ');
+                var subjectWithTags = 'UNISTR (\'' + replacedStringSubject + '\')';
+                document.getElementById("ar-email-subject-text").value = subjectWithTags;
+            }
+        });
+
+        document.getElementById("english-template").addEventListener("input", function () {
+            var englishTextForSms = this.value.trim();
+            var englishTextForEmail = this.value.trim();
+
+            if (englishTextForSms) {
+                var replacedStringSMS = englishTextForSms.replace(/\n/g, '>br<');
+                document.getElementById("en-sms-template-text").value = replacedStringSMS;
+            }
+
+            if (englishTextForEmail) {
+                var replacedStringEmail = englishTextForEmail.replace(/\n/g, '<br>');
+                var emailWithTags = '<html><body><p>' + replacedStringEmail + '</p></body></html>';
+                document.getElementById("en-email-template-text").value = emailWithTags;
+            }
+        });
+
+        document.getElementById("arabic-template").addEventListener("input", function () {
+            var arabicTextForSms = this.value.trim();
+            var arabicTextForEmail = this.value.trim();
+
+            if (arabicTextForSms) {
+                var replacedStringSMS = unicodeForSMS(arabicTextForSms).replace(/\\u000a/g, '>br<').replace(/\\u0020/g, ' ');
+                document.getElementById("ar-sms-template-text").value = replacedStringSMS;
+            }
+
+            if (arabicTextForEmail) {
+                var replacedStringEmail = unicodeForEmail(arabicTextForEmail).replace(/&#x000a;/g, '<br>').replace(/&#x0020;/g, ' ');
+                var emailWithTags = '<html dir="rtl"><body><p align="right">' + replacedStringEmail + '</p></body></html>';
+                document.getElementById("ar-email-template-text").value = emailWithTags;
+            }
+        });
+
+        function unicodeForSubject(text) {
+            let unicodeText = '';
+            let inVariable = false;
+            let variableName = '';
+
+            for (let i = 0; i < text.length; i++) {
+                const char = text.charAt(i);
+
+                if (char === '$' && text.charAt(i + 1) === '{') {
+                    inVariable = true;
+                    variableName = '';
+                    unicodeText += '${';
+                    i++; // Skip the '{'
+                } else if (char === '}' && inVariable) {
+                    inVariable = false;
+                    unicodeText += '}';
+                } else if (inVariable) {
+                    variableName += char;
+                    unicodeText += char;
+                } else {
+                    unicodeText += '\\' + char.charCodeAt(0).toString(16).padStart(4, '0');
+                }
+            }
+
+            return unicodeText;
+        }
+
+        function unicodeForSMS(text) {
+            let unicodeText = '';
+            let inVariable = false;
+            let variableName = '';
+
+            for (let i = 0; i < text.length; i++) {
+                const char = text.charAt(i);
+
+                if (char === '$' && text.charAt(i + 1) === '{') {
+                    inVariable = true;
+                    variableName = '';
+                    unicodeText += '${';
+                    i++; // Skip the '{'
+                } else if (char === '}' && inVariable) {
+                    inVariable = false;
+                    unicodeText += '}';
+                } else if (inVariable) {
+                    variableName += char;
+                    unicodeText += char;
+                } else {
+                    unicodeText += '\\u' + char.charCodeAt(0).toString(16).padStart(4, '0');
+                }
+            }
+
+            return unicodeText;
+        }
+
+        function unicodeForEmail(text) {
+            let unicodeText = '';
+            let inVariable = false;
+            let variableName = '';
+
+            for (let i = 0; i < text.length; i++) {
+                const char = text.charAt(i);
+
+                if (char === '$' && text.charAt(i + 1) === '{') {
+                    inVariable = true;
+                    variableName = '';
+                    unicodeText += '${';
+                    i++; // Skip the '{'
+                } else if (char === '}' && inVariable) {
+                    inVariable = false;
+                    unicodeText += '}';
+                } else if (inVariable) {
+                    variableName += char;
+                    unicodeText += char;
+                } else {
+                    unicodeText += '&#x' + char.charCodeAt(0).toString(16).padStart(4, '0') + ';';
+                }
+            }
+
+            return unicodeText;
+        }
+
+        function copyToClipboard(templateType) {
+            var template = '';
+            if (templateType === "en-sms") {
+                template = document.getElementById("en-sms-template-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("English SMS Template Copied!");
+                } else {
+                    $("#notification-toast-body").text("English SMS Template Empty!");
+                }
+            } else if (templateType === "ar-sms") {
+                template = document.getElementById("ar-sms-template-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("Arabic SMS Template Copied!");
+                } else {
+                    $("#notification-toast-body").text("Arabic SMS Template Empty!");
+                }
+            } else if (templateType === "en-email-sub") {
+                template = document.getElementById("en-email-subject-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("English Email Subject Copied!");
+                } else {
+                    $("#notification-toast-body").text("English Email Subject Empty!");
+                }
+            } else if (templateType === "ar-email-sub") {
+                template = document.getElementById("ar-email-subject-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("Arabic Email Subject Copied!");
+                } else {
+                    $("#notification-toast-body").text("Arabic Email Subject Empty!");
+                }
+            } else if (templateType === "en-email") {
+                template = document.getElementById("en-email-template-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("English Email Template Copied!");
+                } else {
+                    $("#notification-toast-body").text("English Email Template Empty!");
+                }
+            } else if (templateType === "ar-email") {
+                template = document.getElementById("ar-email-template-text").value.trim();
+                if (template) {
+                    $("#notification-toast-body").text("Arabic Email Template Copied!");
+                } else {
+                    $("#notification-toast-body").text("Arabic Email Template Empty!");
+                }
+            } else if (templateType === "query") {
+                template = document.getElementById("sql-query-body").textContent.trim();
+                if (template) {
+                    $("#notification-toast-body").text("Query Copied!");
+                } else {
+                    $("#notification-toast-body").text("Query Empty!");
+                }
+            }
+
+            if (template) {
+                navigator.clipboard.writeText(template).then(
+                    function () {
+                        $("#notification-toast-header")
+                            .toggleClass("text-bg-danger", false)
+                            .toggleClass("text-bg-secondary", false)
+                            .toggleClass("text-bg-primary", true);
+
+                        $("#notification-toast")
+                            .toast("show");
+                    },
+                    function (err) {
+                        $("#notification-toast-body")
+                            .text("Failed to Copy!");
+
+                        $("#notification-toast-header")
+                            .toggleClass("text-bg-primary", false)
+                            .toggleClass("text-bg-secondary", false)
+                            .toggleClass("text-bg-danger", true);
+
+                        $("#notification-toast")
+                            .toast("show");
+                        console.error("Failed to copy: ", err);
+                    }
+                );
+            } else {
+                $("#notification-toast-header")
+                    .toggleClass("text-bg-primary", false)
+                    .toggleClass("text-bg-danger", false)
+                    .toggleClass("text-bg-secondary", true);
+
+                $("#notification-toast")
+                    .toast("show");
+            }
+        }
+
+        function showModal(queryType) {
+            var query = '';
+            var eventId = document.getElementById("event-id").value.trim();
+            var sms = '\'' + document.getElementById("en-sms-template-text").value + '\'';
+            var smsLang = '\'' + document.getElementById("ar-sms-template-text").value + '\'';
+            var emailSub = '\'' + document.getElementById("en-email-subject-text").value + '\'';
+            var emailSubLang = document.getElementById("ar-email-subject-text").value;
+            var email = '\'' + document.getElementById("en-email-template-text").value + '\'';
+            var emailLang = '\'' + document.getElementById("ar-email-template-text").value + '\'';
+            var changeStatus = document.querySelector('input[name="change-status"]:checked').value;
+
+            if (!eventId) {
+                eventId = '<EVENT_ID>';
+            }
+
+            if (!emailSubLang) {
+                emailSubLang = 'UNISTR (\'\')';
+            }
+
+            if (queryType === "Insert") {
+                query = 'MERGE INTO dfn_ntp.m149_notify_templates_c\n';
+                query += ' USING DUAL\n';
+                query += '    ON (m149_event_id_m148 = ' + eventId + ')\nWHEN NOT MATCHED\nTHEN\n';
+                query += 'WHEN NOT MATCHED\n';
+                query += 'THEN\n';
+                query += '    INSERT (m149_id,\n';
+                query += '            m149_event_id_m148,\n';
+                query += '            m149_sms_template,\n';
+                query += '            m149_sms_template_lang,\n';
+                query += '            m149_email_subject,\n';
+                query += '            m149_email_subject_lang,\n';
+                query += '            m149_email_template,\n';
+                query += '            m149_email_template_lang,\n';
+                query += '            m149_institute_id_m02,\n';
+                query += '            m149_custom_type,\n';
+                query += '            m149_extnl_template_id,\n';
+                query += '            m149_change_status)\n';
+                query += '    VALUES ( (SELECT NVL (MAX (m149_id), 0) + 1\n';
+                query += '                FROM dfn_ntp.m149_notify_templates_c),\n';
+                query += '            ' + eventId + ',\n';
+                query += '            ' + sms + ',\n';
+                query += '            ' + smsLang + ',\n';
+                query += '            ' + emailSub + ',\n';
+                query += '            ' + emailSubLang + ',\n';
+                query += '            ' + email + ',\n';
+                query += '            ' + emailLang + ',\n';
+                query += '            1,\n';
+                query += '            \'1\',\n';
+                query += '            NULL,\n';
+                query += '            ' + changeStatus + ');\n\n';
+                query += 'COMMIT;';
+            } else if (queryType === "Update") {
+                query = 'MERGE INTO dfn_ntp.m149_notify_templates_c\n';
+                query += ' USING DUAL\n';
+                query += '    ON (m149_event_id_m148 = ' + eventId + ' AND m149_institute_id_m02 = 1)\n';
+                query += 'WHEN MATCHED\n';
+                query += 'THEN\n';
+                query += '    UPDATE SET m149_sms_template = ' + sms + ',\n';
+                query += '               m149_sms_template_lang = ' + smsLang + ',\n';
+                query += '               m149_email_subject = ' + emailSub + ',\n';
+                query += '               m149_email_subject_lang = ' + emailSubLang + ',\n';
+                query += '               m149_email_template = ' + email + ',\n';
+                query += '               m149_email_template_lang = ' + emailLang + ';\n\n';
+                query += 'COMMIT;';
+            }
+
+            $("#modal-title").text(queryType + ' Query');
+            $("#sql-query-body").text(query);
+            $(".modal").modal("show");
+        }
+
+        function clearFields() {
+            const clearInputFieldsElements = document.getElementsByClassName("clear-input-fields-class");
+            Array.from(clearInputFieldsElements).forEach(clearInputFieldsElement => {
+                clearInputFieldsElement.value = '';
+            });
+
+            document.getElementById("override").checked = true;
+
+            $("#notification-toast-body")
+                .text("Cleared!");
+
+            $("#notification-toast-header")
+                .toggleClass("text-bg-danger", false)
+                .toggleClass("text-bg-primary", false)
+                .toggleClass("text-bg-secondary", true);
+
+            $("#notification-toast")
+                .toast("show");
+        }
+    </script>
+
+</body>
+
+</html>
