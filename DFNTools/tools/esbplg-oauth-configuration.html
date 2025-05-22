@@ -989,7 +989,7 @@
                 maxIdleTime: 30000,
                 requestHeaderSize: 1024,
                 proxyPort: -1,
-                restBindingMode: 'auto',
+                restBindingMode: 'off',
                 matchOnURIPrefix: true,
                 useXForwardForHeader: false,
                 disableStackTrace: true,
@@ -1018,7 +1018,7 @@
                     'msg.count.period': '1000',
                     'msg.period.size': '60000000',
                     'reject.limit.enable': 'true',
-                    'msg.group.expression': '((org.eclipse.jetty.server.Request)headers.get(\'CamelHttpServletRequest\')).getRemoteAddr()',
+                    'msg.group.expression': '((org.eclipse.jetty.ee10.servlet.ServletApiRequest)headers.get(\'CamelHttpServletRequest\')).getRemoteAddr()',
                     'msg.reject.endpoint': integrationName + '_AUTH_TOKEN_' + integrationName + '_IN_OUT_ROUTE'
                 }
             };
@@ -1038,7 +1038,7 @@
                             'msg.count.period': '10000',
                             'msg.period.size': '6000000',
                             'reject.limit.enable': 'true',
-                            'msg.group.expression': '((org.eclipse.jetty.server.Request)headers.get(\'CamelHttpServletRequest\')).getRemoteAddr()',
+                            'msg.group.expression': '((org.eclipse.jetty.ee10.servlet.ServletApiRequest)headers.get(\'CamelHttpServletRequest\')).getRemoteAddr()',
                             'msg.reject.endpoint': integrationName + '_' + servicesData.name + '_' + integrationName + '_IN_OUT_ROUTE'
                         }
                     };
