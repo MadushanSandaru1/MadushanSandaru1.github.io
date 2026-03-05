@@ -60,7 +60,7 @@
 
                 <div class="section-title">
                     <h2>Utilities</h2>
-                    <h3><span>Notification</span> Template Generator</h3>
+                    <h3><span>ALKB Notification</span> Template Generator</h3>
                 </div>
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -90,6 +90,27 @@
                                     <label for="arabic-subject">Arabic Email Subject</label>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <input aria-label="English Email Title" class="form-control clear-input-fields-class"
+                                        id="english-title" type="text" placeholder="English Email Title">
+                                    <label for="english-title">English Email Title</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating">
+                                    <input dir="rtl" aria-label="Arabic Email Title"
+                                        class="form-control clear-input-fields-class" id="arabic-title" type="text"
+                                        placeholder="Arabic Email Title">
+                                    <label for="arabic-title">Arabic Email Title</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="checkbox" class="btn-check" id="include-dear-client" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary" for="include-dear-client">Include Dear Client</label><br>
+                            </div>
+                            
                             <div class="form-group">
                                 <div class="form-floating">
                                     <textarea aria-label="English SMS & Email Template"
@@ -365,39 +386,202 @@
             }
         });
 
-        document.getElementById("english-template").addEventListener("input", function () {
-            var englishTextForSms = this.value.trim();
-            var englishTextForEmail = this.value.trim();
+        document.getElementById("english-title").addEventListener("input", function () {
+            var englishTextForSms = document.getElementById("english-template").value.trim();
+            var englishTextForEmail = document.getElementById("english-template").value.trim();
+            var englishTitleForEmail = this.value.trim();
+            var includeDearClient = document.getElementById("include-dear-client").checked;
 
             if (englishTextForSms) {
                 var replacedStringSMS = englishTextForSms.replace(/\n/g, '>br<');
-                document.getElementById("en-sms-template-text").value = replacedStringSMS;
+                
+                if (includeDearClient) {
+                    var dearClientSMS = 'Dear Client,>br<>br<';
+                    document.getElementById("en-sms-template-text").value = dearClientSMS + replacedStringSMS;
+                } else {
+                    document.getElementById("en-sms-template-text").value = replacedStringSMS;
+                }
             }
 
             document.getElementById("en-email-template-text").value = '';
 
-            if (englishTextForEmail) {
+            if (englishTextForEmail || englishTitleForEmail) {
                 var replacedStringEmail = englishTextForEmail.replace(/\n/g, '<br>');
-                var emailWithTags = '<html><body><p>' + replacedStringEmail + '</p></body></html>';
-                document.getElementById("en-email-template-text").value = emailWithTags;
+                
+                if (includeDearClient) {
+                    var dearClientEmail = '<p style="font-weight: bold; direction:ltr;">Dear Client,</p>';
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:ltr;">' + englishTitleForEmail + '</p></div><div style="padding:20px 40px 0 40px;">' + dearClientEmail + '<p style="direction:ltr;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("en-email-template-text").value = emailWithTags;
+                } else {
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:ltr;">' + englishTitleForEmail + '</p></div><div style="padding:20px 40px 0 40px;"><p style="direction:ltr;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("en-email-template-text").value = emailWithTags;
+                }
+            }
+        });
+
+        document.getElementById("arabic-title").addEventListener("input", function () {
+            var arabicTextForSms = document.getElementById("arabic-template").value.trim();
+            var arabicTextForEmail = document.getElementById("arabic-template").value.trim();
+            var arabicTitleForEmail = this.value.trim();
+            var includeDearClient = document.getElementById("include-dear-client").checked;
+
+            if (arabicTextForSms) {
+                var replacedStringSMS = unicodeForSMS(arabicTextForSms).replace(/\\u000a/g, '>br<').replace(/\\u0020/g, ' ');
+
+                if (includeDearClient) {
+                    var dearClientSMS = '\\u0639\\u0632\\u064a\\u0632\\u064a \\u0627\\u0644\\u0639\\u0645\\u064a\\u0644\\u060c>br<>br<';
+                    document.getElementById("ar-sms-template-text").value = dearClientSMS + replacedStringSMS;
+                } else {
+                    document.getElementById("ar-sms-template-text").value = replacedStringSMS;
+                }
+            }
+
+            document.getElementById("ar-email-template-text").value = '';
+
+            if (arabicTextForEmail || arabicTitleForEmail) {
+                var replacedStringEmail = unicodeForEmail(arabicTextForEmail).replace(/&#x000a;/g, '<br>').replace(/&#x0020;/g, ' ');
+                var replacedStringEmailTitle = unicodeForEmail(arabicTitleForEmail).replace(/&#x0020;/g, ' ');
+
+                if (includeDearClient) {
+                    var dearClientEmail = '<p style="font-weight: bold; direction:rtl;">&#x0639;&#x0632;&#x064a;&#x0632;&#x064a; &#x0627;&#x0644;&#x0639;&#x0645;&#x064a;&#x0644;&#x060c;</p>';
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:rtl;">' + replacedStringEmailTitle + '</p></div><div style="padding:20px 40px 0 40px;">' + dearClientEmail + '<p style="direction:rtl;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("ar-email-template-text").value = emailWithTags;
+                } else {
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:rtl;">' + replacedStringEmailTitle + '</p></div><div style="padding:20px 40px 0 40px;"><p style="direction:rtl;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("ar-email-template-text").value = emailWithTags;
+                }
+            }
+        });
+
+        document.getElementById("include-dear-client").addEventListener("change", function () {
+            var englishTextForSms = document.getElementById("english-template").value.trim();
+            var englishTextForEmail = document.getElementById("english-template").value.trim();
+            var englishTitleForEmail = document.getElementById("english-title").value.trim();
+            var arabicTextForSms = document.getElementById("arabic-template").value.trim();
+            var arabicTextForEmail = document.getElementById("arabic-template").value.trim();
+            var arabicTitleForEmail = document.getElementById("arabic-title").value.trim();
+
+            document.getElementById("en-sms-template-text").value = '';
+            document.getElementById("en-email-template-text").value = '';
+            document.getElementById("ar-sms-template-text").value = '';
+            document.getElementById("ar-email-template-text").value = '';
+
+            if (englishTextForSms) {
+                var replacedStringSMS = englishTextForSms.replace(/\n/g, '>br<');
+                
+                if (this.checked) {
+                    var dearClientSMS = 'Dear Client,>br<>br<';
+                    document.getElementById("en-sms-template-text").value = dearClientSMS + replacedStringSMS;
+                } else {
+                    document.getElementById("en-sms-template-text").value = replacedStringSMS;
+                }
+            }
+
+            if (englishTextForEmail || englishTitleForEmail) {
+                var replacedStringEmail = englishTextForEmail.replace(/\n/g, '<br>');
+                
+                if (this.checked) {
+                    var dearClientEmail = '<p style="font-weight: bold; direction:ltr;">Dear Client,</p>';
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:ltr;">' + englishTitleForEmail + '</p></div><div style="padding:20px 40px 0 40px;">' + dearClientEmail + '<p style="direction:ltr;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("en-email-template-text").value = emailWithTags;
+                } else {
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:ltr;">' + englishTitleForEmail + '</p></div><div style="padding:20px 40px 0 40px;"><p style="direction:ltr;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("en-email-template-text").value = emailWithTags;
+                }
+            }
+
+            if (arabicTextForSms) {
+                var replacedStringSMS = unicodeForSMS(arabicTextForSms).replace(/\\u000a/g, '>br<').replace(/\\u0020/g, ' ');
+
+                if (this.checked) {
+                    var dearClientSMS = '\\u0639\\u0632\\u064a\\u0632\\u064a \\u0627\\u0644\\u0639\\u0645\\u064a\\u0644\\u060c>br<>br<';
+                    document.getElementById("ar-sms-template-text").value = dearClientSMS + replacedStringSMS;
+                } else {
+                    document.getElementById("ar-sms-template-text").value = replacedStringSMS;
+                }
+            }
+
+            if (arabicTextForEmail || arabicTitleForEmail) {
+                var replacedStringEmail = unicodeForEmail(arabicTextForEmail).replace(/&#x000a;/g, '<br>').replace(/&#x0020;/g, ' ');
+                var replacedStringEmailTitle = unicodeForEmail(arabicTitleForEmail).replace(/&#x0020;/g, ' ');
+
+                if (this.checked) {
+                    var dearClientEmail = '<p style="font-weight: bold; direction:rtl;">&#x0639;&#x0632;&#x064a;&#x0632;&#x064a; &#x0627;&#x0644;&#x0639;&#x0645;&#x064a;&#x0644;&#x060c;</p>';
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:rtl;">' + replacedStringEmailTitle + '</p></div><div style="padding:20px 40px 0 40px;">' + dearClientEmail + '<p style="direction:rtl;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("ar-email-template-text").value = emailWithTags;
+                } else {
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:rtl;">' + replacedStringEmailTitle + '</p></div><div style="padding:20px 40px 0 40px;"><p style="direction:rtl;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("ar-email-template-text").value = emailWithTags;
+                }
+            }
+        });
+
+        document.getElementById("english-template").addEventListener("input", function () {
+            var englishTextForSms = this.value.trim();
+            var englishTextForEmail = this.value.trim();
+            var englishTitleForEmail = document.getElementById("english-title").value.trim();
+            var includeDearClient = document.getElementById("include-dear-client").checked;
+
+            document.getElementById("en-sms-template-text").value = '';
+            document.getElementById("en-email-template-text").value = '';
+
+            if (englishTextForSms) {
+                var replacedStringSMS = englishTextForSms.replace(/\n/g, '>br<');
+
+                if (includeDearClient) {
+                    var dearClientSMS = 'Dear Client,>br<>br<';
+                    document.getElementById("en-sms-template-text").value = dearClientSMS + replacedStringSMS;
+                } else {
+                    document.getElementById("en-sms-template-text").value = replacedStringSMS;
+                }
+            }
+
+            if (englishTextForEmail || englishTitleForEmail) {
+                var replacedStringEmail = englishTextForEmail.replace(/\n/g, '<br>');
+
+                if (includeDearClient) {
+                    var dearClientEmail = '<p style="font-weight: bold; direction:ltr;">Dear Client,</p>';
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:ltr;">' + englishTitleForEmail + '</p></div><div style="padding:20px 40px 0 40px;">' + dearClientEmail + '<p style="direction:ltr;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("en-email-template-text").value = emailWithTags;
+                } else {
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:ltr;">' + englishTitleForEmail + '</p></div><div style="padding:20px 40px 0 40px;"><p style="direction:ltr;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("en-email-template-text").value = emailWithTags;
+                }
             }
         });
 
         document.getElementById("arabic-template").addEventListener("input", function () {
             var arabicTextForSms = this.value.trim();
             var arabicTextForEmail = this.value.trim();
+            var arabicTitleForEmail = document.getElementById("arabic-title").value.trim();
+            var includeDearClient = document.getElementById("include-dear-client").checked;
+
+            document.getElementById("ar-sms-template-text").value = '';
+            document.getElementById("ar-email-template-text").value = '';
 
             if (arabicTextForSms) {
                 var replacedStringSMS = unicodeForSMS(arabicTextForSms).replace(/\\u000a/g, '>br<').replace(/\\u0020/g, ' ');
-                document.getElementById("ar-sms-template-text").value = replacedStringSMS;
+
+                if (includeDearClient) {
+                    var dearClientSMS = '\\u0639\\u0632\\u064a\\u0632\\u064a \\u0627\\u0644\\u0639\\u0645\\u064a\\u0644\\u060c>br<>br<';
+                    document.getElementById("ar-sms-template-text").value = dearClientSMS + replacedStringSMS;
+                } else {
+                    document.getElementById("ar-sms-template-text").value = replacedStringSMS;
+                }
             }
 
-            document.getElementById("ar-email-template-text").value = '';
-
-            if (arabicTextForEmail) {
+            if (arabicTextForEmail || arabicTitleForEmail) {
                 var replacedStringEmail = unicodeForEmail(arabicTextForEmail).replace(/&#x000a;/g, '<br>').replace(/&#x0020;/g, ' ');
-                var emailWithTags = '<html dir="rtl"><body><p align="right">' + replacedStringEmail + '</p></body></html>';
-                document.getElementById("ar-email-template-text").value = emailWithTags;
+                var replacedStringEmailTitle = unicodeForEmail(arabicTitleForEmail).replace(/&#x0020;/g, ' ');
+
+                if (includeDearClient) {
+                    var dearClientEmail = '<p style="font-weight: bold; direction:rtl;">&#x0639;&#x0632;&#x064a;&#x0632;&#x064a; &#x0627;&#x0644;&#x0639;&#x0645;&#x064a;&#x0644;&#x060c;</p>';
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:rtl;">' + replacedStringEmailTitle + '</p></div><div style="padding:20px 40px 0 40px;">' + dearClientEmail + '<p style="direction:rtl;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("ar-email-template-text").value = emailWithTags;
+                } else {
+                    var emailWithTags = 'TO_CLOB (\'<html><body style="font-family:Calibri;"><div style="background:#0f2a4a; padding:1px 40px;"><p style="color:#ffffff; font-size:24px; font-weight:700; line-height:1.2; direction:rtl;">' + replacedStringEmailTitle + '</p></div><div style="padding:20px 40px 0 40px;"><p style="direction:rtl;">' + replacedStringEmail + '</p></div></body></html>\')';
+                    document.getElementById("ar-email-template-text").value = emailWithTags;
+                }
             }
         });
 
@@ -577,6 +761,7 @@
                 template = document.getElementById("en-email-template-text").value.trim();
 
                 if (template) {
+                    template = template.replace(/^TO_CLOB\s*\('/i, '').replace(/'\)\s*$/, '');
                     // Render HTML inside iframe
                     document.getElementById("html-template-preview-frame").srcdoc = template;
                     // Set modal title
@@ -591,7 +776,7 @@
                 template = document.getElementById("ar-email-template-text").value.trim();
 
                 if (template) {
-                    template = template.replace(/^'/i, '').replace(/'$/, '');
+                    template = template.replace(/^TO_CLOB\s*\('/i, '').replace(/'\)\s*$/, '');
                     // Render HTML inside iframe
                     document.getElementById("html-template-preview-frame").srcdoc = template;
                     // Set modal title
@@ -622,8 +807,8 @@
             var smsLang = '\'' + document.getElementById("ar-sms-template-text").value + '\'';
             var emailSub = '\'' + document.getElementById("en-email-subject-text").value + '\'';
             var emailSubLang = document.getElementById("ar-email-subject-text").value;
-            var email = '\'' + document.getElementById("en-email-template-text").value + '\'';
-            var emailLang = '\'' + document.getElementById("ar-email-template-text").value + '\'';
+            var email = document.getElementById("en-email-template-text").value;
+            var emailLang = document.getElementById("ar-email-template-text").value;
             var changeStatus = document.querySelector('input[name="change-status"]:checked').value;
 
             if (!eventId) {
@@ -632,6 +817,14 @@
 
             if (!emailSubLang) {
                 emailSubLang = 'UNISTR (\'\')';
+            }
+
+            if (!email) {
+                email = 'TO_CLOB (\'\')';
+            }
+
+            if (!emailLang) {
+                emailLang = 'TO_CLOB (\'\')';
             }
 
             if (queryType === "Insert") {
@@ -723,7 +916,7 @@
 
             $("#query-modal-title").text(queryType + ' Query');
             $("#sql-query-body").text(query);
-            $(".modal").modal("show");
+            $("#query-modal").modal("show");
         }
 
         function clearFields() {
@@ -731,6 +924,8 @@
             Array.from(clearInputFieldsElements).forEach(clearInputFieldsElement => {
                 clearInputFieldsElement.value = '';
             });
+
+            document.getElementById("include-dear-client").checked = true;
 
             document.getElementById("override").checked = true;
 
