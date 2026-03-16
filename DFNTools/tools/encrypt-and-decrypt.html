@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DFN Tools - Encrypt and Decrypt</title>
+  <meta name="description" content="Encrypt and decrypt text using AES ECB mode with Base64 output.">
+  <meta name="keywords" content="DFN Tools, AES, ECB, Encrypt, Decrypt, Base64">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/tools-pages.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg py-3">
+        <a class="navbar-brand" href="../index.html">
+          <span class="text-primary">DFN</span>Tools
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+          <ul class="navbar-nav align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../support.html">Support</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary ms-lg-2" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvas-tools" aria-controls="offcanvas-tools">
+                <i class="bi bi-grid me-1"></i> Tools
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="generator-page">
+      <div class="container" data-aos="fade-up">
+
+        <div class="page-title text-center">
+          <div class="section-title mb-3">
+            <h2>Utilities</h2>
+          </div>
+          <h3><span>Encrypt</span> and Decrypt</h3>
+        </div>
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-10">
+            <div class="generator-card">
+
+              <div class="form-group mb-4">
+                <div class="form-floating">
+                  <input aria-label="AES Key" class="form-control clear-input-fields-class" id="aes-key" type="text"
+                    placeholder="AES Key" value="@1B2c3D4e5F6g7H8">
+                  <label for="aes-key">
+                    Key
+                    <sup>
+                      <small>
+                        <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" data-bs-placement="top"
+                          title="AES key must be exactly 16, 24, or 32 characters."></i>
+                      </small>
+                    </sup>
+                  </label>
+                  <div class="invalid-feedback">Key must be 16, 24, or 32 characters.</div>
+                </div>
+              </div>
+
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <div class="support-card h-100">
+                    <h5 class="mb-3 fw-bold">Encrypt</h5>
+
+                    <div class="form-group mb-3">
+                      <div class="form-floating">
+                        <textarea aria-label="Plain Text" class="form-control clear-input-fields-class" id="plain-text"
+                          placeholder="Plain Text" style="height: 140px">Test Text</textarea>
+                        <label for="plain-text">Plain Text</label>
+                        <div class="invalid-feedback">Plain text is required.</div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <button type="button" class="btn btn-primary" id="encrypt-btn" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Encrypt plain text using AES ECB">
+                        <i class="bi bi-lock me-1"></i> Encrypt
+                      </button>
+                    </div>
+
+                    <div class="form-group mb-0">
+                      <div class="input-group">
+                        <div class="form-floating">
+                          <textarea aria-label="Encrypted Base64"
+                            class="form-control clear-output-fields-class output-field" id="encrypted-text"
+                            placeholder="Encrypted Base64" style="height: 140px" readonly></textarea>
+                          <label for="encrypted-text">Encrypted (Base64)</label>
+                        </div>
+                        <button type="button" class="btn btn-outline-primary copy-button"
+                          onclick="copyToClipboard('encrypted')" data-bs-toggle="tooltip" data-bs-placement="top"
+                          title="Copy encrypted text">
+                          <i class="bi bi-copy"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="support-card h-100">
+                    <h5 class="mb-3 fw-bold">Decrypt</h5>
+
+                    <div class="form-group mb-3">
+                      <div class="form-floating">
+                        <textarea aria-label="Cipher Text" class="form-control clear-input-fields-class"
+                          id="cipher-text" placeholder="Cipher Text"
+                          style="height: 140px">L7MGN5gKLWwVNFd6joWQoA==</textarea>
+                        <label for="cipher-text">Cipher Text</label>
+                        <div class="invalid-feedback">Cipher text is required.</div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <button type="button" class="btn btn-primary" id="decrypt-btn" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Decrypt Base64 cipher text using AES ECB">
+                        <i class="bi bi-unlock me-1"></i> Decrypt
+                      </button>
+                    </div>
+
+                    <div class="form-group mb-0">
+                      <div class="input-group">
+                        <div class="form-floating">
+                          <textarea aria-label="Decrypted Text"
+                            class="form-control clear-output-fields-class output-field" id="decrypted-text"
+                            placeholder="Decrypted Text" style="height: 140px" readonly></textarea>
+                          <label for="decrypted-text">Decrypted Text</label>
+                        </div>
+                        <button type="button" class="btn btn-outline-primary copy-button"
+                          onclick="copyToClipboard('decrypted')" data-bs-toggle="tooltip" data-bs-placement="top"
+                          title="Copy decrypted text">
+                          <i class="bi bi-copy"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center d-flex flex-wrap justify-content-center gap-2 mt-4 generator-actions">
+                <button type="button" class="btn btn-primary" id="encrypt-decrypt-btn" data-bs-toggle="tooltip"
+                  data-bs-placement="top" title="Run both encrypt and decrypt actions">
+                  <i class="bi bi-arrow-left-right me-1"></i> Encrypt &amp; Decrypt
+                </button>
+                <button type="button" class="btn btn-secondary px-4" onclick="clearFields()" data-bs-toggle="tooltip"
+                  data-bs-placement="top" title="Clear all values and restore defaults">
+                  Clear
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="notification-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div id="notification-toast-header" class="toast-header">
+        <strong class="me-auto">DFN Tools</strong>
+        <small>Just now</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div id="notification-toast-body" class="toast-body"></div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-tools" aria-labelledby="offcanvas-tools-label">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvas-tools-label"><span>Quick Links</span> for Tools</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="section-title mb-4">
+        <h2 class="h4 mb-0">Utilities</h2>
+      </div>
+
+      <div class="list-group list-group-flush">
+        <a href="notification-template.html"
+          class="list-group-item list-group-item-action offcanvas-links rounded">
+          <i class="bi bi-chat-right-text me-2"></i> Notification Template Generator
+        </a>
+        <a href="esbplg-oauth-configuration.html"
+          class="list-group-item list-group-item-action offcanvas-links rounded">
+          <i class="bi bi-filetype-json me-2"></i> ESBPLG OAuth 2.0 Gateway Config Generator
+        </a>
+        <a href="alkb-notification-template.html"
+          class="list-group-item list-group-item-action offcanvas-links rounded">
+          <i class="bi bi-chat-right-dots me-2"></i> ALKB Notification Template Generator
+        </a>
+        <a href="encrypt-and-decrypt.html"
+          class="list-group-item list-group-item-action offcanvas-links rounded active">
+          <i class="bi bi-shield-lock me-2"></i> Encrypt and Decrypt
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container py-3">
+      <div class="row align-items-center gy-2 text-center text-md-start">
+        <div class="col-md-6">
+          <div class="copyright">
+            &copy; <strong><span>DFNTools</span></strong>. All Rights Reserved
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="credits">
+            Designed by
+            <a href="https://www.linkedin.com/in/madushansandaru1/" target="_blank" rel="noopener noreferrer">
+              MadushanSandaru1
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+  <script>
+    const BLOCKSIZE = 16;
+    const PADDINGCHAR = " ";
+
+    const toastElement = document.getElementById("notification-toast");
+    const toastHeader = document.getElementById("notification-toast-header");
+    const toastBody = document.getElementById("notification-toast-body");
+
+    const toastInstance = new bootstrap.Toast(toastElement);
+
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
+
+    const showToast = (message, type = "primary") => {
+      toastBody.textContent = message;
+      toastHeader.classList.remove("text-bg-primary", "text-bg-secondary", "text-bg-danger", "text-bg-success", "text-bg-dark");
+      toastHeader.classList.add(`text-bg-${type}`);
+      toastInstance.show();
+    };
+
+    function pad(text) {
+      let paddedText = text;
+      const missing = paddedText.length % BLOCKSIZE;
+
+      if (missing !== 0) {
+        paddedText += PADDINGCHAR.repeat(BLOCKSIZE - missing);
+      }
+
+      return paddedText;
+    }
+
+    function validateKey(key) {
+      return key.length === 16 || key.length === 24 || key.length === 32;
+    }
+
+    function resetValidationStates() {
+      document.querySelectorAll(".is-invalid, .is-valid").forEach((element) => {
+        element.classList.remove("is-invalid", "is-valid");
+      });
+    }
+
+    function validateEncryptFields() {
+      let isValid = true;
+
+      const keyElement = document.getElementById("aes-key");
+      const plainTextElement = document.getElementById("plain-text");
+
+      const key = keyElement.value.trim();
+      const plainText = plainTextElement.value.trim();
+
+      if (!key || !validateKey(key)) {
+        keyElement.classList.add("is-invalid");
+        keyElement.classList.remove("is-valid");
+        isValid = false;
+      } else {
+        keyElement.classList.remove("is-invalid");
+        keyElement.classList.add("is-valid");
+      }
+
+      if (!plainText) {
+        plainTextElement.classList.add("is-invalid");
+        plainTextElement.classList.remove("is-valid");
+        isValid = false;
+      } else {
+        plainTextElement.classList.remove("is-invalid");
+        plainTextElement.classList.add("is-valid");
+      }
+
+      return isValid;
+    }
+
+    function validateDecryptFields() {
+      let isValid = true;
+
+      const keyElement = document.getElementById("aes-key");
+      const cipherTextElement = document.getElementById("cipher-text");
+
+      const key = keyElement.value.trim();
+      const cipherText = cipherTextElement.value.trim();
+
+      if (!key || !validateKey(key)) {
+        keyElement.classList.add("is-invalid");
+        keyElement.classList.remove("is-valid");
+        isValid = false;
+      } else {
+        keyElement.classList.remove("is-invalid");
+        keyElement.classList.add("is-valid");
+      }
+
+      if (!cipherText) {
+        cipherTextElement.classList.add("is-invalid");
+        cipherTextElement.classList.remove("is-valid");
+        isValid = false;
+      } else {
+        cipherTextElement.classList.remove("is-invalid");
+        cipherTextElement.classList.add("is-valid");
+      }
+
+      return isValid;
+    }
+
+    function encrypt(key, text) {
+      const encrypted = CryptoJS.AES.encrypt(
+        CryptoJS.enc.Utf8.parse(pad(text)),
+        CryptoJS.enc.Utf8.parse(key),
+        {
+          mode: CryptoJS.mode.ECB,
+          padding: CryptoJS.pad.NoPadding
+        }
+      );
+
+      return encrypted.ciphertext.toString(CryptoJS.enc.Base64);
+    }
+
+    function decrypt(key, base64Text) {
+      const decrypted = CryptoJS.AES.decrypt(
+        { ciphertext: CryptoJS.enc.Base64.parse(base64Text) },
+        CryptoJS.enc.Utf8.parse(key),
+        {
+          mode: CryptoJS.mode.ECB,
+          padding: CryptoJS.pad.NoPadding
+        }
+      );
+
+      const utf8Value = CryptoJS.enc.Utf8.stringify(decrypted);
+
+      if (utf8Value === "") {
+        throw new Error("Invalid cipher text or key");
+      }
+
+      return utf8Value.trimEnd();
+    }
+
+    function handleEncrypt() {
+      const encryptedTextField = document.getElementById("encrypted-text");
+      const key = document.getElementById("aes-key").value.trim();
+      const plainText = document.getElementById("plain-text").value;
+
+      encryptedTextField.value = "";
+
+      if (!validateEncryptFields()) {
+        showToast("Please check the key and plain text fields!", "danger");
+        return;
+      }
+
+      try {
+        encryptedTextField.value = encrypt(key, plainText);
+        showToast("Text encrypted successfully!", "success");
+      } catch (error) {
+        console.error("Encryption failed:", error);
+        showToast("Encryption failed!", "danger");
+      }
+    }
+
+    function handleDecrypt() {
+      const decryptedTextField = document.getElementById("decrypted-text");
+      const key = document.getElementById("aes-key").value.trim();
+      const cipherText = document.getElementById("cipher-text").value.trim();
+
+      decryptedTextField.value = "";
+
+      if (!validateDecryptFields()) {
+        showToast("Please check the key and cipher text fields!", "danger");
+        return;
+      }
+
+      try {
+        decryptedTextField.value = decrypt(key, cipherText);
+        showToast("Text decrypted successfully!", "success");
+      } catch (error) {
+        console.error("Decryption failed:", error);
+        document.getElementById("cipher-text").classList.add("is-invalid");
+        showToast("Decryption failed! Check key or cipher text.", "danger");
+      }
+    }
+
+    function copyToClipboard(type) {
+      let text = "";
+
+      if (type === "encrypted") {
+        text = document.getElementById("encrypted-text").value.trim();
+        showToast(text ? "Encrypted text copied!" : "Encrypted text empty!", text ? "primary" : "secondary");
+      } else if (type === "decrypted") {
+        text = document.getElementById("decrypted-text").value.trim();
+        showToast(text ? "Decrypted text copied!" : "Decrypted text empty!", text ? "primary" : "secondary");
+      }
+
+      if (!text) {
+        return;
+      }
+
+      navigator.clipboard.writeText(text).catch((error) => {
+        console.error("Copy failed:", error);
+        showToast("Failed to copy!", "danger");
+      });
+    }
+
+    function clearFields() {
+      document.querySelectorAll(".clear-input-fields-class, .clear-output-fields-class").forEach((element) => {
+        element.value = "";
+      });
+
+      resetValidationStates();
+
+      document.getElementById("aes-key").value = "@1B2c3D4e5F6g7H8";
+      document.getElementById("plain-text").value = "Test Text";
+      document.getElementById("cipher-text").value = "L7MGN5gKLWwVNFd6joWQoA==";
+
+      showToast("Cleared!", "secondary");
+    }
+
+    document.getElementById("aes-key").addEventListener("input", function () {
+      const value = this.value;
+      if (value && validateKey(value.trim())) {
+        this.classList.remove("is-invalid");
+        this.classList.add("is-valid");
+      } else {
+        this.classList.remove("is-valid");
+      }
+    });
+
+    document.getElementById("plain-text").addEventListener("input", function () {
+      if (this.value.trim()) {
+        this.classList.remove("is-invalid");
+        this.classList.add("is-valid");
+      } else {
+        this.classList.remove("is-valid");
+      }
+    });
+
+    document.getElementById("cipher-text").addEventListener("input", function () {
+      if (this.value.trim()) {
+        this.classList.remove("is-invalid");
+        this.classList.add("is-valid");
+      } else {
+        this.classList.remove("is-valid");
+      }
+    });
+
+    document.getElementById("encrypt-btn").addEventListener("click", handleEncrypt);
+    document.getElementById("decrypt-btn").addEventListener("click", handleDecrypt);
+
+    document.getElementById("encrypt-decrypt-btn").addEventListener("click", () => {
+      handleEncrypt();
+      handleDecrypt();
+    });
+  </script>
+
+</body>
+
+</html>
