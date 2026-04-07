@@ -1,0 +1,82 @@
+.generator-page {
+    padding: 4rem 0 6rem;
+    background: var(--dfn-light-bg);
+    min-height: calc(100vh - 140px);
+}
+
+.generator-card {
+    background: #fff;
+    border: 1px solid var(--dfn-border);
+    border-radius: 1rem;
+    box-shadow: var(--dfn-card-shadow);
+    padding: 1.5rem;
+}
+
+.generator-actions .btn {
+    transition: all 0.3s ease;
+}
+
+.copy-button {
+    min-width: 52px;
+}
+
+.btn-group-vertical .btn {
+    min-width: 52px;
+}
+
+.form-floating > textarea.form-control {
+    min-height: 100px;
+}
+
+.form-floating > .form-control:disabled,
+.form-floating > .form-control[readonly] {
+    background-color: #f8f9fa;
+}
+
+#html-template-preview-frame {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.page-title {
+    margin-bottom: 2rem;
+}
+
+.page-title h2 {
+    margin-bottom: 0.75rem;
+}
+
+.page-title h3 {
+    font-weight: 700;
+    color: var(--dfn-dark);
+}
+
+.page-title h3 span {
+    color: var(--dfn-primary);
+}
+
+.services-block {
+    border: 1px dashed rgba(13, 110, 253, 0.15);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: #fff;
+}
+
+@media (max-width: 767.98px) {
+    .generator-page {
+    padding: 3rem 0 5rem;
+    }
+
+    .generator-card {
+    padding: 1rem;
+    }
+
+    .generator-actions .btn {
+    width: 100%;
+    }
+}
+
