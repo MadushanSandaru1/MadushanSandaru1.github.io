@@ -360,6 +360,27 @@ main {
   opacity: 1;
 }
 
+.offcanvas-links.active,
+.offcanvas-links.active:hover,
+.offcanvas-links.active:focus {
+  background-color: var(--dfn-primary);
+  border-color: var(--dfn-primary) !important;
+  color: #ffffff !important;
+  transform: translateX(4px);
+}
+
+.offcanvas-links.active::before,
+.offcanvas-links.active:hover::before,
+.offcanvas-links.active:focus::before {
+  opacity: 0;
+}
+
+.offcanvas-links.active i,
+.offcanvas-links.active:hover i,
+.offcanvas-links.active:focus i {
+  color: #ffffff !important;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
