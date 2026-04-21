@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DFN Tools - Arabic Text Comparison</title>
+  <meta name="description" content="Compare two Arabic texts and highlight differences clearly.">
+  <meta name="keywords" content="DFN Tools, Arabic, Text Comparison, Diff Checker, Compare Text">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/tools-pages.css" rel="stylesheet">
+
+  <style>
+    .comparison-editor,
+    .comparison-output {
+      min-height: 320px !important;
+      font-family: "Open Sans", sans-serif;
+      line-height: 1.9;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .comparison-output {
+      background-color: #f8f9fa;
+      overflow: auto;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      border: 1px solid var(--dfn-border);
+    }
+
+    .diff-added {
+      background-color: rgba(25, 135, 84, 0.18);
+      color: #146c43;
+      padding: 0.1rem 0.2rem;
+      border-radius: 0.25rem;
+    }
+
+    .diff-removed {
+      background-color: rgba(220, 53, 69, 0.16);
+      color: #b02a37;
+      text-decoration: line-through;
+      padding: 0.1rem 0.2rem;
+      border-radius: 0.25rem;
+    }
+
+    .comparison-summary-card {
+      border: 1px dashed rgba(13, 110, 253, 0.15);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      background: #fff;
+      height: 100%;
+    }
+
+    .comparison-stat {
+      font-weight: 700;
+      color: var(--dfn-dark);
+      font-size: 1.1rem;
+    }
+
+    .comparison-label {
+      color: var(--dfn-muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .comparison-editor,
+      .comparison-output {
+        min-height: 220px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg py-3">
+        <a class="navbar-brand" href="../index.html">
+          <span class="text-primary">DFN</span>Tools
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+          <ul class="navbar-nav align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../support.html">Support</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary ms-lg-2" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvas-tools" aria-controls="offcanvas-tools">
+                <i class="bi bi-grid me-1"></i> Tools
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="generator-page">
+      <div class="container" data-aos="fade-up">
+
+        <div class="page-title text-center">
+          <div class="section-title mb-3">
+            <h2>Utilities</h2>
+          </div>
+          <h3><span>Arabic</span> Text Comparison</h3>
+          <p class="mb-0">Compare two Arabic texts and highlight the differences clearly.</p>
+        </div>
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12">
+            <div class="generator-card">
+
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <div class="form-group mb-3">
+                    <div class="form-floating">
+                      <textarea dir="rtl" aria-label="Original Arabic Text"
+                        class="form-control clear-input-fields-class comparison-editor" id="original-text"
+                        placeholder="Original Arabic Text"></textarea>
+                      <label for="original-text">Original Arabic Text</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form-group mb-3">
+                    <div class="form-floating">
+                      <textarea dir="rtl" aria-label="Updated Arabic Text"
+                        class="form-control clear-input-fields-class comparison-editor" id="updated-text"
+                        placeholder="Updated Arabic Text"></textarea>
+                      <label for="updated-text">Updated Arabic Text</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center d-flex flex-wrap justify-content-center gap-2 mb-4 generator-actions">
+                <button type="button" class="btn btn-primary" onclick="compareTexts()">
+                  <i class="bi bi-arrow-left-right me-1"></i> Compare Texts
+                </button>
+                <button type="button" class="btn btn-outline-primary" onclick="swapTexts()">
+                  <i class="bi bi-arrow-repeat me-1"></i> Swap
+                </button>
+                <button type="button" class="btn btn-secondary px-4" onclick="clearFields()">Clear</button>
+              </div>
+
+              <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                  <div class="comparison-summary-card text-center">
+                    <div class="comparison-stat" id="added-count">0</div>
+                    <div class="comparison-label">Added Parts</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="comparison-summary-card text-center">
+                    <div class="comparison-stat" id="removed-count">0</div>
+                    <div class="comparison-label">Removed Parts</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="comparison-summary-card text-center">
+                    <div class="comparison-stat" id="changed-count">0</div>
+                    <div class="comparison-label">Changed Blocks</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <div class="support-card h-100">
+                    <h5 class="mb-3 fw-bold">Original View</h5>
+                    <div id="original-output" class="comparison-output" dir="rtl"></div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="support-card h-100">
+                    <h5 class="mb-3 fw-bold">Updated View</h5>
+                    <div id="updated-output" class="comparison-output" dir="rtl"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center d-flex flex-wrap justify-content-center gap-2 mt-4 generator-actions">
+                <button type="button" class="btn btn-outline-primary" onclick="copyComparisonResult()">
+                  <i class="bi bi-copy me-1"></i> Copy Updated Result
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="notification-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div id="notification-toast-header" class="toast-header">
+        <strong class="me-auto">DFN Tools</strong>
+        <small>Just now</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div id="notification-toast-body" class="toast-body"></div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-tools" aria-labelledby="offcanvas-tools-label">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvas-tools-label"><span>Quick Links</span> for Tools</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="section-title mb-4">
+        <h2 class="h4 mb-0">Utilities</h2>
+      </div>
+
+      <div class="list-group list-group-flush">
+        <a href="notification-template.html" class="list-group-item list-group-item-action offcanvas-links rounded">
+          <i class="bi bi-chat-right-text me-2"></i> Notification Template Generator
+        </a>
+
+        <a href="esbplg-oauth-configuration.html"
+          class="list-group-item list-group-item-action offcanvas-links rounded">
+          <i class="bi bi-filetype-json me-2"></i> ESBPLG OAuth 2.0 Gateway Config Generator
+        </a>
+
+        <a href="alkb-notification-template.html"
+          class="list-group-item list-group-item-action offcanvas-links rounded">
+          <i class="bi bi-chat-right-text me-2"></i> ALKB Notification Template Generator
+        </a>
+
+        <a href="encrypt-and-decrypt.html"
+          class="list-group-item list-group-item-action offcanvas-links rounded">
+          <i class="bi bi-shield-lock me-2"></i> Encrypt and Decrypt
+        </a>
+
+        <a href="arabic-text-comparison.html"
+          class="list-group-item list-group-item-action offcanvas-links rounded active">
+          <i class="bi bi-files me-2"></i> Arabic Text Comparison
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container py-3">
+      <div class="row align-items-center gy-2 text-center text-md-start">
+        <div class="col-md-6">
+          <div class="copyright">
+            &copy; <strong><span>DFNTools</span></strong>. All Rights Reserved
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="credits">
+            Designed by
+            <a href="https://www.linkedin.com/in/madushansandaru1/" target="_blank" rel="noopener noreferrer">
+              MadushanSandaru1
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+  <script>
+    const toastElement = document.getElementById("notification-toast");
+    const toastHeader = document.getElementById("notification-toast-header");
+    const toastBody = document.getElementById("notification-toast-body");
+    const toastInstance = new bootstrap.Toast(toastElement);
+
+    const showToast = (message, type = "primary") => {
+      toastBody.textContent = message;
+      toastHeader.classList.remove("text-bg-primary", "text-bg-secondary", "text-bg-danger", "text-bg-success");
+      toastHeader.classList.add(`text-bg-${type}`);
+      toastInstance.show();
+    };
+
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function tokenize(text) {
+      return text.match(/[\u0600-\u06FF0-9A-Za-z]+|[^\s]/g) || [];
+    }
+
+    function buildLcsMatrix(a, b) {
+      const matrix = Array(a.length + 1).fill(null).map(() => Array(b.length + 1).fill(0));
+
+      for (let i = a.length - 1; i >= 0; i--) {
+        for (let j = b.length - 1; j >= 0; j--) {
+          if (a[i] === b[j]) {
+            matrix[i][j] = matrix[i + 1][j + 1] + 1;
+          } else {
+            matrix[i][j] = Math.max(matrix[i + 1][j], matrix[i][j + 1]);
+          }
+        }
+      }
+
+      return matrix;
+    }
+
+    function diffTokens(originalTokens, updatedTokens) {
+      const matrix = buildLcsMatrix(originalTokens, updatedTokens);
+      const originalResult = [];
+      const updatedResult = [];
+
+      let i = 0;
+      let j = 0;
+      let addedCount = 0;
+      let removedCount = 0;
+
+      while (i < originalTokens.length && j < updatedTokens.length) {
+        if (originalTokens[i] === updatedTokens[j]) {
+          originalResult.push(escapeHtml(originalTokens[i]));
+          updatedResult.push(escapeHtml(updatedTokens[j]));
+          i++;
+          j++;
+        } else if (matrix[i + 1][j] >= matrix[i][j + 1]) {
+          originalResult.push(`<span class="diff-removed">${escapeHtml(originalTokens[i])}</span>`);
+          removedCount++;
+          i++;
+        } else {
+          updatedResult.push(`<span class="diff-added">${escapeHtml(updatedTokens[j])}</span>`);
+          addedCount++;
+          j++;
+        }
+      }
+
+      while (i < originalTokens.length) {
+        originalResult.push(`<span class="diff-removed">${escapeHtml(originalTokens[i])}</span>`);
+        removedCount++;
+        i++;
+      }
+
+      while (j < updatedTokens.length) {
+        updatedResult.push(`<span class="diff-added">${escapeHtml(updatedTokens[j])}</span>`);
+        addedCount++;
+        j++;
+      }
+
+      return {
+        originalHtml: originalResult.join(" "),
+        updatedHtml: updatedResult.join(" "),
+        addedCount,
+        removedCount,
+        changedCount: Math.max(addedCount, removedCount)
+      };
+    }
+
+    function compareTexts() {
+      const originalText = document.getElementById("original-text").value.trim();
+      const updatedText = document.getElementById("updated-text").value.trim();
+      const originalOutput = document.getElementById("original-output");
+      const updatedOutput = document.getElementById("updated-output");
+
+      if (!originalText && !updatedText) {
+        showToast("Please enter both Arabic texts!", "danger");
+        return;
+      }
+
+      if (!originalText) {
+        showToast("Original Arabic text is required!", "danger");
+        return;
+      }
+
+      if (!updatedText) {
+        showToast("Updated Arabic text is required!", "danger");
+        return;
+      }
+
+      const originalTokens = tokenize(originalText);
+      const updatedTokens = tokenize(updatedText);
+      const result = diffTokens(originalTokens, updatedTokens);
+
+      originalOutput.innerHTML = result.originalHtml || escapeHtml(originalText);
+      updatedOutput.innerHTML = result.updatedHtml || escapeHtml(updatedText);
+
+      document.getElementById("added-count").textContent = result.addedCount;
+      document.getElementById("removed-count").textContent = result.removedCount;
+      document.getElementById("changed-count").textContent = result.changedCount;
+
+      showToast("Comparison completed!", "success");
+    }
+
+    function swapTexts() {
+      const originalElement = document.getElementById("original-text");
+      const updatedElement = document.getElementById("updated-text");
+
+      const temp = originalElement.value;
+      originalElement.value = updatedElement.value;
+      updatedElement.value = temp;
+
+      showToast("Texts swapped!", "secondary");
+    }
+
+    function copyComparisonResult() {
+      const updatedText = document.getElementById("updated-text").value.trim();
+
+      if (!updatedText) {
+        showToast("Updated text is empty!", "secondary");
+        return;
+      }
+
+      navigator.clipboard.writeText(updatedText).then(
+        () => showToast("Updated text copied!", "primary"),
+        (error) => {
+          console.error("Copy failed:", error);
+          showToast("Failed to copy!", "danger");
+        }
+      );
+    }
+
+    function clearFields() {
+      document.querySelectorAll(".clear-input-fields-class").forEach((element) => {
+        element.value = "";
+      });
+
+      document.getElementById("original-output").innerHTML = "";
+      document.getElementById("updated-output").innerHTML = "";
+      document.getElementById("added-count").textContent = "0";
+      document.getElementById("removed-count").textContent = "0";
+      document.getElementById("changed-count").textContent = "0";
+
+      showToast("Cleared!", "secondary");
+    }
+  </script>
+
+</body>
+
+</html>
