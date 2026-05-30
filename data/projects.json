@@ -9,7 +9,12 @@
     "techStack": ["Java", "Spring Boot", "Apache Camel", "EIP", "SQL", "REST APIs"],
     "githubUrl": "",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/api-gateway.svg", "alt": "Enterprise Service Bus integration preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/ntp-esb/ntp-esb-thumb.png",
+        "alt": "Enterprise Service Bus runtime architecture thumbnail"
+      }
+    ]
   },
   {
     "name": "Light-weight API Gateway",
@@ -21,7 +26,12 @@
     "techStack": ["Java", "Spring Boot", "REST APIs", "JWT", "OAuth 2.0", "TLS/SSL"],
     "githubUrl": "",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/api-gateway.svg", "alt": "Light-weight API Gateway preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/api-gateway/api-gateway-thumb.png",
+        "alt": "Light-weight API Gateway plugin architecture thumbnail"
+      }
+    ]
   },
   {
     "name": "Notification Server (NTP Message Router)",
@@ -33,7 +43,12 @@
     "techStack": ["Java", "Spring Boot", "Apache Camel", "Message Routing", "TLS 1.2", "SQL"],
     "githubUrl": "",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/community.svg", "alt": "Message Router project preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/message-router/message-router-thumb.png",
+        "alt": "Notification Server message router gateway connector thumbnail"
+      }
+    ]
   },
   {
     "name": "Integration Testing Simulators",
@@ -45,7 +60,12 @@
     "techStack": ["Java", "Spring Boot", "REST APIs", "JUnit", "Mockito", "Postman"],
     "githubUrl": "",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/reporting.svg", "alt": "Integration testing simulator preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/integration-simulators/integration-simulators-thumb.png",
+        "alt": "Integration testing simulators QA workflow thumbnail"
+      }
+    ]
   },
   {
     "name": "Fuel Pass Platform Sri Lanka",
