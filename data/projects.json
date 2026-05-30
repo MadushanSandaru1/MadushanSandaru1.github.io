@@ -717,32 +717,32 @@
     "images": [
       {
         "src": "assets/images/projects/nmv/nmv-0-thumb.webp",
-        "gallerySrc": "assets/images/projects/nmv/nmv-0-gallery.png",
+        "gallerySrc": "assets/images/projects/nmv/nmv-0-gallery.webp",
         "alt": "Sri Nishshankamalla Maha Vidyalaya about page with motto, vision, mission, emblem, and flag"
       },
       {
-        "src": "assets/images/projects/nmv/nmv-1-gallery.png",
-        "gallerySrc": "assets/images/projects/nmv/nmv-1-gallery.png",
+        "src": "assets/images/projects/nmv/nmv-1-gallery.webp",
+        "gallerySrc": "assets/images/projects/nmv/nmv-1-gallery.webp",
         "alt": "Sri Nishshankamalla Maha Vidyalaya principal message and footer"
       },
       {
-        "src": "assets/images/projects/nmv/nmv-2-gallery.png",
-        "gallerySrc": "assets/images/projects/nmv/nmv-2-gallery.png",
+        "src": "assets/images/projects/nmv/nmv-2-gallery.webp",
+        "gallerySrc": "assets/images/projects/nmv/nmv-2-gallery.webp",
         "alt": "Sri Nishshankamalla Maha Vidyalaya history page with school flag"
       },
       {
-        "src": "assets/images/projects/nmv/nmv-3-gallery.png",
-        "gallerySrc": "assets/images/projects/nmv/nmv-3-gallery.png",
+        "src": "assets/images/projects/nmv/nmv-3-gallery.webp",
+        "gallerySrc": "assets/images/projects/nmv/nmv-3-gallery.webp",
         "alt": "Sri Nishshankamalla Maha Vidyalaya contact page with map and contact details"
       },
       {
-        "src": "assets/images/projects/nmv/nmv-4-gallery.png",
-        "gallerySrc": "assets/images/projects/nmv/nmv-4-gallery.png",
+        "src": "assets/images/projects/nmv/nmv-4-gallery.webp",
+        "gallerySrc": "assets/images/projects/nmv/nmv-4-gallery.webp",
         "alt": "Sri Nishshankamalla Maha Vidyalaya Sinhala page with school song and footer"
       },
       {
-        "src": "assets/images/projects/nmv/nmv-5-gallery.png",
-        "gallerySrc": "assets/images/projects/nmv/nmv-5-gallery.png",
+        "src": "assets/images/projects/nmv/nmv-5-gallery.webp",
+        "gallerySrc": "assets/images/projects/nmv/nmv-5-gallery.webp",
         "alt": "Sri Nishshankamalla Maha Vidyalaya about page overview"
       }
     ]
@@ -760,17 +760,17 @@
     "images": [
       {
         "src": "assets/images/projects/papersms/papersms-0-thumb.webp",
-        "gallerySrc": "assets/images/projects/papersms/papersms-0-gallery.png",
+        "gallerySrc": "assets/images/projects/papersms/papersms-0-gallery.webp",
         "alt": "Papers Management System landing page for past papers"
       },
       {
-        "src": "assets/images/projects/papersms/papersms-1-gallery.png",
-        "gallerySrc": "assets/images/projects/papersms/papersms-1-gallery.png",
+        "src": "assets/images/projects/papersms/papersms-1-gallery.webp",
+        "gallerySrc": "assets/images/projects/papersms/papersms-1-gallery.webp",
         "alt": "Papers Management System level and semester selection cards"
       },
       {
-        "src": "assets/images/projects/papersms/papersms-2-gallery.png",
-        "gallerySrc": "assets/images/projects/papersms/papersms-2-gallery.png",
+        "src": "assets/images/projects/papersms/papersms-2-gallery.webp",
+        "gallerySrc": "assets/images/projects/papersms/papersms-2-gallery.webp",
         "alt": "Papers Management System paper download listing by year"
       }
     ]
@@ -788,27 +788,27 @@
     "images": [
       {
         "src": "assets/images/projects/aieseclba/aieseclba-0-thumb.webp",
-        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-0-gallery.png",
+        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-0-gallery.webp",
         "alt": "AIESEC in University of Ruhuna Leadership Body Application home page"
       },
       {
-        "src": "assets/images/projects/aieseclba/aieseclba-1-gallery.png",
-        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-1-gallery.png",
+        "src": "assets/images/projects/aieseclba/aieseclba-1-gallery.webp",
+        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-1-gallery.webp",
         "alt": "AIESEC Leadership Body Application guidelines and countdown section"
       },
       {
-        "src": "assets/images/projects/aieseclba/aieseclba-2-gallery.png",
-        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-2-gallery.png",
+        "src": "assets/images/projects/aieseclba/aieseclba-2-gallery.webp",
+        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-2-gallery.webp",
         "alt": "AIESEC Leadership Body Application front office and back office functional area cards"
       },
       {
-        "src": "assets/images/projects/aieseclba/aieseclba-3-gallery.png",
-        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-3-gallery.png",
+        "src": "assets/images/projects/aieseclba/aieseclba-3-gallery.webp",
+        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-3-gallery.webp",
         "alt": "AIESEC Leadership Body Application contact page with member cards"
       },
       {
-        "src": "assets/images/projects/aieseclba/aieseclba-4-gallery.png",
-        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-4-gallery.png",
+        "src": "assets/images/projects/aieseclba/aieseclba-4-gallery.webp",
+        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-4-gallery.webp",
         "alt": "AIESEC Leadership Body Application role description page for iGV IR"
       }
     ]
