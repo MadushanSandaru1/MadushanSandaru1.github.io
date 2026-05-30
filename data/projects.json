@@ -140,7 +140,7 @@
     "demoUrl": "",
     "images": [
       {
-        "src": "assets/images/projects/rmichatapp/rmichatapp-4-thumb.webp",
+        "src": "assets/images/projects/rmichatapp/rmichatapp-0-thumb.webp",
         "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-0-gallery.webp",
         "alt": "RMI ChatApp sign in screen"
       },
@@ -150,17 +150,17 @@
         "alt": "RMI ChatApp password recovery code screen"
       },
       {
-        "src": "assets/images/projects/rmichatapp/rmichatapp-0-thumb.webp",
+        "src": "assets/images/projects/rmichatapp/rmichatapp-2-thumb.webp",
         "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-2-gallery.webp",
         "alt": "RMI ChatApp sign up screen"
       },
       {
-        "src": "assets/images/projects/rmichatapp/rmichatapp-2-thumb.webp",
+        "src": "assets/images/projects/rmichatapp/rmichatapp-3-thumb.webp",
         "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-3-gallery.webp",
         "alt": "RMI ChatApp chat list screen"
       },
       {
-        "src": "assets/images/projects/rmichatapp/rmichatapp-3-thumb.webp",
+        "src": "assets/images/projects/rmichatapp/rmichatapp-4-thumb.webp",
         "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-4-gallery.webp",
         "alt": "RMI ChatApp message conversation screens"
       }

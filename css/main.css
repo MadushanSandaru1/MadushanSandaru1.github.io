@@ -234,8 +234,8 @@ ul { padding-left: 20px; }
 .social-link:hover, .card-actions a:hover { color: var(--text); border-color: var(--accent); }
 
 .hero-visual { position: relative; width: min(100%, 340px); margin-left: auto; }
-.profile-frame { width: 100%; margin-left: auto; aspect-ratio: 4 / 5; border-radius: 20px; padding: 8px; background: linear-gradient(135deg, rgba(70, 217, 255, .55), rgba(141, 125, 255, .45)); box-shadow: var(--shadow); }
-.profile-image { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; border-radius: 16px; background: var(--bg-soft); }
+.profile-frame { overflow: hidden; width: 100%; margin-left: auto; aspect-ratio: 4 / 5; border-radius: 20px; padding: 8px; background: linear-gradient(135deg, rgba(70, 217, 255, .55), rgba(141, 125, 255, .45)); box-shadow: var(--shadow); }
+.profile-image { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; border-radius: 16px; background: var(--bg-soft); transform: scale(1.07); transform-origin: center 18%; }
 .signal-card { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); width: calc(100% - 44px); padding: 13px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--card-strong); box-shadow: var(--shadow); }
 .signal-card span { color: var(--subtle); display: block; font-size: 12px; margin-bottom: 4px; }
 
