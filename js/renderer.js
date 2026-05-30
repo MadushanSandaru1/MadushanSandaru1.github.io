@@ -34,7 +34,36 @@
   function tags(items) { const values = cleanArray(items); return values.length ? `<div class="tag-list">${values.map((item) => `<span>${esc(item)}</span>`).join('')}</div>` : ''; }
   function imageTag(image, className) {
     if (!image || !hasValue(image.src)) return '';
-    return `<img class="${className || ''}" src="${esc(image.src)}" alt="${esc(image.alt || '')}" loading="lazy" onerror="this.onerror=null;this.src='${esc(image.fallback || 'assets/images/profile/default-avatar.svg')}';">`;
+    const srcset = hasValue(image.srcset) ? ` srcset="${esc(image.srcset)}"` : '';
+    const sizes = hasValue(image.sizes) ? ` sizes="${esc(image.sizes)}"` : '';
+    return `<img class="${className || ''}" src="${esc(image.src)}"${srcset}${sizes} alt="${esc(image.alt || '')}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${esc(image.fallback || 'assets/images/profile/default-avatar.svg')}';">`;
+  }
+  function renderProjectMedia(item) {
+    const images = Array.isArray(item.images) ? item.images.filter((image) => hasValue(image?.src)) : [];
+    if (!images.length) return '';
+    const first = images[0];
+    const controls = images.length > 1
+      ? `<div class="project-gallery-controls" aria-label="${esc(item.name)} screenshots">${images.map((image, index) => `<button class="project-gallery-dot ${index === 0 ? 'active' : ''}" type="button" data-gallery-index="${index}" data-gallery-src="${esc(image.gallerySrc || image.src)}" data-gallery-alt="${esc(image.alt || `${item.name} screenshot ${index + 1}`)}" aria-label="Show screenshot ${index + 1}" aria-pressed="${index === 0 ? 'true' : 'false'}"></button>`).join('')}</div>`
+      : '';
+    return `<div class="project-media">${imageTag(first, 'project-image')} ${images.length > 1 ? `<span class="project-image-count">${images.length} images</span>` : ''}${controls}</div>`;
+  }
+  function initProjectGalleries() {
+    document.querySelectorAll('.project-gallery-controls').forEach(function (controls) {
+      controls.addEventListener('click', function (event) {
+        const button = event.target.closest('.project-gallery-dot');
+        if (!button) return;
+        const media = button.closest('.project-media');
+        const image = media?.querySelector('.project-image');
+        if (!image) return;
+        image.src = button.dataset.gallerySrc;
+        image.alt = button.dataset.galleryAlt || image.alt;
+        controls.querySelectorAll('.project-gallery-dot').forEach(function (dot) {
+          const active = dot === button;
+          dot.classList.toggle('active', active);
+          dot.setAttribute('aria-pressed', String(active));
+        });
+      });
+    });
   }
   function popover(label, content) { return hasValue(content) ? `<div class="detail-popover-wrap"><button class="detail-trigger" type="button" aria-expanded="false">${esc(label)} <span>+</span></button><div class="detail-popover" role="region">${content}</div></div>` : ''; }
   function shouldShow(config, key, data) {
@@ -102,7 +131,8 @@
   }
   function renderProjects(items) {
     const categories = ['All', ...new Set(items.map((item) => item.category).filter(Boolean))];
-    $('#projects').html(`<div class="container">${sectionIntro('Projects', 'Selected work', 'Featured engineering, integration, cloud, and community projects.')}<div class="filter-bar reveal">${categories.map((cat, i) => `<button class="filter-chip ${i === 0 ? 'active' : ''}" type="button" data-filter="${esc(cat)}">${esc(cat)}</button>`).join('')}</div><div class="project-grid">${items.map((item) => `<article class="project-card card reveal" data-project-category="${esc(item.category)}">${imageTag(item.images?.[0], 'project-image')}<div class="project-body">${meta([item.type, item.category])}<h3>${esc(item.name)}</h3>${hasValue(item.description) ? `<p>${esc(item.description)}</p>` : ''}${popover('Engineering detail', `${hasValue(item.problemSolved) ? `<p><strong>Problem solved:</strong> ${esc(item.problemSolved)}</p>` : ''}${list(item.keyFeatures)}${tags(item.techStack)}`)}<div class="card-actions">${hasValue(item.githubUrl) ? `<a href="${esc(item.githubUrl)}" target="_blank" rel="noreferrer">${icon('github')} GitHub</a>` : ''}${hasValue(item.demoUrl) ? `<a href="${esc(item.demoUrl)}" target="_blank" rel="noreferrer">${icon('external')} Demo</a>` : ''}</div></div></article>`).join('')}</div></div>`);
+    $('#projects').html(`<div class="container">${sectionIntro('Projects', 'Selected work', 'Featured engineering, integration, cloud, and community projects.')}<div class="filter-bar reveal">${categories.map((cat, i) => `<button class="filter-chip ${i === 0 ? 'active' : ''}" type="button" data-filter="${esc(cat)}">${esc(cat)}</button>`).join('')}</div><div class="project-grid">${items.map((item) => `<article class="project-card card reveal" data-project-category="${esc(item.category)}">${renderProjectMedia(item)}<div class="project-body">${meta([item.type, item.category])}<h3>${esc(item.name)}</h3>${hasValue(item.description) ? `<p>${esc(item.description)}</p>` : ''}${popover('Engineering detail', `${hasValue(item.problemSolved) ? `<p><strong>Problem solved:</strong> ${esc(item.problemSolved)}</p>` : ''}${list(item.keyFeatures)}${tags(item.techStack)}`)}<div class="card-actions">${hasValue(item.githubUrl) ? `<a href="${esc(item.githubUrl)}" target="_blank" rel="noreferrer">${icon('github')} GitHub</a>` : ''}${hasValue(item.demoUrl) ? `<a href="${esc(item.demoUrl)}" target="_blank" rel="noreferrer">${icon('external')} Demo</a>` : ''}</div></div></article>`).join('')}</div></div>`);
+    initProjectGalleries();
   }
   function renderSkills(items, selector, title, kicker) { $(selector).html(`<div class="container">${sectionIntro(title, kicker, '')}<div class="skill-grid">${items.map((group) => `<article class="skill-panel reveal"><h3>${esc(group.category)}</h3>${tags(group.skills)}</article>`).join('')}</div></div>`); }
   function renderEducation(items) { $('#education').html(`<div class="container">${sectionIntro('Education', 'Academic foundation', '')}<div class="credential-list">${items.map((item) => `<article class="credential-item reveal">${meta([item.period, item.location])}<h3>${esc(item.degree)}</h3>${hasValue(item.institute) ? `<p class="company">${esc(item.institute)}</p>` : ''}${hasValue(item.description) ? `<p>${esc(item.description)}</p>` : ''}${hasValue(item.grade) ? `<p><strong>${esc(item.grade)}</strong></p>` : ''}${tags(item.coursework)}</article>`).join('')}</div></div>`); }

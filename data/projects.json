@@ -69,7 +69,38 @@
     "techStack": ["Spring Boot", "MySQL", "HTML5", "Bootstrap 5", "CSS", "JavaScript"],
     "githubUrl": "https://github.com/MadushanSandaru1/CanteenMS",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/reporting.svg", "alt": "FOT Canteen Management System preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/canteenms/canteenms-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/canteenms/canteenms-0-gallery.webp",
+        "alt": "FOT Canteen Management System home page"
+      },
+      {
+        "src": "assets/images/projects/canteenms/canteenms-5-thumb.webp",
+        "gallerySrc": "assets/images/projects/canteenms/canteenms-5-gallery.webp",
+        "alt": "FOT Canteen Management System login page"
+      },
+      {
+        "src": "assets/images/projects/canteenms/canteenms-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/canteenms/canteenms-2-gallery.webp",
+        "alt": "FOT Canteen Management System order page"
+      },
+      {
+        "src": "assets/images/projects/canteenms/canteenms-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/canteenms/canteenms-1-gallery.webp",
+        "alt": "FOT Canteen Management System user account management page"
+      },
+      {
+        "src": "assets/images/projects/canteenms/canteenms-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/canteenms/canteenms-3-gallery.webp",
+        "alt": "FOT Canteen Management System admin meals page"
+      },
+      {
+        "src": "assets/images/projects/canteenms/canteenms-4-thumb.webp",
+        "gallerySrc": "assets/images/projects/canteenms/canteenms-4-gallery.webp",
+        "alt": "FOT Canteen Management System profile page"
+      }
+    ]
   },
   {
     "name": "RMI ChatApp / Java RMI Chat Application",
@@ -81,7 +112,33 @@
     "techStack": ["Java", "Hibernate", "MySQL", "RMI", "Design Patterns"],
     "githubUrl": "https://github.com/MadushanSandaru1/ChatApp",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/community.svg", "alt": "Java RMI Chat Application preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/rmichatapp/rmichatapp-4-thumb.webp",
+        "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-4-gallery.webp",
+        "alt": "RMI ChatApp sign in screen"
+      },
+      {
+        "src": "assets/images/projects/rmichatapp/rmichatapp-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-1-gallery.webp",
+        "alt": "RMI ChatApp sign up screen"
+      },
+      {
+        "src": "assets/images/projects/rmichatapp/rmichatapp-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-0-gallery.webp",
+        "alt": "RMI ChatApp password recovery code screen"
+      },
+      {
+        "src": "assets/images/projects/rmichatapp/rmichatapp-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-2-gallery.webp",
+        "alt": "RMI ChatApp chat list screen"
+      },
+      {
+        "src": "assets/images/projects/rmichatapp/rmichatapp-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-3-gallery.webp",
+        "alt": "RMI ChatApp message conversation screens"
+      }
+    ]
   },
   {
     "name": "Abhaya Car Rental Management System",
@@ -93,7 +150,53 @@
     "techStack": ["CodeIgniter", "PHP", "Bootstrap", "CSS", "JavaScript", "DomPDF"],
     "githubUrl": "https://github.com/MadushanSandaru1/CRMS",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/reporting.svg", "alt": "Car Rental Management System preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/crms/crms-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/crms/crms-0-gallery.webp",
+        "alt": "Abhaya Car Rental Management System home page"
+      },
+      {
+        "src": "assets/images/projects/crms/crms-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/crms/crms-1-gallery.webp",
+        "alt": "Abhaya Car Rental Management System car booking page"
+      },
+      {
+        "src": "assets/images/projects/crms/crms-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/crms/crms-2-gallery.webp",
+        "alt": "Abhaya Car Rental Management System features page"
+      },
+      {
+        "src": "assets/images/projects/crms/crms-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/crms/crms-3-gallery.webp",
+        "alt": "Abhaya Car Rental Management System contact page"
+      },
+      {
+        "src": "assets/images/projects/crms/crms-4-thumb.webp",
+        "gallerySrc": "assets/images/projects/crms/crms-4-gallery.webp",
+        "alt": "Abhaya Car Rental Management System sign in page"
+      },
+      {
+        "src": "assets/images/projects/crms/crms-5-thumb.webp",
+        "gallerySrc": "assets/images/projects/crms/crms-5-gallery.webp",
+        "alt": "Abhaya Car Rental Management System admin dashboard"
+      },
+      {
+        "src": "assets/images/projects/crms/crms-6-thumb.webp",
+        "gallerySrc": "assets/images/projects/crms/crms-6-gallery.webp",
+        "alt": "Abhaya Car Rental Management System customer management page"
+      },
+      {
+        "src": "assets/images/projects/crms/crms-7-thumb.webp",
+        "gallerySrc": "assets/images/projects/crms/crms-7-gallery.webp",
+        "alt": "Abhaya Car Rental Management System vehicle management form"
+      },
+      {
+        "src": "assets/images/projects/crms/crms-8-thumb.webp",
+        "gallerySrc": "assets/images/projects/crms/crms-8-gallery.webp",
+        "alt": "Abhaya Car Rental Management System vehicle income and expenses report"
+      }
+    ]
   },
   {
     "name": "DigiMart Online Store",
@@ -105,7 +208,78 @@
     "techStack": ["PHP", "JavaScript", "AJAX", "CSS", "Bootstrap", "MySQL", "Google Charts", "Gmail SMTP"],
     "githubUrl": "https://github.com/MadushanSandaru1/DigiMart",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/api-gateway.svg", "alt": "DigiMart online store preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/digimart/digimart-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-0-gallery.webp",
+        "alt": "DigiMart Online Store home page"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-1-gallery.webp",
+        "alt": "DigiMart Online Store dark theme home page"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-2-gallery.webp",
+        "alt": "DigiMart Online Store services and payment methods section"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-3-gallery.webp",
+        "alt": "DigiMart Online Store laptop category listing"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-4-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-4-gallery.webp",
+        "alt": "DigiMart Online Store contact form"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-5-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-5-gallery.webp",
+        "alt": "DigiMart Online Store registration page"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-6-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-6-gallery.webp",
+        "alt": "DigiMart Online Store customize PC locked page"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-7-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-7-gallery.webp",
+        "alt": "DigiMart Online Store customize PC configuration page"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-8-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-8-gallery.webp",
+        "alt": "DigiMart Online Store checkout and payment page"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-9-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-9-gallery.webp",
+        "alt": "DigiMart Online Store customer message center"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-10-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-10-gallery.webp",
+        "alt": "DigiMart Online Store order history page"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-11-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-11-gallery.webp",
+        "alt": "DigiMart Online Store quotation page"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-12-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-12-gallery.webp",
+        "alt": "DigiMart Online Store administrator management page"
+      },
+      {
+        "src": "assets/images/projects/digimart/digimart-13-thumb.webp",
+        "gallerySrc": "assets/images/projects/digimart/digimart-13-gallery.webp",
+        "alt": "DigiMart Online Store dark theme customer management page"
+      }
+    ]
   },
   {
     "name": "ChefGuru Hotel Management System",
@@ -117,7 +291,43 @@
     "techStack": ["Java", "MySQL"],
     "githubUrl": "https://github.com/MadushanSandaru1/ChefGuru",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/reporting.svg", "alt": "ChefGuru Hotel Management System preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/chefguru/chefguru-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguru/chefguru-0-gallery.webp",
+        "alt": "ChefGuru Hotel Management System sign in screen"
+      },
+      {
+        "src": "assets/images/projects/chefguru/chefguru-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguru/chefguru-1-gallery.webp",
+        "alt": "ChefGuru Hotel Management System guest information screen"
+      },
+      {
+        "src": "assets/images/projects/chefguru/chefguru-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguru/chefguru-2-gallery.webp",
+        "alt": "ChefGuru Hotel Management System room type information screen"
+      },
+      {
+        "src": "assets/images/projects/chefguru/chefguru-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguru/chefguru-3-gallery.webp",
+        "alt": "ChefGuru Hotel Management System account settings screen"
+      },
+      {
+        "src": "assets/images/projects/chefguru/chefguru-4-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguru/chefguru-4-gallery.webp",
+        "alt": "ChefGuru Hotel Management System food billing screen"
+      },
+      {
+        "src": "assets/images/projects/chefguru/chefguru-5-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguru/chefguru-5-gallery.webp",
+        "alt": "ChefGuru Hotel Management System check in receipt"
+      },
+      {
+        "src": "assets/images/projects/chefguru/chefguru-6-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguru/chefguru-6-gallery.webp",
+        "alt": "ChefGuru Hotel Management System room information report"
+      }
+    ]
   },
   {
     "name": "ChefGuru Website",
@@ -129,7 +339,38 @@
     "techStack": ["PHP", "Bootstrap", "CSS", "JavaScript", "MySQL"],
     "githubUrl": "https://github.com/MadushanSandaru1/chefguru-website",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/community.svg", "alt": "ChefGuru Website preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/chefguruweb/chefguruweb-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguruweb/chefguruweb-0-gallery.webp",
+        "alt": "ChefGuru Website home page"
+      },
+      {
+        "src": "assets/images/projects/chefguruweb/chefguruweb-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguruweb/chefguruweb-1-gallery.webp",
+        "alt": "ChefGuru Website reservation and feature sections"
+      },
+      {
+        "src": "assets/images/projects/chefguruweb/chefguruweb-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguruweb/chefguruweb-2-gallery.webp",
+        "alt": "ChefGuru Website introduction page"
+      },
+      {
+        "src": "assets/images/projects/chefguruweb/chefguruweb-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguruweb/chefguruweb-3-gallery.webp",
+        "alt": "ChefGuru Website rooms and tariff page"
+      },
+      {
+        "src": "assets/images/projects/chefguruweb/chefguruweb-4-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguruweb/chefguruweb-4-gallery.webp",
+        "alt": "ChefGuru Website gallery page"
+      },
+      {
+        "src": "assets/images/projects/chefguruweb/chefguruweb-5-thumb.webp",
+        "gallerySrc": "assets/images/projects/chefguruweb/chefguruweb-5-gallery.webp",
+        "alt": "ChefGuru Website contact page"
+      }
+    ]
   },
   {
     "name": "Aarogya Hospital Management System",
