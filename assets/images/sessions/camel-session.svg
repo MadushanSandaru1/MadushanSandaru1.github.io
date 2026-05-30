@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Middleware session placeholder">
+  <rect width="800" height="500" fill="#0b1728"/>
+  <g fill="none" stroke-width="16" stroke-linecap="round"><path d="M150 180h170c90 0 70 140 160 140h170" stroke="#46d9ff"/><path d="M150 320h170c90 0 70-140 160-140h170" stroke="#8d7dff"/></g>
+  <text x="400" y="430" fill="#f4f8ff" font-family="Arial" font-size="38" text-anchor="middle">Apache Camel Patterns</text>
+</svg>

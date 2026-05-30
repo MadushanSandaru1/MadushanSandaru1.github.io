@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Sample: Practical REST API Design for Enterprise Systems",
+    "topic": "API Development",
+    "date": "Add session date",
+    "mode": "Hybrid",
+    "audience": "Software engineers and students",
+    "organizedBy": "Add organizer",
+    "description": "Sample session entry for workshops, webinars, conference talks, meetups, or internal engineering knowledge-sharing sessions.",
+    "image": {
+      "src": "assets/images/sessions/api-session.svg",
+      "alt": "Sample API design community session"
+    },
+    "slidesUrl": "https://example.com/slides",
+    "recordingUrl": "https://example.com/recording"
+  },
+  {
+    "title": "Sample: Middleware Patterns with Apache Camel",
+    "topic": "Enterprise Integration",
+    "date": "Add session date",
+    "mode": "Online",
+    "audience": "Backend developers",
+    "organizedBy": "Add organizer",
+    "description": "Sample workshop entry covering routing, transformation, retries, queues, and operational integration patterns.",
+    "image": {
+      "src": "assets/images/sessions/camel-session.svg",
+      "alt": "Sample Apache Camel middleware session"
+    },
+    "slidesUrl": "https://example.com/slides",
+    "recordingUrl": ""
+  }
+]

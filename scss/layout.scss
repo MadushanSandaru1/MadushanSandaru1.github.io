@@ -1,0 +1,116 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background:
+    linear-gradient(120deg, rgba(70, 217, 255, .12), transparent 28rem),
+    radial-gradient(circle at 80% 10%, rgba(141, 125, 255, .16), transparent 28rem),
+    var(--bg);
+  color: var(--text);
+  transition: background-color var(--transition), color var(--transition);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .35;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, #000, transparent 80%);
+}
+.container { width: min(100% - 40px, var(--container)); margin-inline: auto; }
+.narrow { width: min(100% - 40px, 920px); }
+.section { padding: 58px 0; position: relative; }
+.section + .section { border-top: 1px solid rgba(180, 208, 255, .06); }
+.hero { min-height: 86vh; display: grid; align-items: center; padding-top: 96px; padding-bottom: 28px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(260px, 340px); gap: 48px; align-items: center; }
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 300;
+  transition: background var(--transition), border-color var(--transition), backdrop-filter var(--transition);
+}
+.site-header.scrolled {
+  background: rgba(7, 17, 31, .78);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+:root[data-theme="light"] .site-header.scrolled { background: rgba(247, 250, 252, .84); }
+.top-nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { color: var(--text); font-weight: 800; text-decoration: none; letter-spacing: 0; }
+.nav-links { display: flex; align-items: center; gap: 6px; }
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  transition: color var(--transition), background var(--transition);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text); background: var(--card); }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.site-footer { padding: 44px 0 36px; border-top: 1px solid var(--line); background: rgba(0, 0, 0, .08); }
+.footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; color: var(--muted); }
+.bottom-nav { display: none; }
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  transition: opacity 240ms ease, visibility 240ms ease;
+}
+.page-loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-shell {
+  width: min(420px, calc(100% - 48px));
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--card-strong);
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+.loader-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  position: relative;
+  overflow: hidden;
+}
+.loader-lines { display: grid; gap: 10px; }
+.loader-lines span {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+}
+.loader-lines span:nth-child(1) { width: 82%; }
+.loader-lines span:nth-child(2) { width: 62%; }
+.loader-lines span:nth-child(3) { width: 74%; }
+.loader-mark::after, .loader-lines span::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+  animation: shimmer 1.2s infinite;
+}
+@keyframes shimmer { to { transform: translateX(100%); } }

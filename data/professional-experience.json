@@ -1,0 +1,66 @@
+[
+  {
+    "jobTitle": "Senior Software Engineer",
+    "company": "DirectFN Sri Lanka",
+    "location": "Sri Lanka",
+    "employmentType": "Full-time",
+    "startDate": "Sep 2024",
+    "endDate": "Present",
+    "summary": "Leading the design and implementation of complex enterprise integration solutions for fintech systems using Java, Spring Boot, and Apache Camel.",
+    "responsibilities": [
+      "Lead design and implementation of enterprise integration solutions using Java, Spring Boot, and Apache Camel.",
+      "Drive architectural decisions for integration systems with a focus on scalability, performance, and reliability.",
+      "Guide engineering teams on best practices, code quality, and system design.",
+      "Optimize integration workflows and improve system efficiency through process improvements.",
+      "Strengthen security practices and improve testing frameworks for better stability and maintainability."
+    ],
+    "achievements": [
+      "Improved scalability, performance, and reliability across integration systems.",
+      "Mentored engineers while raising code quality and architecture discipline across delivery work."
+    ],
+    "technologies": ["Java", "Spring Boot", "Apache Camel", "SQL", "REST APIs", "Microservices", "JWT", "TLS/SSL"]
+  },
+  {
+    "jobTitle": "Software Engineer",
+    "company": "DirectFN Sri Lanka",
+    "location": "Sri Lanka",
+    "employmentType": "Full-time",
+    "startDate": "Dec 2022",
+    "endDate": "Aug 2024",
+    "summary": "Developed and maintained enterprise integration products including NTP ESB, NTP Message Router, and the NTP Light-weight API Gateway.",
+    "responsibilities": [
+      "Built 25+ secure integrations with third-party and internal systems using Apache Camel.",
+      "Migrated Notification Server to Message Router and integrated 10+ SMS gateways.",
+      "Implemented security features including TLS 1.2 for SMTP and JWT-based authentication.",
+      "Delivered API Gateway solutions to 5+ clients with rate limiting and load balancing capabilities.",
+      "Developed integration simulators to improve testing efficiency and reduce external system dependencies.",
+      "Collaborated onsite in KSA for 3 months, leading deployment and UAT activities for client delivery."
+    ],
+    "achievements": [
+      "Delivered secure integration solutions across multiple client and internal systems.",
+      "Improved testing efficiency and client delivery readiness through custom simulators.",
+      "Supported onsite deployment and UAT leadership for production client delivery in KSA."
+    ],
+    "technologies": ["Java", "Spring Boot", "Apache Camel", "IBM MQ", "RabbitMQ", "ActiveMQ", "JWT", "TLS 1.2", "Jira", "Linux"]
+  },
+  {
+    "jobTitle": "Software Engineer Intern",
+    "company": "DirectFN Sri Lanka",
+    "location": "Sri Lanka",
+    "employmentType": "Internship",
+    "startDate": "Jun 2022",
+    "endDate": "Nov 2022",
+    "summary": "Gained hands-on experience with Java, Spring Boot, reporting systems, security enhancements, and enterprise integration platforms.",
+    "responsibilities": [
+      "Enhanced Notification Server by enabling TLS 1.2 across 5+ live projects.",
+      "Developed new reporting features for NTP Report Server using Jaspersoft Studio.",
+      "Built an Order Testing Tool to streamline testing and validation processes.",
+      "Worked with Java, Spring Boot, and enterprise integration systems."
+    ],
+    "achievements": [
+      "Improved system security and reliability across live projects.",
+      "Reduced testing friction through an internal order testing tool."
+    ],
+    "technologies": ["Java", "Spring Boot", "Jaspersoft Studio", "TLS 1.2", "SQL", "Testing Tools"]
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "platform": "LinkedIn",
+    "url": "https://www.linkedin.com/in/madushansandaru1",
+    "icon": "linkedin",
+    "label": "Connect on LinkedIn"
+  },
+  {
+    "platform": "GitHub",
+    "url": "https://github.com/MadushanSandaru1",
+    "icon": "github",
+    "label": "View GitHub"
+  },
+  {
+    "platform": "Medium",
+    "url": "https://madushansandaru1.medium.com/",
+    "icon": "medium",
+    "label": "Read articles on Medium"
+  },
+  {
+    "platform": "Stack Overflow",
+    "url": "https://stackoverflow.com/users/13410194/madhushan-sandaruwan",
+    "icon": "stackoverflow",
+    "label": "View Stack Overflow profile"
+  },
+  {
+    "platform": "Email",
+    "url": "mailto:madushansandaru1@gmail.com",
+    "icon": "mail",
+    "label": "Send Email"
+  },
+  {
+    "platform": "Website",
+    "url": "https://madushansandaru1.github.io",
+    "icon": "external",
+    "label": "Visit personal website"
+  }
+]

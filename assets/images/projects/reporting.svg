@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Reporting service project placeholder">
+  <rect width="1200" height="675" fill="#0b1728"/>
+  <rect x="170" y="120" width="860" height="430" rx="18" fill="#12243e" stroke="#b4d0ff" opacity=".8"/>
+  <path d="M250 460V330M390 460V240M530 460V290M670 460V195M810 460V260M950 460V350" stroke="#46d9ff" stroke-width="34"/>
+  <path d="M235 470h730" stroke="#aab8cd" stroke-width="4"/>
+  <text x="600" y="595" fill="#f4f8ff" font-family="Arial" font-size="42" text-anchor="middle">Capital Market Reporting</text>
+</svg>

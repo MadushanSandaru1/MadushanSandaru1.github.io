@@ -1,0 +1,44 @@
+{
+  "name": "Madhushan Sandaruwan",
+  "title": "Senior Software Engineer | Enterprise Integration Specialist",
+  "tagline": "Building scalable fintech integrations, backend systems, microservices, and API-driven platforms.",
+  "location": "Sri Lanka",
+  "email": "madushansandaru1@gmail.com",
+  "phone": "+94771637551",
+  "shortSummary": "Senior Software Engineer specializing in backend systems and enterprise integrations in the fintech domain, with experience designing scalable microservices and integration solutions using Java, Spring Boot, Apache Camel, and SQL.",
+  "about": "I design and deliver production-grade software systems with a strong focus on backend engineering, enterprise integration, middleware, APIs, and fintech platforms. My work includes NTP ESB, NTP Message Router, light-weight API Gateway solutions, secure third-party integrations, performance optimization, security improvements, testing simulators, client deployments, and mentoring junior engineers.",
+  "profileImage": {
+    "src": "assets/images/profile/madhushan-sandaruwan-profile-v2.jpg",
+    "alt": "Professional profile photo of Madhushan Sandaruwan",
+    "fallback": "assets/images/profile/default-avatar.svg"
+  },
+  "resume": {
+    "downloadUrl": "assets/docs/Madhushan-Sandaruwan-Senior-Software-Engineer.pdf",
+    "label": "Download CV"
+  },
+  "experienceStartDate": "Jun 2022",
+  "stats": [
+    { "label": "Years of experience", "value": "autoExperienceYears" },
+    { "label": "Secure integrations built", "value": 25 },
+    { "label": "Projects and systems built", "value": 21 },
+    { "label": "Certifications and courses", "value": 37 }
+  ],
+  "focusAreas": [
+    {
+      "title": "Enterprise Integration",
+      "description": "Designing resilient integration flows, message routing, transformations, and API-led connectivity for enterprise fintech platforms."
+    },
+    {
+      "title": "Backend Engineering",
+      "description": "Building Java and Spring Boot services with microservice architecture, secure authentication, testing discipline, and maintainable deployment practices."
+    },
+    {
+      "title": "Fintech Systems",
+      "description": "Working on financial technology platforms that need reliable APIs, report generation, secure communication, client delivery, and operational stability."
+    },
+    {
+      "title": "Technical Leadership",
+      "description": "Guiding engineers on best practices, code quality, system design, architecture decisions, and client-focused delivery."
+    }
+  ]
+}

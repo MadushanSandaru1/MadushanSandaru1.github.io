@@ -1,0 +1,14 @@
+[
+  {
+    "category": "Engineering Leadership",
+    "skills": ["Architectural decision-making", "Mentoring junior engineers", "Code quality guidance", "System design", "Client delivery ownership", "Knowledge sharing"]
+  },
+  {
+    "category": "Delivery Strengths",
+    "skills": ["Problem solving", "Critical thinking", "Time management", "Fast learning", "Testing discipline", "Process improvement", "UAT coordination"]
+  },
+  {
+    "category": "Collaboration",
+    "skills": ["Teamwork", "Active listening", "Communication skills", "Stakeholder communication", "Onsite client collaboration", "Organizing skills"]
+  }
+]

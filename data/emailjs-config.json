@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "publicKey": "user_rUNhO3jZZ0giIsiVwJ2Ju",
+  "serviceId": "service_dv6k0qe",
+  "templateId": "template_yntmq8a",
+  "fallbackEmail": "madushansandaru1@gmail.com",
+  "options": {
+    "blockHeadless": true,
+    "limitRate": {
+      "id": "portfolio-contact-form",
+      "throttle": 10000
+    },
+    "blockList": {
+      "list": [],
+      "watchVariable": "reply_to"
+    }
+  },
+  "templateParams": {
+    "name": "from_name",
+    "email": "reply_to",
+    "message": "message",
+    "subject": "subject",
+    "toEmail": "to_email"
+  }
+}

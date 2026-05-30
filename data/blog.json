@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Build Your Own Java Version Manager (Windows, Git Bash & PowerShell)",
+    "description": "A practical technical article on building a custom Java version manager workflow for Windows using Git Bash and PowerShell.",
+    "date": "",
+    "tags": ["Java", "PowerShell", "Git Bash", "Developer Tools"],
+    "link": "https://madushansandaru1.medium.com/build-your-own-java-version-manager-windows-git-bash-powershell-61273df6ff5c",
+    "coverImage": {
+      "src": "assets/images/blog/java-version-manager.webp",
+      "alt": "Java version manager article cover"
+    }
+  },
+  {
+    "title": "SOAP vs REST, Which Is Better?",
+    "description": "A comparison of SOAP and REST API styles, including practical trade-offs for integration engineers.",
+    "date": "",
+    "tags": ["SOAP", "REST", "API Design", "Integration"],
+    "link": "https://madushansandaru1.medium.com/soap-vs-rest-which-is-better-17c996cb994f",
+    "coverImage": {
+      "src": "assets/images/blog/soap-vs-rest.webp",
+      "alt": "SOAP vs REST article cover"
+    }
+  },
+  {
+    "title": "GitHub Student Developer Pack",
+    "description": "A guide-style article introducing the GitHub Student Developer Pack and how students can benefit from developer tools.",
+    "date": "",
+    "tags": ["GitHub", "Student Developers", "Tools", "Learning"],
+    "link": "https://madushansandaru1.medium.com/github-student-developer-pack-d8a09dd9104c",
+    "coverImage": {
+      "src": "assets/images/blog/github-student-developer-pack.webp",
+      "alt": "GitHub Student Developer Pack article cover"
+    }
+  },
+  {
+    "title": "Cloud Computing vs Distributed Computing",
+    "description": "An introductory article explaining the differences and relationships between cloud computing and distributed computing.",
+    "date": "",
+    "tags": ["Cloud Computing", "Distributed Systems", "Architecture"],
+    "link": "https://madushansandaru1.medium.com/cloud-computing-vs-distributed-computing-a12323b3c259",
+    "coverImage": {
+      "src": "assets/images/blog/cloud-vs-distributed-computing.webp",
+      "alt": "Cloud computing article cover"
+    }
+  }
+]

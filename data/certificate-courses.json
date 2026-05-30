@@ -1,0 +1,350 @@
+[
+  {
+    "name": "Getting Started with Spring Boot",
+    "issuer": "Amigoscode",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1IiNthEFkRM7UhmdXpV1DFm3R1bADt7QW/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1IiNthEFkRM7UhmdXpV1DFm3R1bADt7QW/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Spring Boot", "Java", "Backend Development"]
+  },
+  {
+    "name": "Spring Security",
+    "issuer": "Amigoscode",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/18C94HOBJckHd4ad9GUt_nG-UkPFWqEpn/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/18C94HOBJckHd4ad9GUt_nG-UkPFWqEpn/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Spring Security", "Authentication", "Backend Security"]
+  },
+  {
+    "name": "Diploma in Information and Communication Technology",
+    "issuer": "Infonet Computer Studies, Kandy",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1P7GO3kVC1GnZMTwztSkGoJcM8Vj3Mk7v/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1P7GO3kVC1GnZMTwztSkGoJcM8Vj3Mk7v/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["ICT", "Practical Computing", "Office Applications"]
+  },
+  {
+    "name": "PCAP: Programming Essentials in Python",
+    "issuer": "Vocational Training Authority of Sri Lanka",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1chpbRz7ZoogA65vktpzp6llPefwWuD-m/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1chpbRz7ZoogA65vktpzp6llPefwWuD-m/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Python", "Programming Fundamentals"]
+  },
+  {
+    "name": "MongoDB Basics",
+    "issuer": "MongoDB University",
+    "completedDate": "Completed",
+    "credentialUrl": "https://university.mongodb.com/course_completion/2399d4c2-744d-4f49-acb4-aa2d40068f0d",
+    "credentials": [{ "label": "Credential", "url": "https://university.mongodb.com/course_completion/2399d4c2-744d-4f49-acb4-aa2d40068f0d" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["MongoDB", "NoSQL", "Databases"]
+  },
+  {
+    "name": "Postman Student Expert",
+    "issuer": "Postman",
+    "completedDate": "Completed",
+    "credentialUrl": "https://api.badgr.io/public/assertions/y2E0nrDfT2Gpc8DJXT3QTQ",
+    "credentials": [{ "label": "Badge", "url": "https://api.badgr.io/public/assertions/y2E0nrDfT2Gpc8DJXT3QTQ" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Postman", "API Testing", "REST APIs"]
+  },
+  {
+    "name": "Backend Web Dev with Node.js",
+    "issuer": "ShapeAI",
+    "completedDate": "Completed",
+    "credentialUrl": "",
+    "credentials": [
+      { "label": "Certificate 1", "url": "https://www.cert.shapeai.cf/verify/FRrfy" },
+      { "label": "Certificate 2", "url": "https://www.cert.shapeai.cf/verify/ZDPpDi" },
+      { "label": "Certificate 3", "url": "https://www.cert.shapeai.cf/verify/oKeA6" }
+    ],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Node.js", "Backend Development", "Web APIs"]
+  },
+  {
+    "name": "Basic Web Dev with Bootstrap",
+    "issuer": "ShapeAI",
+    "completedDate": "Completed",
+    "credentialUrl": "",
+    "credentials": [
+      { "label": "Certificate 1", "url": "https://www.cert.shapeai.cf/verify/1SmlmU" },
+      { "label": "Certificate 2", "url": "https://www.cert.shapeai.cf/verify/Z8Ncqd" },
+      { "label": "Certificate 3", "url": "https://www.cert.shapeai.cf/verify/Z154Gzt" }
+    ],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["HTML", "CSS", "Bootstrap", "Web Development"]
+  },
+  {
+    "name": "Javascript and React Js",
+    "issuer": "ShapeAI",
+    "completedDate": "Completed",
+    "credentialUrl": "",
+    "credentials": [
+      { "label": "JavaScript", "url": "https://www.cert.shapeai.cf/verify/ZMjzzl" },
+      { "label": "React JS", "url": "https://www.cert.shapeai.cf/verify/ut17M" }
+    ],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["JavaScript", "React", "Frontend Development"]
+  },
+  {
+    "name": "Python and Deep Learning",
+    "issuer": "ShapeAI",
+    "completedDate": "Completed",
+    "credentialUrl": "",
+    "credentials": [
+      { "label": "Certificate 1", "url": "https://www.cert.shapeai.cf/verify/2llhfC" },
+      { "label": "Certificate 2", "url": "https://www.cert.shapeai.cf/verify/Z2cGQoj" },
+      { "label": "Certificate 3", "url": "https://www.cert.shapeai.cf/verify/1SaVBG" }
+    ],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Python", "Deep Learning", "Machine Learning"]
+  },
+  {
+    "name": "Python Essentials 1",
+    "issuer": "Cisco Networking Academy",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.credly.com/badges/5fda19d5-1492-49ee-a332-9438f3944d51/public_url",
+    "credentials": [{ "label": "Badge", "url": "https://www.credly.com/badges/5fda19d5-1492-49ee-a332-9438f3944d51/public_url" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Python", "Programming"]
+  },
+  {
+    "name": "CCNA: Introduction to Networks",
+    "issuer": "Cisco Networking Academy",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.credly.com/badges/08e21160-29dd-4275-9ea0-7ff7065b849c/public_url",
+    "credentials": [{ "label": "Badge", "url": "https://www.credly.com/badges/08e21160-29dd-4275-9ea0-7ff7065b849c/public_url" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Networking", "Cisco", "Network Fundamentals"]
+  },
+  {
+    "name": "JavaScript Essentials",
+    "issuer": "OpenEDG",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1Ay3uQ7k0pjy9HzkdT-eExqMxMVNUohpi/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1Ay3uQ7k0pjy9HzkdT-eExqMxMVNUohpi/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["JavaScript", "Programming"]
+  },
+  {
+    "name": "Java",
+    "issuer": "SoloLearn",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.sololearn.com/certificates/course/en/21406646/1068/landscape/png",
+    "credentials": [{ "label": "Certificate", "url": "https://www.sololearn.com/certificates/course/en/21406646/1068/landscape/png" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Java", "Object-Oriented Programming"]
+  },
+  {
+    "name": "HTML",
+    "issuer": "SoloLearn",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.sololearn.com/Certificate/1014-21406646/jpg",
+    "credentials": [{ "label": "Certificate", "url": "https://www.sololearn.com/Certificate/1014-21406646/jpg" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["HTML", "Web Development"]
+  },
+  {
+    "name": "SQL",
+    "issuer": "SoloLearn",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.sololearn.com/certificates/course/en/21406646/1060/landscape/png",
+    "credentials": [{ "label": "Certificate", "url": "https://www.sololearn.com/certificates/course/en/21406646/1060/landscape/png" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["SQL", "Databases"]
+  },
+  {
+    "name": "Python for Beginners",
+    "issuer": "CODL - University of Moratuwa",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1f67yI4MUo_SAsntI5iBLpNQTqbYLzlX2/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1f67yI4MUo_SAsntI5iBLpNQTqbYLzlX2/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Python", "Programming Basics"]
+  },
+  {
+    "name": "Web Design for Beginners",
+    "issuer": "CODL - University of Moratuwa",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1FPtlRFjiLjNG6HZYr-d0nquoZ0C_nZWn/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1FPtlRFjiLjNG6HZYr-d0nquoZ0C_nZWn/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Web Design", "HTML", "CSS"]
+  },
+  {
+    "name": "Introduction to Cybersecurity",
+    "issuer": "Cisco Networking Academy",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.credly.com/badges/1a98f23f-2819-410d-b322-3e8d99e4301b/public_url",
+    "credentials": [{ "label": "Badge", "url": "https://www.credly.com/badges/1a98f23f-2819-410d-b322-3e8d99e4301b/public_url" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Cybersecurity", "Security Fundamentals"]
+  },
+  {
+    "name": "Introduction to Packet Tracer",
+    "issuer": "Cisco Networking Academy",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.credly.com/badges/7ca229c3-fafd-4e11-95dc-4c88c3e7660e/public_url",
+    "credentials": [{ "label": "Badge", "url": "https://www.credly.com/badges/7ca229c3-fafd-4e11-95dc-4c88c3e7660e/public_url" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Cisco Packet Tracer", "Networking"]
+  },
+  {
+    "name": "Introduction to IoT",
+    "issuer": "Cisco Networking Academy",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.credly.com/badges/79ae9545-1f9b-46e4-b246-b0d6784e9d59/public_url",
+    "credentials": [{ "label": "Badge", "url": "https://www.credly.com/badges/79ae9545-1f9b-46e4-b246-b0d6784e9d59/public_url" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["IoT", "Networking", "Connected Devices"]
+  },
+  {
+    "name": "Cybersecurity Essentials",
+    "issuer": "Cisco Networking Academy",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.credly.com/badges/f01e473f-f286-45ca-83f2-47aed84b9121/public_url",
+    "credentials": [{ "label": "Badge", "url": "https://www.credly.com/badges/f01e473f-f286-45ca-83f2-47aed84b9121/public_url" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Cybersecurity", "Network Security"]
+  },
+  {
+    "name": "Image Processing 5 Days Workshop",
+    "issuer": "Global Eye International (Pvt) Ltd",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1zTCeGWFppx73wUInziZYMEpPaAZNL__-/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1zTCeGWFppx73wUInziZYMEpPaAZNL__-/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Image Processing", "Computer Vision"]
+  },
+  {
+    "name": "MarkerSpace Programme",
+    "issuer": "The American Corner Matara",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1oUbeDovfw6KeE3Kwpc3Bs5ttojGa9tBn/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1oUbeDovfw6KeE3Kwpc3Bs5ttojGa9tBn/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Makerspace", "Innovation", "Prototyping"]
+  },
+  {
+    "name": "English Enrichment Course",
+    "issuer": "The American Corner Matara",
+    "completedDate": "Completed",
+    "credentialUrl": "",
+    "credentials": [],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["English", "Communication"]
+  },
+  {
+    "name": "Networking Essentials",
+    "issuer": "Cisco Networking Academy",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1uXXqFtY7tnB4O3CypXD6cPQcwunlWOMP/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1uXXqFtY7tnB4O3CypXD6cPQcwunlWOMP/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Networking", "Network Fundamentals"]
+  },
+  {
+    "name": "Git and Github Essentials",
+    "issuer": "Amigoscode",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/15EvOY4Za9H0x52G5waDMDA7BXWpAQaOy/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/15EvOY4Za9H0x52G5waDMDA7BXWpAQaOy/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Git", "GitHub", "Version Control"]
+  },
+  {
+    "name": "Human Resource Management Professional",
+    "issuer": "Virtual Academy",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/17NlrrZJ3VFuopQWc0KVM1Qn6w2x67mcN/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/17NlrrZJ3VFuopQWc0KVM1Qn6w2x67mcN/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Human Resource Management", "Leadership"]
+  },
+  {
+    "name": "C",
+    "issuer": "SoloLearn",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.sololearn.com/Certificate/1089-21406646/jpg",
+    "credentials": [{ "label": "Certificate", "url": "https://www.sololearn.com/Certificate/1089-21406646/jpg" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["C", "Programming"]
+  },
+  {
+    "name": "PHP",
+    "issuer": "SoloLearn",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.sololearn.com/Certificate/1059-21406646/jpg",
+    "credentials": [{ "label": "Certificate", "url": "https://www.sololearn.com/Certificate/1059-21406646/jpg" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["PHP", "Web Development"]
+  },
+  {
+    "name": "JavaScript",
+    "issuer": "SoloLearn",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.sololearn.com/certificates/course/en/21406646/1024/landscape/png",
+    "credentials": [{ "label": "Certificate", "url": "https://www.sololearn.com/certificates/course/en/21406646/1024/landscape/png" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["JavaScript", "Programming"]
+  },
+  {
+    "name": "Python and Computer Vision",
+    "issuer": "ShapeAI",
+    "completedDate": "Completed",
+    "credentialUrl": "https://www.cert.shapeai.cf/verify/Z1HlLhw",
+    "credentials": [{ "label": "Credential", "url": "https://www.cert.shapeai.cf/verify/Z1HlLhw" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Python", "Computer Vision"]
+  },
+  {
+    "name": "NDG Linux Essentials",
+    "issuer": "Network Development Group",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1ohQf63_mwRTmrchGN9fHbfcXMMh3A4Rz/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1ohQf63_mwRTmrchGN9fHbfcXMMh3A4Rz/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Linux", "Operating Systems"]
+  },
+  {
+    "name": "Get Connected",
+    "issuer": "Cisco Networking Academy",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1sZ0q8tdQRG4P2azLmyF0xWBmmmQaVLfK/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1sZ0q8tdQRG4P2azLmyF0xWBmmmQaVLfK/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Digital Literacy", "Networking Basics"]
+  },
+  {
+    "name": "Entrepreneurship",
+    "issuer": "Cisco Networking Academy",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/file/d/1__w7siJRv33uMx3G3Y7nAtIALib5bDaS/view?usp=sharing",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/file/d/1__w7siJRv33uMx3G3Y7nAtIALib5bDaS/view?usp=sharing" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Entrepreneurship", "Business Fundamentals"]
+  },
+  {
+    "name": "The Fundamentals of Digital Marketing",
+    "issuer": "Google Digital Garage",
+    "completedDate": "Completed",
+    "credentialUrl": "https://drive.google.com/open?id=17ndzcJ5cJSl8ZKZvKlk0hYmxld9Bbf8A",
+    "credentials": [{ "label": "Credential", "url": "https://drive.google.com/open?id=17ndzcJ5cJSl8ZKZvKlk0hYmxld9Bbf8A" }],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Digital Marketing", "Online Strategy"]
+  },
+  {
+    "name": "Python Fast Track",
+    "issuer": "Shilpa Sayura Foundation",
+    "completedDate": "Following",
+    "credentialUrl": "",
+    "credentials": [],
+    "image": { "src": "", "alt": "" },
+    "skillsCovered": ["Python", "Programming"]
+  }
+]

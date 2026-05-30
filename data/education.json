@@ -1,0 +1,38 @@
+[
+  {
+    "degree": "Bachelor of Information and Communication Technology (Honours)",
+    "institute": "Faculty of Technology, University of Ruhuna",
+    "location": "Sri Lanka",
+    "period": "2017 - 2022",
+    "grade": "CGPA: 3.62/4.00 | Second Class Upper Division",
+    "description": "Academic foundation in software engineering, databases, web systems, information systems, research, and applied computing. Co-Founder and President of the ICT Students' Circle, member of the Mentor Team in Batch 2, and member of faculty chess, basketball, and carrom teams.",
+    "coursework": ["Software Engineering", "Database Systems", "Web Technologies", "Programming", "Information Systems", "Research", "Advanced Java", "Advanced Database Management Systems"]
+  },
+  {
+    "degree": "Diploma in Information and Communication Technology",
+    "institute": "Infonet Computer Studies, Kandy",
+    "location": "Kandy, Sri Lanka",
+    "period": "Jan 2014 - Jul 2014",
+    "grade": "Distinction | Index No: 14657",
+    "description": "Completed 140 theory hours and 100 practical hours with distinction.",
+    "coursework": ["ICT Fundamentals", "Practical Computing", "Office Applications", "Programming Basics"]
+  },
+  {
+    "degree": "G.C.E. Advanced Level Examination",
+    "institute": "Ananda National School, Puttalam",
+    "location": "Puttalam, Sri Lanka",
+    "period": "2016",
+    "grade": "Technology Stream",
+    "description": "Served as Head Prefect from 2015 to 2016, Senior Prefect from 2014 to 2015, Student of the Year 2015, and member of the media unit.",
+    "coursework": ["Technology Stream", "School Leadership", "Media Unit"]
+  },
+  {
+    "degree": "G.C.E. Ordinary Level Examination",
+    "institute": "CP/HT Sri Nishshankamalla Maha Vidyalaya, Hangarapitiya",
+    "location": "Sri Lanka",
+    "period": "2013",
+    "grade": "",
+    "description": "Completed secondary education foundation before entering the technology stream.",
+    "coursework": []
+  }
+]

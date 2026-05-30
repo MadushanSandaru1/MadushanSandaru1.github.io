@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="API session placeholder">
+  <rect width="800" height="500" fill="#0b1728"/>
+  <path d="M160 250h480M260 160l-90 90 90 90M540 160l90 90-90 90" stroke="#46d9ff" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="420" fill="#f4f8ff" font-family="Arial" font-size="38" text-anchor="middle">REST API Design</text>
+</svg>

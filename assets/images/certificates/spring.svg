@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Spring certificate placeholder">
+  <rect width="400" height="400" rx="40" fill="#0b1728"/>
+  <circle cx="200" cy="170" r="96" fill="#25d0a6" opacity=".85"/>
+  <path d="M145 185c65-2 112-35 135-90-2 94-51 154-135 170 30-28 44-52 0-80z" fill="#f4f8ff"/>
+  <text x="200" y="335" fill="#f4f8ff" font-family="Arial" font-size="34" text-anchor="middle">Spring</text>
+</svg>

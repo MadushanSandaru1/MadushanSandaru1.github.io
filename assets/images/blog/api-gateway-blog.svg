@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="API gateway blog cover placeholder">
+  <rect width="1200" height="675" fill="#0b1728"/>
+  <g stroke="#46d9ff" stroke-width="5" fill="none" opacity=".8"><path d="M260 210h680v255H260z"/><path d="M260 285h680M385 210v255M815 210v255"/></g>
+  <text x="600" y="555" fill="#f4f8ff" font-family="Arial" font-size="48" text-anchor="middle">API Gateway Patterns</text>
+</svg>

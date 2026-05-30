@@ -1,0 +1,12 @@
+[
+  { "category": "Programming Languages", "skills": ["Java", "Python", "SQL", "JavaScript", "C", "PHP", "Perl", "Prolog"] },
+  { "category": "Backend Development", "skills": ["Spring Boot", "Hibernate", "Node.js", "CodeIgniter", "MVC", "REST APIs", "Microservices", "WebSocket"] },
+  { "category": "Integration & Middleware", "skills": ["Apache Camel", "Enterprise Integration Patterns", "ESB", "Message Routing", "IBM MQ", "RabbitMQ", "ActiveMQ", "API Gateway"] },
+  { "category": "API Security", "skills": ["OAuth 2.0", "JWT Authentication", "TLS/SSL", "TLS 1.2", "Secure API Design", "Rate Limiting", "Load Balancing"] },
+  { "category": "Databases", "skills": ["MySQL", "Oracle", "MS SQL", "MongoDB", "Stored Procedures", "Triggers", "Events"] },
+  { "category": "Testing & Debugging", "skills": ["JUnit", "Mockito", "Selenium", "Integration Simulators", "Postman", "Wireshark", "Cisco Packet Tracer"] },
+  { "category": "Frontend & Mobile", "skills": ["HTML", "CSS", "Bootstrap", "jQuery", "AJAX", "Angular", "React", "React Native", "TypeScript"] },
+  { "category": "Tools & Platforms", "skills": ["Git", "GitHub", "Bitbucket", "TortoiseGit", "Linux", "Jira", "ClickUp", "WinSCP", "PuTTY", "Postman"] },
+  { "category": "Reporting & Modeling", "skills": ["TIBCO Jaspersoft Studio", "Crystal Reports", "IBM Rational System Architect", "IBM SPSS Statistics", "Microsoft Project"] },
+  { "category": "Design & Prototyping", "skills": ["Figma", "Autodesk Tinkercad", "MS Microbit", "Microsoft Office"] }
+]

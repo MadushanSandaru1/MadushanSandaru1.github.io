@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "Madhushan Sandaruwan | Senior Software Engineer",
+    "description": "Portfolio of Madhushan Sandaruwan, a Senior Software Engineer from Sri Lanka specializing in backend systems, enterprise integrations, fintech platforms, microservices, APIs, and middleware.",
+    "canonicalUrl": "https://madushansandaru1.github.io",
+    "keywords": [
+      "Madhushan Sandaruwan",
+      "Senior Software Engineer",
+      "Enterprise Integration",
+      "Java Developer",
+      "Spring Boot",
+      "Apache Camel",
+      "Microservices",
+      "API Gateway",
+      "Fintech",
+      "DirectFN",
+      "Sri Lanka"
+    ]
+  },
+  "sections": {
+    "hero": true,
+    "about": true,
+    "professionalExperience": true,
+    "projects": true,
+    "technicalSkills": true,
+    "personalSkills": true,
+    "education": true,
+    "certificateCourses": true,
+    "publications": true,
+    "volunteerExperience": true,
+    "communitySessions": false,
+    "awardsCompetitions": true,
+    "testimonials": true,
+    "interests": true,
+    "languages": true,
+    "blog": true,
+    "contact": true
+  },
+  "emptyState": {
+    "showEmptySections": false
+  }
+}
