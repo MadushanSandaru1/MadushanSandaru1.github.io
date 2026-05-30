@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Community platform project placeholder">
-  <rect width="1200" height="675" fill="#0b1728"/>
-  <circle cx="375" cy="285" r="78" fill="#46d9ff" opacity=".85"/>
-  <circle cx="600" cy="235" r="92" fill="#8d7dff" opacity=".85"/>
-  <circle cx="825" cy="285" r="78" fill="#25d0a6" opacity=".85"/>
-  <path d="M220 520c35-105 105-155 155-155s120 50 155 155M420 520c40-135 120-195 180-195s140 60 180 195M670 520c35-105 105-155 155-155s120 50 155 155" fill="#f4f8ff" opacity=".12"/>
-  <text x="600" y="600" fill="#f4f8ff" font-family="Arial" font-size="42" text-anchor="middle">Developer Community Platform</text>
-</svg>

@@ -65,7 +65,7 @@ Example:
 
 ```json
 "profileImage": {
-  "src": "assets/images/profile/profile-photo.jpg",
+  "src": "assets/images/profile/madhushan-sandaruwan-profile.jpg",
   "alt": "Professional profile photo of Your Name",
   "fallback": "assets/images/profile/default-avatar.svg"
 }

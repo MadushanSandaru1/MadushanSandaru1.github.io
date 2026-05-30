@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Award placeholder">
-  <rect width="400" height="400" rx="40" fill="#0b1728"/>
-  <path d="M140 70h120v95c0 60-40 100-60 115-20-15-60-55-60-115z" fill="#46d9ff"/>
-  <path d="M170 275h60l25 70H145z" fill="#8d7dff"/>
-  <text x="200" y="365" fill="#f4f8ff" font-family="Arial" font-size="28" text-anchor="middle">Recognition</text>
-</svg>

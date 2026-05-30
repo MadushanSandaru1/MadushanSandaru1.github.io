@@ -11,7 +11,7 @@
     "demoUrl": "",
     "images": [
       {
-        "src": "assets/images/projects/ntp-esb/ntp-esb-thumb.png",
+        "src": "assets/images/projects/ntp-esb/ntp-esb-thumb.webp",
         "alt": "Enterprise Service Bus runtime architecture thumbnail"
       }
     ]
@@ -28,7 +28,7 @@
     "demoUrl": "",
     "images": [
       {
-        "src": "assets/images/projects/api-gateway/api-gateway-thumb.png",
+        "src": "assets/images/projects/api-gateway/api-gateway-thumb.webp",
         "alt": "Light-weight API Gateway plugin architecture thumbnail"
       }
     ]
@@ -45,7 +45,7 @@
     "demoUrl": "",
     "images": [
       {
-        "src": "assets/images/projects/message-router/message-router-thumb.png",
+        "src": "assets/images/projects/message-router/message-router-thumb.webp",
         "alt": "Notification Server message router gateway connector thumbnail"
       }
     ]
@@ -62,7 +62,7 @@
     "demoUrl": "",
     "images": [
       {
-        "src": "assets/images/projects/integration-simulators/integration-simulators-thumb.png",
+        "src": "assets/images/projects/integration-simulators/integration-simulators-thumb.webp",
         "alt": "Integration testing simulators QA workflow thumbnail"
       }
     ]
@@ -716,7 +716,7 @@
     "demoUrl": "",
     "images": [
       {
-        "src": "assets/images/projects/nmv/nmv-0-gallery.png",
+        "src": "assets/images/projects/nmv/nmv-0-thumb.webp",
         "gallerySrc": "assets/images/projects/nmv/nmv-0-gallery.png",
         "alt": "Sri Nishshankamalla Maha Vidyalaya about page with motto, vision, mission, emblem, and flag"
       },
@@ -759,7 +759,7 @@
     "demoUrl": "https://papers-ictsc.github.io",
     "images": [
       {
-        "src": "assets/images/projects/papersms/papersms-0-gallery.png",
+        "src": "assets/images/projects/papersms/papersms-0-thumb.webp",
         "gallerySrc": "assets/images/projects/papersms/papersms-0-gallery.png",
         "alt": "Papers Management System landing page for past papers"
       },
@@ -787,7 +787,7 @@
     "demoUrl": "https://aiesec-ruhuna.github.io",
     "images": [
       {
-        "src": "assets/images/projects/aieseclba/aieseclba-0-gallery.png",
+        "src": "assets/images/projects/aieseclba/aieseclba-0-thumb.webp",
         "gallerySrc": "assets/images/projects/aieseclba/aieseclba-0-gallery.png",
         "alt": "AIESEC in University of Ruhuna Leadership Body Application home page"
       },

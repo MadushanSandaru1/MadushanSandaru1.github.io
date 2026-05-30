@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="API gateway project placeholder">
-  <rect width="1200" height="675" fill="#0b1728"/>
-  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#46d9ff"/><stop offset="1" stop-color="#8d7dff"/></linearGradient></defs>
-  <g stroke="#46d9ff" stroke-width="4" fill="none" opacity=".55"><path d="M210 180h220v110H210zM770 180h220v110H770zM490 380h220v110H490zM430 235h340M600 290v90"/></g>
-  <rect x="490" y="380" width="220" height="110" rx="12" fill="url(#g)" opacity=".28"/>
-  <text x="600" y="575" fill="#f4f8ff" font-family="Arial" font-size="42" text-anchor="middle">Enterprise API Gateway</text>
-</svg>

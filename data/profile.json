@@ -8,7 +8,7 @@
   "shortSummary": "Senior Software Engineer specializing in backend systems and enterprise integrations in the fintech domain, with experience designing scalable microservices and integration solutions using Java, Spring Boot, Apache Camel, and SQL.",
   "about": "I design and deliver production-grade software systems with a strong focus on backend engineering, enterprise integration, middleware, APIs, and fintech platforms. My work includes NTP ESB, NTP Message Router, light-weight API Gateway solutions, secure third-party integrations, performance optimization, security improvements, testing simulators, client deployments, and mentoring junior engineers.",
   "profileImage": {
-    "src": "assets/images/profile/madhushan-sandaruwan-profile-v2.jpg",
+    "src": "assets/images/profile/madhushan-sandaruwan-profile.jpg",
     "alt": "Professional profile photo of Madhushan Sandaruwan",
     "fallback": "assets/images/profile/default-avatar.svg"
   },
