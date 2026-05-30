@@ -25,7 +25,7 @@
     display: flex;
     align-items: flex-start;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: clip;
     gap: 14px;
     padding: 2px 2px 12px;
     margin-inline: -2px;
@@ -43,10 +43,12 @@
   .project-card.has-open-popover,
   .volunteer-item.has-open-popover,
   .award-item.has-open-popover,
-  .blog-card.has-open-popover { z-index: 45; }
+  .blog-card.has-open-popover { z-index: 45; transform: none !important; }
+  .card:hover { transform: none; }
   .detail-popover-wrap.is-mobile-fixed-popover .detail-popover {
     position: fixed;
     top: auto;
+    z-index: 400;
     max-height: min(300px, 48vh);
   }
   .project-grid::-webkit-scrollbar,

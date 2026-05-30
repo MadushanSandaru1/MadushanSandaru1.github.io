@@ -271,7 +271,7 @@ ul { padding-left: 20px; }
   pointer-events: none;
 }
 .card, .certificate-item, .volunteer-item, .award-item { position: relative; }
-.has-open-popover { z-index: 45; }
+.has-open-popover { z-index: 45; transform: none !important; backdrop-filter: none; }
 .project-media { position: relative; overflow: hidden; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background: var(--bg-soft); }
 .project-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: var(--bg-soft); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
 .project-image-count { position: absolute; left: 12px; top: 12px; color: #fff; background: rgba(3, 10, 20, .86); border: 1px solid rgba(255, 255, 255, .32); border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 800; line-height: 1; text-shadow: 0 1px 2px rgba(0, 0, 0, .6); box-shadow: 0 8px 18px rgba(0, 0, 0, .24); }
@@ -574,7 +574,7 @@ input:focus, textarea:focus, .button:focus-visible, .icon-button:focus-visible, 
 }
 .back-to-top.visible { opacity: 1; pointer-events: auto; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 520ms ease, transform 520ms ease; }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal.is-visible { opacity: 1; transform: none; }
 .empty-state { padding: 32px; text-align: center; }
 
 .site-footer { padding: 44px 0 36px; border-top: 1px solid var(--line); background: rgba(0, 0, 0, .08); }
@@ -607,7 +607,7 @@ input:focus, textarea:focus, .button:focus-visible, .icon-button:focus-visible, 
     display: flex;
     align-items: flex-start;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: clip;
     gap: 14px;
     padding: 2px 2px 12px;
     margin-inline: -2px;
@@ -625,10 +625,12 @@ input:focus, textarea:focus, .button:focus-visible, .icon-button:focus-visible, 
   .project-card.has-open-popover,
   .volunteer-item.has-open-popover,
   .award-item.has-open-popover,
-  .blog-card.has-open-popover { z-index: 45; }
+  .blog-card.has-open-popover { z-index: 45; transform: none !important; }
+  .card:hover { transform: none; }
   .detail-popover-wrap.is-mobile-fixed-popover .detail-popover {
     position: fixed;
     top: auto;
+    z-index: 400;
     max-height: min(300px, 48vh);
   }
   .project-grid::-webkit-scrollbar,

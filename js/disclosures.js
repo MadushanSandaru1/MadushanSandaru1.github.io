@@ -30,9 +30,19 @@
     wrapper.classList.toggle('is-mobile-fixed-popover', useFixedMobilePanel);
 
     if (useFixedMobilePanel) {
-      panel.style.left = Math.round(Math.max(12, hostRect.left)) + 'px';
-      panel.style.top = Math.round(Math.min(triggerRect.bottom + 8, window.innerHeight - 180)) + 'px';
-      panel.style.width = Math.round(Math.min(hostRect.width, window.innerWidth - 24)) + 'px';
+      const viewport = window.visualViewport || window;
+      const viewportTop = viewport.offsetTop || 0;
+      const viewportLeft = viewport.offsetLeft || 0;
+      const viewportWidth = viewport.width || window.innerWidth;
+      const viewportHeight = viewport.height || window.innerHeight;
+      const panelHeight = Math.min(panel.scrollHeight || 300, 300, viewportHeight * 0.48);
+      const minTop = viewportTop + 12;
+      const maxTop = viewportTop + viewportHeight - panelHeight - 12;
+      const preferredTop = triggerRect.bottom + 8;
+
+      panel.style.left = Math.round(Math.max(viewportLeft + 12, hostRect.left)) + 'px';
+      panel.style.top = Math.round(Math.max(minTop, Math.min(preferredTop, maxTop))) + 'px';
+      panel.style.width = Math.round(Math.min(hostRect.width, viewportWidth - 24)) + 'px';
       return;
     }
 

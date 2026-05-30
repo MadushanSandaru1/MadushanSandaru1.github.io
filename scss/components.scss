@@ -187,7 +187,7 @@ p, li { color: var(--muted); line-height: 1.62; }
   pointer-events: none;
 }
 .card, .certificate-item, .volunteer-item, .award-item { position: relative; }
-.has-open-popover { z-index: 45; }
+.has-open-popover { z-index: 45; transform: none !important; backdrop-filter: none; }
 .project-media {
   position: relative;
   overflow: hidden;
@@ -585,5 +585,5 @@ input:focus, textarea:focus, .button:focus-visible, .icon-button:focus-visible, 
 }
 .back-to-top.visible { opacity: 1; pointer-events: auto; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 520ms ease, transform 520ms ease; }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal.is-visible { opacity: 1; transform: none; }
 .empty-state { padding: 32px; text-align: center; }
