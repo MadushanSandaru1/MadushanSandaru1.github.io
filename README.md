@@ -1,5 +1,14 @@
 # Data-Driven Senior Engineer Portfolio
 
+## Copyright Notice
+
+Copyright © 2026 Madhushan Sandaruwan. All rights reserved.
+
+This repository is provided for viewing and reference purposes only.
+No permission is granted to use, copy, modify, distribute, sublicense, or create derivative works from any part of this code without prior written permission from the copyright holder.
+
+---
+
 A modern, responsive, static portfolio website for a Senior Software Engineer and Integration Engineer. The site is built with HTML, CSS/SCSS, JavaScript, and jQuery, and is ready for GitHub Pages deployment.
 
 ## Project Structure
