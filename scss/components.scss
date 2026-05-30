@@ -200,13 +200,16 @@ p, li { color: var(--muted); line-height: 1.62; }
   position: absolute;
   left: 12px;
   top: 12px;
-  color: var(--text);
-  background: rgba(3, 10, 20, .72);
-  border: 1px solid rgba(255, 255, 255, .18);
+  color: #fff;
+  background: rgba(3, 10, 20, .86);
+  border: 1px solid rgba(255, 255, 255, .32);
   border-radius: 999px;
-  padding: 5px 8px;
+  padding: 6px 10px;
   font-size: 11px;
   font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .24);
 }
 .project-gallery-controls {
   position: absolute;

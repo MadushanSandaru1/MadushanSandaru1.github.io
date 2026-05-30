@@ -110,7 +110,7 @@
     $('[property="og:image"], [name="twitter:image"]').attr('content', profile.profileImage?.src || '');
     $('link[rel="canonical"]').attr('href', site.canonicalUrl || 'https://your-domain.example');
     $('[property="og:url"]').attr('content', site.canonicalUrl || 'https://your-domain.example');
-    $('[data-brand]').text(profile.name || 'Portfolio');
+    $('[data-brand]').html(`<img class="brand-logo" src="assets/images/brand/ms-logo.svg" alt="" aria-hidden="true"><span>${esc(profile.name || 'Portfolio')}</span>`);
     const schema = { '@context': 'https://schema.org', '@type': 'Person', name: profile.name, jobTitle: profile.title, image: profile.profileImage?.src, url: site.canonicalUrl, address: { '@type': 'PostalAddress', addressCountry: profile.location || 'Sri Lanka' }, sameAs: (data.socialLinks || []).filter((item) => hasValue(item.url) && !item.url.startsWith('mailto:')).map((item) => item.url) };
     $('head').append(`<script type="application/ld+json">${JSON.stringify(schema)}<\/script>`);
   }

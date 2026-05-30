@@ -77,7 +77,9 @@ body::before {
 .site-header.scrolled { background: rgba(7, 17, 31, .78); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
 :root[data-theme="light"] .site-header.scrolled { background: rgba(247, 250, 252, .84); }
 .top-nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.brand { color: var(--text); font-weight: 800; text-decoration: none; letter-spacing: 0; }
+.brand { color: var(--text); font-weight: 800; text-decoration: none; letter-spacing: 0; display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
+.brand-logo { width: 34px; height: 34px; flex: 0 0 auto; border-radius: 8px; box-shadow: 0 10px 24px rgba(0, 0, 0, .18); }
+.brand span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .nav-links { display: flex; align-items: center; gap: 6px; }
 .nav-links a { color: var(--muted); text-decoration: none; padding: 9px 11px; border-radius: var(--radius); font-size: 13px; transition: color var(--transition), background var(--transition); }
 .nav-links a:hover, .nav-links a.active { color: var(--text); background: var(--card); }
@@ -272,7 +274,7 @@ ul { padding-left: 20px; }
 .has-open-popover { z-index: 45; }
 .project-media { position: relative; overflow: hidden; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background: var(--bg-soft); }
 .project-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: var(--bg-soft); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
-.project-image-count { position: absolute; left: 12px; top: 12px; color: var(--text); background: rgba(3, 10, 20, .72); border: 1px solid rgba(255, 255, 255, .18); border-radius: 999px; padding: 5px 8px; font-size: 11px; font-weight: 800; }
+.project-image-count { position: absolute; left: 12px; top: 12px; color: #fff; background: rgba(3, 10, 20, .86); border: 1px solid rgba(255, 255, 255, .32); border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 800; line-height: 1; text-shadow: 0 1px 2px rgba(0, 0, 0, .6); box-shadow: 0 8px 18px rgba(0, 0, 0, .24); }
 .project-gallery-controls { position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); display: flex; align-items: center; gap: 7px; padding: 6px 8px; border: 1px solid rgba(255, 255, 255, .16); border-radius: 999px; background: rgba(3, 10, 20, .68); backdrop-filter: blur(8px); }
 .project-gallery-dot { width: 8px; height: 8px; min-height: 0; padding: 0; cursor: pointer; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .48); }
 .project-gallery-dot.active { width: 18px; border-radius: 999px; background: var(--accent); }

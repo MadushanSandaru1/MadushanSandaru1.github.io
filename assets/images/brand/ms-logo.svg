@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">MS monogram logo</title>
+  <desc id="desc">A dark rounded-square logo with cyan-to-blue border and MS letters.</desc>
+  <defs>
+    <linearGradient id="edgeGradient" x1="38" y1="46" x2="474" y2="466" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22e6f2"/>
+      <stop offset="0.48" stop-color="#36a9ff"/>
+      <stop offset="1" stop-color="#6b6cff"/>
+    </linearGradient>
+    <linearGradient id="letterGradient" x1="92" y1="166" x2="424" y2="346" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22e6f2"/>
+      <stop offset="0.52" stop-color="#2ea8ff"/>
+      <stop offset="1" stop-color="#5d6dff"/>
+    </linearGradient>
+    <radialGradient id="surfaceGlow" cx="50%" cy="42%" r="72%">
+      <stop offset="0" stop-color="#112844"/>
+      <stop offset="0.58" stop-color="#07182b"/>
+      <stop offset="1" stop-color="#020813"/>
+    </radialGradient>
+    <filter id="letterShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#00060d" flood-opacity="0.55"/>
+    </filter>
+    <filter id="outerGlow" x="-12%" y="-12%" width="124%" height="124%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#36a9ff" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="52" fill="#020813"/>
+  <rect x="18" y="18" width="476" height="476" rx="72" fill="url(#surfaceGlow)" stroke="url(#edgeGradient)" stroke-width="8" filter="url(#outerGlow)"/>
+  <text x="256" y="342" fill="url(#letterGradient)" filter="url(#letterShadow)" text-anchor="middle" font-family="Inter, Montserrat, Arial, sans-serif" font-size="194" font-weight="900" letter-spacing="-14">MS</text>
+</svg>

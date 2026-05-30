@@ -53,11 +53,17 @@
     "type": "Personal",
     "description": "Full-stack web and mobile application integrated with the Sri Lanka Fuel Pass API system.",
     "problemSolved": "Made real-time fuel quota management more accessible through a cross-platform application with QR access, OTP authentication, and supplier search.",
-    "keyFeatures": ["Real-time fuel quota tracking", "Instant QR code access", "Fuel station and supplier search", "Secure OTP-based authentication", "Light and dark mode support", "Monorepo architecture with shared packages"],
+    "keyFeatures": ["Secure OTP authentication", "Real-time fuel quota tracking", "Instant QR code access for refueling", "Fuel station and supplier search", "Light and dark mode support", "Responsive web and mobile experience", "Monorepo architecture with shared packages"],
     "techStack": ["React Native Expo", "React Web", "TypeScript", "Zustand", "React Query", "REST APIs", "Sri Lanka Fuel Pass APIs"],
     "githubUrl": "https://github.com/MadushanSandaru1/fuel-pass-platform",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/community.svg", "alt": "Fuel Pass platform preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/fuelpass/fuelpass-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/fuelpass/fuelpass-0-gallery.webp",
+        "alt": "Fuel Pass Platform Sri Lanka smart fuel quota management preview"
+      }
+    ]
   },
   {
     "name": "FOT Canteen Management System",
@@ -115,27 +121,27 @@
     "images": [
       {
         "src": "assets/images/projects/rmichatapp/rmichatapp-4-thumb.webp",
-        "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-4-gallery.webp",
+        "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-0-gallery.webp",
         "alt": "RMI ChatApp sign in screen"
       },
       {
         "src": "assets/images/projects/rmichatapp/rmichatapp-1-thumb.webp",
         "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-1-gallery.webp",
-        "alt": "RMI ChatApp sign up screen"
-      },
-      {
-        "src": "assets/images/projects/rmichatapp/rmichatapp-0-thumb.webp",
-        "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-0-gallery.webp",
         "alt": "RMI ChatApp password recovery code screen"
       },
       {
-        "src": "assets/images/projects/rmichatapp/rmichatapp-2-thumb.webp",
+        "src": "assets/images/projects/rmichatapp/rmichatapp-0-thumb.webp",
         "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-2-gallery.webp",
+        "alt": "RMI ChatApp sign up screen"
+      },
+      {
+        "src": "assets/images/projects/rmichatapp/rmichatapp-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-3-gallery.webp",
         "alt": "RMI ChatApp chat list screen"
       },
       {
         "src": "assets/images/projects/rmichatapp/rmichatapp-3-thumb.webp",
-        "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-3-gallery.webp",
+        "gallerySrc": "assets/images/projects/rmichatapp/rmichatapp-4-gallery.webp",
         "alt": "RMI ChatApp message conversation screens"
       }
     ]
@@ -382,7 +388,53 @@
     "techStack": ["PHP", "Bootstrap", "CSS", "JavaScript", "TCPDF", "MySQL"],
     "githubUrl": "https://github.com/MadushanSandaru1/Aarogya",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/reporting.svg", "alt": "Aarogya Hospital Management System preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/aarogya/aarogya-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/aarogya/aarogya-0-gallery.webp",
+        "alt": "Aarogya Hospital Management System home page"
+      },
+      {
+        "src": "assets/images/projects/aarogya/aarogya-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/aarogya/aarogya-1-gallery.webp",
+        "alt": "Aarogya Hospital Management System services section"
+      },
+      {
+        "src": "assets/images/projects/aarogya/aarogya-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/aarogya/aarogya-2-gallery.webp",
+        "alt": "Aarogya Hospital Management System doctors page"
+      },
+      {
+        "src": "assets/images/projects/aarogya/aarogya-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/aarogya/aarogya-3-gallery.webp",
+        "alt": "Aarogya Hospital Management System about page"
+      },
+      {
+        "src": "assets/images/projects/aarogya/aarogya-4-thumb.webp",
+        "gallerySrc": "assets/images/projects/aarogya/aarogya-4-gallery.webp",
+        "alt": "Aarogya Hospital Management System contact page"
+      },
+      {
+        "src": "assets/images/projects/aarogya/aarogya-5-thumb.webp",
+        "gallerySrc": "assets/images/projects/aarogya/aarogya-5-gallery.webp",
+        "alt": "Aarogya Hospital Management System login page"
+      },
+      {
+        "src": "assets/images/projects/aarogya/aarogya-6-thumb.webp",
+        "gallerySrc": "assets/images/projects/aarogya/aarogya-6-gallery.webp",
+        "alt": "Aarogya Hospital Management System admin dashboard"
+      },
+      {
+        "src": "assets/images/projects/aarogya/aarogya-7-thumb.webp",
+        "gallerySrc": "assets/images/projects/aarogya/aarogya-7-gallery.webp",
+        "alt": "Aarogya Hospital Management System add doctor form"
+      },
+      {
+        "src": "assets/images/projects/aarogya/aarogya-8-thumb.webp",
+        "gallerySrc": "assets/images/projects/aarogya/aarogya-8-gallery.webp",
+        "alt": "Aarogya Hospital Management System edit profile page"
+      }
+    ]
   },
   {
     "name": "Fingerprint-based Voting System",
@@ -394,67 +446,243 @@
     "techStack": ["PHP", "Bootstrap", "CSS", "JavaScript", "TCPDF", "MySQL", "Google Charts API", "SVG"],
     "githubUrl": "https://github.com/MadushanSandaru1/Fingerprint-Voting-System",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/api-gateway.svg", "alt": "Fingerprint-based Voting System preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/fvs/fvs-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-0-gallery.webp",
+        "alt": "Fingerprint-based Voting System public login page"
+      },
+      {
+        "src": "assets/images/projects/fvs/fvs-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-1-gallery.webp",
+        "alt": "Fingerprint-based Voting System fingerprint verification page"
+      },
+      {
+        "src": "assets/images/projects/fvs/fvs-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-2-gallery.webp",
+        "alt": "Fingerprint-based Voting System ballot selection page"
+      },
+      {
+        "src": "assets/images/projects/fvs/fvs-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-3-gallery.webp",
+        "alt": "Fingerprint-based Voting System successful vote confirmation"
+      },
+      {
+        "src": "assets/images/projects/fvs/fvs-4-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-4-gallery.webp",
+        "alt": "Fingerprint-based Voting System administrator login page"
+      },
+      {
+        "src": "assets/images/projects/fvs/fvs-5-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-5-gallery.webp",
+        "alt": "Fingerprint-based Voting System administrator dashboard"
+      },
+      {
+        "src": "assets/images/projects/fvs/fvs-6-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-6-gallery.webp",
+        "alt": "Fingerprint-based Voting System add election schedule form"
+      },
+      {
+        "src": "assets/images/projects/fvs/fvs-7-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-7-gallery.webp",
+        "alt": "Fingerprint-based Voting System add candidate form"
+      },
+      {
+        "src": "assets/images/projects/fvs/fvs-8-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-8-gallery.webp",
+        "alt": "Fingerprint-based Voting System candidate list"
+      },
+      {
+        "src": "assets/images/projects/fvs/fvs-9-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-9-gallery.webp",
+        "alt": "Fingerprint-based Voting System all island election results"
+      },
+      {
+        "src": "assets/images/projects/fvs/fvs-10-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-10-gallery.webp",
+        "alt": "Fingerprint-based Voting System district results map"
+      },
+      {
+        "src": "assets/images/projects/fvs/fvs-11-thumb.webp",
+        "gallerySrc": "assets/images/projects/fvs/fvs-11-gallery.webp",
+        "alt": "Fingerprint-based Voting System election results view"
+      }
+    ]
   },
   {
     "name": "TECMIS Management Information System",
     "category": "Desktop",
     "type": "University",
     "description": "Java-based Management Information System for the Faculty of Technology, University of Ruhuna.",
-    "problemSolved": "Built a first-year academic management information system with Java and MySQL.",
-    "keyFeatures": ["Team leader role", "Management information workflows", "Java desktop application", "MySQL database"],
+    "problemSolved": "Built a first-year academic management information system for managing faculty users, academic records, attendance, eligibility, courses, timetables, and notices.",
+    "keyFeatures": ["Team leader role", "Administrator and student dashboards", "User profile and user list management", "Attendance and eligibility tracking", "Course, timetable, and notice workflows", "Java desktop application with MySQL persistence"],
     "techStack": ["Java", "MySQL"],
     "githubUrl": "https://github.com/MadushanSandaru1/TECMIS-master",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/reporting.svg", "alt": "TECMIS Management Information System preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/tecmis/tecmis-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/tecmis/tecmis-0-gallery.webp",
+        "alt": "TECMIS Management Information System sign in screen"
+      },
+      {
+        "src": "assets/images/projects/tecmis/tecmis-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/tecmis/tecmis-1-gallery.webp",
+        "alt": "TECMIS Management Information System administrator dashboard"
+      },
+      {
+        "src": "assets/images/projects/tecmis/tecmis-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/tecmis/tecmis-2-gallery.webp",
+        "alt": "TECMIS Management Information System add user profile screen"
+      },
+      {
+        "src": "assets/images/projects/tecmis/tecmis-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/tecmis/tecmis-3-gallery.webp",
+        "alt": "TECMIS Management Information System user list screen"
+      },
+      {
+        "src": "assets/images/projects/tecmis/tecmis-4-thumb.webp",
+        "gallerySrc": "assets/images/projects/tecmis/tecmis-4-gallery.webp",
+        "alt": "TECMIS Management Information System student eligibility screen"
+      }
+    ]
   },
   {
     "name": "Student Management System",
     "category": "Web",
     "type": "Personal",
     "description": "Angular-based web application with CRUD operations and login system using network APIs.",
-    "problemSolved": "Implemented a student management interface that consumes APIs for backend operations.",
-    "keyFeatures": ["Individual project", "CRUD operations", "Login system", "Network API integration"],
+    "problemSolved": "Implemented an authenticated student management interface for creating, viewing, updating, and deleting student records through backend APIs.",
+    "keyFeatures": ["Individual project", "Login system", "Student create and update forms", "Student record table with delete and update actions", "Success feedback states", "Network API integration"],
     "techStack": ["Angular", "Network API", "Bootstrap", "Postman"],
     "githubUrl": "https://github.com/MadushanSandaru1/student-management-system",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/community.svg", "alt": "Student Management System preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/studentms/studentms-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/studentms/studentms-0-gallery.webp",
+        "alt": "Student Management System login page"
+      },
+      {
+        "src": "assets/images/projects/studentms/studentms-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/studentms/studentms-1-gallery.webp",
+        "alt": "Student Management System dashboard with add student form"
+      },
+      {
+        "src": "assets/images/projects/studentms/studentms-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/studentms/studentms-2-gallery.webp",
+        "alt": "Student Management System dashboard success state"
+      },
+      {
+        "src": "assets/images/projects/studentms/studentms-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/studentms/studentms-3-gallery.webp",
+        "alt": "Student Management System dashboard update student form"
+      }
+    ]
   },
   {
     "name": "ICC Concrete Mixture Counter",
     "category": "Tooling",
     "type": "Competition",
     "description": "Python-based concrete mixture counter created for the National Level School ICT Championship 2015.",
-    "problemSolved": "Built a user-interface-driven counter for Piliyandala International Construction Consortium (Pvt) Ltd.",
-    "keyFeatures": ["2nd place in junior category", "Python interface", "Construction workflow support"],
+    "problemSolved": "Built a user-interface-driven counter concept for Piliyandala International Construction Consortium (Pvt) Ltd. to support concrete mixture counting workflows.",
+    "keyFeatures": ["2nd place in junior category", "Python interface", "Concrete mixture counting workflow", "Construction workflow support"],
     "techStack": ["Python"],
     "githubUrl": "",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/reporting.svg", "alt": "ICC Concrete Mixture Counter preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/icc/icc-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/icc/icc-0-gallery.webp",
+        "alt": "ICC Concrete Mixture Counter project preview"
+      }
+    ]
   },
   {
     "name": "Website for Faculty of Technology, University of Ruhuna",
     "category": "Web",
     "type": "University",
     "description": "Website for the Faculty of Technology, University of Ruhuna.",
-    "problemSolved": "Created a faculty website as a Human Computer Interaction course project.",
-    "keyFeatures": ["Team leader role", "Faculty website", "Responsive pages", "HCI course project"],
+    "problemSolved": "Created a faculty website as a Human Computer Interaction course project to organize faculty information, departments, student services, news, and contact details.",
+    "keyFeatures": ["Team leader role", "Faculty home page", "Service categories and statistics", "News and events sections", "Department information pages", "Contact forms and location map", "HCI course project"],
     "techStack": ["PHP", "Bootstrap", "CSS", "JavaScript"],
     "githubUrl": "https://github.com/MadushanSandaru1/FOT",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/community.svg", "alt": "Faculty of Technology website preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/fot/fot-0-thumb.webp",
+        "gallerySrc": "assets/images/projects/fot/fot-0-gallery.webp",
+        "alt": "Faculty of Technology website home page"
+      },
+      {
+        "src": "assets/images/projects/fot/fot-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/fot/fot-1-gallery.webp",
+        "alt": "Faculty of Technology website service categories and statistics section"
+      },
+      {
+        "src": "assets/images/projects/fot/fot-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/fot/fot-2-gallery.webp",
+        "alt": "Faculty of Technology website latest news and events section"
+      },
+      {
+        "src": "assets/images/projects/fot/fot-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/fot/fot-3-gallery.webp",
+        "alt": "Faculty of Technology website ICT department page"
+      },
+      {
+        "src": "assets/images/projects/fot/fot-4-thumb.webp",
+        "gallerySrc": "assets/images/projects/fot/fot-4-gallery.webp",
+        "alt": "Faculty of Technology website contact page with map"
+      },
+      {
+        "src": "assets/images/projects/fot/fot-5-thumb.webp",
+        "gallerySrc": "assets/images/projects/fot/fot-5-gallery.webp",
+        "alt": "Faculty of Technology website footer and contact form"
+      }
+    ]
   },
   {
     "name": "Website for Lanka Premier League",
     "category": "Web",
     "type": "Competition",
     "description": "Website for Lanka Premier League built for Parallax 2020 UI/UX Hackathon.",
-    "problemSolved": "Created a pure JavaScript and CSS sports website concept for a competition setting.",
-    "keyFeatures": ["Team Semicolon", "Parallax 2020 participation", "Pure JavaScript and CSS", "Figma design"],
+    "problemSolved": "Created a pure JavaScript and CSS sports website concept for a competition setting with league information, teams, live scores, schedules, points, and contact sections.",
+    "keyFeatures": ["Team Semicolon", "Parallax 2020 participation", "League landing page", "Team listing and player sections", "Score and points table views", "Match schedule view", "About and feedback contact section", "Pure JavaScript and CSS", "Figma design"],
     "techStack": ["HTML", "CSS", "JavaScript", "Figma"],
     "githubUrl": "https://github.com/MadushanSandaru1/LPL",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/api-gateway.svg", "alt": "Lanka Premier League website preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/lpl/lpl-1-thumb.webp",
+        "gallerySrc": "assets/images/projects/lpl/lpl-1-gallery.webp",
+        "alt": "Lanka Premier League website home page"
+      },
+      {
+        "src": "assets/images/projects/lpl/lpl-2-thumb.webp",
+        "gallerySrc": "assets/images/projects/lpl/lpl-2-gallery.webp",
+        "alt": "Lanka Premier League website teams page"
+      },
+      {
+        "src": "assets/images/projects/lpl/lpl-3-thumb.webp",
+        "gallerySrc": "assets/images/projects/lpl/lpl-3-gallery.webp",
+        "alt": "Lanka Premier League website score page"
+      },
+      {
+        "src": "assets/images/projects/lpl/lpl-4-thumb.webp",
+        "gallerySrc": "assets/images/projects/lpl/lpl-4-gallery.webp",
+        "alt": "Lanka Premier League website schedule page"
+      },
+      {
+        "src": "assets/images/projects/lpl/lpl-5-thumb.webp",
+        "gallerySrc": "assets/images/projects/lpl/lpl-5-gallery.webp",
+        "alt": "Lanka Premier League website points table page"
+      },
+      {
+        "src": "assets/images/projects/lpl/lpl-6-thumb.webp",
+        "gallerySrc": "assets/images/projects/lpl/lpl-6-gallery.webp",
+        "alt": "Lanka Premier League website about and feedback page"
+      }
+    ]
   },
   {
     "name": "Website for Sri Nishshankamalla Maha Vidyalaya",
@@ -466,7 +694,38 @@
     "techStack": ["PHP", "Bootstrap", "CSS", "JavaScript"],
     "githubUrl": "https://github.com/MadushanSandaru1/NMV",
     "demoUrl": "",
-    "images": [{ "src": "assets/images/projects/community.svg", "alt": "School website preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/nmv/nmv-0-gallery.png",
+        "gallerySrc": "assets/images/projects/nmv/nmv-0-gallery.png",
+        "alt": "Sri Nishshankamalla Maha Vidyalaya about page with motto, vision, mission, emblem, and flag"
+      },
+      {
+        "src": "assets/images/projects/nmv/nmv-1-gallery.png",
+        "gallerySrc": "assets/images/projects/nmv/nmv-1-gallery.png",
+        "alt": "Sri Nishshankamalla Maha Vidyalaya principal message and footer"
+      },
+      {
+        "src": "assets/images/projects/nmv/nmv-2-gallery.png",
+        "gallerySrc": "assets/images/projects/nmv/nmv-2-gallery.png",
+        "alt": "Sri Nishshankamalla Maha Vidyalaya history page with school flag"
+      },
+      {
+        "src": "assets/images/projects/nmv/nmv-3-gallery.png",
+        "gallerySrc": "assets/images/projects/nmv/nmv-3-gallery.png",
+        "alt": "Sri Nishshankamalla Maha Vidyalaya contact page with map and contact details"
+      },
+      {
+        "src": "assets/images/projects/nmv/nmv-4-gallery.png",
+        "gallerySrc": "assets/images/projects/nmv/nmv-4-gallery.png",
+        "alt": "Sri Nishshankamalla Maha Vidyalaya Sinhala page with school song and footer"
+      },
+      {
+        "src": "assets/images/projects/nmv/nmv-5-gallery.png",
+        "gallerySrc": "assets/images/projects/nmv/nmv-5-gallery.png",
+        "alt": "Sri Nishshankamalla Maha Vidyalaya about page overview"
+      }
+    ]
   },
   {
     "name": "Papers Management System for Faculty of Technology",
@@ -478,7 +737,23 @@
     "techStack": ["HTML5", "Bootstrap 5", "CSS", "JavaScript"],
     "githubUrl": "",
     "demoUrl": "https://papers-ictsc.github.io",
-    "images": [{ "src": "assets/images/projects/reporting.svg", "alt": "Past papers management website preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/papersms/papersms-0-gallery.png",
+        "gallerySrc": "assets/images/projects/papersms/papersms-0-gallery.png",
+        "alt": "Papers Management System landing page for past papers"
+      },
+      {
+        "src": "assets/images/projects/papersms/papersms-1-gallery.png",
+        "gallerySrc": "assets/images/projects/papersms/papersms-1-gallery.png",
+        "alt": "Papers Management System level and semester selection cards"
+      },
+      {
+        "src": "assets/images/projects/papersms/papersms-2-gallery.png",
+        "gallerySrc": "assets/images/projects/papersms/papersms-2-gallery.png",
+        "alt": "Papers Management System paper download listing by year"
+      }
+    ]
   },
   {
     "name": "AIESEC in University of Ruhuna Leadership Body Application",
@@ -490,6 +765,32 @@
     "techStack": ["HTML5", "Bootstrap 5", "CSS", "JavaScript"],
     "githubUrl": "",
     "demoUrl": "https://aiesec-ruhuna.github.io",
-    "images": [{ "src": "assets/images/projects/community.svg", "alt": "AIESEC leadership body application website preview" }]
+    "images": [
+      {
+        "src": "assets/images/projects/aieseclba/aieseclba-0-gallery.png",
+        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-0-gallery.png",
+        "alt": "AIESEC in University of Ruhuna Leadership Body Application home page"
+      },
+      {
+        "src": "assets/images/projects/aieseclba/aieseclba-1-gallery.png",
+        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-1-gallery.png",
+        "alt": "AIESEC Leadership Body Application guidelines and countdown section"
+      },
+      {
+        "src": "assets/images/projects/aieseclba/aieseclba-2-gallery.png",
+        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-2-gallery.png",
+        "alt": "AIESEC Leadership Body Application front office and back office functional area cards"
+      },
+      {
+        "src": "assets/images/projects/aieseclba/aieseclba-3-gallery.png",
+        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-3-gallery.png",
+        "alt": "AIESEC Leadership Body Application contact page with member cards"
+      },
+      {
+        "src": "assets/images/projects/aieseclba/aieseclba-4-gallery.png",
+        "gallerySrc": "assets/images/projects/aieseclba/aieseclba-4-gallery.png",
+        "alt": "AIESEC Leadership Body Application role description page for iGV IR"
+      }
+    ]
   }
 ]
