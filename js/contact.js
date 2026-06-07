@@ -143,7 +143,7 @@
       window.emailjs.send(emailConfig.serviceId, emailConfig.templateId, toTemplateParams(emailConfig, fields), getEmailJsOptions(emailConfig))
         .then(function (response) {
           form.reset();
-          const sent = response && response.status ? `Message sent successfully (${response.status}).` : 'Message sent successfully.';
+          const sent = response ? `Message sent successfully.` : 'Message sent successfully.';
           setStatus(form, `${sent} Thank you for reaching out.`, 'success');
           openThankYouModal(form);
         })
