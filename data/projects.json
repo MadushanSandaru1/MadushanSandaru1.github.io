@@ -1,6 +1,8 @@
 [
   {
     "name": "Enterprise Service Bus (NTP ESB) Integrations",
+    "featured": true,
+    "highlight": "25+ secure integrations",
     "category": "Integration",
     "type": "Enterprise",
     "description": "Enterprise integration work for secure connectivity between third-party systems, internal platforms, and fintech services.",
@@ -18,6 +20,8 @@
   },
   {
     "name": "Light-weight API Gateway",
+    "featured": true,
+    "highlight": "Delivered to 5+ clients",
     "category": "API Platform",
     "type": "Enterprise",
     "description": "Client-delivered API Gateway solution for secure and scalable API management across enterprise systems.",
@@ -35,6 +39,8 @@
   },
   {
     "name": "Notification Server (NTP Message Router)",
+    "featured": true,
+    "highlight": "10+ SMS gateway integrations",
     "category": "Messaging",
     "type": "Enterprise",
     "description": "Migration and enhancement of notification infrastructure into a scalable message routing platform.",

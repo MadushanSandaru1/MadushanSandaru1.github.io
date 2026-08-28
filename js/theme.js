@@ -6,7 +6,10 @@
   }
 
   function getTheme() {
-    return localStorage.getItem(storageKey) || systemTheme();
+    try {
+      const saved = localStorage.getItem(storageKey);
+      return ['dark', 'light'].includes(saved) ? saved : systemTheme();
+    } catch (_) { return systemTheme(); }
   }
 
   function applyTheme(theme) {
@@ -19,11 +22,12 @@
     applyTheme(getTheme());
     $('[data-theme-toggle]').on('click', function () {
       const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      localStorage.setItem(storageKey, next);
+      try { localStorage.setItem(storageKey, next); } catch (_) { /* Theme still works without persistence. */ }
       applyTheme(next);
     });
     window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function () {
-      if (!localStorage.getItem(storageKey)) applyTheme(systemTheme());
+      try { if (localStorage.getItem(storageKey)) return; } catch (_) {}
+      applyTheme(systemTheme());
     });
   }
 

@@ -1,9 +1,4 @@
 (function (window) {
-  const navItems = [
-    ['hero', 'Home', 'home'], ['about', 'About', 'user'], ['professional-experience', 'Experience', 'briefcase'],
-    ['projects', 'Projects', 'code'], ['technical-skills', 'Skills', 'layers'], ['contact', 'Contact', 'mail']
-  ];
-
   const Icons = {
     home: '<path d="M3 10.5 12 3l9 7.5v9a1.5 1.5 0 0 1-1.5 1.5H15v-6H9v6H4.5A1.5 1.5 0 0 1 3 19.5z"/>',
     user: '<path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/>',
@@ -36,7 +31,7 @@
     if (!image || !hasValue(image.src)) return '';
     const srcset = hasValue(image.srcset) ? ` srcset="${esc(image.srcset)}"` : '';
     const sizes = hasValue(image.sizes) ? ` sizes="${esc(image.sizes)}"` : '';
-    return `<img class="${className || ''}" src="${esc(image.src)}"${srcset}${sizes} alt="${esc(image.alt || '')}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${esc(image.fallback || 'assets/images/profile/default-avatar.svg')}';">`;
+    return `<img class="${className || ''}" src="${esc(image.src)}"${srcset}${sizes} alt="${esc(image.alt || '')}" loading="${className === 'profile-image' ? 'eager' : 'lazy'}" ${className === 'profile-image' ? 'fetchpriority="high"' : ''} decoding="async" onerror="this.onerror=null;this.src='${esc(image.fallback || 'assets/images/profile/default-avatar.svg')}';">`;
   }
   function renderProjectMedia(item) {
     const images = Array.isArray(item.images) ? item.images.filter((image) => hasValue(image?.src)) : [];
@@ -107,31 +102,40 @@
     $('meta[name="keywords"]').attr('content', (site.keywords || []).join(', '));
     $('[property="og:title"], [name="twitter:title"]').attr('content', site.title || profile.name || '');
     $('[property="og:description"], [name="twitter:description"]').attr('content', site.description || profile.shortSummary || '');
-    $('[property="og:image"], [name="twitter:image"]').attr('content', profile.profileImage?.src || '');
+    $('[property="og:image"], [name="twitter:image"]').attr('content', new URL(profile.profileImage?.src || '', site.canonicalUrl || window.location.href).href);
     $('link[rel="canonical"]').attr('href', site.canonicalUrl || 'https://madushansandaru1.github.io');
     $('[property="og:url"]').attr('content', site.canonicalUrl || 'https://madushansandaru1.github.io');
     $('[data-brand]').html(`<img class="brand-logo" src="assets/images/brand/ms-logo.svg" alt="" aria-hidden="true"><span>${esc(profile.name || 'Portfolio')}</span>`);
     const schema = { '@context': 'https://schema.org', '@type': 'Person', name: profile.name, jobTitle: profile.title, image: profile.profileImage?.src, url: site.canonicalUrl, address: { '@type': 'PostalAddress', addressCountry: profile.location || 'Sri Lanka' }, sameAs: (data.socialLinks || []).filter((item) => hasValue(item.url) && !item.url.startsWith('mailto:')).map((item) => item.url) };
-    $('head').append(`<script type="application/ld+json">${JSON.stringify(schema)}<\/script>`);
+    $('script[data-person-schema]').remove();
+    $('head').append(`<script data-person-schema type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}<\/script>`);
   }
 
   function renderNav() {
-    $('[data-desktop-nav]').html(navItems.map(([id, label]) => `<a href="#${id}" data-nav-link="${id}">${label}</a>`).join(''));
-    $('[data-mobile-nav]').html(navItems.filter((_, i) => [0, 1, 3, 4, 5].includes(i)).map(([id, label, iconName]) => `<a href="#${id}" data-nav-link="${id}">${icon(iconName)}<span>${label}</span></a>`).join(''));
+    const sections = Array.from(document.querySelectorAll('main section[id]')).map((section) => ({
+      id: section.id,
+      label: section.id === 'hero' ? 'Home' : section.querySelector('h2')?.textContent
+    })).filter((section) => section.label);
+    const link = ({ id, label }) => `<a href="#${esc(id)}" data-nav-link="${esc(id)}">${esc(label)}</a>`;
+    function strip(id) {
+      return `<button class="nav-scroll-arrow" type="button" data-nav-scroll="-1" aria-label="Scroll sections left" aria-controls="${id}">‹</button><div class="nav-scroll-track" id="${id}" data-nav-track>${sections.map(link).join('')}</div><button class="nav-scroll-arrow" type="button" data-nav-scroll="1" aria-label="Scroll sections right" aria-controls="${id}">›</button>`;
+    }
+    $('[data-desktop-nav]').html(strip('desktop-section-links'));
+    $('[data-mobile-nav]').html(strip('mobile-section-links'));
     $('[data-back-to-top]').html(icon('up'));
   }
   function renderSocialLinks(items) { return (items || []).filter((item) => hasValue(item.url)).map((item) => `<a class="social-link" href="${esc(item.url)}" target="${item.url.startsWith('mailto:') ? '_self' : '_blank'}" rel="noreferrer" aria-label="${esc(item.label || item.platform)}">${icon(item.icon)}<span>${esc(item.platform)}</span></a>`).join(''); }
   function renderHero(profile, socialLinks) {
     const stats = profile.stats || [], heroSocialLinks = (socialLinks || []).filter((item) => item.platform !== 'Website');
-    $('#hero').html(`<div class="container hero-grid"><div class="hero-copy reveal"><h1>${esc(profile.name)}</h1><p class="hero-title">${esc(profile.title)}</p><p class="hero-tagline">${esc(profile.tagline)}</p><p class="hero-summary">${esc(profile.shortSummary)}</p><div class="hero-actions"><a class="button button-primary" href="#projects">View Projects ${icon('arrow')}</a><button class="button button-secondary" type="button" data-cv-download data-cv-url="${esc(profile.resume?.downloadUrl)}" data-cv-label="${esc(profile.resume?.label || 'Download CV')}">${icon('download')} ${esc(profile.resume?.label || 'Download CV')}</button><a class="button button-ghost" href="#contact">Contact Me</a></div><div class="social-row">${renderSocialLinks(heroSocialLinks)}</div></div><div class="hero-visual reveal"><div class="profile-frame">${imageTag(profile.profileImage, 'profile-image')}</div><div class="signal-card"><span>Integration focus</span><strong>APIs - Middleware - Fintech</strong></div></div><div class="stats-strip reveal">${stats.map((stat) => `<div><strong data-counter="${esc(resolveStatValue(profile, stat))}">0</strong><span>${esc(stat.label)}</span></div>`).join('')}</div></div>`);
+    $('#hero').html(`<div class="container hero-grid"><div class="hero-copy reveal"><h1>${esc(profile.name)}</h1><p class="hero-title">${esc(profile.title)}</p><p class="hero-tagline">${esc(profile.tagline)}</p><p class="hero-summary">${esc(profile.shortSummary)}</p><div class="hero-actions"><a class="button button-primary" href="#projects">View Projects ${icon('arrow')}</a><a class="button button-secondary" href="${esc(profile.resume?.downloadUrl)}" download data-cv-download data-cv-url="${esc(profile.resume?.downloadUrl)}" data-cv-label="${esc(profile.resume?.label || 'Download CV')}">${icon('download')} ${esc(profile.resume?.label || 'Download CV')}</a><a class="button button-ghost" href="#contact">Contact Me</a></div><div class="social-row">${renderSocialLinks(heroSocialLinks)}</div></div><div class="hero-visual reveal"><div class="profile-frame">${imageTag(profile.profileImage, 'profile-image')}</div><div class="signal-card"><span>Integration focus</span><strong>APIs - Middleware - Fintech</strong></div></div><div class="stats-strip reveal">${stats.map((stat) => `<div><strong data-counter="${esc(resolveStatValue(profile, stat))}">${esc(resolveStatValue(profile, stat))}+</strong><span>${esc(stat.label)}</span></div>`).join('')}</div></div>`);
   }
   function renderAbout(profile) { $('#about').html(`<div class="container">${sectionIntro('About Me', 'Profile', profile.about)}<div class="about-panel reveal">${(profile.focusAreas || []).map((item) => `<article><strong>${esc(item.title)}</strong><p>${esc(item.description)}</p></article>`).join('')}</div></div>`); }
   function renderExperience(items) {
     $('#professional-experience').html(`<div class="container">${sectionIntro('Professional Experience', 'Career timeline', 'Senior engineering work across backend systems, enterprise integrations, and production platforms.')}<div class="timeline">${items.map((item) => `<article class="timeline-item reveal"><div class="timeline-marker"></div><div class="card experience-card"><div class="experience-head"><div><h3>${esc(item.jobTitle)}</h3>${hasValue(item.company) ? `<p class="company">${esc(item.company)}</p>` : ''}${meta([item.location, item.employmentType])}</div><div class="experience-date">${hasValue(item.startDate) ? `<strong>${esc(item.startDate)} - ${esc(item.endDate || 'Present')}</strong>` : ''}${hasValue(durationLabel(item.startDate, item.endDate)) ? `<span>${esc(durationLabel(item.startDate, item.endDate))}</span>` : ''}</div></div>${hasValue(item.summary) ? `<p>${esc(item.summary)}</p>` : ''}<h4>Responsibilities</h4>${list(item.responsibilities)}<h4>Key achievements</h4>${list(item.achievements)}${tags(item.technologies)}</div></article>`).join('')}</div></div>`);
   }
   function renderProjects(items) {
-    const categories = ['All', ...new Set(items.map((item) => item.category).filter(Boolean))];
-    $('#projects').html(`<div class="container">${sectionIntro('Projects', 'Selected work', 'Featured engineering, integration, cloud, and community projects.')}<div class="filter-bar reveal">${categories.map((cat, i) => `<button class="filter-chip ${i === 0 ? 'active' : ''}" type="button" data-filter="${esc(cat)}">${esc(cat)}</button>`).join('')}</div><div class="project-grid">${items.map((item) => `<article class="project-card card reveal" data-project-category="${esc(item.category)}">${renderProjectMedia(item)}<div class="project-body">${meta([item.type, item.category])}<h3>${esc(item.name)}</h3>${hasValue(item.description) ? `<p>${esc(item.description)}</p>` : ''}${popover('Engineering detail', `${hasValue(item.problemSolved) ? `<p><strong>Problem solved:</strong> ${esc(item.problemSolved)}</p>` : ''}${list(item.keyFeatures)}${tags(item.techStack)}`)}<div class="card-actions">${hasValue(item.githubUrl) ? `<a href="${esc(item.githubUrl)}" target="_blank" rel="noreferrer">${icon('github')} GitHub</a>` : ''}${hasValue(item.demoUrl) ? `<a href="${esc(item.demoUrl)}" target="_blank" rel="noreferrer">${icon('external')} Demo</a>` : ''}</div></div></article>`).join('')}</div></div>`);
+    const categories = [...(items.some((item) => item.featured) ? ['Featured'] : []), 'All', ...new Set(items.map((item) => item.category).filter(Boolean))];
+    $('#projects').html(`<div class="container">${sectionIntro('Projects', 'Selected work', 'Featured engineering, integration, cloud, and community projects.')}<div class="filter-bar reveal">${categories.map((cat, i) => `<button class="filter-chip ${i === 0 ? 'active' : ''}" type="button" data-filter="${esc(cat)}" aria-pressed="${i === 0}" aria-controls="project-results">${esc(cat)}</button>`).join('')}</div><p class="project-count" data-project-count role="status" aria-live="polite"></p><div class="project-grid" id="project-results">${items.map((item) => `<article class="project-card card reveal" data-project-category="${esc(item.category)}" data-featured="${Boolean(item.featured)}">${renderProjectMedia(item)}<div class="project-body">${meta([item.type, item.category])}<h3>${esc(item.name)}</h3>${hasValue(item.description) ? `<p>${esc(item.description)}</p>` : ''}${item.highlight ? `<p class="project-highlight">${esc(item.highlight)}</p>${tags((item.techStack || []).slice(0, 3))}` : ''}${popover('Engineering detail', `${hasValue(item.problemSolved) ? `<p><strong>Problem solved:</strong> ${esc(item.problemSolved)}</p>` : ''}${list(item.keyFeatures)}${tags(item.techStack)}`)}<div class="card-actions">${hasValue(item.githubUrl) ? `<a href="${esc(item.githubUrl)}" target="_blank" rel="noreferrer">${icon('github')} GitHub</a>` : ''}${hasValue(item.demoUrl) ? `<a href="${esc(item.demoUrl)}" target="_blank" rel="noreferrer">${icon('external')} Demo</a>` : ''}</div></div></article>`).join('')}</div></div>`);
     initProjectGalleries();
   }
   function renderSkills(items, selector, title, kicker) { $(selector).html(`<div class="container">${sectionIntro(title, kicker, '')}<div class="skill-grid">${items.map((group) => `<article class="skill-panel reveal"><h3>${esc(group.category)}</h3>${tags(group.skills)}</article>`).join('')}</div></div>`); }
@@ -195,9 +199,39 @@
     $('[data-footer]').html(`<div class="container footer-grid"><p><strong>${esc(profile.name)}</strong><br>${esc(profile.title)}</p><div class="social-row">${renderSocialLinks(footerSocialLinks)}</div><p>&copy; ${new Date().getFullYear()} ${esc(profile.name)}. Built as a static, data-driven portfolio.</p></div>`);
   }
 
+
+  function compactSections() {
+    const limits = { 'certificate-courses': 6, testimonials: 3, 'volunteer-experience': 3, 'awards-competitions': 3, 'technical-skills': 4 };
+    Object.entries(limits).forEach(([id, limit]) => {
+      const section = document.getElementById(id);
+      if (!section) return;
+      const cards = Array.from(section.querySelectorAll('article'));
+      if (cards.length <= limit) return;
+      const grid = cards[0].parentElement;
+      grid.id = id + '-items';
+      const extra = cards.slice(limit);
+      extra.forEach((card) => { card.hidden = true; });
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'button button-secondary section-more';
+      button.setAttribute('aria-expanded', 'false');
+      button.setAttribute('aria-controls', grid.id);
+      const label = section.querySelector('h2').textContent.toLowerCase();
+      button.textContent = `View all ${cards.length} ${label}`;
+      button.addEventListener('click', () => {
+        const open = button.getAttribute('aria-expanded') !== 'true';
+        extra.forEach((card) => { card.hidden = !open; });
+        button.setAttribute('aria-expanded', String(open));
+        button.textContent = open ? 'Show fewer' : `View all ${cards.length} ${label}`;
+        if (id === 'testimonials') initTestimonialText();
+      });
+      grid.after(button);
+    });
+  }
+
   function render(data) {
     const config = data.siteConfig || { sections: {}, emptyState: { showEmptySections: false } }, profile = data.profile || {};
-    renderMeta(data); renderNav();
+    renderMeta(data);
     shouldShow(config, 'hero', profile) ? renderHero(profile, data.socialLinks || []) : $('#hero').remove();
     shouldShow(config, 'about', profile) ? renderAbout(profile) : $('#about').remove();
     const renderers = {
@@ -218,9 +252,12 @@
       contact: () => renderContact(profile, data.socialLinks || [])
     };
     Object.entries(renderers).forEach(([key, renderer]) => shouldShow(config, key, data[key]) ? renderer() : $(`[data-section="${key}"]`).remove());
+    renderNav();
+    document.querySelectorAll('[data-nav-link]').forEach((link) => { if (!document.getElementById(link.dataset.navLink)) link.remove(); });
     renderFooter(profile, data.socialLinks || []);
+    compactSections();
   }
 
   window.PortfolioIcons = { icon };
-  window.PortfolioRenderer = { render };
+  window.PortfolioRenderer = { render, renderNav };
 })(window);

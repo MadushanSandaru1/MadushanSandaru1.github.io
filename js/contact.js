@@ -1,6 +1,5 @@
 (function (window, document) {
   let thankYouModal = null;
-  let lastSubmitButton = null;
 
   function hasValue(value) {
     return value !== undefined && value !== null && String(value).trim() !== '';
@@ -57,20 +56,12 @@
   }
 
   function openThankYouModal(form) {
-    const button = form.querySelector('button[type="submit"]');
-    lastSubmitButton = button || document.activeElement;
     const modal = getThankYouModal();
-    const closeButton = modal.querySelector('[data-contact-modal-action]');
-    modal.removeAttribute('hidden');
-    document.body.classList.add('modal-open');
-    if (closeButton) closeButton.focus();
+    PortfolioDialog.open(modal, modal.querySelector('[data-contact-modal-action]'), form.querySelector('button[type="submit"]'));
   }
 
   function closeThankYouModal() {
-    if (!thankYouModal || thankYouModal.hasAttribute('hidden')) return;
-    thankYouModal.setAttribute('hidden', '');
-    document.body.classList.remove('modal-open');
-    if (lastSubmitButton && typeof lastSubmitButton.focus === 'function') lastSubmitButton.focus();
+    if (thankYouModal && !thankYouModal.hidden) PortfolioDialog.close();
   }
 
   function openMailto(config, fields) {
@@ -132,7 +123,7 @@
       }
 
       if (!canSendWithEmailJs) {
-        setStatus(form, 'EmailJS is not configured yet. Opening your email app instead.', 'info');
+        setStatus(form, 'Opening your email app with a draft. Please send it there to complete your message.', 'info');
         openMailto(emailConfig, fields);
         return;
       }
@@ -145,6 +136,7 @@
           form.reset();
           const sent = response && response.status ? `Message sent successfully (${response.status}).` : 'Message sent successfully.';
           setStatus(form, `${sent} Thank you for reaching out.`, 'success');
+          setLoading(form, false);
           openThankYouModal(form);
         })
         .catch(function (error) {
@@ -159,17 +151,6 @@
     document.addEventListener('click', function (event) {
       if (event.target.closest('[data-contact-modal-close]')) closeThankYouModal();
     });
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeThankYouModal();
-    });
-
-    const status = form.querySelector('[data-contact-status]');
-    if (status && window.MutationObserver) {
-      new MutationObserver(function () {
-        if (status.dataset.state === 'success') openThankYouModal(form);
-      }).observe(status, { attributes: true, attributeFilter: ['data-state'] });
-    }
   }
 
   window.PortfolioContact = { init };

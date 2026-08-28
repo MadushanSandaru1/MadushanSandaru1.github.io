@@ -1,5 +1,4 @@
 (function (window, document) {
-  let lastTrigger = null;
 
   function createModal() {
     const modal = document.createElement('div');
@@ -40,19 +39,14 @@
     let downloadUrl = '';
 
     function open(trigger) {
-      lastTrigger = trigger;
       downloadUrl = trigger.dataset.cvUrl || '';
       const label = trigger.dataset.cvLabel || 'Download CV';
       confirmButton.textContent = label;
-      modal.removeAttribute('hidden');
-      document.body.classList.add('modal-open');
-      confirmButton.focus();
+      PortfolioDialog.open(modal, confirmButton);
     }
 
     function close() {
-      modal.setAttribute('hidden', '');
-      document.body.classList.remove('modal-open');
-      if (lastTrigger) lastTrigger.focus();
+      PortfolioDialog.close();
     }
 
     document.addEventListener('click', function (event) {
@@ -68,10 +62,6 @@
     confirmButton.addEventListener('click', function () {
       if (downloadUrl) downloadFile(downloadUrl);
       close();
-    });
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && !modal.hasAttribute('hidden')) close();
     });
   }
 

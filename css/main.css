@@ -573,7 +573,7 @@ input:focus, textarea:focus, .button:focus-visible, .icon-button:focus-visible, 
   box-shadow: var(--shadow);
 }
 .back-to-top.visible { opacity: 1; pointer-events: auto; }
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity 520ms ease, transform 520ms ease; }
+.reveal { opacity: 1; transform: none; transition: opacity 520ms ease, transform 520ms ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 .empty-state { padding: 32px; text-align: center; }
 
@@ -675,4 +675,63 @@ input:focus, textarea:focus, .button:focus-visible, .icon-button:focus-visible, 
   .stats-strip strong { font-size: 26px; }
   .card, .contact-form, .project-body { padding: 18px; }
   .footer-grid { display: grid; }
+}
+
+/* Progressive enhancement and accessible controls. */
+[hidden] { display: none !important; }
+.section:empty { display: none; }
+.section, main { scroll-margin-top: 84px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.section-more { margin-top: 24px; }
+.project-count { color: var(--muted); margin-block: 12px 20px; }
+.project-highlight { color: var(--accent); font-weight: 750; }
+.load-status { margin-top: 80px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); }
+@media (max-width: 760px) {
+  .section, main { scroll-margin-top: 16px; }
+  .project-grid { display: grid; grid-template-columns: 1fr; overflow: visible; }
+  .project-card { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Show click affordance consistently across interactive controls. */
+a[href], button, .button, [role="button"], summary,
+input[type="button"], input[type="submit"], input[type="reset"],
+input[type="checkbox"], input[type="radio"], select {
+  cursor: pointer;
+}
+button:disabled, input:disabled, select:disabled,
+.button[aria-disabled="true"], [role="button"][aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+/* Scrollable section navigation: touch, trackpad, keyboard, and arrow controls. */
+.top-nav { gap: 16px; }
+.top-nav .brand { flex: 0 1 260px; }
+.nav-actions { flex: 0 0 auto; }
+.nav-links { flex: 1 1 0; min-width: 0; gap: 4px; }
+.nav-scroll-track {
+  display: flex; flex: 1 1 0; min-width: 0; align-items: center; gap: 6px;
+  overflow-x: auto; overscroll-behavior-x: contain; scroll-behavior: smooth;
+  scroll-snap-type: x proximity; scroll-padding-inline: 8px;
+  scrollbar-width: thin; scrollbar-color: var(--accent) transparent; padding: 6px 4px;
+}
+.nav-scroll-track a { flex: 0 0 auto; white-space: nowrap; scroll-snap-align: start; }
+.nav-scroll-arrow {
+  flex: 0 0 28px; width: 28px; height: 40px; padding: 0;
+  display: grid; place-items: center; border: 1px solid var(--line);
+  border-radius: 10px; background: var(--card); color: var(--text); font-size: 24px;
+}
+.nav-scroll-arrow:hover:not(:disabled) { background: var(--bg-soft); border-color: var(--accent); }
+.nav-scroll-arrow:disabled { opacity: .3; }
+.nav-scroll-track::-webkit-scrollbar { height: 3px; }
+.nav-scroll-track::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+@media (max-width: 980px) and (min-width: 761px) {
+  .top-nav .brand { flex-basis: 150px; }
+}
+@media (max-width: 760px) {
+  .bottom-nav { display: flex; align-items: center; gap: 4px; }
+  .bottom-nav .nav-scroll-track a { display: flex; align-items: center; min-height: 44px; padding: 8px 14px; font-size: 12px; }
+  .bottom-nav .nav-scroll-arrow { flex-basis: 26px; width: 26px; }
 }

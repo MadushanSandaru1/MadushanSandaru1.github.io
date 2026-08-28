@@ -20,17 +20,51 @@
     emailjsConfig: 'data/emailjs-config.json'
   };
 
-  function loadJson(path) {
-    return $.getJSON(path).catch(function () {
-      console.warn('Unable to load ' + path);
-      return Array.isArray(path) ? [] : null;
+  let localData;
+  async function loadJson(path) {
+    if (window.location?.protocol === 'file:') {
+      if (!localData) {
+        const snapshot = document.getElementById('portfolio-local-data');
+        if (!snapshot) throw new Error('Local preview data is missing. Run node scripts/build.mjs.');
+        localData = JSON.parse(snapshot.textContent);
+      }
+      if (!Object.prototype.hasOwnProperty.call(localData, path)) throw new Error('Missing local preview data: ' + path);
+      return localData[path];
+    }
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+    try {
+      const response = await fetch(path, { signal: controller.signal });
+      if (!response.ok) throw new Error('Unable to load ' + path);
+      return await response.json();
+    } finally { clearTimeout(timeout); }
+  }
+
+  async function loadPortfolioData() {
+    const failedSections = [];
+    const siteConfig = await loadJson(DATA_FILES.siteConfig).then((config) => {
+      if (!config || typeof config !== 'object' || Array.isArray(config)) throw new Error('Invalid site configuration');
+      return config;
+    }).catch(() => {
+      failedSections.push('siteConfig');
+      return { sections: {} };
     });
+    const entries = Object.entries(DATA_FILES).filter(([key]) => key !== 'siteConfig' && siteConfig.sections?.[key] !== false);
+    const values = await Promise.all(entries.map(async ([key, path]) => {
+      try {
+        const value = await loadJson(path);
+        const objectKeys = ['profile', 'emailjsConfig'];
+        if (objectKeys.includes(key) ? !value || typeof value !== 'object' || Array.isArray(value) : !Array.isArray(value)) throw new Error('Invalid data: ' + key);
+        if (key === 'profile' && !value.name) throw new Error('Missing profile name');
+        return [key, value];
+      } catch (error) {
+        if (key === 'profile') throw error;
+        failedSections.push(key);
+        console.warn('Unable to load ' + path);
+        return [key, key === 'emailjsConfig' ? {} : []];
+      }
+    }));
+    return Object.assign(Object.fromEntries(values), { siteConfig, failedSections });
   }
-
-  function loadPortfolioData() {
-    const entries = Object.entries(DATA_FILES);
-    return Promise.all(entries.map(([key, path]) => loadJson(path).then((value) => [key, value]))).then(Object.fromEntries);
-  }
-
   window.PortfolioDataLoader = { loadPortfolioData };
 })(window);
